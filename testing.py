@@ -5,5 +5,8 @@ from resources.operators_natural import operators_natural
 
 # Initialize grammar
 grammar = CFG(rules=operators_natural, axiom="S")
-# print(grammar)
-generate_examples(grammar)
+print("\n----Context-free grammar----\n")
+print(grammar)
+print("----Generated examples----\n")
+generate_examples(grammar, 5, print_tree=False)
+print()

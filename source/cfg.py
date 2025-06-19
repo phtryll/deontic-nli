@@ -93,11 +93,17 @@ class CFG:
     def __str__(self) -> str:
         """String representation of the rule."""
 
+        # Format nicely the elements of the CFG
+        formatted_terminals = "\n   - ".join(str(t) for t in self.terminals)
+        formatted_non_terminals = "\n   - ".join(str(nt) for nt in self.non_terminals)
+        formatted_rules = "\n   - ".join(str(rule) for rule in self.rules)
+
         context_free_grammar = (
-            f"({self.terminals}, "
-            f"{self.non_terminals}, "
-            f"{self.rules}, "
-            f"{self.axiom})"
+            "CFG: a tuple containing:\n\n"
+            f"An axiom: {self.axiom}\n"
+            f"A set of terminals:\n   - {formatted_terminals}\n"
+            f"A set of non-terminals:\n   - {formatted_non_terminals}\n"
+            f"A set of rules:\n   - {formatted_rules}\n"
         )
 
         return context_free_grammar
