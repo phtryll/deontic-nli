@@ -2,7 +2,7 @@ import argparse
 import logging
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 from source.generate import generate_examples, generate_rules
-from source.lexical_items_utils import generate_lexical_pool
+from source.generate_utils import generate_lexical_pool
 from source.cfg import CFG
 from resources.operators import operators
 from resources.model_prompts import prompts
