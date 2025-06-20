@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModelForMaskedLM
 from source.generate import generate_examples, generate_rules
 from source.generate_utils import generate_lexical_pool
 from source.cfg import CFG
-from resources.operators import operators
+from resources.axiom_obrm import my_rules
 from resources.model_prompts import prompts
 
 # Suppress useless transformers messages
@@ -51,7 +51,7 @@ def main():
     model = AutoModelForMaskedLM.from_pretrained("flaubert/flaubert_base_cased")
     
     # Initialize grammar
-    grammar = CFG(rules=operators, axiom="S")
+    grammar = CFG(rules=my_rules, axiom="S")
 
     if args.show_grammar:
         print("\n----Context-free grammar----\n")
