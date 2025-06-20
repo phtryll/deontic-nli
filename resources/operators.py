@@ -1,6 +1,6 @@
-from source.utils import Rule
+from source.cfg_utils import Rule
 
-operators_natural = [
+operators = [
 
     # Axiom
     Rule(left="S", right=["F"]),
@@ -34,7 +34,5 @@ operators_natural = [
     # Rule(left="Arg", right=["non", "q"]),
 
     # Other
-    Rule(left="Neg", right=["il n'est pas le cas que"]),
-
-
+    Rule(left="Neg", right=["il n'est pas le cas que"])
 ]

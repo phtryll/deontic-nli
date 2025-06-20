@@ -32,6 +32,7 @@ class Tree:
     def __init__(self, node_label: str, children: List["Tree"] | None = None) -> None:
         """
         Initialize the tree with a node. Children are optional.
+        
         -   node_label (str): the label of the parent node.
         -   children (List[Tree]): a list with the children of the provided node.
         """

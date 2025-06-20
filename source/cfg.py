@@ -1,7 +1,7 @@
 import random
 from collections import defaultdict
 from typing import Set, List, DefaultDict
-from source.utils import Rule, Tree
+from source.cfg_utils import Rule, Tree
 
 
 class CFG:
