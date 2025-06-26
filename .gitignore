@@ -1,5 +1,7 @@
 # Ignore my notes
 notes.md
+notes.html
+notes.pdf
 
 # macOS Finder metadata
 .DS_Store
