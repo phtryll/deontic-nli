@@ -47,8 +47,8 @@ def main():
     args = parser.parse_args()
 
     # Initialize tokenizer and model
-    tokenizer = AutoTokenizer.from_pretrained("flaubert/flaubert_base_cased")
-    model = AutoModelForMaskedLM.from_pretrained("flaubert/flaubert_base_cased")
+    tokenizer = AutoTokenizer.from_pretrained("FacebookAI/xlm-roberta-large")
+    model = AutoModelForMaskedLM.from_pretrained("FacebookAI/xlm-roberta-large")
     
     # Initialize grammar
     grammar = CFG(rules=my_rules, axiom="S")
