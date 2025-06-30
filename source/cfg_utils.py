@@ -103,12 +103,18 @@ def join(tokens: List[str]) -> str:
 
     # Initialize list
     list = []
+    capitalize_next = False
 
     # Go over the tokens in the list
     for i, token in enumerate(tokens):
         
         # Skip empty tokens
         if token == "": continue
+
+        # Capitalize first character after punctuation
+        if capitalize_next and token:
+            token = token[0].upper() + token[1:]
+            capitalize_next = False
     
         # Specific punctuation tokens need a space before them
         if i > 0 and token[0] not in {".", "?", ",", ":", " "}:
@@ -116,6 +122,10 @@ def join(tokens: List[str]) -> str:
         
         # Otherwise just append the token
         list.append(token)
+
+        # If this token ends with punctuation, capitalize the next token
+        if token and token[-1] in {".", "?", "!", ":", "]"}:
+            capitalize_next = True
     
     # Join the elements of the list
     return "".join(list)
