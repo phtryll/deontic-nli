@@ -25,15 +25,26 @@ def generate_examples(grammar: CFG, num_examples: int = 20, print_tree: bool = F
             print(text) # Print the resulting sentence
 
 
-def generate_rules(prompts: Dict[str, List[str]], tokenizer: Any, model: Any, top_k: int = 50) -> None:
-    """Generate rules for specific non-terminal symbols for lexical diversity."""
+def generate_rules(prompts: Dict[str, List[str]], tokenizer: Any, model: Any, top_k: int, labels: Dict[str, List[str]]) -> None:
+    """
+    Generate rules for specific non-terminal symbols for lexical diversity.
+    Uses generate_lexical_pool and format_lexical_pool to handle multi-mask slots.
     
-    # Generate lexical items pool using CamemBERT
-    pool: Dict[str, List[str]] = generate_lexical_pool(prompts, tokenizer, model, top_k=top_k)
+    -   prompts (Dict[str, List[str]]): Map from category names to lists of mask-containing prompts.
+    -   tokenizer (Any): HuggingFace tokenizer for a masked LLM.
+    -   model (Any): HuggingFace masked language model instance.
+    -   top_k (int): Number of top joint candidates to retain per category.
+    -   labels (Dict[str, List[str]]): Map from category names to their slot-label lists.
+    """
     
-    # Format the lexical items as instances of `Rule` class
-    rules: List[str] = format_rules(pool)
+    # Generate lexical items pool
+    pool = generate_lexical_pool(prompts, tokenizer, model, top_k=top_k)
 
-    # Print the resulting rules
-    for rule in rules:
-        print(rule)
+    # Format the lexical pool into slot-mapped dictionaries
+    formatted_pools = format_lexical_pool(pool, labels)
+
+    # Generate and print rules for each slot dictionary
+    for slot_dict in formatted_pools:
+        rules = format_rules(slot_dict)
+        for rule in rules:
+            print(rule)

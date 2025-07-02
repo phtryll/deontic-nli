@@ -5,7 +5,7 @@ from source.generate import generate_examples, generate_rules
 from source.generate_utils import generate_lexical_pool
 from source.cfg import CFG
 from resources.axiom_obrm import my_rules
-from resources.model_prompts import prompts
+from resources.model_prompts import prompts, labels
 
 # Suppress useless transformers messages
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
@@ -62,7 +62,7 @@ def main():
         generate_examples(grammar, args.generate_examples, print_tree=False)
 
     if args.generate_rules:
-        generate_rules(prompts, tokenizer, model, top_k=args.generate_rules)
+        generate_rules(prompts, tokenizer, model, top_k=args.generate_rules, labels=labels)
     
     if args.generate_lexical_pool:
         pool = generate_lexical_pool(prompts, tokenizer, model, top_k=args.generate_lexical_pool)

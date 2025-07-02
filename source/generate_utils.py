@@ -124,12 +124,17 @@ def fill_mask(prompt: str, tokenizer: Any, model: Any, top_k: int = 50) -> List[
 
 def generate_lexical_pool(prompts: Dict[str, List[str]], tokenizer: Any, model: Any, top_k: int = 50) -> Dict[str, List[List[str]]]:
     """
-    Returns a dictionary mapping each lexical category to a list of token lists (each list corresponding to filled masks) ordered by joint probability.
+    Generate a lexical pool for each category by filling masks in provided prompts.
+    For each category:
+      1. Call fill_mask on each prompt to get joint predictions.
+      2. Deduplicate by keeping only the highest joint-scoring fills.
+      3. Sort and select the top_k candidate token lists.
+    Returns a dictionary mapping each category to its list of token lists, ordered by joint probability.
 
-    -   prompts: A dictionary mapping each lexical category (e.g., 'Verb') to a list of prompts containing <mask>.
-    -   tokenizer: The tokenizer used to encode the prompts.
-    -   model: The masked language model used to predict replacements for <mask>.
-    -   top_k: Number of top predictions to retain globally per category.
+    -   prompts (Dict[str, List[str]]): Map from category names to lists of mask-containing prompts.
+    -   tokenizer (Any): HuggingFace tokenizer for a masked LLM.
+    -   model (Any): HuggingFace masked language model instance.
+    -   top_k (int): Number of top joint candidates to retain per category.
     """
 
     # Dictionary to hold lexical items per category (with insertion order)
@@ -166,8 +171,44 @@ def generate_lexical_pool(prompts: Dict[str, List[str]], tokenizer: Any, model: 
     return pool
 
 
-def format_lexical_pool():
-    pass
+def format_lexical_pool(lexical_pool: Dict[str, List[List[str]]], slot_labels_map: Dict[str, List[str]]) -> List[Dict[str, List[str]]]:
+    """
+    Format a lexical pool into a list of slot-mapped dictionaries.
+    For each pool key:
+      1. Look up its slot labels.
+      2. Transpose the list of token lists into per-slot lists.
+    Returns a list of dicts mapping each slot label to its list of predicted strings.
+
+    -   lexical_pool (Dict[str, List[List[str]]]): Map from category keys to lists of filled token lists.
+    -   slot_labels_map (Dict[str, List[str]]): Map from category keys to their corresponding slot label lists.
+    """
+    
+    # Initialize list to hold formatted output
+    formatted: List[Dict[str, List[str]]] = []
+
+    # Iterate over each category and its fills in the lexical pool
+    for category, fills in lexical_pool.items():
+
+        # Get slot labels for this category
+        labels = slot_labels_map[category]
+
+        # Initialize empty list for each slot label
+        slot_dict: Dict[str, List[str]] = { label: [] for label in labels }
+
+        # Iterate over each fill (list of tokens)
+        for fill in fills:
+
+            # Iterate over each token and corresponding slot label
+            for i, label in enumerate(labels):
+
+                # Append the token to its corresponding slot list
+                slot_dict[label].append(fill[i])
+
+        # Add the filled slot dictionary to the formatted output
+        formatted.append(slot_dict)
+
+    # Return the list of slot-mapped dictionaries
+    return formatted
 
 
 def format_rules(lexical_pool: Dict[str, List[str]]) -> List[str]:
