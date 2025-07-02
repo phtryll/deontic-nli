@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-import sys
 import logging
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
@@ -22,12 +20,9 @@ def test_generate_lexical_pool():
     model = AutoModelForMaskedLM.from_pretrained("FacebookAI/xlm-roberta-large")
 
     prompts = {
-        "Verb": [
-            "She <mask> the ball.",
-            "They <mask> quickly."
-        ],
-        "Pair": [
-            "The color <mask> goes with <mask>."
+        "LOCATIONS": [
+            "The city of <mask> is in the country of <mask>.",
+            "We went to <mask>, and visited the little town of <mask>. It was beautiful!"
         ]
     }
 
@@ -43,8 +38,8 @@ def main():
     print("=== fill_mask test ===")
     test_fill_mask()
 
-    # print("=== generate_lexical_pool test ===")
-    # test_generate_lexical_pool()
+    print("=== generate_lexical_pool test ===")
+    test_generate_lexical_pool()
 
 if __name__ == "__main__":
     main()

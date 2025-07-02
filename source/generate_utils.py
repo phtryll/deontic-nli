@@ -3,12 +3,7 @@ from collections import defaultdict
 from typing import List, Dict, Any, Tuple, Optional
 
 
-def fill_mask(
-    prompt:     str,
-    tokenizer:  Any,
-    model:      Any,
-    top_k:      int = 50
-) -> List[Tuple[List[str], float]]:
+def fill_mask(prompt: str, tokenizer: Any, model: Any, top_k: int = 50) -> List[Tuple[List[str], float]]:
     """
     Fill the masked tokens in a prompt sequentially.
     If there is one <mask>, return a list of ([token], probability) for the top_k tokens.
@@ -127,10 +122,9 @@ def fill_mask(
     return results
 
 
-def generate_lexical_pool(prompts: Dict[str, List[str]], tokenizer: Any, model: Any, top_k: int = 50) -> Dict[str, List[str]]:
+def generate_lexical_pool(prompts: Dict[str, List[str]], tokenizer: Any, model: Any, top_k: int = 50) -> Dict[str, List[List[str]]]:
     """
-    Generate a dictionary of lexical items for each category using masked language modeling.
-    Returns a dictionary mapping each lexical category to the top-k highest probability unique predictions.
+    Returns a dictionary mapping each lexical category to a list of token lists (each list corresponding to filled masks) ordered by joint probability.
 
     -   prompts: A dictionary mapping each lexical category (e.g., 'Verb') to a list of prompts containing <mask>.
     -   tokenizer: The tokenizer used to encode the prompts.
@@ -146,7 +140,9 @@ def generate_lexical_pool(prompts: Dict[str, List[str]], tokenizer: Any, model: 
         
         # Store predicted words
         scored_words = []
-        seen = {}
+        
+        # Map from filled-token tuples to their highest joint score
+        seen: Dict[Tuple[str, ...], float] = {}
 
         # For each prompt in that category, get predictions
         for prompt in examples:
@@ -156,15 +152,16 @@ def generate_lexical_pool(prompts: Dict[str, List[str]], tokenizer: Any, model: 
             scored_words.extend(predictions)
 
         # For each word, retain only the highest-scoring version
-        for word, score in scored_words:
-            if word not in seen or score > seen[word]:
-                seen[word] = score
+        for word_list, score in scored_words:
+            key = tuple(word_list)
+            if key not in seen or score > seen[key]:
+                seen[key] = score
 
         # Sort words by descending score and keep only the top_k
         top_items = sorted(seen.items(), key=lambda x: x[1], reverse=True)[:top_k]
 
         # Store the final list of lexical items for this category
-        pool[category] = [word for word, _ in top_items]
+        pool[category] = [list(key) for key, _ in top_items]
 
     return pool
 
