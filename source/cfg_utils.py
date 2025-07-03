@@ -4,21 +4,24 @@ from typing import List
 class Rule:
     """Class to represent a CFG rule."""
 
-    def __init__(self, left: str, right: List[str]) -> None:
+    def __init__(self, left: str, right: List[str], prob: float = 1.0) -> None:
         """
         Initialize the left and right sides of the rule.
 
         -   left (str): the left-hand side symbol (non-terminal).
         -   right (List[str]): the right-hand side symbol(s), a list of strings.
+        -   prob (float): the probability of the rule (default 1.0).
         """
 
         self.left: str = left
         self.right: List[str] = right
+        self.prob: float = prob
 
     def __str__(self) -> str:
-        """String representation of the rule."""
+        """String representation of the rule, showing probability if not 1.0."""
         
-        return f"{self.left} -> {self.right}"
+        base = f"{self.left} -> {' '.join(self.right)}"
+        return f"{base} [{self.prob:.3f}]" if self.prob != 1.0 else base
     
     def __repr__(self) -> str:
         """Internal representation. Calls __str__"""
