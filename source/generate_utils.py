@@ -173,101 +173,122 @@ def generate_lexical_pool(prompts: Dict[str, List[str]], tokenizer: Any, model: 
     return pool
 
 
-def format_lexical_pool(lexical_pool: Dict[str, List[List[str]]], slot_labels_map: Dict[str, List[str]]) -> List[Dict[str, List[str]]]:
+def format_lexical_pool(lexical_pool: Dict[str, List[List[str]]], slot_labels_map: Dict[str, List[str]]) -> Dict[str, Dict[str, List[str]]]:
     """
-    Format a lexical pool into a list of slot-mapped dictionaries.
-    For each pool key:
-      1. Look up its slot labels.
-      2. Transpose the list of token lists into per-slot lists.
-    Returns a list of dicts mapping each slot label to its list of predicted strings.
+    Format a lexical pool into a mapping from category keys to slot-mapped dictionaries.
+    Each category maps to a dict of slot_label → list of predicted tokens.
+    Returns: Dict[category, Dict[slot_label, List[str]]].
 
-    -   lexical_pool (Dict[str, List[List[str]]]): Map from category keys to lists of filled token lists.
-    -   slot_labels_map (Dict[str, List[str]]): Map from category keys to their corresponding slot label lists.
+    - lexical_pool: Map from category to list of token-list predictions.
+    - slot_labels_map: Map from category to its corresponding slot label list.
     """
-    
-    # Initialize list to hold formatted output
-    formatted: List[Dict[str, List[str]]] = []
+
+    # Initialize dict to hold formatted output per category
+    formatted: Dict[str, Dict[str, List[str]]] = {}
 
     # Iterate over each category and its fills in the lexical pool
     for category, fills in lexical_pool.items():
-
+        
         # Get slot labels for this category
         labels = slot_labels_map[category]
-
+        
         # Initialize empty list for each slot label
         slot_dict: Dict[str, List[str]] = { label: [] for label in labels }
-
+        
         # Iterate over each fill (list of tokens)
         for fill in fills:
-
-            # Iterate over each token and corresponding slot label
+            
+            # Assign each token in fill to its corresponding slot label
             for i, label in enumerate(labels):
-
-                # Append the token to its corresponding slot list
                 slot_dict[label].append(fill[i])
-
-        # Add the filled slot dictionary to the formatted output
-        formatted.append(slot_dict)
-
-    # Return the list of slot-mapped dictionaries
+        
+        # Map the category to its filled slot dictionary
+        formatted[category] = slot_dict
+    
+    # Return the mapping from category to slot_dict
     return formatted
 
 
-def format_rules(lexical_pool: Dict[str, List[str]]) -> List[str]:
+def format_rules(slot_dict: Dict[str, List[str]]) -> Dict[str, List[str]]:
     """
-    Convert a lexical pool into CFG rule strings in the format Rule(left="Category", right=["item"]).
-    Returns a list of formatted rule strings ready to be used in a CFG.
-
-    -   lexical_pool: A dictionary of lexical categories to lists of lexical items.
-    """
-
-    # List of rules
-    rules = []
-
-    # Go over the items in the lexical pool
-    for category, items in lexical_pool.items():
-
-        # Iterate over each lexical item for the current category
-        for item in items:
-
-            # Format as a Rule CFG string and append to the list
-            rules.append(f'Rule(left="{category}", right=["{item}"])')
-
-    return rules
-
-
-def save_rules_json(rules: List[str]) -> None:
-    """
-    Save a list of rule strings by appending to root/data/lexical_rules_pool.json.
-    If the file exists, load existing list and append new rules; otherwise create it.
+    Convert a slot-mapped dict into CFG rule strings.
+    For each slot_label, produce a list of Rule(...) strings.
+    Returns: Dict[slot_label, List[rule_str]].
     """
     
-    # Use current working directory as project root for the data folder
-    file_path = Path.cwd() / "data" / "lexical_rules_pool.json"
+    # Map each slot label to its list of rule strings
+    rules_map: Dict[str, List[str]] = {}
+
+    # Iterate over slot labels and their predicted items
+    for slot_label, items in slot_dict.items():
+        
+        # Collect rule strings for this slot_label
+        rule_strs: List[str] = []
+        
+        # Create a Rule string for each item
+        for item in items:
+            rule_strs.append(f'Rule(left="{slot_label}", right=["{item}"])')
+        
+        rules_map[slot_label] = rule_strs
+
+    # Return the mapping of slot labels to rule string lists
+    return rules_map
+
+
+def save_rules_json(structured_rules: Dict[str, Dict[str, List[str]]]) -> None:
+    """
+    Save a nested mapping of category→slot_label→rule strings to data/lexical_rules_pool.json.
+    If the file exists, load the existing structure and merge new entries (deduplicating).
+    """
+    
+    # Determine fixed rules file path
+    rules_file_path = Path.cwd() / "data" / "lexical_rules_pool.json"
     
     # Ensure directory exists
-    file_path.parent.mkdir(parents=True, exist_ok=True)
+    rules_file_path.parent.mkdir(parents=True, exist_ok=True)
     
-    # Load existing rules if file exists
-    if file_path.exists():
-        with open(file_path, 'r', encoding='utf-8') as f:
-            existing_rules = json.load(f)
+    # Load existing rules map if file exists
+    if rules_file_path.exists():
+        with open(rules_file_path, 'r', encoding='utf-8') as file:
+            existing_rules_map = json.load(file)
+    
+    # No existing file: start with an empty rules map
     else:
-        existing_rules = []
+        existing_rules_map: Dict[str, Dict[str, List[str]]] = {}
     
-    # Combine and deduplicate rules, preserving order
-    combined_rules = existing_rules + rules
-    unique_rules = list(dict.fromkeys(combined_rules))
+    # Merge new structured rules
+    for category, slot_map in structured_rules.items():
+        if category not in existing_rules_map:
+            existing_rules_map[category] = {}
+        
+        # For each slot label under this category
+        for slot_label, rule_list in slot_map.items():
 
-    # Write JSON
-    with open(file_path, 'w', encoding='utf-8') as f:
-        json.dump(unique_rules, f, ensure_ascii=False, indent=2)
+            # Merge with existing rule list and remove duplicates
+            if slot_label in existing_rules_map[category]:
+                
+                # Append and dedupe, preserving order
+                combined = existing_rules_map[category][slot_label] + rule_list
+                seen = set()
+                deduped = []
+                for rule in combined:
+                    if rule not in seen:
+                        seen.add(rule)
+                        deduped.append(rule)
+                existing_rules_map[category][slot_label] = deduped
+            
+            else:
+                existing_rules_map[category][slot_label] = rule_list
+    
+    # Write merged rules map to JSON
+    with open(rules_file_path, 'w', encoding='utf-8') as file:
+        json.dump(existing_rules_map, file, ensure_ascii=False, indent=2)
 
 
 def save_lexical_pool_json(lexical_pool: Dict[str, List[List[str]]]) -> None:
     """
     Save lexical_pool dict by merging into root/data/lexical_items_pool.json.
-    If the file exists, load existing dict and append new items per category; otherwise create it.
+    If the file exists, load existing dict and append new items per category.
     """
     
     # Use current working directory as project root for the data folder

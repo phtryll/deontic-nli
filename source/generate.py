@@ -26,9 +26,9 @@ def generate_examples(grammar: CFG, num_examples: int = 20, print_tree: bool = F
             print(text) # Print the resulting sentence
 
 
-def generate_rules(prompts: Dict[str, List[str]], tokenizer: Any, model: Any, top_k: int, labels: Dict[str, List[str]]) -> List[str]:
+def generate_rules(prompts: Dict[str, List[str]], tokenizer: Any, model: Any, top_k: int, labels: Dict[str, List[str]]) -> Dict[str, Dict[str, List[str]]]:
     """
-    Generate rules for specific non-terminal symbols for lexical diversity.
+    Generate a nested mapping of category → slot_label → rule strings for lexical diversity.
     Uses generate_lexical_pool and format_lexical_pool to handle multi-mask slots.
     
     -   prompts (Dict[str, List[str]]): Map from category names to lists of mask-containing prompts.
@@ -40,15 +40,18 @@ def generate_rules(prompts: Dict[str, List[str]], tokenizer: Any, model: Any, to
     
     # Generate lexical items pool
     pool = generate_lexical_pool(prompts, tokenizer, model, top_k=top_k)
-
-    # Format the lexical pool into slot-mapped dictionaries
+    
+    # Format the lexical pool into a mapping category → slot_dict
     formatted_pools = format_lexical_pool(pool, labels)
-
-    all_rules: List[str] = []
-
-    # Generate and collect rules for each slot dictionary
-    for slot_dict in formatted_pools:
-        rules = format_rules(slot_dict)
-        all_rules.extend(rules)
-
-    return all_rules
+    
+    # Build nested mapping category → slot_label → list of rule strings
+    structured_rules: Dict[str, Dict[str, List[str]]] = {}
+    
+    for category, slot_dict in formatted_pools.items():
+        
+        # Format rules for each slot dictionary
+        rules_map = format_rules(slot_dict)
+        structured_rules[category] = rules_map
+    
+    # Return the nested category → slot_label → rules mapping
+    return structured_rules

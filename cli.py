@@ -82,12 +82,11 @@ def main():
         # Ensure data directory exists
         data_dir.mkdir(parents=True, exist_ok=True)
         
-        # Determine empty structure based on target
-        empty_content = [] if target == "lexical_rules" else {}
-        
+        # empty_content = 
+
         # Write empty JSON content (truncate or create file)
         with open(file_path, 'w', encoding='utf-8') as f:
-            json.dump(empty_content, f, ensure_ascii=False, indent=2)
+            json.dump({}, f, ensure_ascii=False, indent=2)
         print(f"Cleared contents of {target} file at {file_path}")
         sys.exit(0)
 
