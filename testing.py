@@ -59,8 +59,8 @@ def test_generate_rules():
     prompts = LOCATION_PROMPTS
 
     print("Testing generate_rules...")
-    generate_rules(prompts, tokenizer, model, top_k=10, labels=LOCATION_SLOT_LABELS)
-    print()
+    rules = generate_rules(prompts, tokenizer, model, top_k=10, labels=LOCATION_SLOT_LABELS)
+    for rule in rules: print(rule)
 
 def main():
     print("=== fill_mask test ===")

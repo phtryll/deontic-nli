@@ -1,8 +1,11 @@
 import argparse
 import logging
+import sys
+import json
+from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 from source.generate import generate_examples, generate_rules
-from source.generate_utils import generate_lexical_pool
+from source.generate_utils import generate_lexical_pool, format_lexical_pool, save_rules_json, save_lexical_pool_json
 from source.cfg import CFG
 from resources.axiom_obrm import my_rules
 from resources.model_prompts import prompts, labels
@@ -37,7 +40,7 @@ def main():
         help="Generate N lexical items for specific categories"
     )
     
-    # Option to generate N lexical rules using the masked language model and CamemBERT
+    # Option to generate N lexical rules using the masked language model and RoBERTa
     parser.add_argument(
         "--generate-rules",
         nargs='?',
@@ -45,10 +48,48 @@ def main():
         type=int,
         default=None,
         metavar="N",
-        help="Generate N lexical rules using CamemBERT"
+        help="Generate N lexical rules using RoBERTa"
+    )
+
+    # Option to save output to JSON files under data/
+    parser.add_argument(
+        "--save",
+        action="store_true",
+        help="Save output to JSON files under data/"
+    )
+
+    # Option to reset a data file under data/
+    parser.add_argument(
+        "--reset",
+        choices=["lexical_items", "lexical_rules"],
+        metavar="TARGET",
+        help="Reset the specified data file (lexical_items or lexical_rules)"
     )
 
     args = parser.parse_args()
+
+    # Handle reset of data files: clear contents without deleting the file
+    if args.reset:
+        file_map = {
+            "lexical_items": "lexical_items_pool.json",
+            "lexical_rules": "lexical_rules_pool.json"
+        }
+        
+        target = args.reset
+        data_dir = Path.cwd() / "data"
+        file_path = data_dir / file_map[target]
+        
+        # Ensure data directory exists
+        data_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Determine empty structure based on target
+        empty_content = [] if target == "lexical_rules" else {}
+        
+        # Write empty JSON content (truncate or create file)
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(empty_content, f, ensure_ascii=False, indent=2)
+        print(f"Cleared contents of {target} file at {file_path}")
+        sys.exit(0)
 
     # Initialize tokenizer and model
     tokenizer = AutoTokenizer.from_pretrained("FacebookAI/xlm-roberta-large")
@@ -87,18 +128,23 @@ def main():
         generate_examples(grammar_to_use, count, print_tree=False)
 
     if args.generate_rules:
-        
         # Generate lexical inference rules using the language model
-        generate_rules(prompts, tokenizer, model, top_k=args.generate_rules, labels=labels)
+        rules = generate_rules(prompts, tokenizer, model, top_k=args.generate_rules, labels=labels)
+        if args.save:
+            save_rules_json(rules)
+        else:
+            for rule in rules:
+                print(rule)
     
     if args.generate_lexical_pool:
-        
-        # Generate and print lexical category pools
+        # Generate lexical category pools using the masked language model
         pool = generate_lexical_pool(prompts, tokenizer, model, top_k=args.generate_lexical_pool)
-        
-        for category, items in pool.items():
-            for item in items:  
-                print(f"{category}: {item}")
+        if args.save:
+            save_lexical_pool_json(pool)
+        else:
+            for category, items in pool.items():
+                for item in items:
+                    print(f"{category}: {item}")
 
 if __name__ == "__main__":
     main()

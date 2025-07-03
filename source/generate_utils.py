@@ -1,6 +1,8 @@
 import torch
 from collections import defaultdict
 from typing import List, Dict, Any, Tuple, Optional
+import json
+from pathlib import Path
 
 
 def fill_mask(prompt: str, tokenizer: Any, model: Any, top_k: int = 50) -> List[Tuple[List[str], float]]:
@@ -232,3 +234,73 @@ def format_rules(lexical_pool: Dict[str, List[str]]) -> List[str]:
             rules.append(f'Rule(left="{category}", right=["{item}"])')
 
     return rules
+
+
+def save_rules_json(rules: List[str]) -> None:
+    """
+    Save a list of rule strings by appending to root/data/lexical_rules_pool.json.
+    If the file exists, load existing list and append new rules; otherwise create it.
+    """
+    
+    # Use current working directory as project root for the data folder
+    file_path = Path.cwd() / "data" / "lexical_rules_pool.json"
+    
+    # Ensure directory exists
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    # Load existing rules if file exists
+    if file_path.exists():
+        with open(file_path, 'r', encoding='utf-8') as f:
+            existing_rules = json.load(f)
+    else:
+        existing_rules = []
+    
+    # Combine and deduplicate rules, preserving order
+    combined_rules = existing_rules + rules
+    unique_rules = list(dict.fromkeys(combined_rules))
+
+    # Write JSON
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(unique_rules, f, ensure_ascii=False, indent=2)
+
+
+def save_lexical_pool_json(lexical_pool: Dict[str, List[List[str]]]) -> None:
+    """
+    Save lexical_pool dict by merging into root/data/lexical_items_pool.json.
+    If the file exists, load existing dict and append new items per category; otherwise create it.
+    """
+    
+    # Use current working directory as project root for the data folder
+    file_path = Path.cwd() / "data" / "lexical_items_pool.json"
+    
+    # Ensure directory exists
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    # Load existing pool if file exists
+    if file_path.exists():
+        with open(file_path, 'r', encoding='utf-8') as f:
+            existing_pool = json.load(f)
+    else:
+        existing_pool = {}
+    
+    # Merge new items
+    for category, items in lexical_pool.items():
+        if category in existing_pool:
+            existing_pool[category] += items
+        else:
+            existing_pool[category] = items
+
+    # Deduplicate items per category, preserving order
+    for category, items in existing_pool.items():
+        seen = set()
+        deduped = []
+        for entry in items:
+            key = tuple(entry)
+            if key not in seen:
+                seen.add(key)
+                deduped.append(entry)
+        existing_pool[category] = deduped
+
+    # Write JSON
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(existing_pool, f, ensure_ascii=False, indent=2)
