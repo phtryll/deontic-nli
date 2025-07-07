@@ -5,10 +5,20 @@ import json
 from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 from source.generate import generate_examples, generate_rules
-from source.generate_utils import generate_lexical_pool, format_lexical_pool, save_rules_json, save_lexical_pool_json
+from source.generate_utils import generate_lexical_pool, save_rules_json, save_lexical_pool_json
 from source.cfg import CFG
-from resources.axiom_obrm import my_rules
+from source.cfg_utils import Rule
+from resources.axiom_obrm import my_rules_cfg
 from resources.model_prompts import prompts, labels
+import os
+
+
+# # Extend my_rules with entries from the JSON pool
+# json_path = os.path.join(os.path.dirname(__file__), "data", "lexical_rules_pool.json")
+# with open(json_path, "r", encoding="utf-8") as f:
+#     loc_data = json.load(f)
+# my_rules.extend(eval(rule_str) for rule_str in loc_data["LOCATIONS"]["CITY"] + loc_data["LOCATIONS"]["COUNTRY"])
+
 
 # Suppress useless transformers messages
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
@@ -95,7 +105,7 @@ def main():
     model = AutoModelForMaskedLM.from_pretrained("FacebookAI/xlm-roberta-large")
     
     # Initialize grammar
-    grammar = CFG(rules=my_rules, axiom="S")
+    grammar = CFG(rules=my_rules_cfg, axiom="S")
 
     if args.show_grammar:
         
@@ -121,7 +131,7 @@ def main():
         use_probabilistic = (mode_lower == "pcfg")
         
         # Create a CFG instance with probabilistic mode if requested
-        grammar_to_use = CFG(rules=my_rules, axiom="S", probabilistic=use_probabilistic)
+        grammar_to_use = CFG(rules=my_rules_cfg, axiom="S", probabilistic=use_probabilistic)
         
         print(f"----Generated examples ({mode_lower.upper()})----\n")
         generate_examples(grammar_to_use, count, print_tree=False)

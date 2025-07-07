@@ -1,27 +1,41 @@
-from typing import List
+from typing import List, Dict, Any, Optional
 
 
 class Rule:
     """Class to represent a CFG rule."""
 
-    def __init__(self, left: str, right: List[str], prob: float = 1.0) -> None:
+    def __init__(self, left: str, right: List[str], prob: float = 1.0, features: Optional[Dict[str, Any]] = None) -> None:
         """
         Initialize the left and right sides of the rule.
 
         -   left (str): the left-hand side symbol (non-terminal).
         -   right (List[str]): the right-hand side symbol(s), a list of strings.
         -   prob (float): the probability of the rule (default 1.0).
+        -   features (Optional[Dict[str, Any]]): optional feature bundle for the rule.
         """
 
         self.left: str = left
         self.right: List[str] = right
         self.prob: float = prob
+        self.features: Dict[str, Any] = features or {}
 
     def __str__(self) -> str:
-        """String representation of the rule, showing probability if not 1.0."""
-        
+        """String representation of the rule, showing probability and features when present."""
+
+        # Simple CFG rule
         base = f"{self.left} -> {' '.join(self.right)}"
-        return f"{base} [{self.prob:.3f}]" if self.prob != 1.0 else base
+        parts = [base]
+        
+        # Include optional probability
+        if self.prob != 1.0:
+            parts.append(f"[probability: {self.prob:.3f}]")
+        
+        # Include optional features
+        if self.features:
+            rule_features = ", ".join(f"{key}={value}" for key, value in self.features.items())
+            parts.append(f"[features: {rule_features}]")
+        
+        return " ".join(parts)
     
     def __repr__(self) -> str:
         """Internal representation. Calls __str__"""
@@ -32,12 +46,13 @@ class Rule:
 class Tree:
     """Class to represent a CFG tree."""
 
-    def __init__(self, node_label: str, children: List["Tree"] | None = None) -> None:
+    def __init__(self, node_label: str, children: List["Tree"] | None = None, features: Optional[Dict[str, Any]] = None) -> None:
         """
         Initialize the tree with a node. Children are optional.
         
         -   node_label (str): the label of the parent node.
         -   children (List[Tree]): a list with the children of the provided node.
+        -   features (Optional[Dict[str, Any]]): optional feature bundle for the tree node.
         """
 
         # If children are not provided, initialize an empty list
@@ -46,6 +61,7 @@ class Tree:
 
         self.node_label: str = node_label
         self.children: List[Tree] = children
+        self.features: Dict[str, Any] = features or {}
 
     def output(self) -> List[str]:
         """Iteratively get the output of the tree as a sequence of terminal symbols."""
@@ -132,3 +148,50 @@ def join(tokens: List[str]) -> str:
     
     # Join the elements of the list
     return "".join(list)
+
+
+def unify(node_features: Dict[str, Any], rule_features: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """
+    Merge two feature dicts if compatible, binding variables.
+    Returns the merged dict or None on conflict.
+    """
+
+    # Initialize the merged dict
+    merged: Dict[str, Any] = {}
+    
+    # For each key, compare values between node and rule:
+    for key in set(node_features) | set(rule_features):
+
+        # Get the values (if empty it yields 'None')
+        v_node = node_features.get(key)
+        v_rule = rule_features.get(key)
+
+        # If node is empty return rule value
+        if v_node is None:
+            merged[key] = v_rule
+        
+        # If rule is empty return node value
+        elif v_rule is None:
+            merged[key] = v_node
+        
+        # If both have the same value: consistent
+        elif v_node == v_rule:
+            merged[key] = v_node
+        
+        # Check variable value consistency
+        elif isinstance(v_node, str) and v_node.startswith("?") and isinstance(v_rule, str) and v_rule.startswith("?"):
+            raise ValueError(f"Inconsistent variable values for feature '{key}': {v_node} vs {v_rule}")
+
+        # If rule value is a variable: bind it to the node
+        elif isinstance(v_rule, str) and v_rule.startswith("?"):
+            merged[key] = v_node
+
+        # If node value is a variable: bind it to the rule
+        elif isinstance(v_node, str) and v_node.startswith("?"):
+            merged[key] = v_rule
+        
+        # Conflict between two distinct constants
+        else:
+            return None
+    
+    return merged
