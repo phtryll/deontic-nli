@@ -1,8 +1,8 @@
-import torch
-from collections import defaultdict
-from typing import List, Dict, Any, Tuple, Optional
 import json
+import torch
 from pathlib import Path
+from collections import defaultdict
+from typing import List, Dict, Any, Tuple
 
 
 def fill_mask(prompt: str, tokenizer: Any, model: Any, top_k: int = 50) -> List[Tuple[List[str], float]]:

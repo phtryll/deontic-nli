@@ -1,7 +1,7 @@
 import random
 from collections import defaultdict
-from typing import Set, List, DefaultDict
-from source.cfg_utils import Rule, Tree
+from typing import Set, List, Dict, DefaultDict, Any
+from source.cfg_utils import Rule, Tree, unify
 
 
 class CFG:
@@ -42,9 +42,17 @@ class CFG:
         if self.probabilistic:
             for non_terminal, rules_for_non_terminal in self.mappings.items():
                 total_probability = sum(rule.prob for rule in rules_for_non_terminal)
-                assert abs(total_probability - 1.0) < 1e-6, (
-                    f"PCFG probabilities for {non_terminal} sum to {total_probability:.6f}, not 1.0"
-                )
+
+                # If it is not the case: auto-normalize
+                if abs(total_probability - 1.0) > 1e-6:
+                    print(
+                        f"[INFO] Normalizing rule probabilities for '{non_terminal}' "
+                        f"(sum was {total_probability:.2f})."
+                    )
+                    
+                    # Each possible rule of a non terminal will get same value
+                    for rule in rules_for_non_terminal:
+                        rule.prob /= total_probability
 
     def is_terminal(self, symbol: str) -> bool:
         """Helper. Checks if a symbol is terminal."""
@@ -59,8 +67,11 @@ class CFG:
     def generate(self, verbose=False):
         """Generate a grammar tree."""
 
+        # Initialize global features for the entire CFG tree
+        self.bindings: Dict[str, Any] = {}
+
         # Initialize a tree with the axiom as the starting label
-        tree: Tree = Tree(node_label=self.axiom)
+        tree: Tree = Tree(node_label=self.axiom, features={})
 
         # Initialize a stack (LIFO) to hold nodes for rewriting
         stack: List[Tree] = [tree]
@@ -83,19 +94,37 @@ class CFG:
             # Retrieve applicable rules for this non-terminal
             applicable_rules = self.mappings[node.node_label]
             
+            # Filter by feature unification
+            candidates = []
+            for rule in applicable_rules:
+                merged_features = unify(self.bindings, rule.features)
+
+                if merged_features is not None:
+                    candidates.append((rule, merged_features))
+                
+            # else:
+            assert candidates, f"No applicable rules for {node.node_label} with features {node.features}"
+
             # Select a rule: weighted by probability for PCFG, uniform otherwise
             if self.probabilistic:
-                # Prepare lists of rules and their probabilities
-                rule_choices, rule_probabilities = zip(*( (rule, rule.prob) for rule in applicable_rules ))
+                # Extract the probabilities for the candidate rules
+                weights = [rule.prob for rule, _ in candidates]
+                
                 # Sample one rule according to weights
-                selected_rule = random.choices(rule_choices, weights=rule_probabilities, k=1)[0]
+                selected_rule, selected_features = random.choices(candidates, weights=weights, k=1)[0]
             
             else:
                 # Default: uniform random choice for standard CFG
-                selected_rule = random.choice(applicable_rules)
+                selected_rule, selected_features = random.choice(candidates)
+
+            # Update global bindings with the merged feature values
+            self.bindings = selected_features
 
             # Apply the rule by creating children nodes from the rule's right
-            node.children = [Tree(node_label=symbol) for symbol in selected_rule.right]
+            node.children = [
+                Tree(node_label=symbol, features=self.bindings.copy())
+                for symbol in selected_rule.right
+            ]
 
             # If verbose: print the current state of the tree
             if verbose:
