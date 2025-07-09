@@ -7,15 +7,14 @@ from source.cfg_utils import Rule, Tree, unify
 class CFG:
     "Class for the context-free grammar."
 
-    def __init__(self, rules: List[Rule], axiom: str, probabilistic: bool = False) -> None:
+    def __init__(self, rules: List[Rule], axiom: str) -> None:
         """
-        Initialize the CFG with a list of rules, an axiom (starting non-terminal symbol),
-        and an optional flag for probabilistic expansions (PCFG mode). It also collects
-        non-terminals, terminals, and builds mappings from non-terminals to their rules.
+        Initialize the CFG with a list of rules and an axiom (starting non-terminal symbol).
+        It collects non-terminals, terminals, and builds mappings from non-terminals to their rules.
+        It also normalizes rule probabilities for each non-terminal to sum to 1.0.
 
         -   rules (List[Rule]): a list of CFG rules.
         -   axiom (str): the starting non-terminal symbol of the grammar.
-        -   probabilistic (bool): if True, use PCFG behavior sampling rules by their `prob` weights. Defaults to False.
         -   non_terminals (set): the set of non-terminal symbols N gathered from the left-hand side of the rules.
         -   terminals (set): the set of terminal symbols collected from the right-hand side of rules that are not in non-terminals.
         -   mappings (Dict): a dictionary that maps each non-terminal to its corresponding rules.
@@ -23,36 +22,34 @@ class CFG:
 
         self.rules: List[Rule] = rules
         self.axiom: str = axiom
-        self.non_terminals: Set[str] = set(rule.left for rule in rules)
+        self.non_terminals: Set[str] = set(rule.left for rule in self.rules)
         self.terminals: Set[str] = set()
         self.mappings: DefaultDict[str, List[Rule]] = defaultdict(list)
-        self.probabilistic: bool = probabilistic
 
         # Populate the set of terminals
-        for rule in rules:
+        for rule in self.rules:
             for symbol in rule.right:
                 if symbol not in self.non_terminals:
                     self.terminals.add(symbol)
 
         # Build mappings
-        for rule in rules:
+        for rule in self.rules:
             self.mappings[rule.left].append(rule)
 
-        # In PCFG mode, check that for each non-terminal, rule probabilities sum to 1.0
-        if self.probabilistic:
-            for non_terminal, rules_for_non_terminal in self.mappings.items():
-                total_probability = sum(rule.prob for rule in rules_for_non_terminal)
+        # Normalize rule probabilities for each non-terminal to sum to 1.0
+        for non_terminal, rules_for_non_terminal in self.mappings.items():
+            total_probability = sum(rule.prob for rule in rules_for_non_terminal)
 
-                # If it is not the case: auto-normalize
-                if abs(total_probability - 1.0) > 1e-6:
-                    print(
-                        f"[INFO] Normalizing rule probabilities for '{non_terminal}' "
-                        f"(sum was {total_probability:.2f})."
-                    )
-                    
-                    # Each possible rule of a non terminal will get same value
-                    for rule in rules_for_non_terminal:
-                        rule.prob /= total_probability
+            # If it is not the case: auto-normalize
+            if abs(total_probability - 1.0) > 1e-6:
+                print(
+                    f"[INFO] Normalizing rule probabilities for '{non_terminal}' "
+                    f"(sum was {total_probability:.2f})."
+                )
+                
+                # Each possible rule of a non terminal will get same value
+                for rule in rules_for_non_terminal:
+                    rule.prob /= total_probability
 
     def is_terminal(self, symbol: str) -> bool:
         """Helper. Checks if a symbol is terminal."""
@@ -105,17 +102,9 @@ class CFG:
             # else:
             assert candidates, f"No applicable rules for {node.node_label} with features {node.features}"
 
-            # Select a rule: weighted by probability for PCFG, uniform otherwise
-            if self.probabilistic:
-                # Extract the probabilities for the candidate rules
-                weights = [rule.prob for rule, _ in candidates]
-                
-                # Sample one rule according to weights
-                selected_rule, selected_features = random.choices(candidates, weights=weights, k=1)[0]
-            
-            else:
-                # Default: uniform random choice for standard CFG
-                selected_rule, selected_features = random.choice(candidates)
+            # Always sample one rule according to weights
+            weights = [rule.prob for rule, _ in candidates]
+            selected_rule, selected_features = random.choices(candidates, weights=weights, k=1)[0]
 
             # Update global bindings with the merged feature values
             self.bindings = selected_features

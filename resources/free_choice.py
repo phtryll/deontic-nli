@@ -1,6 +1,6 @@
 from source.cfg_utils import Rule
 
-my_rules = [
+fcp = [
 
     # Free choice en formule
     Rule(left="S", right=["M_DIS", "→", "M_CONJ"]),

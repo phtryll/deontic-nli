@@ -1,6 +1,6 @@
 from source.cfg_utils import Rule
 
-my_rules = [
+operators = [
 
     # Axiom
     Rule(left="S", right=["MOD_F"]),

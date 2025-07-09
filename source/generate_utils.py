@@ -235,7 +235,7 @@ def format_rules(slot_dict: Dict[str, List[str]]) -> Dict[str, List[str]]:
     return rules_map
 
 
-def save_rules_json(structured_rules: Dict[str, Dict[str, List[str]]]) -> None:
+def save_rules(structured_rules: Dict[str, Dict[str, List[str]]]) -> None:
     """
     Save a nested mapping of category→slot_label→rule strings to data/lexical_rules_pool.json.
     If the file exists, load the existing structure and merge new entries (deduplicating).
@@ -285,7 +285,7 @@ def save_rules_json(structured_rules: Dict[str, Dict[str, List[str]]]) -> None:
         json.dump(existing_rules_map, file, ensure_ascii=False, indent=2)
 
 
-def save_lexical_pool_json(lexical_pool: Dict[str, List[List[str]]]) -> None:
+def save_lexical_pool(lexical_pool: Dict[str, List[List[str]]]) -> None:
     """
     Save lexical_pool dict by merging into root/data/lexical_items_pool.json.
     If the file exists, load existing dict and append new items per category.

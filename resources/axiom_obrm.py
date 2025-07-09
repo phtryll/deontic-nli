@@ -1,8 +1,6 @@
-import os
-import json
 from source.cfg_utils import Rule
 
-my_rules = [
+obrm = [
 
         Rule(
             left="S",

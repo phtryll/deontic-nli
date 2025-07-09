@@ -1,110 +1,184 @@
-import os
 import sys
 import json
-import argparse
 import logging
+import argparse
+from argparse import RawTextHelpFormatter
+from functools import partial
 from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForMaskedLM
-from source.generate import generate_examples, generate_rules
-from source.generate_utils import generate_lexical_pool, save_rules_json, save_lexical_pool_json
+
+
+# Import CFG and generation source code
 from source.cfg import CFG
-from source.cfg_utils import Rule
-from resources.axiom_obrm import my_rules
+from source.generate import generate_examples, generate_rules
+from source.generate_utils import generate_lexical_pool, save_rules, save_lexical_pool
 from resources.model_prompts import prompts, labels
+
+
+# Grammars
+from resources.axiom_obrm import obrm
+from resources.axiom_obexh import exh
+from resources.free_choice import fcp
+from resources.operators import operators
 
 
 # Suppress useless transformers messages
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
 
-# CLI tool for generating deontic logic examples and lexical resources
-def main():
-    parser = argparse.ArgumentParser(description="Deontic NLI CLI utility")
+# Cleaner --help display
+MyFormatter = partial(RawTextHelpFormatter, max_help_position=70, width=100)
 
-    # Option to print the underlying CFG grammar rules
-    parser.add_argument("--show-grammar", action="store_true", help="Print the CFG grammar")
+# Current grammars to generate examples with
+GRAMMARS = {
+    "OB_RM": obrm,
+    "OB_EXH": exh,
+    "FCP": fcp,
+    "Deontic_Operators": operators
+}
+
+# Current models to generate lexical items with
+MODELS = {
+    "RoBERTa": "FacebookAI/xlm-roberta-large"
+}
+
+# Files to store lexical items, rules and examples
+FILE_MAP = {
+            "examples": "examples.json",
+            "lexical_items": "lexical_items_pool.json",
+            "lexical_rules": "lexical_rules_pool.json"
+        }
+
+
+def main():
+    
+    parser = argparse.ArgumentParser(
+        prog="cli.py",
+        formatter_class=MyFormatter,
+        description="Deontic NLI - CLI utility"
+    )
+
+    # Select one or more grammars
+    parser.add_argument(
+        "-g", "--grammar",
+        choices=GRAMMARS,
+        nargs="+",
+        metavar=("GRAMMAR1", "GRAMMAR2"),
+        help=(
+            f"select grammar(s) to generate examples: "
+            f"{', '.join(GRAMMARS.keys())}"
+        )
+    )
+
+    # Select one or more grammars
+    parser.add_argument(
+        "-m", "--model",
+        choices=MODELS,
+        metavar="MODEL",
+        default=list(MODELS.keys())[0],
+        help=(
+            f"select model for masked LM: "
+            f"{', '.join(MODELS.keys())} (default: {list(MODELS.keys())[0]})"
+        )
+    )
+
+    # Option to print the selected CFG(s)
+    parser.add_argument("--show-grammar", action="store_true", help="print the CFG grammar(s)")
 
     # Option to generate N examples from the grammar. Mode can be 'cfg' for uniform or 'pcfg' for probabilistic generation.
     parser.add_argument(
         "--generate-examples",
-        nargs=2,
-        metavar=("N", "MODE"),
-        help="Generate N examples; MODE should be 'cfg' or 'pcfg'",
+        nargs='?',
+        const=100,
+        type=int,
         default=None,
+        metavar="N",
+        help="generate N examples (default: 100)"
     )
 
     # Option to generate a pool of lexical items for each category using the masked language model
     parser.add_argument(
         "--generate-lexical-pool",
         nargs='?',
-        const=20,
+        const=100,
         type=int,
         default=None,
         metavar="N",
-        help="Generate N lexical items for specific categories"
+        help="generate N lexical items for specific categories using masked LM (default: 100)"
     )
     
     # Option to generate N lexical rules using the masked language model and RoBERTa
     parser.add_argument(
         "--generate-rules",
         nargs='?',
-        const=20,
+        const=100,
         type=int,
         default=None,
         metavar="N",
-        help="Generate N lexical rules using RoBERTa"
+        help="generate N lexical rules from previously generated lexical pool (default: 100)"
     )
 
     # Option to save output to JSON files under data/
     parser.add_argument(
-        "--save",
+        "-s", "--save",
         action="store_true",
-        help="Save output to JSON files under data/"
+        help="save output in JSON format in the 'data' directory"
     )
 
     # Option to reset a data file under data/
     parser.add_argument(
         "--reset",
-        choices=["lexical_items", "lexical_rules"],
-        metavar="TARGET",
-        help="Reset the specified data file (lexical_items or lexical_rules)"
+        choices=FILE_MAP,
+        nargs="+",
+        metavar=("FILE1", "FILE2"),
+        help=(
+            f"reset the specified data file(s): "
+            f"{', '.join(FILE_MAP.values())}"
+        )
     )
 
+
+    # Store arguments
     args = parser.parse_args()
 
-    # Handle reset of data files: clear contents without deleting the file
-    if args.reset:
-        file_map = {
-            "lexical_items": "lexical_items_pool.json",
-            "lexical_rules": "lexical_rules_pool.json"
-        }
-        
-        target = args.reset
-        data_dir = Path.cwd() / "data"
-        file_path = data_dir / file_map[target]
-        
-        # Ensure data directory exists
-        data_dir.mkdir(parents=True, exist_ok=True)
-        
-        # empty_content = 
+    # Always initialize an empty grammar dict
+    grammars = {}
 
-        # Write empty JSON content (truncate or create file)
-        with open(file_path, 'w', encoding='utf-8') as f:
-            json.dump({}, f, ensure_ascii=False, indent=2)
-        print(f"Cleared contents of {target} file at {file_path}")
+    # Check if grammar has been defined
+    if (args.generate_examples or args.show_grammar) and not args.grammar:
+        parser.error("argument -g/--grammar is required for generating examples or showing grammar.")
+
+    # Create a dictionary with all the specified grammars
+    if args.grammar:
+        grammars = {
+            name: CFG(rules=GRAMMARS[name], axiom="S")
+            for name in args.grammar
+        }
+
+    # Display the CFG(s) to the user
+    if args.show_grammar:
+        for name, grammar in grammars.items():
+            print(f"\n----Context-free grammar for {name}----\n")
+            print(grammar)
+
+
+    # Reset data files: clean the file contents without erasing the files
+    if args.reset:
+        targets = args.reset
+        data_dir = Path.cwd() / "data"
+        data_dir.mkdir(parents=True, exist_ok=True)
+
+        for target in targets:
+            file_path = data_dir / FILE_MAP[target]
+            with open(file_path, 'w', encoding='utf-8') as f:
+                json.dump({}, f, ensure_ascii=False, indent=2)
+            print(f"Cleared contents of {target} file at {file_path}")
+        
         sys.exit(0)
 
-    # Initialize tokenizer and model
-    tokenizer = AutoTokenizer.from_pretrained("FacebookAI/xlm-roberta-large")
-    model = AutoModelForMaskedLM.from_pretrained("FacebookAI/xlm-roberta-large")
-    
-    # Initialize grammar
-    grammar = CFG(rules=my_rules, axiom="S")
 
-    if args.show_grammar:
-        
-        # Display the CFG grammar to the user
-        print("\n----Context-free grammar----\n")
-        print(grammar)
+    # Initialize tokenizer and model
+    tokenizer = AutoTokenizer.from_pretrained(MODELS[args.model])
+    model = AutoModelForMaskedLM.from_pretrained(MODELS[args.model])
 
     if args.generate_examples:
         
@@ -118,13 +192,8 @@ def main():
         
         mode_lower = mode.lower()
         
-        if mode_lower not in ("cfg", "pcfg"):
-            parser.error("generate-examples mode must be 'cfg' or 'pcfg'")
-        
-        use_probabilistic = (mode_lower == "pcfg")
-        
         # Create a CFG instance with probabilistic mode if requested
-        grammar_to_use = CFG(rules=my_rules, axiom="S", probabilistic=use_probabilistic)
+        grammar_to_use = CFG(rules=args.grammar, axiom="S")
         
         print(f"----Generated examples ({mode_lower.upper()})----\n")
         generate_examples(grammar_to_use, count, print_tree=False)
@@ -133,7 +202,7 @@ def main():
         # Generate lexical inference rules using the language model
         rules = generate_rules(prompts, tokenizer, model, top_k=args.generate_rules, labels=labels)
         if args.save:
-            save_rules_json(rules)
+            save_rules(rules)
         else:
             for rule in rules:
                 print(rule)
@@ -142,11 +211,13 @@ def main():
         # Generate lexical category pools using the masked language model
         pool = generate_lexical_pool(prompts, tokenizer, model, top_k=args.generate_lexical_pool)
         if args.save:
-            save_lexical_pool_json(pool)
+            save_lexical_pool(pool)
         else:
             for category, items in pool.items():
                 for item in items:
                     print(f"{category}: {item}")
 
+
+# Run CLI
 if __name__ == "__main__":
     main()
