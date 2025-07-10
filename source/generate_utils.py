@@ -282,7 +282,7 @@ def save_rules(structured_rules: Dict[str, Dict[str, List[str]]]) -> None:
     
     # Write merged rules map to JSON
     with open(rules_file_path, 'w', encoding='utf-8') as file:
-        json.dump(existing_rules_map, file, ensure_ascii=False, indent=2)
+        json.dump(existing_rules_map, file, ensure_ascii=False, indent=4)
 
 
 def save_lexical_pool(lexical_pool: Dict[str, List[List[str]]]) -> None:
@@ -324,4 +324,45 @@ def save_lexical_pool(lexical_pool: Dict[str, List[List[str]]]) -> None:
 
     # Write JSON
     with open(file_path, 'w', encoding='utf-8') as f:
-        json.dump(existing_pool, f, ensure_ascii=False, indent=2)
+        json.dump(existing_pool, f, ensure_ascii=False, indent=4)
+
+
+def save_examples(examples: Dict[str, List[str]]) -> None:
+    """
+    Save generated examples by merging into data/examples.json.
+    If the file exists, load existing data and append new examples per grammar.
+    """
+    
+    # Use current working directory as project root for the data folder
+    file_path = Path.cwd() / "data" / "examples.json"
+
+    # Ensure directory exists
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Load existing examples if present
+    if file_path.exists():
+        with open(file_path, 'r', encoding='utf-8') as f:
+            existing_examples = json.load(f)
+    else:
+        existing_examples = {}
+
+    # Merge new examples
+    for grammar_name, new_list in examples.items():
+        if grammar_name in existing_examples:
+            existing_examples[grammar_name] += new_list
+        else:
+            existing_examples[grammar_name] = new_list
+
+    # Deduplicate, preserving order
+    for grammar_name, example_list in existing_examples.items():
+        seen = set()
+        deduped = []
+        for example in example_list:
+            if example not in seen:
+                seen.add(example)
+                deduped.append(example)
+        existing_examples[grammar_name] = deduped
+
+    # Write to JSON
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(existing_examples, f, ensure_ascii=False, indent=4)
