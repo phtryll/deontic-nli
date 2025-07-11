@@ -24,8 +24,6 @@ pip install -r requirements.txt
 
 ## Usage
 
-> **Important:** Grammar rules are currently defined under `resources/some_rules.py` and loaded as `my_rules` in `cli.py`. To change or extend the grammar, select or update a file under that directory — CLI commands do not accept external grammar files.
-
 Below are some examples of how to use the CLI tool:
 
 ```bash
