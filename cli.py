@@ -125,7 +125,7 @@ def main():
         metavar=("FILE1", "FILE2"),
         help=(
             f"reset the specified data file(s): "
-            f"{', '.join(FILE_MAP.values())}"
+            f"{', '.join(FILE_MAP.keys())}"
         )
     )
 
@@ -170,13 +170,13 @@ def main():
     if args.generate_examples:
         examples_dict = {}
         for name, grammar in grammars.items():
-            print(f"\n----Generated examples for {name}----\n")
             examples = generate_examples(grammar, args.generate_examples, print_tree=False)
             examples_dict[name] = examples
         if args.save:
             save_examples(examples_dict)
         else:
             for name, examples_list in examples_dict.items():
+                print(f"\n----Generated examples for {name}----\n")
                 for example in examples_list:
                     print(f"{name}: {example}")
 

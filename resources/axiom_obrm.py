@@ -77,13 +77,13 @@ obrm = [
         # Adding lexical items: geographic dependency case
         Rule(
             left="p",
-            right=["NAME", "VERB", "in", "COUNTRY"],
+            right=["NAME", "VERB", "in", "CITY"],
             features={"name":"?n","verb":"?v","country":"?c"}
         ),
         
         Rule(
             left="q",
-            right=["NAME", "VERB", "in", "CITY"],
+            right=["NAME", "VERB", "in", "COUNTRY"],
             features={"name":"?n","verb":"?v","country":"?c","city":"?d"}
         ),
 
