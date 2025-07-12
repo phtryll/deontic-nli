@@ -29,3 +29,18 @@ if content is None: raise ValueError("No content in model response")
 country = Test.model_validate_json(content)
 for example in country.examples:
    print(example)
+
+
+# def generate_fcp_tuples(num_samples=None):
+#     """
+#     Generate free-choice permission examples as (premise, hypothesis) tuples.
+#     """
+#     raw_examples = grammar.generate("S", num_samples)
+#     tuples = []
+#     for ex in raw_examples:
+#         if "[H]" in ex:
+#             prem, hyp = ex.split("[H]", 1)
+#             prem = prem.strip()
+#             hyp = "[H]" + hyp.strip()
+#             tuples.append((prem, hyp))
+#     return tuples

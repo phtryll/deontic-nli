@@ -21,14 +21,17 @@ def fill_mask(prompt: str, tokenizer: Any, model: Any, top_k: int = 50) -> List[
     -   top_k (int): Number of top candidates for the first mask and number of joint results returned.
     """
 
+    # Normalize placeholder masks to the tokenizer's mask token
+    prompt = prompt.replace("<mask>", tokenizer.mask_token)
+
     # Determine computing device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Move model to the selected device
     model.to(device)
 
-    # Count the number of <mask> tokens in the prompt
-    num_masks = prompt.count("<mask>")
+    # Count the number of mask tokens in the prompt
+    num_masks = prompt.count(tokenizer.mask_token)
 
     # Tokenize the original prompt
     encoded_input_pre = tokenizer(prompt, return_tensors="pt")
@@ -79,7 +82,7 @@ def fill_mask(prompt: str, tokenizer: Any, model: Any, top_k: int = 50) -> List[
             # Insert each already filled token
             for token in tokens_list:
                 # Replace one mask at a time
-                masked_text = masked_text.replace("<mask>", token, 1)
+                masked_text = masked_text.replace(tokenizer.mask_token, token, 1)
 
             # Tokenize updated prompt
             encoded_input_pre2 = tokenizer(masked_text, return_tensors="pt")
