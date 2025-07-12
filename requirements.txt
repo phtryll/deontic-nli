@@ -1,2 +1,4 @@
+ollama==0.5.1
+pydantic==2.11.7
 torch==2.5.1
 transformers==4.49.0
