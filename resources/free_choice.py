@@ -4,76 +4,80 @@ from source.cfg_utils import Rule
 
 fcp_base = [
 
-    Rule(
-        left="S",
-        right=["<PREMISE>", "<HYPOTHESIS>"],
-    ),
+    Rule(left="S", right=["<PREMISE>", "<HYPOTHESIS>"]),
 
-    Rule(
-        left="<PREMISE>",
-        right=["[P]", "PE", "COMP", "p", "or", "q", "."],
-    ),
+    Rule(left="<PREMISE>", right=["<PROPOSITION>"]),
+    Rule(left="<HYPOTHESIS>", right=["<PROPOSITION>"]),
+    Rule(left="<PROPOSITION>", right=["A"]),
+    Rule(left="<PROPOSITION>", right=["B"]),
+    Rule(left="A", right=["NP", "VP", "."]),
+    Rule(left="B", right=["NP", "VP", "."]),
 
-    Rule(
-        left="<HYPOTHESIS>",
-        right=["[H]", "PE", "COMP", "p", "and", "PE", "COMP", "q", "."],
-    ),
+    # Rule(
+    #     left="<PREMISE>",
+    #     right=["[P]", "PE", "COMP", "p", "or", "q", "."],
+    # ),
 
-    Rule(
-        left="<PREMISE>",
-        right=["[P]", "PE", "COMP", "PROP", "."],
-    ),
+    # Rule(
+    #     left="<HYPOTHESIS>",
+    #     right=["[H]", "PE", "COMP", "p", "and", "PE", "COMP", "q", "."],
+    # ),
 
-    Rule(
-        left="<HYPOTHESIS>",
-        right=["[H]", "PE", "COMP", "PROP", "."],
-    ),
+    # Rule(
+    #     left="<PREMISE>",
+    #     right=["[P]", "PE", "COMP", "PROP", "."],
+    # ),
 
-    Rule(
-        left="<HYPOTHESIS>",
-        right=["[H]", "PE", "COMP", "p", "or", "q", "."],
-    ),
+    # Rule(
+    #     left="<HYPOTHESIS>",
+    #     right=["[H]", "PE", "COMP", "PROP", "."],
+    # ),
 
-    Rule(
-        left="<PREMISE>",
-        right=["[P]", "p", "or", "q"],
-    ),
+    # Rule(
+    #     left="<HYPOTHESIS>",
+    #     right=["[H]", "PE", "COMP", "p", "or", "q", "."],
+    # ),
 
-    Rule(
-        left="<HYPOTHESIS>",
-        right=["[H]", "p", "or", "q"],
-    ),
+    # Rule(
+    #     left="<PREMISE>",
+    #     right=["[P]", "p", "or", "q"],
+    # ),
 
-    Rule(
-        left="<PREMISE>",
-        right=["[P]", "p", "and", "q"],
-    ),
+    # Rule(
+    #     left="<HYPOTHESIS>",
+    #     right=["[H]", "p", "or", "q"],
+    # ),
 
-    Rule(
-        left="<HYPOTHESIS>",
-        right=["[H]", "p", "and", "q"],
-    ),
+    # Rule(
+    #     left="<PREMISE>",
+    #     right=["[P]", "p", "and", "q"],
+    # ),
 
-    Rule(
-        left="<HYPOTHESIS>",
-        right=["[H]", "PROP"],
-    ),
+    # Rule(
+    #     left="<HYPOTHESIS>",
+    #     right=["[H]", "p", "and", "q"],
+    # ),
 
-    Rule(
-        left="<PREMISE>",
-        right=["[P]", "PROP"],
-    ),
+    # Rule(
+    #     left="<HYPOTHESIS>",
+    #     right=["[H]", "PROP"],
+    # ),
 
-    Rule(left="PE", right=["it is", "NEG", "permitted"]),
-    Rule(left="NEG", right=["not"]),
-    Rule(left="NEG", right=[""]),
+    # Rule(
+    #     left="<PREMISE>",
+    #     right=["[P]", "PROP"],
+    # ),
+
+    # Rule(left="PE", right=["it is", "NEG", "permitted"]),
+    # Rule(left="NEG", right=["not"]),
+    # Rule(left="NEG", right=[""]),
     
-    Rule(left="COMP", right=["that"]),
+    # Rule(left="COMP", right=["that"]),
 
-    Rule(left="PROP", right=["p"]),
-    Rule(left="PROP", right=["q"]),
-    Rule(left="p", right=["A"]),
-    Rule(left="q", right=["B"])
+    # Rule(left="PROP", right=["p"]),
+    # Rule(left="PROP", right=["q"]),
+    # Rule(left="p", right=["A"]),
+    # Rule(left="q", right=["B"])
 ]
 
 fcp = list(fcp_base)
@@ -82,7 +86,7 @@ seen_rules = set()
 # Load lexical item grammar rules
 rule_files = [
     "rules_NP.json",
-    "rules_V.json"
+    "rules_VP.json"
 ]
 
 # Add them to the grammar

@@ -66,7 +66,12 @@ def main():
     )
 
     # Option to print the selected CFG(s)
-    parser.add_argument("--show-grammar", action="store_true", help="print the CFG grammar(s)")
+    parser.add_argument(
+        "--show-grammar",
+        choices=["base", "full"],
+        metavar="GRAMMAR",
+        help="print the CFG grammar(s): base, full"
+    )
 
     # Option to generate N examples from the grammar. Mode can be 'cfg' for uniform or 'pcfg' for probabilistic generation.
     parser.add_argument(
@@ -124,14 +129,20 @@ def main():
 
     # Display the CFG(s) to the user
     if args.show_grammar:
-        base_grammars = {
-            name: CFG(rules=GRAMMARS[name][1], axiom="S")
-            for name in args.grammar
-        }
-        
-        for name, grammar in base_grammars.items():
-            print(f"\n----Context-free grammar for {name}----\n")
-            print(grammar)
+        if args.show_grammar == "full":
+            for name, grammar in grammars.items():
+                print(f"\n----Context-free grammar for {name}----\n")
+                print(grammar)
+
+        if args.show_grammar == "base":
+            base_grammars = {
+                name: CFG(rules=GRAMMARS[name][1], axiom="S")
+                for name in args.grammar
+            }
+            
+            for name, grammar in base_grammars.items():
+                print(f"\n----Context-free grammar for {name}----\n")
+                print(grammar)
 
     # Generate examples
     if args.generate_examples:
