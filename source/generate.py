@@ -1,4 +1,3 @@
-import json
 from ollama import chat
 from pydantic import RootModel
 from source.cfg import CFG
@@ -36,7 +35,7 @@ class LexicalPoolSchema(RootModel[List[str]]):
     pass
 
 
-def generate_with_ollama(prompt: str, model: str = 'mistral') -> List[str]:
+def generate_items(prompt: str, model: str = 'mistral') -> List[str]:
     """
     Generate lexical items for each category using ollama.
     Returns: dict mapping category to list of items.

@@ -1,14 +1,13 @@
-import sys
 import json
 import logging
 import argparse
-from argparse import RawTextHelpFormatter
-from functools import partial
 from pathlib import Path
+from functools import partial
+from argparse import RawTextHelpFormatter
 
 # Import CFG and generation source code
 from source.cfg import CFG
-from source.generate import generate_examples, generate_with_ollama, format_rules, format_examples
+from source.generate import generate_examples, generate_items, format_rules, format_examples
 from resources.prompts import prompts_ollama, labels_ollama
 
 # Grammars
@@ -152,7 +151,7 @@ def main():
         output_dict = {}
         for label, prompt in prompts_ollama.items():
             prompt = prompt.format(k=args.generate_rules)
-            output = generate_with_ollama(prompt, args.model)
+            output = generate_items(prompt, args.model)
             output_dict[label] = output
         
         # Format to CFG rules
