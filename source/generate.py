@@ -38,16 +38,20 @@ class LexicalPoolSchema(RootModel[List[str]]):
 
 def generate_with_ollama(prompt: str, model: str = 'mistral') -> List[str]:
     """
-    Generate lexical items for each category using ollama chat.
+    Generate lexical items for each category using ollama.
     Returns: dict mapping category to list of items.
 
-    - prompts: dict mapping category to prompt string.
+    - prompt: a prompt string.
     - model: ollama model name.
     """
     
     system_msg = {
         'role': 'system',
-        'content': ('You are a helpful assistant that generates lexical items based on the prompt instructions.')
+        'content': (
+            'You are a helpful assistant that generates lexical items. '
+            'You follow the exact instructions of the prompt. '
+        
+        )
     }
 
     user_msg = {
@@ -95,3 +99,21 @@ def format_rules(slot_dict: Dict[str, List[str]]) -> Dict[str, List[str]]:
 
     # Return the mapping of slot labels to rule string lists
     return rules_map
+
+
+def format_examples(input: Dict[str, List[str]]) -> Dict[str, List[tuple[str, str]]]:
+    """Format examples as premise/hypothesis tuples."""
+
+    formatted_examples: Dict[str, List[tuple[str, str]]] = {}
+
+    for grammar, examples in input.items():
+        formatted_examples[grammar] = []
+
+        for example in examples:
+            if "[H]" in example:
+                premise, hypothesis = example.split("[H]", 1)
+                premise = premise.replace("[P]", "", 1).strip()
+                hypothesis = hypothesis.strip()
+                formatted_examples[grammar].append((premise, hypothesis))
+    
+    return formatted_examples

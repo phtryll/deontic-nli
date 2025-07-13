@@ -8,8 +8,8 @@ from pathlib import Path
 
 # Import CFG and generation source code
 from source.cfg import CFG
-from source.generate import generate_examples, generate_with_ollama, format_rules
-from resources.prompts_ollama import prompts_ollama, labels_ollama
+from source.generate import generate_examples, generate_with_ollama, format_rules, format_examples
+from resources.prompts import prompts_ollama, labels_ollama
 
 # Grammars
 from resources.axiom_obrm import obrm
@@ -91,6 +91,12 @@ def main():
         help="generate N lexical rules from previously generated lexical pool (default: 100)"
     )
 
+    parser.add_argument(
+        "-s", "--save",
+        metavar="FILE",
+        help="save generated rules under data/<FILE>"
+    )
+
     # Store arguments
     args = parser.parse_args()
 
@@ -100,6 +106,10 @@ def main():
     # Check if grammar has been defined
     if (args.generate_examples or args.show_grammar) and not args.grammar:
         parser.error("argument -g/--grammar is required for generating examples or showing grammar.")
+    
+    # Ensure that when generating and saving, a filename is provided
+    if (args.generate_rules is not None or args.generate_examples is not None) and args.save is None:
+        parser.error("you must specify a filename with -s/--save, e.g.: foobar.json")
 
     # Create a dictionary with all the specified grammars
     if args.grammar:
@@ -120,11 +130,22 @@ def main():
         for name, grammar in grammars.items():
             examples = generate_examples(grammar, args.generate_examples, print_tree=False)
             examples_dict[name] = examples
+        
+        # Format examples as tuples of premise/hypothesis
+        formatted_examples = format_examples(examples_dict)
 
         for name, examples_list in examples_dict.items():
             print(f"\n----Generated examples for {name}----\n")
             for example in examples_list:
                 print(example)
+        
+        if args.save:
+            save_path = Path(__file__).parent / "data" / args.save
+            
+            with open(save_path, "w", encoding="utf-8") as f:
+                json.dump(formatted_examples, f, ensure_ascii=False, indent=4)
+            
+            print(f"\nSaved generated examples to {save_path}")
 
     # Generate lexical rules
     if args.generate_rules:
@@ -141,6 +162,14 @@ def main():
             print(f"\n--- {label} ---\n")
             for item in output:
                 print(item)
+
+        if args.save:
+            save_path = Path(__file__).parent / "data" / args.save
+            
+            with open(save_path, "w", encoding="utf-8") as f:
+                json.dump(new_rules, f, ensure_ascii=False, indent=4)
+            
+            print(f"\nSaved generated rules to {save_path}")
 
 # Run CLI
 if __name__ == "__main__":
