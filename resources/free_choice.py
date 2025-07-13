@@ -67,7 +67,6 @@ fcp = [
     Rule(left="NEG", right=[""]),
     
     Rule(left="COMP", right=["that"]),
-    Rule(left="COMP", right=["to"]),
 
     Rule(left="PROP", right=["p"]),
     Rule(left="PROP", right=["q"]),

@@ -1,7 +1,10 @@
+import json
+from ollama import chat
+from pydantic import RootModel
 from source.cfg import CFG
 from source.cfg_utils import join
-from source.generate_utils import *
-from typing import List, Dict, Any
+from typing import List, Dict
+
 
 def generate_examples(grammar: CFG, num_examples: int = 20, print_tree: bool = False) -> List[str]:
     """Generates examples produced by a grammar."""
@@ -23,37 +26,72 @@ def generate_examples(grammar: CFG, num_examples: int = 20, print_tree: bool = F
             print("yield:", tokens) # Print the yield (list of tokens)
         
         example = join(tokens) # Join the tokens into a sentence
-        examples.append(example)
+        examples.append(example) # Add it to the list
     
     return examples
 
 
-def generate_rules(prompts: Dict[str, List[str]], tokenizer: Any, model: Any, top_k: int, labels: Dict[str, List[str]]) -> Dict[str, Dict[str, List[str]]]:
+class LexicalPoolSchema(RootModel[List[str]]):
+    """Root model for a mapping from category to list of generated items."""
+    pass
+
+
+def generate_with_ollama(prompt: str, model: str = 'mistral') -> List[str]:
     """
-    Generate a nested mapping of category → slot_label → rule strings for lexical diversity.
-    Uses generate_lexical_pool and format_lexical_pool to handle multi-mask slots.
-    
-    -   prompts (Dict[str, List[str]]): Map from category names to lists of mask-containing prompts.
-    -   tokenizer (Any): HuggingFace tokenizer for a masked LLM.
-    -   model (Any): HuggingFace masked language model instance.
-    -   top_k (int): Number of top joint candidates to retain per category.
-    -   labels (Dict[str, List[str]]): Map from category names to their slot-label lists.
+    Generate lexical items for each category using ollama chat.
+    Returns: dict mapping category to list of items.
+
+    - prompts: dict mapping category to prompt string.
+    - model: ollama model name.
     """
     
-    # Generate lexical items pool
-    pool = generate_lexical_pool(prompts, tokenizer, model, top_k=top_k)
+    system_msg = {
+        'role': 'system',
+        'content': ('You are a helpful assistant that generates lexical items based on the prompt instructions.')
+    }
+
+    user_msg = {
+        'role': 'user',
+        'content': prompt
+    }
+
+    response = chat(
+        messages=[system_msg, user_msg],
+        model=model,
+        format=LexicalPoolSchema.model_json_schema(),
+    )
+
+    content = response.message.content
+    if content is None:
+        raise ValueError("No content in model response")
     
-    # Format the lexical pool into a mapping category → slot_dict
-    formatted_pools = format_lexical_pool(pool, labels)
+    # Validate and parse JSON to dict
+    lexical_pool = LexicalPoolSchema.model_validate_json(content).root
     
-    # Build nested mapping category → slot_label → list of rule strings
-    structured_rules: Dict[str, Dict[str, List[str]]] = {}
+    return lexical_pool
+
+
+def format_rules(slot_dict: Dict[str, List[str]]) -> Dict[str, List[str]]:
+    """
+    Convert a slot-mapped dict into CFG rule strings.
+    For each slot_label, produce a list of Rule(...) strings.
+    Returns: Dict[slot_label, List[rule_str]].
+    """
     
-    for category, slot_dict in formatted_pools.items():
+    # Map each slot label to its list of rule strings
+    rules_map: Dict[str, List[str]] = {}
+
+    # Iterate over slot labels and their predicted items
+    for slot_label, items in slot_dict.items():
         
-        # Format rules for each slot dictionary
-        rules_map = format_rules(slot_dict)
-        structured_rules[category] = rules_map
-    
-    # Return the nested category → slot_label → rules mapping
-    return structured_rules
+        # Collect rule strings for this slot_label
+        rule_strs: List[str] = []
+        
+        # Create a Rule string for each item
+        for item in items:
+            rule_strs.append(f'Rule(left="{slot_label}", right=["{item}"])')
+        
+        rules_map[slot_label] = rule_strs
+
+    # Return the mapping of slot labels to rule string lists
+    return rules_map
