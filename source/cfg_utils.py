@@ -160,7 +160,13 @@ def join(tokens: List[str]) -> str:
             capitalize_next = True
     
     # Join the elements of the list
-    return "".join(list)
+    result = "".join(list).lstrip()
+
+    # Capitalize first char if it is a letter
+    if result and result[0].isalpha():
+        result = result[0].upper() + result[1:]
+    
+    return result
 
 
 def unify(node_features: Dict[str, Any], rule_features: Dict[str, Any]) -> Optional[Dict[str, Any]]:
