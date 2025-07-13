@@ -42,6 +42,19 @@ class Rule:
         
         return self.__str__()
 
+    def __eq__(self, other) -> bool:
+        """Equality based on left-hand side and right-hand side symbols."""
+
+        if not isinstance(other, Rule):
+            return NotImplemented
+        
+        return (self.left, tuple(self.right)) == (other.left, tuple(other.right))
+
+    def __hash__(self) -> int:
+        """Hash based on left-hand side and right-hand side symbols."""
+        
+        return hash((self.left, tuple(self.right)))
+
 
 class Tree:
     """Class to represent a CFG tree."""

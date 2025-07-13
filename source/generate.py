@@ -46,11 +46,7 @@ def generate_items(prompt: str, model: str = 'mistral') -> List[str]:
     
     system_msg = {
         'role': 'system',
-        'content': (
-            'You are a helpful assistant that generates lexical items. '
-            'You follow the exact instructions of the prompt. '
-        
-        )
+        'content': ()
     }
 
     user_msg = {

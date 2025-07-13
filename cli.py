@@ -8,13 +8,13 @@ from argparse import RawTextHelpFormatter
 # Import CFG and generation source code
 from source.cfg import CFG
 from source.generate import generate_examples, generate_items, format_rules, format_examples
-from resources.prompts import prompts_ollama, labels_ollama
+from resources.prompts import prompts_ollama
 
 # Grammars
-from resources.axiom_obrm import obrm
-from resources.axiom_obexh import exh
-from resources.free_choice import fcp
-from resources.operators import operators
+from resources.axiom_obrm import obrm, obrm_base
+from resources.axiom_obexh import exh, exh_base
+from resources.free_choice import fcp, fcp_base
+from resources.operators import operators, operators_base
 
 # Suppress useless transformers messages
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
@@ -24,10 +24,10 @@ MyFormatter = partial(RawTextHelpFormatter, max_help_position=70, width=100)
 
 # Current grammars to generate examples with
 GRAMMARS = {
-    "obrm": obrm,
-    "obexh": exh,
-    "fcp": fcp,
-    "operators": operators
+    "obrm": (obrm, obrm_base),
+    "obexh": (exh, exh_base),
+    "fcp": (fcp, fcp_base),
+    "operators": (operators, operators_base)
 }
 
 # Current models to generate text
@@ -79,7 +79,7 @@ def main():
         help="generate N examples (default: 100)"
     )
 
-    # Option to generate N lexical rules using the masked language model and RoBERTa
+    # Option to generate N lexical rules using ollama for text generation
     parser.add_argument(
         "--generate-rules",
         nargs='?',
@@ -88,6 +88,15 @@ def main():
         default=None,
         metavar="N",
         help="generate N lexical rules from previously generated lexical pool (default: 100)"
+    )
+
+    # Specify what prompt(s) we want to use
+    parser.add_argument(
+        "-l", "--labels",
+        nargs="+",
+        choices=list(prompts_ollama.keys()),
+        metavar="LABEL",
+        help="select which prompt labels to generate rules for (default: all)"
     )
 
     parser.add_argument(
@@ -105,21 +114,22 @@ def main():
     # Check if grammar has been defined
     if (args.generate_examples or args.show_grammar) and not args.grammar:
         parser.error("argument -g/--grammar is required for generating examples or showing grammar.")
-    
-    # Ensure that when generating and saving, a filename is provided
-    if (args.generate_rules is not None or args.generate_examples is not None) and args.save is None:
-        parser.error("you must specify a filename with -s/--save, e.g.: foobar.json")
 
     # Create a dictionary with all the specified grammars
     if args.grammar:
         grammars = {
-            name: CFG(rules=GRAMMARS[name], axiom="S")
+            name: CFG(rules=GRAMMARS[name][0], axiom="S")
             for name in args.grammar
         }
 
     # Display the CFG(s) to the user
     if args.show_grammar:
-        for name, grammar in grammars.items():
+        base_grammars = {
+            name: CFG(rules=GRAMMARS[name][1], axiom="S")
+            for name in args.grammar
+        }
+        
+        for name, grammar in base_grammars.items():
             print(f"\n----Context-free grammar for {name}----\n")
             print(grammar)
 
@@ -149,7 +159,10 @@ def main():
     # Generate lexical rules
     if args.generate_rules:
         output_dict = {}
-        for label, prompt in prompts_ollama.items():
+        selected_labels = args.labels if args.labels else prompts_ollama.keys()
+        
+        for label in selected_labels:
+            prompt = prompts_ollama[label]
             prompt = prompt.format(k=args.generate_rules)
             output = generate_items(prompt, args.model)
             output_dict[label] = output
