@@ -61,10 +61,15 @@ class CFG:
 
         return symbol in self.non_terminals
     
+    def is_variable(self, value: Any) -> bool:
+        """Check if the feature value is a variable (string starting with '?')."""
+
+        return isinstance(value, str) and value.startswith('?')
+
     def generate(self, verbose=False):
         """Generate a grammar tree."""
 
-        # Initialize global features for the entire CFG tree
+        # Initialize global variable bindings for the entire CFG tree
         self.bindings: Dict[str, Any] = {}
 
         # Initialize a tree with the axiom as the starting label
@@ -94,7 +99,7 @@ class CFG:
             # Filter by feature unification
             candidates = []
             for rule in applicable_rules:
-                merged_features = unify(self.bindings, rule.features)
+                merged_features = unify({**node.features, **self.bindings}, rule.features)
 
                 if merged_features is not None:
                     candidates.append((rule, merged_features))
@@ -106,12 +111,16 @@ class CFG:
             weights = [rule.prob for rule, _ in candidates]
             selected_rule, selected_features = random.choices(candidates, weights=weights, k=1)[0]
 
-            # Update global bindings with the merged feature values
-            self.bindings = selected_features
+            # Update the variable bindings in case a variable got bound
+            for feature, value in selected_features.items():
+                orig_value = node.features.get(feature)
+                rule_value = selected_rule.features.get(feature)
+                if self.is_variable(orig_value) or self.is_variable(rule_value):
+                    self.bindings[feature] = value
 
-            # Apply the rule by creating children nodes from the rule's right
+            # Create children with current global variable bindings
             node.children = [
-                Tree(node_label=symbol, features=self.bindings.copy())
+                Tree(node_label=symbol, features=selected_features)
                 for symbol in selected_rule.right
             ]
 

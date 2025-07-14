@@ -8,7 +8,7 @@ from argparse import RawTextHelpFormatter
 # Import CFG and generation source code
 from source.cfg import CFG
 from source.generate import generate_examples, generate_items, format_rules, format_examples
-from resources.prompts import prompts_ollama
+from resources.prompts import prompts_ollama, labels_ollama
 
 # Grammars
 from resources.axiom_obrm import obrm, obrm_base
@@ -31,7 +31,7 @@ GRAMMARS = {
 }
 
 # Current models to generate text
-MODELS = ["mistral", "deepseek-r1", "llama-3.1"]
+MODELS = ["mistral", "deepseek-r1", "llama3.1"]
 
 def main():
     
@@ -110,7 +110,6 @@ def main():
         help="save generated rules under data/<FILE>"
     )
 
-    # Store arguments
     args = parser.parse_args()
 
     # Always initialize an empty grammar dict
@@ -147,11 +146,11 @@ def main():
     # Generate examples
     if args.generate_examples:
         examples_dict = {}
+        
         for name, grammar in grammars.items():
             examples = generate_examples(grammar, args.generate_examples, print_tree=False)
             examples_dict[name] = examples
         
-        # Format examples as tuples of premise/hypothesis
         formatted_examples = format_examples(examples_dict)
 
         for name, examples_list in examples_dict.items():
@@ -174,15 +173,17 @@ def main():
         
         for label in selected_labels:
             prompt = prompts_ollama[label]
+            field_names = labels_ollama[label]
             prompt = prompt.format(k=args.generate_rules)
-            output = generate_items(prompt, args.model)
-            output_dict[label] = output
+            
+            result = generate_items(prompt, field_names, args.model)
+            output_dict.update(result)
         
-        # Format to CFG rules
         new_rules = format_rules(output_dict)
 
         for label, output in new_rules.items():
             print(f"\n--- {label} ---\n")
+            
             for item in output:
                 print(item)
 
