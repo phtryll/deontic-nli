@@ -1,0 +1,4022 @@
+{
+    "p_ou_q_implique_p/q": [
+        [
+            "The chef steals or swims.",
+            "The chef steals."
+        ],
+        [
+            "The programmer wakes or dreams.",
+            "The programmer dreams."
+        ],
+        [
+            "The actor forgives or steals.",
+            "The actor steals."
+        ],
+        [
+            "The student astonishes or draws.",
+            "The student astonishes."
+        ],
+        [
+            "The actor eats or fishes.",
+            "The actor fishes."
+        ],
+        [
+            "The architect climbs or climbs.",
+            "The architect climbs."
+        ],
+        [
+            "The student camps or hikes.",
+            "The student hikes."
+        ],
+        [
+            "The man discovers or misses.",
+            "The man misses."
+        ],
+        [
+            "The engineer experiments or discovers.",
+            "The engineer experiments."
+        ],
+        [
+            "The driver reads or films.",
+            "The driver reads."
+        ],
+        [
+            "Your sister codes or apologizes.",
+            "Your sister codes."
+        ],
+        [
+            "The engineer hikes or imagines.",
+            "The engineer hikes."
+        ],
+        [
+            "His mother lies or designs.",
+            "His mother lies."
+        ],
+        [
+            "The doctor eats or amazes.",
+            "The doctor amazes."
+        ],
+        [
+            "The engineer rows or sails.",
+            "The engineer sails."
+        ],
+        [
+            "Her father creates or amazes.",
+            "Her father creates."
+        ],
+        [
+            "The chef enjoys or wins.",
+            "The chef enjoys."
+        ],
+        [
+            "The student runs or explores.",
+            "The student runs."
+        ],
+        [
+            "The engineer sings or explores.",
+            "The engineer sings."
+        ],
+        [
+            "The architect dances or laughs.",
+            "The architect laughs."
+        ],
+        [
+            "The writer inspires or climbs.",
+            "The writer inspires."
+        ],
+        [
+            "The athlete discovers or fishes.",
+            "The athlete discovers."
+        ],
+        [
+            "The chef skis or programs.",
+            "The chef programs."
+        ],
+        [
+            "The driver loves or experiments.",
+            "The driver loves."
+        ],
+        [
+            "The scientist travels or sketches.",
+            "The scientist sketches."
+        ],
+        [
+            "The musician sails or envies.",
+            "The musician envies."
+        ],
+        [
+            "The painter hates or codes.",
+            "The painter hates."
+        ],
+        [
+            "Her father flies or innovates.",
+            "Her father innovates."
+        ],
+        [
+            "The artist competes or wakes.",
+            "The artist wakes."
+        ],
+        [
+            "The queen envies or longs.",
+            "The queen envies."
+        ],
+        [
+            "The woman jumps or films.",
+            "The woman films."
+        ],
+        [
+            "The pilot codes or reads.",
+            "The pilot codes."
+        ],
+        [
+            "The scientist camps or dances.",
+            "The scientist camps."
+        ],
+        [
+            "The programmer adores or sketches.",
+            "The programmer adores."
+        ],
+        [
+            "The artist plays or laughs.",
+            "The artist plays."
+        ],
+        [
+            "The explorer films or camps.",
+            "The explorer films."
+        ],
+        [
+            "The artist wins or delights.",
+            "The artist wins."
+        ],
+        [
+            "The designer sketches or edits.",
+            "The designer edits."
+        ],
+        [
+            "The driver thinks or eats.",
+            "The driver eats."
+        ],
+        [
+            "The man dances or loves.",
+            "The man dances."
+        ],
+        [
+            "The artist runs or adores.",
+            "The artist adores."
+        ],
+        [
+            "The student delights or sings.",
+            "The student delights."
+        ],
+        [
+            "The boy swims or competes.",
+            "The boy competes."
+        ],
+        [
+            "The artist steals or invents.",
+            "The artist invents."
+        ],
+        [
+            "The designer builds or learns.",
+            "The designer builds."
+        ],
+        [
+            "The engineer admits or plays.",
+            "The engineer plays."
+        ],
+        [
+            "The man rows or edits.",
+            "The man edits."
+        ],
+        [
+            "The director regrets or teaches.",
+            "The director regrets."
+        ],
+        [
+            "Her father adores or swims.",
+            "Her father swims."
+        ],
+        [
+            "The nurse fishes or delights.",
+            "The nurse fishes."
+        ],
+        [
+            "The writer hope or sketches.",
+            "The writer sketches."
+        ],
+        [
+            "The pilot sleeps or sings.",
+            "The pilot sings."
+        ],
+        [
+            "Your sister builds or hope.",
+            "Your sister hope."
+        ],
+        [
+            "The king enjoys or dreams.",
+            "The king dreams."
+        ],
+        [
+            "The nurse betrays or longs.",
+            "The nurse longs."
+        ],
+        [
+            "The king hates or regrets.",
+            "The king hates."
+        ],
+        [
+            "The designer speaks or camps.",
+            "The designer camps."
+        ],
+        [
+            "The writer hates or appreciates.",
+            "The writer hates."
+        ],
+        [
+            "The dancer sails or inspires.",
+            "The dancer inspires."
+        ],
+        [
+            "The man betrays or speaks.",
+            "The man speaks."
+        ],
+        [
+            "Her father loses or fishes.",
+            "Her father fishes."
+        ],
+        [
+            "The dancer speaks or codes.",
+            "The dancer speaks."
+        ],
+        [
+            "The programmer jumps or fishes.",
+            "The programmer fishes."
+        ],
+        [
+            "The programmer pines or composes.",
+            "The programmer composes."
+        ],
+        [
+            "The dancer admits or edits.",
+            "The dancer admits."
+        ],
+        [
+            "The queen envies or promises.",
+            "The queen promises."
+        ],
+        [
+            "The boy jumps or skis.",
+            "The boy jumps."
+        ],
+        [
+            "The woman astonishes or inspires.",
+            "The woman astonishes."
+        ],
+        [
+            "His mother plays or thinks.",
+            "His mother thinks."
+        ],
+        [
+            "The nurse hates or adores.",
+            "The nurse adores."
+        ],
+        [
+            "The engineer longs or photographs.",
+            "The engineer longs."
+        ],
+        [
+            "The painter hikes or edits.",
+            "The painter edits."
+        ],
+        [
+            "The pilot admits or eats.",
+            "The pilot admits."
+        ],
+        [
+            "The doctor learns or explores.",
+            "The doctor explores."
+        ],
+        [
+            "The nurse sails or dreams.",
+            "The nurse sails."
+        ],
+        [
+            "The scholar dances or discovers.",
+            "The scholar dances."
+        ],
+        [
+            "The doctor photographs or travels.",
+            "The doctor travels."
+        ],
+        [
+            "The pilot apologizes or betrays.",
+            "The pilot betrays."
+        ],
+        [
+            "The engineer explores or laughs.",
+            "The engineer explores."
+        ],
+        [
+            "The musician sings or competes.",
+            "The musician competes."
+        ],
+        [
+            "The architect codes or promises.",
+            "The architect promises."
+        ],
+        [
+            "The soldier builds or betrays.",
+            "The soldier betrays."
+        ],
+        [
+            "The chef travels or appreciates.",
+            "The chef travels."
+        ],
+        [
+            "The scholar inspires or hope.",
+            "The scholar inspires."
+        ],
+        [
+            "His mother sings or cherishes.",
+            "His mother cherishes."
+        ],
+        [
+            "The dancer builds or plays.",
+            "The dancer builds."
+        ],
+        [
+            "The driver wins or misses.",
+            "The driver wins."
+        ],
+        [
+            "The nurse builds or skis.",
+            "The nurse builds."
+        ],
+        [
+            "Her father films or learns.",
+            "Her father films."
+        ],
+        [
+            "The nurse experiments or photographs.",
+            "The nurse photographs."
+        ],
+        [
+            "The boy designs or longs.",
+            "The boy longs."
+        ],
+        [
+            "The designer astonishes or plays.",
+            "The designer astonishes."
+        ],
+        [
+            "My friend sketches or sketches.",
+            "My friend sketches."
+        ],
+        [
+            "The queen loses or lies.",
+            "The queen lies."
+        ],
+        [
+            "The doctor designs or discovers.",
+            "The doctor discovers."
+        ],
+        [
+            "Her father dances or travels.",
+            "Her father travels."
+        ],
+        [
+            "The writer cycles or competes.",
+            "The writer competes."
+        ],
+        [
+            "The director betrays or rows.",
+            "The director rows."
+        ],
+        [
+            "The director laughs or delights.",
+            "The director laughs."
+        ],
+        [
+            "The scientist teaches or thinks.",
+            "The scientist thinks."
+        ]
+    ],
+    "p_ou_q_implique_p_et_q": [
+        [
+            "Her father swims or writes.",
+            "Her father swims and writes."
+        ],
+        [
+            "The artist climbs or loves.",
+            "The artist climbs and loves."
+        ],
+        [
+            "The engineer astonishes or misses.",
+            "The engineer astonishes and misses."
+        ],
+        [
+            "The director lies or climbs.",
+            "The director lies and climbs."
+        ],
+        [
+            "My friend invents or reads.",
+            "My friend invents and reads."
+        ],
+        [
+            "The driver climbs or edits.",
+            "The driver climbs and edits."
+        ],
+        [
+            "My friend envies or designs.",
+            "My friend envies and designs."
+        ],
+        [
+            "The musician explores or teaches.",
+            "The musician explores and teaches."
+        ],
+        [
+            "The actor wakes or sleeps.",
+            "The actor wakes and sleeps."
+        ],
+        [
+            "The architect appreciates or longs.",
+            "The architect appreciates and longs."
+        ],
+        [
+            "My friend cheats or loses.",
+            "My friend cheats and loses."
+        ],
+        [
+            "The athlete loses or cries.",
+            "The athlete loses and cries."
+        ],
+        [
+            "The explorer invents or camps.",
+            "The explorer invents and camps."
+        ],
+        [
+            "The student plays or thinks.",
+            "The student plays and thinks."
+        ],
+        [
+            "The dancer competes or designs.",
+            "The dancer competes and designs."
+        ],
+        [
+            "The explorer edits or astonishes.",
+            "The explorer edits and astonishes."
+        ],
+        [
+            "The chef edits or betrays.",
+            "The chef edits and betrays."
+        ],
+        [
+            "The writer teaches or reads.",
+            "The writer teaches and reads."
+        ],
+        [
+            "The queen skis or forgives.",
+            "The queen skis and forgives."
+        ],
+        [
+            "The pilot appreciates or hikes.",
+            "The pilot appreciates and hikes."
+        ],
+        [
+            "The nurse writes or invents.",
+            "The nurse writes and invents."
+        ],
+        [
+            "The architect longs or edits.",
+            "The architect longs and edits."
+        ],
+        [
+            "The chef travels or laughs.",
+            "The chef travels and laughs."
+        ],
+        [
+            "The king programs or hikes.",
+            "The king programs and hikes."
+        ],
+        [
+            "The chef camps or delights.",
+            "The chef camps and delights."
+        ],
+        [
+            "The soldier programs or composes.",
+            "The soldier programs and composes."
+        ],
+        [
+            "The actor appreciates or skis.",
+            "The actor appreciates and skis."
+        ],
+        [
+            "My friend fishes or drives.",
+            "My friend fishes and drives."
+        ],
+        [
+            "The man appreciates or enjoys.",
+            "The man appreciates and enjoys."
+        ],
+        [
+            "The director wakes or promises.",
+            "The director wakes and promises."
+        ],
+        [
+            "The scientist invents or edits.",
+            "The scientist invents and edits."
+        ],
+        [
+            "The musician discovers or jumps.",
+            "The musician discovers and jumps."
+        ],
+        [
+            "The scholar eats or drives.",
+            "The scholar eats and drives."
+        ],
+        [
+            "The student innocent or discovers.",
+            "The student innocent and discovers."
+        ],
+        [
+            "The engineer designs or cries.",
+            "The engineer designs and cries."
+        ],
+        [
+            "Your sister promises or researches.",
+            "Your sister promises and researches."
+        ],
+        [
+            "The scholar cherishes or designs.",
+            "The scholar cherishes and designs."
+        ],
+        [
+            "The dancer flies or discovers.",
+            "The dancer flies and discovers."
+        ],
+        [
+            "The woman writes or sleeps.",
+            "The woman writes and sleeps."
+        ],
+        [
+            "The engineer teaches or sketches.",
+            "The engineer teaches and sketches."
+        ],
+        [
+            "The scholar apologizes or longs.",
+            "The scholar apologizes and longs."
+        ],
+        [
+            "The chef imagines or speaks.",
+            "The chef imagines and speaks."
+        ],
+        [
+            "His mother loves or designs.",
+            "His mother loves and designs."
+        ],
+        [
+            "The queen enjoys or dances.",
+            "The queen enjoys and dances."
+        ],
+        [
+            "The boy speaks or yearns.",
+            "The boy speaks and yearns."
+        ],
+        [
+            "The man drives or innovates.",
+            "The man drives and innovates."
+        ],
+        [
+            "The engineer draws or wins.",
+            "The engineer draws and wins."
+        ],
+        [
+            "The pilot steals or writes.",
+            "The pilot steals and writes."
+        ],
+        [
+            "The designer regrets or steals.",
+            "The designer regrets and steals."
+        ],
+        [
+            "Your sister pines or yearns.",
+            "Your sister pines and yearns."
+        ],
+        [
+            "The student experiments or promises.",
+            "The student experiments and promises."
+        ],
+        [
+            "The driver longs or plays.",
+            "The driver longs and plays."
+        ],
+        [
+            "The actor hikes or learns.",
+            "The actor hikes and learns."
+        ],
+        [
+            "The king paints or rows.",
+            "The king paints and rows."
+        ],
+        [
+            "Her father betrays or hates.",
+            "Her father betrays and hates."
+        ],
+        [
+            "The programmer cheats or codes.",
+            "The programmer cheats and codes."
+        ],
+        [
+            "The artist eats or fishes.",
+            "The artist eats and fishes."
+        ],
+        [
+            "The athlete camps or imagines.",
+            "The athlete camps and imagines."
+        ],
+        [
+            "The nurse cries or films.",
+            "The nurse cries and films."
+        ],
+        [
+            "Your sister lies or swims.",
+            "Your sister lies and swims."
+        ],
+        [
+            "The designer swims or composes.",
+            "The designer swims and composes."
+        ],
+        [
+            "The man sketches or designs.",
+            "The man sketches and designs."
+        ],
+        [
+            "The actor misses or cherishes.",
+            "The actor misses and cherishes."
+        ],
+        [
+            "The pilot competes or experiments.",
+            "The pilot competes and experiments."
+        ],
+        [
+            "The student astonishes or eats.",
+            "The student astonishes and eats."
+        ],
+        [
+            "The king amazes or hates.",
+            "The king amazes and hates."
+        ],
+        [
+            "The chef thinks or lies.",
+            "The chef thinks and lies."
+        ],
+        [
+            "Your sister regrets or enjoys.",
+            "Your sister regrets and enjoys."
+        ],
+        [
+            "The student drives or discovers.",
+            "The student drives and discovers."
+        ],
+        [
+            "The king enjoys or travels.",
+            "The king enjoys and travels."
+        ],
+        [
+            "The queen drives or innovates.",
+            "The queen drives and innovates."
+        ],
+        [
+            "The scholar works or programs.",
+            "The scholar works and programs."
+        ],
+        [
+            "The driver longs or camps.",
+            "The driver longs and camps."
+        ],
+        [
+            "The king draws or cherishes.",
+            "The king draws and cherishes."
+        ],
+        [
+            "The pilot steals or draws.",
+            "The pilot steals and draws."
+        ],
+        [
+            "The engineer runs or enjoys.",
+            "The engineer runs and enjoys."
+        ],
+        [
+            "The programmer designs or dances.",
+            "The programmer designs and dances."
+        ],
+        [
+            "The artist programs or runs.",
+            "The artist programs and runs."
+        ],
+        [
+            "The driver forgives or learns.",
+            "The driver forgives and learns."
+        ],
+        [
+            "The nurse promises or jumps.",
+            "The nurse promises and jumps."
+        ],
+        [
+            "The programmer codes or swims.",
+            "The programmer codes and swims."
+        ],
+        [
+            "Your sister reads or regrets.",
+            "Your sister reads and regrets."
+        ],
+        [
+            "The director researches or enjoys.",
+            "The director researches and enjoys."
+        ],
+        [
+            "Her father regrets or imagines.",
+            "Her father regrets and imagines."
+        ],
+        [
+            "Your sister longs or astonishes.",
+            "Your sister longs and astonishes."
+        ],
+        [
+            "The engineer paints or yearns.",
+            "The engineer paints and yearns."
+        ],
+        [
+            "The explorer innocent or discovers.",
+            "The explorer innocent and discovers."
+        ],
+        [
+            "The doctor experiments or laughs.",
+            "The doctor experiments and laughs."
+        ],
+        [
+            "The musician longs or explores.",
+            "The musician longs and explores."
+        ],
+        [
+            "Her father camps or rows.",
+            "Her father camps and rows."
+        ],
+        [
+            "The man experiments or researches.",
+            "The man experiments and researches."
+        ],
+        [
+            "The doctor experiments or loves.",
+            "The doctor experiments and loves."
+        ],
+        [
+            "The musician sails or sketches.",
+            "The musician sails and sketches."
+        ],
+        [
+            "The scientist appreciates or thinks.",
+            "The scientist appreciates and thinks."
+        ],
+        [
+            "The explorer laughs or hikes.",
+            "The explorer laughs and hikes."
+        ],
+        [
+            "The student builds or imagines.",
+            "The student builds and imagines."
+        ],
+        [
+            "His mother innovates or imagines.",
+            "His mother innovates and imagines."
+        ],
+        [
+            "The boy codes or sails.",
+            "The boy codes and sails."
+        ],
+        [
+            "The chef swims or longs.",
+            "The chef swims and longs."
+        ],
+        [
+            "The artist apologizes or sketches.",
+            "The artist apologizes and sketches."
+        ]
+    ],
+    "p_and_q_implique_p_or_q": [
+        [
+            "The engineer amazes and builds.",
+            "The engineer amazes or builds."
+        ],
+        [
+            "The musician pines and delights.",
+            "The musician pines or delights."
+        ],
+        [
+            "His mother fishes and films.",
+            "His mother fishes or films."
+        ],
+        [
+            "The king forgives and amazes.",
+            "The king forgives or amazes."
+        ],
+        [
+            "The king hates and yearns.",
+            "The king hates or yearns."
+        ],
+        [
+            "The programmer fishes and plays.",
+            "The programmer fishes or plays."
+        ],
+        [
+            "The pilot plays and skis.",
+            "The pilot plays or skis."
+        ],
+        [
+            "The nurse jumps and hikes.",
+            "The nurse jumps or hikes."
+        ],
+        [
+            "The man edits and builds.",
+            "The man edits or builds."
+        ],
+        [
+            "The dancer fishes and envies.",
+            "The dancer fishes or envies."
+        ],
+        [
+            "His mother betrays and appreciates.",
+            "His mother betrays or appreciates."
+        ],
+        [
+            "The queen amazes and regrets.",
+            "The queen amazes or regrets."
+        ],
+        [
+            "Your sister sleeps and explores.",
+            "Your sister sleeps or explores."
+        ],
+        [
+            "The dancer invents and draws.",
+            "The dancer invents or draws."
+        ],
+        [
+            "The scientist wakes and runs.",
+            "The scientist wakes or runs."
+        ],
+        [
+            "The doctor hikes and thinks.",
+            "The doctor hikes or thinks."
+        ],
+        [
+            "The pilot hates and sails.",
+            "The pilot hates or sails."
+        ],
+        [
+            "The student creates and edits.",
+            "The student creates or edits."
+        ],
+        [
+            "The designer steals and researches.",
+            "The designer steals or researches."
+        ],
+        [
+            "The writer pines and plays.",
+            "The writer pines or plays."
+        ],
+        [
+            "The pilot cheats and apologizes.",
+            "The pilot cheats or apologizes."
+        ],
+        [
+            "Her father skis and imagines.",
+            "Her father skis or imagines."
+        ],
+        [
+            "The doctor codes and adores.",
+            "The doctor codes or adores."
+        ],
+        [
+            "The scientist imagines and pines.",
+            "The scientist imagines or pines."
+        ],
+        [
+            "The designer astonishes and hikes.",
+            "The designer astonishes or hikes."
+        ],
+        [
+            "The boy astonishes and experiments.",
+            "The boy astonishes or experiments."
+        ],
+        [
+            "The scientist programs and travels.",
+            "The scientist programs or travels."
+        ],
+        [
+            "The writer apologizes and composes.",
+            "The writer apologizes or composes."
+        ],
+        [
+            "My friend designs and innovates.",
+            "My friend designs or innovates."
+        ],
+        [
+            "The woman wakes and experiments.",
+            "The woman wakes or experiments."
+        ],
+        [
+            "The chef sings and builds.",
+            "The chef sings or builds."
+        ],
+        [
+            "The woman skis and rows.",
+            "The woman skis or rows."
+        ],
+        [
+            "The dancer speaks and skis.",
+            "The dancer speaks or skis."
+        ],
+        [
+            "The architect loves and researches.",
+            "The architect loves or researches."
+        ],
+        [
+            "The painter lies and programs.",
+            "The painter lies or programs."
+        ],
+        [
+            "The writer invents and cycles.",
+            "The writer invents or cycles."
+        ],
+        [
+            "The scholar steals and steals.",
+            "The scholar steals or steals."
+        ],
+        [
+            "The man eats and dreams.",
+            "The man eats or dreams."
+        ],
+        [
+            "The explorer travels and hikes.",
+            "The explorer travels or hikes."
+        ],
+        [
+            "The musician amazes and thinks.",
+            "The musician amazes or thinks."
+        ],
+        [
+            "The programmer sleeps and runs.",
+            "The programmer sleeps or runs."
+        ],
+        [
+            "The chef drives and loves.",
+            "The chef drives or loves."
+        ],
+        [
+            "The queen draws and flies.",
+            "The queen draws or flies."
+        ],
+        [
+            "The queen designs and hikes.",
+            "The queen designs or hikes."
+        ],
+        [
+            "The musician yearns and forgives.",
+            "The musician yearns or forgives."
+        ],
+        [
+            "The woman amazes and runs.",
+            "The woman amazes or runs."
+        ],
+        [
+            "The scientist betrays and steals.",
+            "The scientist betrays or steals."
+        ],
+        [
+            "The scientist loves and camps.",
+            "The scientist loves or camps."
+        ],
+        [
+            "My friend yearns and runs.",
+            "My friend yearns or runs."
+        ],
+        [
+            "The painter runs and runs.",
+            "The painter runs or runs."
+        ],
+        [
+            "The king experiments and envies.",
+            "The king experiments or envies."
+        ],
+        [
+            "His mother sleeps and learns.",
+            "His mother sleeps or learns."
+        ],
+        [
+            "The doctor imagines and rows.",
+            "The doctor imagines or rows."
+        ],
+        [
+            "The queen creates and inspires.",
+            "The queen creates or inspires."
+        ],
+        [
+            "The driver loves and innovates.",
+            "The driver loves or innovates."
+        ],
+        [
+            "The director experiments and astonishes.",
+            "The director experiments or astonishes."
+        ],
+        [
+            "The engineer innovates and writes.",
+            "The engineer innovates or writes."
+        ],
+        [
+            "The nurse rows and photographs.",
+            "The nurse rows or photographs."
+        ],
+        [
+            "The explorer runs and regrets.",
+            "The explorer runs or regrets."
+        ],
+        [
+            "The man paints and skis.",
+            "The man paints or skis."
+        ],
+        [
+            "The man draws and regrets.",
+            "The man draws or regrets."
+        ],
+        [
+            "The artist hikes and sleeps.",
+            "The artist hikes or sleeps."
+        ],
+        [
+            "The king flies and cheats.",
+            "The king flies or cheats."
+        ],
+        [
+            "The artist photographs and imagines.",
+            "The artist photographs or imagines."
+        ],
+        [
+            "Her father films and regrets.",
+            "Her father films or regrets."
+        ],
+        [
+            "The engineer paints and creates.",
+            "The engineer paints or creates."
+        ],
+        [
+            "The dancer inspires and apologizes.",
+            "The dancer inspires or apologizes."
+        ],
+        [
+            "The actor appreciates and dreams.",
+            "The actor appreciates or dreams."
+        ],
+        [
+            "The explorer codes and builds.",
+            "The explorer codes or builds."
+        ],
+        [
+            "The student loves and learns.",
+            "The student loves or learns."
+        ],
+        [
+            "The doctor designs and creates.",
+            "The doctor designs or creates."
+        ],
+        [
+            "The driver sails and cries.",
+            "The driver sails or cries."
+        ],
+        [
+            "My friend promises and creates.",
+            "My friend promises or creates."
+        ],
+        [
+            "The programmer reads and fishes.",
+            "The programmer reads or fishes."
+        ],
+        [
+            "The soldier plays and pines.",
+            "The soldier plays or pines."
+        ],
+        [
+            "The king dreams and wins.",
+            "The king dreams or wins."
+        ],
+        [
+            "The programmer researches and sketches.",
+            "The programmer researches or sketches."
+        ],
+        [
+            "The director wins and researches.",
+            "The director wins or researches."
+        ],
+        [
+            "The designer designs and pines.",
+            "The designer designs or pines."
+        ],
+        [
+            "The actor delights and jumps.",
+            "The actor delights or jumps."
+        ],
+        [
+            "The scientist wins and adores.",
+            "The scientist wins or adores."
+        ],
+        [
+            "The dancer envies and sketches.",
+            "The dancer envies or sketches."
+        ],
+        [
+            "The artist works and climbs.",
+            "The artist works or climbs."
+        ],
+        [
+            "The writer envies and runs.",
+            "The writer envies or runs."
+        ],
+        [
+            "Your sister codes and enjoys.",
+            "Your sister codes or enjoys."
+        ],
+        [
+            "His mother competes and writes.",
+            "His mother competes or writes."
+        ],
+        [
+            "The writer wakes and dances.",
+            "The writer wakes or dances."
+        ],
+        [
+            "The painter loses and paints.",
+            "The painter loses or paints."
+        ],
+        [
+            "The chef amazes and experiments.",
+            "The chef amazes or experiments."
+        ],
+        [
+            "Her father rows and cherishes.",
+            "Her father rows or cherishes."
+        ],
+        [
+            "The explorer sketches and dances.",
+            "The explorer sketches or dances."
+        ],
+        [
+            "The programmer wakes and competes.",
+            "The programmer wakes or competes."
+        ],
+        [
+            "The actor skis and imagines.",
+            "The actor skis or imagines."
+        ],
+        [
+            "The explorer camps and fishes.",
+            "The explorer camps or fishes."
+        ],
+        [
+            "The scholar runs and cheats.",
+            "The scholar runs or cheats."
+        ],
+        [
+            "The nurse learns and runs.",
+            "The nurse learns or runs."
+        ],
+        [
+            "The man plays and loses.",
+            "The man plays or loses."
+        ],
+        [
+            "Her father dreams and draws.",
+            "Her father dreams or draws."
+        ],
+        [
+            "Her father rows and eats.",
+            "Her father rows or eats."
+        ],
+        [
+            "The man pines and designs.",
+            "The man pines or designs."
+        ]
+    ],
+    "p/q_implique_p_ou_q": [
+        [
+            "Your sister apologizes.",
+            "Your sister amazes or apologizes."
+        ],
+        [
+            "My friend thinks.",
+            "My friend thinks or codes."
+        ],
+        [
+            "The designer designs.",
+            "The designer designs or sails."
+        ],
+        [
+            "The engineer composes.",
+            "The engineer imagines or composes."
+        ],
+        [
+            "Your sister cries.",
+            "Your sister cries or longs."
+        ],
+        [
+            "The soldier swims.",
+            "The soldier composes or swims."
+        ],
+        [
+            "The explorer cherishes.",
+            "The explorer cherishes or runs."
+        ],
+        [
+            "The explorer hope.",
+            "The explorer travels or hope."
+        ],
+        [
+            "The pilot lies.",
+            "The pilot experiments or lies."
+        ],
+        [
+            "The nurse composes.",
+            "The nurse composes or explores."
+        ],
+        [
+            "Your sister photographs.",
+            "Your sister photographs or edits."
+        ],
+        [
+            "The pilot cheats.",
+            "The pilot experiments or cheats."
+        ],
+        [
+            "The chef travels.",
+            "The chef hope or travels."
+        ],
+        [
+            "Your sister films.",
+            "Your sister explores or films."
+        ],
+        [
+            "The explorer speaks.",
+            "The explorer speaks or cries."
+        ],
+        [
+            "The nurse appreciates.",
+            "The nurse appreciates or dances."
+        ],
+        [
+            "The woman sleeps.",
+            "The woman codes or sleeps."
+        ],
+        [
+            "The king travels.",
+            "The king travels or betrays."
+        ],
+        [
+            "The writer rows.",
+            "The writer rows or regrets."
+        ],
+        [
+            "The soldier apologizes.",
+            "The soldier apologizes or programs."
+        ],
+        [
+            "The actor speaks.",
+            "The actor speaks or programs."
+        ],
+        [
+            "My friend sleeps.",
+            "My friend travels or sleeps."
+        ],
+        [
+            "The programmer inspires.",
+            "The programmer inspires or composes."
+        ],
+        [
+            "The driver dances.",
+            "The driver amazes or dances."
+        ],
+        [
+            "The writer wins.",
+            "The writer wins or flies."
+        ],
+        [
+            "The pilot innocent.",
+            "The pilot innocent or competes."
+        ],
+        [
+            "The nurse draws.",
+            "The nurse draws or imagines."
+        ],
+        [
+            "The writer edits.",
+            "The writer edits or innocent."
+        ],
+        [
+            "The doctor envies.",
+            "The doctor speaks or envies."
+        ],
+        [
+            "The driver experiments.",
+            "The driver experiments or climbs."
+        ],
+        [
+            "His mother works.",
+            "His mother experiments or works."
+        ],
+        [
+            "The engineer explores.",
+            "The engineer explores or regrets."
+        ],
+        [
+            "The painter learns.",
+            "The painter innocent or learns."
+        ],
+        [
+            "The painter cycles.",
+            "The painter cycles or enjoys."
+        ],
+        [
+            "Her father envies.",
+            "Her father works or envies."
+        ],
+        [
+            "The driver enjoys.",
+            "The driver admits or enjoys."
+        ],
+        [
+            "The writer flies.",
+            "The writer amazes or flies."
+        ],
+        [
+            "The dancer sketches.",
+            "The dancer forgives or sketches."
+        ],
+        [
+            "The chef photographs.",
+            "The chef photographs or adores."
+        ],
+        [
+            "The programmer adores.",
+            "The programmer adores or rows."
+        ],
+        [
+            "The musician researches.",
+            "The musician explores or researches."
+        ],
+        [
+            "The man sings.",
+            "The man sings or paints."
+        ],
+        [
+            "The chef researches.",
+            "The chef researches or fishes."
+        ],
+        [
+            "The nurse experiments.",
+            "The nurse creates or experiments."
+        ],
+        [
+            "The king inspires.",
+            "The king sails or inspires."
+        ],
+        [
+            "The pilot writes.",
+            "The pilot writes or hates."
+        ],
+        [
+            "The nurse films.",
+            "The nurse films or writes."
+        ],
+        [
+            "The doctor codes.",
+            "The doctor codes or amazes."
+        ],
+        [
+            "The programmer paints.",
+            "The programmer fishes or paints."
+        ],
+        [
+            "The designer writes.",
+            "The designer writes or camps."
+        ],
+        [
+            "The chef hope.",
+            "The chef hope or lies."
+        ],
+        [
+            "The driver creates.",
+            "The driver edits or creates."
+        ],
+        [
+            "The dancer flies.",
+            "The dancer flies or cherishes."
+        ],
+        [
+            "The architect skis.",
+            "The architect skis or cries."
+        ],
+        [
+            "The scholar drives.",
+            "The scholar drives or envies."
+        ],
+        [
+            "The boy researches.",
+            "The boy paints or researches."
+        ],
+        [
+            "The athlete speaks.",
+            "The athlete amazes or speaks."
+        ],
+        [
+            "The woman amazes.",
+            "The woman learns or amazes."
+        ],
+        [
+            "The engineer dreams.",
+            "The engineer dreams or explores."
+        ],
+        [
+            "The actor betrays.",
+            "The actor invents or betrays."
+        ],
+        [
+            "The dancer regrets.",
+            "The dancer envies or regrets."
+        ],
+        [
+            "The dancer cries.",
+            "The dancer cries or wakes."
+        ],
+        [
+            "His mother amazes.",
+            "His mother programs or amazes."
+        ],
+        [
+            "The designer reads.",
+            "The designer reads or edits."
+        ],
+        [
+            "The designer apologizes.",
+            "The designer runs or apologizes."
+        ],
+        [
+            "The writer runs.",
+            "The writer runs or longs."
+        ],
+        [
+            "The doctor draws.",
+            "The doctor dances or draws."
+        ],
+        [
+            "The student travels.",
+            "The student climbs or travels."
+        ],
+        [
+            "The doctor hope.",
+            "The doctor hope or sails."
+        ],
+        [
+            "The musician eats.",
+            "The musician adores or eats."
+        ],
+        [
+            "The boy travels.",
+            "The boy promises or travels."
+        ],
+        [
+            "The engineer cycles.",
+            "The engineer misses or cycles."
+        ],
+        [
+            "The explorer inspires.",
+            "The explorer inspires or innovates."
+        ],
+        [
+            "The engineer rows.",
+            "The engineer rows or wakes."
+        ],
+        [
+            "The queen invents.",
+            "The queen invents or adores."
+        ],
+        [
+            "The student climbs.",
+            "The student climbs or flies."
+        ],
+        [
+            "The student astonishes.",
+            "The student astonishes or sails."
+        ],
+        [
+            "The driver photographs.",
+            "The driver photographs or sails."
+        ],
+        [
+            "The chef astonishes.",
+            "The chef swims or astonishes."
+        ],
+        [
+            "His mother builds.",
+            "His mother builds or explores."
+        ],
+        [
+            "The writer imagines.",
+            "The writer adores or imagines."
+        ],
+        [
+            "The driver researches.",
+            "The driver drives or researches."
+        ],
+        [
+            "The programmer sings.",
+            "The programmer learns or sings."
+        ],
+        [
+            "The man longs.",
+            "The man longs or amazes."
+        ],
+        [
+            "The queen wins.",
+            "The queen wins or speaks."
+        ],
+        [
+            "My friend forgives.",
+            "My friend lies or forgives."
+        ],
+        [
+            "The dancer explores.",
+            "The dancer imagines or explores."
+        ],
+        [
+            "The writer runs.",
+            "The writer films or runs."
+        ],
+        [
+            "The writer climbs.",
+            "The writer competes or climbs."
+        ],
+        [
+            "My friend steals.",
+            "My friend steals or apologizes."
+        ],
+        [
+            "The chef invents.",
+            "The chef invents or drives."
+        ],
+        [
+            "The driver admits.",
+            "The driver admits or jumps."
+        ],
+        [
+            "The doctor climbs.",
+            "The doctor climbs or invents."
+        ],
+        [
+            "The artist astonishes.",
+            "The artist astonishes or designs."
+        ],
+        [
+            "The chef codes.",
+            "The chef codes or plays."
+        ],
+        [
+            "The architect laughs.",
+            "The architect cries or laughs."
+        ],
+        [
+            "The engineer wakes.",
+            "The engineer wakes or steals."
+        ],
+        [
+            "The programmer writes.",
+            "The programmer sleeps or writes."
+        ],
+        [
+            "The architect learns.",
+            "The architect learns or wins."
+        ],
+        [
+            "My friend laughs.",
+            "My friend laughs or adores."
+        ]
+    ],
+    "PE_p_or_q_implies_PE_p_and_PE_q": [
+        [
+            "The student is permitted to teach or swim.",
+            "The student is permitted to teach and is permitted to swim."
+        ],
+        [
+            "The writer is permitted to sketch or yearn.",
+            "The writer is permitted to sketch and is permitted to yearn."
+        ],
+        [
+            "Her father is permitted to win or play.",
+            "Her father is permitted to win and is permitted to play."
+        ],
+        [
+            "The soldier is permitted to explore or promise.",
+            "The soldier is permitted to explore and is permitted to promise."
+        ],
+        [
+            "The student is permitted to design or inspire.",
+            "The student is permitted to design and is permitted to inspire."
+        ],
+        [
+            "My friend is permitted to create or laugh.",
+            "My friend is permitted to create and is permitted to laugh."
+        ],
+        [
+            "The dancer is permitted to learn or dream.",
+            "The dancer is permitted to learn and is permitted to dream."
+        ],
+        [
+            "The soldier is permitted to appreciate or lie.",
+            "The soldier is permitted to appreciate and is permitted to lie."
+        ],
+        [
+            "Your sister is permitted to fish or astonished.",
+            "Your sister is permitted to fish and is permitted to astonished."
+        ],
+        [
+            "The chef is permitted to learn or forgive.",
+            "The chef is permitted to learn and is permitted to forgive."
+        ],
+        [
+            "Your sister is permitted to fly or sail.",
+            "Your sister is permitted to fly and is permitted to sail."
+        ],
+        [
+            "The doctor is permitted to innovate or compete.",
+            "The doctor is permitted to innovate and is permitted to compete."
+        ],
+        [
+            "The king is permitted to win or experiment.",
+            "The king is permitted to win and is permitted to experiment."
+        ],
+        [
+            "The king is permitted to admit or explore.",
+            "The king is permitted to admit and is permitted to explore."
+        ],
+        [
+            "The actor is permitted to inspire or photograph.",
+            "The actor is permitted to inspire and is permitted to photograph."
+        ],
+        [
+            "The scholar is permitted to amaze or delight.",
+            "The scholar is permitted to amaze and is permitted to delight."
+        ],
+        [
+            "The man is permitted to amaze or teach.",
+            "The man is permitted to amaze and is permitted to teach."
+        ],
+        [
+            "The writer is permitted to camp or compose.",
+            "The writer is permitted to camp and is permitted to compose."
+        ],
+        [
+            "The queen is permitted to cry or write.",
+            "The queen is permitted to cry and is permitted to write."
+        ],
+        [
+            "The queen is permitted to hike or design.",
+            "The queen is permitted to hike and is permitted to design."
+        ],
+        [
+            "The man is permitted to speak or wake.",
+            "The man is permitted to speak and is permitted to wake."
+        ],
+        [
+            "The nurse is permitted to dance or innovate.",
+            "The nurse is permitted to dance and is permitted to innovate."
+        ],
+        [
+            "The chef is permitted to compete or research.",
+            "The chef is permitted to compete and is permitted to research."
+        ],
+        [
+            "The king is permitted to cherish or experiment.",
+            "The king is permitted to cherish and is permitted to experiment."
+        ],
+        [
+            "The doctor is permitted to discover or paint.",
+            "The doctor is permitted to discover and is permitted to paint."
+        ],
+        [
+            "The king is permitted to sail or imagine.",
+            "The king is permitted to sail and is permitted to imagine."
+        ],
+        [
+            "The scientist is permitted to photograph or dance.",
+            "The scientist is permitted to photograph and is permitted to dance."
+        ],
+        [
+            "The soldier is permitted to wake or sleep.",
+            "The soldier is permitted to wake and is permitted to sleep."
+        ],
+        [
+            "My friend is permitted to explore or steal.",
+            "My friend is permitted to explore and is permitted to steal."
+        ],
+        [
+            "The scientist is permitted to program or dance.",
+            "The scientist is permitted to program and is permitted to dance."
+        ],
+        [
+            "The scientist is permitted to pine or invent.",
+            "The scientist is permitted to pine and is permitted to invent."
+        ],
+        [
+            "The actor is permitted to photograph or explore.",
+            "The actor is permitted to photograph and is permitted to explore."
+        ],
+        [
+            "The scientist is permitted to yearn or dream.",
+            "The scientist is permitted to yearn and is permitted to dream."
+        ],
+        [
+            "Her father is permitted to yearn or yearn.",
+            "Her father is permitted to yearn and is permitted to yearn."
+        ],
+        [
+            "The architect is permitted to hike or amazed.",
+            "The architect is permitted to hike and is permitted to amazed."
+        ],
+        [
+            "His mother is permitted to regret or discover.",
+            "His mother is permitted to regret and is permitted to discover."
+        ],
+        [
+            "The woman is permitted to compete or climb.",
+            "The woman is permitted to compete and is permitted to climb."
+        ],
+        [
+            "The man is permitted to research or write.",
+            "The man is permitted to research and is permitted to write."
+        ],
+        [
+            "The engineer is permitted to pine or teach.",
+            "The engineer is permitted to pine and is permitted to teach."
+        ],
+        [
+            "The artist is permitted to delight or admit.",
+            "The artist is permitted to delight and is permitted to admit."
+        ],
+        [
+            "The scientist is permitted to astonished or speak.",
+            "The scientist is permitted to astonished and is permitted to speak."
+        ],
+        [
+            "Your sister is permitted to design or dream.",
+            "Your sister is permitted to design and is permitted to dream."
+        ],
+        [
+            "The designer is permitted to cherish or admit.",
+            "The designer is permitted to cherish and is permitted to admit."
+        ],
+        [
+            "The architect is permitted to discover or admit.",
+            "The architect is permitted to discover and is permitted to admit."
+        ],
+        [
+            "The scientist is permitted to enjoy or camp.",
+            "The scientist is permitted to enjoy and is permitted to camp."
+        ],
+        [
+            "The writer is permitted to enjoy or hike.",
+            "The writer is permitted to enjoy and is permitted to hike."
+        ],
+        [
+            "The architect is permitted to inspire or sing.",
+            "The architect is permitted to inspire and is permitted to sing."
+        ],
+        [
+            "The actor is permitted to jump or hike.",
+            "The actor is permitted to jump and is permitted to hike."
+        ],
+        [
+            "The man is permitted to dream or photograph.",
+            "The man is permitted to dream and is permitted to photograph."
+        ],
+        [
+            "Your sister is permitted to promise or steal.",
+            "Your sister is permitted to promise and is permitted to steal."
+        ],
+        [
+            "The student is permitted to research or edit.",
+            "The student is permitted to research and is permitted to edit."
+        ],
+        [
+            "The man is permitted to amazed or long.",
+            "The man is permitted to amazed and is permitted to long."
+        ],
+        [
+            "The writer is permitted to paint or build.",
+            "The writer is permitted to paint and is permitted to build."
+        ],
+        [
+            "The architect is permitted to travel or imagine.",
+            "The architect is permitted to travel and is permitted to imagine."
+        ],
+        [
+            "The man is permitted to work or paint.",
+            "The man is permitted to work and is permitted to paint."
+        ],
+        [
+            "Her father is permitted to experiment or cry.",
+            "Her father is permitted to experiment and is permitted to cry."
+        ],
+        [
+            "My friend is permitted to sing or discover.",
+            "My friend is permitted to sing and is permitted to discover."
+        ],
+        [
+            "The musician is permitted to jump or fly.",
+            "The musician is permitted to jump and is permitted to fly."
+        ],
+        [
+            "The scientist is permitted to cheat or edit.",
+            "The scientist is permitted to cheat and is permitted to edit."
+        ],
+        [
+            "His mother is permitted to envy or row.",
+            "His mother is permitted to envy and is permitted to row."
+        ],
+        [
+            "The doctor is permitted to adore or appreciate.",
+            "The doctor is permitted to adore and is permitted to appreciate."
+        ],
+        [
+            "The scholar is permitted to innovate or speak.",
+            "The scholar is permitted to innovate and is permitted to speak."
+        ],
+        [
+            "The designer is permitted to sail or experiment.",
+            "The designer is permitted to sail and is permitted to experiment."
+        ],
+        [
+            "My friend is permitted to edit or steal.",
+            "My friend is permitted to edit and is permitted to steal."
+        ],
+        [
+            "The woman is permitted to steal or forgive.",
+            "The woman is permitted to steal and is permitted to forgive."
+        ],
+        [
+            "The chef is permitted to sail or design.",
+            "The chef is permitted to sail and is permitted to design."
+        ],
+        [
+            "The director is permitted to adore or draw.",
+            "The director is permitted to adore and is permitted to draw."
+        ],
+        [
+            "The doctor is permitted to fish or amazed.",
+            "The doctor is permitted to fish and is permitted to amazed."
+        ],
+        [
+            "The driver is permitted to love or write.",
+            "The driver is permitted to love and is permitted to write."
+        ],
+        [
+            "The nurse is permitted to learn or write.",
+            "The nurse is permitted to learn and is permitted to write."
+        ],
+        [
+            "The writer is permitted to read or climb.",
+            "The writer is permitted to read and is permitted to climb."
+        ],
+        [
+            "The engineer is permitted to apologize or enjoy.",
+            "The engineer is permitted to apologize and is permitted to enjoy."
+        ],
+        [
+            "The soldier is permitted to experiment or drive.",
+            "The soldier is permitted to experiment and is permitted to drive."
+        ],
+        [
+            "The musician is permitted to enjoy or write.",
+            "The musician is permitted to enjoy and is permitted to write."
+        ],
+        [
+            "The man is permitted to love or work.",
+            "The man is permitted to love and is permitted to work."
+        ],
+        [
+            "The nurse is permitted to discover or lose.",
+            "The nurse is permitted to discover and is permitted to lose."
+        ],
+        [
+            "The artist is permitted to admit or cycle.",
+            "The artist is permitted to admit and is permitted to cycle."
+        ],
+        [
+            "The chef is permitted to paint or sleep.",
+            "The chef is permitted to paint and is permitted to sleep."
+        ],
+        [
+            "The doctor is permitted to sleep or imagine.",
+            "The doctor is permitted to sleep and is permitted to imagine."
+        ],
+        [
+            "The dancer is permitted to lie or compose.",
+            "The dancer is permitted to lie and is permitted to compose."
+        ],
+        [
+            "The musician is permitted to lie or miss.",
+            "The musician is permitted to lie and is permitted to miss."
+        ],
+        [
+            "The artist is permitted to sail or jump.",
+            "The artist is permitted to sail and is permitted to jump."
+        ],
+        [
+            "The painter is permitted to row or swim.",
+            "The painter is permitted to row and is permitted to swim."
+        ],
+        [
+            "The soldier is permitted to betray or innovate.",
+            "The soldier is permitted to betray and is permitted to innovate."
+        ],
+        [
+            "Your sister is permitted to climb or work.",
+            "Your sister is permitted to climb and is permitted to work."
+        ],
+        [
+            "His mother is permitted to cherish or cheat.",
+            "His mother is permitted to cherish and is permitted to cheat."
+        ],
+        [
+            "The doctor is permitted to explore or inspire.",
+            "The doctor is permitted to explore and is permitted to inspire."
+        ],
+        [
+            "The man is permitted to yearn or long.",
+            "The man is permitted to yearn and is permitted to long."
+        ],
+        [
+            "The programmer is permitted to innovate or hope.",
+            "The programmer is permitted to innovate and is permitted to hope."
+        ],
+        [
+            "Her father is permitted to swim or play.",
+            "Her father is permitted to swim and is permitted to play."
+        ],
+        [
+            "The architect is permitted to write or win.",
+            "The architect is permitted to write and is permitted to win."
+        ],
+        [
+            "The queen is permitted to sleep or film.",
+            "The queen is permitted to sleep and is permitted to film."
+        ],
+        [
+            "The engineer is permitted to jump or play.",
+            "The engineer is permitted to jump and is permitted to play."
+        ],
+        [
+            "The driver is permitted to program or astonished.",
+            "The driver is permitted to program and is permitted to astonished."
+        ],
+        [
+            "Your sister is permitted to read or discover.",
+            "Your sister is permitted to read and is permitted to discover."
+        ],
+        [
+            "The driver is permitted to photograph or wake.",
+            "The driver is permitted to photograph and is permitted to wake."
+        ],
+        [
+            "The boy is permitted to delight or cheat.",
+            "The boy is permitted to delight and is permitted to cheat."
+        ],
+        [
+            "The dancer is permitted to appreciate or sleep.",
+            "The dancer is permitted to appreciate and is permitted to sleep."
+        ],
+        [
+            "The artist is permitted to film or row.",
+            "The artist is permitted to film and is permitted to row."
+        ],
+        [
+            "The actor is permitted to camp or film.",
+            "The actor is permitted to camp and is permitted to film."
+        ]
+    ],
+    "PE_p_or_q_implies_PE_p_/_PE_q": [
+        [
+            "The man is permitted to climb or jump.",
+            "The man is permitted to jump."
+        ],
+        [
+            "The nurse is permitted to camp or steal.",
+            "The nurse is permitted to steal."
+        ],
+        [
+            "The athlete is permitted to amazed or cry.",
+            "The athlete is permitted to cry."
+        ],
+        [
+            "The musician is permitted to fish or speak.",
+            "The musician is permitted to fish."
+        ],
+        [
+            "The woman is permitted to photograph or innocent.",
+            "The woman is permitted to photograph."
+        ],
+        [
+            "His mother is permitted to create or betray.",
+            "His mother is permitted to betray."
+        ],
+        [
+            "The driver is permitted to astonished or run.",
+            "The driver is permitted to astonished."
+        ],
+        [
+            "The queen is permitted to adore or amaze.",
+            "The queen is permitted to amaze."
+        ],
+        [
+            "The scientist is permitted to miss or amaze.",
+            "The scientist is permitted to miss."
+        ],
+        [
+            "The architect is permitted to speak or eat.",
+            "The architect is permitted to eat."
+        ],
+        [
+            "The director is permitted to row or research.",
+            "The director is permitted to row."
+        ],
+        [
+            "The student is permitted to imagine or edit.",
+            "The student is permitted to imagine."
+        ],
+        [
+            "The soldier is permitted to apologize or sail.",
+            "The soldier is permitted to sail."
+        ],
+        [
+            "The doctor is permitted to sail or play.",
+            "The doctor is permitted to sail."
+        ],
+        [
+            "The king is permitted to forgive or astonish.",
+            "The king is permitted to astonish."
+        ],
+        [
+            "The artist is permitted to paint or inspire.",
+            "The artist is permitted to inspire."
+        ],
+        [
+            "His mother is permitted to experiment or long.",
+            "His mother is permitted to experiment."
+        ],
+        [
+            "The driver is permitted to design or speak.",
+            "The driver is permitted to design."
+        ],
+        [
+            "Your sister is permitted to love or win.",
+            "Your sister is permitted to love."
+        ],
+        [
+            "Her father is permitted to long or enjoy.",
+            "Her father is permitted to enjoy."
+        ],
+        [
+            "The pilot is permitted to drive or learn.",
+            "The pilot is permitted to learn."
+        ],
+        [
+            "The dancer is permitted to create or pine.",
+            "The dancer is permitted to create."
+        ],
+        [
+            "Your sister is permitted to learn or cherish.",
+            "Your sister is permitted to cherish."
+        ],
+        [
+            "The artist is permitted to lose or drive.",
+            "The artist is permitted to drive."
+        ],
+        [
+            "The queen is permitted to program or discover.",
+            "The queen is permitted to discover."
+        ],
+        [
+            "The man is permitted to pine or adore.",
+            "The man is permitted to pine."
+        ],
+        [
+            "The woman is permitted to miss or laugh.",
+            "The woman is permitted to laugh."
+        ],
+        [
+            "Her father is permitted to discover or swim.",
+            "Her father is permitted to swim."
+        ],
+        [
+            "The scholar is permitted to admit or swim.",
+            "The scholar is permitted to swim."
+        ],
+        [
+            "The explorer is permitted to program or read.",
+            "The explorer is permitted to program."
+        ],
+        [
+            "My friend is permitted to fish or edit.",
+            "My friend is permitted to fish."
+        ],
+        [
+            "The athlete is permitted to envy or paint.",
+            "The athlete is permitted to paint."
+        ],
+        [
+            "The actor is permitted to code or fish.",
+            "The actor is permitted to fish."
+        ],
+        [
+            "The programmer is permitted to fly or forgive.",
+            "The programmer is permitted to fly."
+        ],
+        [
+            "The actor is permitted to write or fly.",
+            "The actor is permitted to fly."
+        ],
+        [
+            "The athlete is permitted to draw or drive.",
+            "The athlete is permitted to draw."
+        ],
+        [
+            "My friend is permitted to compose or compete.",
+            "My friend is permitted to compose."
+        ],
+        [
+            "The director is permitted to edit or pine.",
+            "The director is permitted to edit."
+        ],
+        [
+            "The nurse is permitted to yearn or think.",
+            "The nurse is permitted to think."
+        ],
+        [
+            "The explorer is permitted to laugh or invent.",
+            "The explorer is permitted to laugh."
+        ],
+        [
+            "The man is permitted to adore or win.",
+            "The man is permitted to adore."
+        ],
+        [
+            "The boy is permitted to admit or drive.",
+            "The boy is permitted to admit."
+        ],
+        [
+            "The scientist is permitted to climb or film.",
+            "The scientist is permitted to climb."
+        ],
+        [
+            "The programmer is permitted to ski or imagine.",
+            "The programmer is permitted to ski."
+        ],
+        [
+            "The pilot is permitted to drive or wake.",
+            "The pilot is permitted to wake."
+        ],
+        [
+            "The designer is permitted to work or think.",
+            "The designer is permitted to work."
+        ],
+        [
+            "The queen is permitted to explore or appreciate.",
+            "The queen is permitted to explore."
+        ],
+        [
+            "The designer is permitted to travel or fly.",
+            "The designer is permitted to fly."
+        ],
+        [
+            "The boy is permitted to apologize or discover.",
+            "The boy is permitted to discover."
+        ],
+        [
+            "The actor is permitted to adore or astonished.",
+            "The actor is permitted to adore."
+        ],
+        [
+            "The king is permitted to hate or jump.",
+            "The king is permitted to hate."
+        ],
+        [
+            "The soldier is permitted to program or wake.",
+            "The soldier is permitted to wake."
+        ],
+        [
+            "The designer is permitted to drive or travel.",
+            "The designer is permitted to travel."
+        ],
+        [
+            "The scientist is permitted to photograph or betray.",
+            "The scientist is permitted to photograph."
+        ],
+        [
+            "The designer is permitted to draw or lose.",
+            "The designer is permitted to lose."
+        ],
+        [
+            "The engineer is permitted to miss or drive.",
+            "The engineer is permitted to miss."
+        ],
+        [
+            "The chef is permitted to sing or regret.",
+            "The chef is permitted to sing."
+        ],
+        [
+            "His mother is permitted to discover or innocent.",
+            "His mother is permitted to discover."
+        ],
+        [
+            "The queen is permitted to program or forgive.",
+            "The queen is permitted to program."
+        ],
+        [
+            "The architect is permitted to teach or invent.",
+            "The architect is permitted to teach."
+        ],
+        [
+            "Your sister is permitted to ski or photograph.",
+            "Your sister is permitted to ski."
+        ],
+        [
+            "The boy is permitted to paint or envy.",
+            "The boy is permitted to paint."
+        ],
+        [
+            "The programmer is permitted to research or delight.",
+            "The programmer is permitted to delight."
+        ],
+        [
+            "The athlete is permitted to innovate or paint.",
+            "The athlete is permitted to innovate."
+        ],
+        [
+            "My friend is permitted to compose or invent.",
+            "My friend is permitted to compose."
+        ],
+        [
+            "My friend is permitted to swim or compose.",
+            "My friend is permitted to swim."
+        ],
+        [
+            "His mother is permitted to lose or hate.",
+            "His mother is permitted to lose."
+        ],
+        [
+            "The artist is permitted to experiment or promise.",
+            "The artist is permitted to experiment."
+        ],
+        [
+            "The musician is permitted to drive or hike.",
+            "The musician is permitted to hike."
+        ],
+        [
+            "The scholar is permitted to sing or cherish.",
+            "The scholar is permitted to cherish."
+        ],
+        [
+            "The athlete is permitted to yearn or edit.",
+            "The athlete is permitted to edit."
+        ],
+        [
+            "The actor is permitted to adore or cheat.",
+            "The actor is permitted to adore."
+        ],
+        [
+            "The engineer is permitted to win or drive.",
+            "The engineer is permitted to win."
+        ],
+        [
+            "The painter is permitted to code or research.",
+            "The painter is permitted to research."
+        ],
+        [
+            "The student is permitted to compete or run.",
+            "The student is permitted to compete."
+        ],
+        [
+            "The chef is permitted to run or hate.",
+            "The chef is permitted to run."
+        ],
+        [
+            "The painter is permitted to astonish or miss.",
+            "The painter is permitted to astonish."
+        ],
+        [
+            "The man is permitted to teach or research.",
+            "The man is permitted to research."
+        ],
+        [
+            "The dancer is permitted to ski or forgive.",
+            "The dancer is permitted to forgive."
+        ],
+        [
+            "The boy is permitted to admit or invent.",
+            "The boy is permitted to admit."
+        ],
+        [
+            "The student is permitted to sing or cherish.",
+            "The student is permitted to sing."
+        ],
+        [
+            "Your sister is permitted to astonished or eat.",
+            "Your sister is permitted to eat."
+        ],
+        [
+            "The architect is permitted to dream or play.",
+            "The architect is permitted to dream."
+        ],
+        [
+            "The artist is permitted to pine or delight.",
+            "The artist is permitted to delight."
+        ],
+        [
+            "His mother is permitted to swim or miss.",
+            "His mother is permitted to miss."
+        ],
+        [
+            "Her father is permitted to adore or innocent.",
+            "Her father is permitted to adore."
+        ],
+        [
+            "The artist is permitted to learn or draw.",
+            "The artist is permitted to draw."
+        ],
+        [
+            "The athlete is permitted to innocent or astonished.",
+            "The athlete is permitted to astonished."
+        ],
+        [
+            "The man is permitted to speak or learn.",
+            "The man is permitted to speak."
+        ],
+        [
+            "The dancer is permitted to discover or explore.",
+            "The dancer is permitted to discover."
+        ],
+        [
+            "The driver is permitted to promise or paint.",
+            "The driver is permitted to promise."
+        ],
+        [
+            "The dancer is permitted to lose or write.",
+            "The dancer is permitted to lose."
+        ],
+        [
+            "Her father is permitted to sketch or code.",
+            "Her father is permitted to code."
+        ],
+        [
+            "The designer is permitted to miss or sleep.",
+            "The designer is permitted to miss."
+        ],
+        [
+            "The soldier is permitted to sail or promise.",
+            "The soldier is permitted to promise."
+        ],
+        [
+            "His mother is permitted to draw or sleep.",
+            "His mother is permitted to sleep."
+        ],
+        [
+            "The driver is permitted to work or laugh.",
+            "The driver is permitted to work."
+        ],
+        [
+            "The designer is permitted to laugh or invent.",
+            "The designer is permitted to laugh."
+        ],
+        [
+            "The student is permitted to enjoy or discover.",
+            "The student is permitted to enjoy."
+        ],
+        [
+            "The designer is permitted to program or cry.",
+            "The designer is permitted to cry."
+        ]
+    ],
+    "PE_p_or_q_implies_non_PE_p_and_PE_q_négation_explicite": [
+        [
+            "The king is permitted to love or pine.",
+            "It is not the case that the king is permitted to love and is permitted to pine."
+        ],
+        [
+            "The designer is permitted to win or innovate.",
+            "It is not the case that the designer is permitted to win and is permitted to innovate."
+        ],
+        [
+            "The architect is permitted to betray or cycle.",
+            "It is not the case that the architect is permitted to betray and is permitted to cycle."
+        ],
+        [
+            "The scholar is permitted to pine or love.",
+            "It is not the case that the scholar is permitted to pine and is permitted to love."
+        ],
+        [
+            "The soldier is permitted to envy or write.",
+            "It is not the case that the soldier is permitted to envy and is permitted to write."
+        ],
+        [
+            "The athlete is permitted to paint or row.",
+            "It is not the case that the athlete is permitted to paint and is permitted to row."
+        ],
+        [
+            "The designer is permitted to love or promise.",
+            "It is not the case that the designer is permitted to love and is permitted to promise."
+        ],
+        [
+            "The queen is permitted to hope or admit.",
+            "It is not the case that the queen is permitted to hope and is permitted to admit."
+        ],
+        [
+            "The musician is permitted to program or sketch.",
+            "It is not the case that the musician is permitted to program and is permitted to sketch."
+        ],
+        [
+            "The scholar is permitted to hike or film.",
+            "It is not the case that the scholar is permitted to hike and is permitted to film."
+        ],
+        [
+            "The athlete is permitted to admit or compete.",
+            "It is not the case that the athlete is permitted to admit and is permitted to compete."
+        ],
+        [
+            "Your sister is permitted to pine or create.",
+            "It is not the case that your sister is permitted to pine and is permitted to create."
+        ],
+        [
+            "His mother is permitted to swim or invent.",
+            "It is not the case that his mother is permitted to swim and is permitted to invent."
+        ],
+        [
+            "My friend is permitted to betray or code.",
+            "It is not the case that my friend is permitted to betray and is permitted to code."
+        ],
+        [
+            "My friend is permitted to play or adore.",
+            "It is not the case that my friend is permitted to play and is permitted to adore."
+        ],
+        [
+            "The engineer is permitted to eat or fish.",
+            "It is not the case that the engineer is permitted to eat and is permitted to fish."
+        ],
+        [
+            "The actor is permitted to delight or fish.",
+            "It is not the case that the actor is permitted to delight and is permitted to fish."
+        ],
+        [
+            "The designer is permitted to astonished or innocent.",
+            "It is not the case that the designer is permitted to astonished and is permitted to innocent."
+        ],
+        [
+            "The writer is permitted to swim or compose.",
+            "It is not the case that the writer is permitted to swim and is permitted to compose."
+        ],
+        [
+            "The painter is permitted to cheat or amaze.",
+            "It is not the case that the painter is permitted to cheat and is permitted to amaze."
+        ],
+        [
+            "The athlete is permitted to draw or draw.",
+            "It is not the case that the athlete is permitted to draw and is permitted to draw."
+        ],
+        [
+            "The man is permitted to draw or yearn.",
+            "It is not the case that the man is permitted to draw and is permitted to yearn."
+        ],
+        [
+            "The pilot is permitted to appreciate or long.",
+            "It is not the case that the pilot is permitted to appreciate and is permitted to long."
+        ],
+        [
+            "The pilot is permitted to sing or miss.",
+            "It is not the case that the pilot is permitted to sing and is permitted to miss."
+        ],
+        [
+            "The king is permitted to row or research.",
+            "It is not the case that the king is permitted to row and is permitted to research."
+        ],
+        [
+            "The queen is permitted to enjoy or admit.",
+            "It is not the case that the queen is permitted to enjoy and is permitted to admit."
+        ],
+        [
+            "The designer is permitted to discover or innocent.",
+            "It is not the case that the designer is permitted to discover and is permitted to innocent."
+        ],
+        [
+            "The dancer is permitted to laugh or camp.",
+            "It is not the case that the dancer is permitted to laugh and is permitted to camp."
+        ],
+        [
+            "The architect is permitted to delight or run.",
+            "It is not the case that the architect is permitted to delight and is permitted to run."
+        ],
+        [
+            "My friend is permitted to research or pine.",
+            "It is not the case that my friend is permitted to research and is permitted to pine."
+        ],
+        [
+            "The artist is permitted to research or teach.",
+            "It is not the case that the artist is permitted to research and is permitted to teach."
+        ],
+        [
+            "The nurse is permitted to row or swim.",
+            "It is not the case that the nurse is permitted to row and is permitted to swim."
+        ],
+        [
+            "The nurse is permitted to inspire or pine.",
+            "It is not the case that the nurse is permitted to inspire and is permitted to pine."
+        ],
+        [
+            "His mother is permitted to love or experiment.",
+            "It is not the case that his mother is permitted to love and is permitted to experiment."
+        ],
+        [
+            "My friend is permitted to innovate or compete.",
+            "It is not the case that my friend is permitted to innovate and is permitted to compete."
+        ],
+        [
+            "The athlete is permitted to fly or invent.",
+            "It is not the case that the athlete is permitted to fly and is permitted to invent."
+        ],
+        [
+            "The writer is permitted to build or sail.",
+            "It is not the case that the writer is permitted to build and is permitted to sail."
+        ],
+        [
+            "The boy is permitted to learn or paint.",
+            "It is not the case that the boy is permitted to learn and is permitted to paint."
+        ],
+        [
+            "The architect is permitted to dream or innovate.",
+            "It is not the case that the architect is permitted to dream and is permitted to innovate."
+        ],
+        [
+            "The engineer is permitted to teach or dream.",
+            "It is not the case that the engineer is permitted to teach and is permitted to dream."
+        ],
+        [
+            "The woman is permitted to love or appreciate.",
+            "It is not the case that the woman is permitted to love and is permitted to appreciate."
+        ],
+        [
+            "The woman is permitted to wake or design.",
+            "It is not the case that the woman is permitted to wake and is permitted to design."
+        ],
+        [
+            "The student is permitted to swim or dream.",
+            "It is not the case that the student is permitted to swim and is permitted to dream."
+        ],
+        [
+            "The doctor is permitted to hike or promise.",
+            "It is not the case that the doctor is permitted to hike and is permitted to promise."
+        ],
+        [
+            "The explorer is permitted to betray or long.",
+            "It is not the case that the explorer is permitted to betray and is permitted to long."
+        ],
+        [
+            "The director is permitted to photograph or cherish.",
+            "It is not the case that the director is permitted to photograph and is permitted to cherish."
+        ],
+        [
+            "The woman is permitted to love or promise.",
+            "It is not the case that the woman is permitted to love and is permitted to promise."
+        ],
+        [
+            "Your sister is permitted to lie or fly.",
+            "It is not the case that your sister is permitted to lie and is permitted to fly."
+        ],
+        [
+            "The writer is permitted to play or cycle.",
+            "It is not the case that the writer is permitted to play and is permitted to cycle."
+        ],
+        [
+            "The chef is permitted to write or hope.",
+            "It is not the case that the chef is permitted to write and is permitted to hope."
+        ],
+        [
+            "The student is permitted to jump or build.",
+            "It is not the case that the student is permitted to jump and is permitted to build."
+        ],
+        [
+            "The programmer is permitted to explore or think.",
+            "It is not the case that the programmer is permitted to explore and is permitted to think."
+        ],
+        [
+            "The athlete is permitted to sing or apologize.",
+            "It is not the case that the athlete is permitted to sing and is permitted to apologize."
+        ],
+        [
+            "The chef is permitted to lose or amaze.",
+            "It is not the case that the chef is permitted to lose and is permitted to amaze."
+        ],
+        [
+            "The soldier is permitted to hate or betray.",
+            "It is not the case that the soldier is permitted to hate and is permitted to betray."
+        ],
+        [
+            "The programmer is permitted to fly or betray.",
+            "It is not the case that the programmer is permitted to fly and is permitted to betray."
+        ],
+        [
+            "The actor is permitted to sleep or inspire.",
+            "It is not the case that the actor is permitted to sleep and is permitted to inspire."
+        ],
+        [
+            "The scholar is permitted to design or innovate.",
+            "It is not the case that the scholar is permitted to design and is permitted to innovate."
+        ],
+        [
+            "The king is permitted to play or row.",
+            "It is not the case that the king is permitted to play and is permitted to row."
+        ],
+        [
+            "The nurse is permitted to cycle or cheat.",
+            "It is not the case that the nurse is permitted to cycle and is permitted to cheat."
+        ],
+        [
+            "The engineer is permitted to drive or fly.",
+            "It is not the case that the engineer is permitted to drive and is permitted to fly."
+        ],
+        [
+            "The doctor is permitted to eat or swim.",
+            "It is not the case that the doctor is permitted to eat and is permitted to swim."
+        ],
+        [
+            "The boy is permitted to sing or learn.",
+            "It is not the case that the boy is permitted to sing and is permitted to learn."
+        ],
+        [
+            "The painter is permitted to long or promise.",
+            "It is not the case that the painter is permitted to long and is permitted to promise."
+        ],
+        [
+            "My friend is permitted to program or paint.",
+            "It is not the case that my friend is permitted to program and is permitted to paint."
+        ],
+        [
+            "The pilot is permitted to apologize or eat.",
+            "It is not the case that the pilot is permitted to apologize and is permitted to eat."
+        ],
+        [
+            "The chef is permitted to innovate or miss.",
+            "It is not the case that the chef is permitted to innovate and is permitted to miss."
+        ],
+        [
+            "The writer is permitted to cry or build.",
+            "It is not the case that the writer is permitted to cry and is permitted to build."
+        ],
+        [
+            "The artist is permitted to admit or pine.",
+            "It is not the case that the artist is permitted to admit and is permitted to pine."
+        ],
+        [
+            "The designer is permitted to delight or astonished.",
+            "It is not the case that the designer is permitted to delight and is permitted to astonished."
+        ],
+        [
+            "The boy is permitted to innovate or cycle.",
+            "It is not the case that the boy is permitted to innovate and is permitted to cycle."
+        ],
+        [
+            "The artist is permitted to compose or research.",
+            "It is not the case that the artist is permitted to compose and is permitted to research."
+        ],
+        [
+            "The director is permitted to write or explore.",
+            "It is not the case that the director is permitted to write and is permitted to explore."
+        ],
+        [
+            "His mother is permitted to explore or ski.",
+            "It is not the case that his mother is permitted to explore and is permitted to ski."
+        ],
+        [
+            "The pilot is permitted to invent or dance.",
+            "It is not the case that the pilot is permitted to invent and is permitted to dance."
+        ],
+        [
+            "Your sister is permitted to hate or film.",
+            "It is not the case that your sister is permitted to hate and is permitted to film."
+        ],
+        [
+            "The artist is permitted to promise or wake.",
+            "It is not the case that the artist is permitted to promise and is permitted to wake."
+        ],
+        [
+            "The boy is permitted to edit or row.",
+            "It is not the case that the boy is permitted to edit and is permitted to row."
+        ],
+        [
+            "The scholar is permitted to sail or fish.",
+            "It is not the case that the scholar is permitted to sail and is permitted to fish."
+        ],
+        [
+            "The man is permitted to read or win.",
+            "It is not the case that the man is permitted to read and is permitted to win."
+        ],
+        [
+            "The nurse is permitted to lie or wake.",
+            "It is not the case that the nurse is permitted to lie and is permitted to wake."
+        ],
+        [
+            "The student is permitted to speak or forgive.",
+            "It is not the case that the student is permitted to speak and is permitted to forgive."
+        ],
+        [
+            "The explorer is permitted to camp or sail.",
+            "It is not the case that the explorer is permitted to camp and is permitted to sail."
+        ],
+        [
+            "The musician is permitted to edit or compose.",
+            "It is not the case that the musician is permitted to edit and is permitted to compose."
+        ],
+        [
+            "The nurse is permitted to speak or discover.",
+            "It is not the case that the nurse is permitted to speak and is permitted to discover."
+        ],
+        [
+            "The dancer is permitted to laugh or work.",
+            "It is not the case that the dancer is permitted to laugh and is permitted to work."
+        ],
+        [
+            "The driver is permitted to write or lose.",
+            "It is not the case that the driver is permitted to write and is permitted to lose."
+        ],
+        [
+            "The scholar is permitted to edit or appreciate.",
+            "It is not the case that the scholar is permitted to edit and is permitted to appreciate."
+        ],
+        [
+            "The doctor is permitted to invent or cry.",
+            "It is not the case that the doctor is permitted to invent and is permitted to cry."
+        ],
+        [
+            "The driver is permitted to innovate or astonish.",
+            "It is not the case that the driver is permitted to innovate and is permitted to astonish."
+        ],
+        [
+            "Her father is permitted to laugh or design.",
+            "It is not the case that her father is permitted to laugh and is permitted to design."
+        ],
+        [
+            "The athlete is permitted to laugh or sketch.",
+            "It is not the case that the athlete is permitted to laugh and is permitted to sketch."
+        ],
+        [
+            "The nurse is permitted to photograph or betray.",
+            "It is not the case that the nurse is permitted to photograph and is permitted to betray."
+        ],
+        [
+            "The man is permitted to swim or steal.",
+            "It is not the case that the man is permitted to swim and is permitted to steal."
+        ],
+        [
+            "The programmer is permitted to fly or amazed.",
+            "It is not the case that the programmer is permitted to fly and is permitted to amazed."
+        ],
+        [
+            "The chef is permitted to lie or forgive.",
+            "It is not the case that the chef is permitted to lie and is permitted to forgive."
+        ],
+        [
+            "His mother is permitted to lose or forgive.",
+            "It is not the case that his mother is permitted to lose and is permitted to forgive."
+        ],
+        [
+            "The director is permitted to work or win.",
+            "It is not the case that the director is permitted to work and is permitted to win."
+        ],
+        [
+            "The queen is permitted to film or build.",
+            "It is not the case that the queen is permitted to film and is permitted to build."
+        ],
+        [
+            "The architect is permitted to eat or jump.",
+            "It is not the case that the architect is permitted to eat and is permitted to jump."
+        ]
+    ],
+    "PE_p_or_q_implies_non_PE_p_/_non_PE_q_négation_explicite": [
+        [
+            "The chef is permitted to astonish or innocent.",
+            "It is not the case that the chef is permitted to astonish."
+        ],
+        [
+            "Your sister is permitted to win or create.",
+            "It is not the case that your sister is permitted to win."
+        ],
+        [
+            "The king is permitted to fish or cherish.",
+            "It is not the case that the king is permitted to fish."
+        ],
+        [
+            "The engineer is permitted to jump or camp.",
+            "It is not the case that the engineer is permitted to jump."
+        ],
+        [
+            "The programmer is permitted to betray or run.",
+            "It is not the case that the programmer is permitted to betray."
+        ],
+        [
+            "The artist is permitted to fly or play.",
+            "It is not the case that the artist is permitted to play."
+        ],
+        [
+            "The athlete is permitted to experiment or program.",
+            "It is not the case that the athlete is permitted to program."
+        ],
+        [
+            "The chef is permitted to create or film.",
+            "It is not the case that the chef is permitted to create."
+        ],
+        [
+            "The woman is permitted to invent or hope.",
+            "It is not the case that the woman is permitted to hope."
+        ],
+        [
+            "The queen is permitted to cheat or miss.",
+            "It is not the case that the queen is permitted to miss."
+        ],
+        [
+            "The student is permitted to speak or invent.",
+            "It is not the case that the student is permitted to speak."
+        ],
+        [
+            "The dancer is permitted to speak or hate.",
+            "It is not the case that the dancer is permitted to hate."
+        ],
+        [
+            "The actor is permitted to regret or cycle.",
+            "It is not the case that the actor is permitted to regret."
+        ],
+        [
+            "The chef is permitted to cry or hike.",
+            "It is not the case that the chef is permitted to cry."
+        ],
+        [
+            "The actor is permitted to discover or hope.",
+            "It is not the case that the actor is permitted to hope."
+        ],
+        [
+            "The dancer is permitted to draw or win.",
+            "It is not the case that the dancer is permitted to win."
+        ],
+        [
+            "The actor is permitted to play or draw.",
+            "It is not the case that the actor is permitted to play."
+        ],
+        [
+            "The engineer is permitted to research or lose.",
+            "It is not the case that the engineer is permitted to research."
+        ],
+        [
+            "The director is permitted to learn or imagine.",
+            "It is not the case that the director is permitted to learn."
+        ],
+        [
+            "The painter is permitted to betray or film.",
+            "It is not the case that the painter is permitted to film."
+        ],
+        [
+            "The man is permitted to innocent or eat.",
+            "It is not the case that the man is permitted to eat."
+        ],
+        [
+            "The engineer is permitted to apologize or fish.",
+            "It is not the case that the engineer is permitted to apologize."
+        ],
+        [
+            "His mother is permitted to hate or draw.",
+            "It is not the case that his mother is permitted to hate."
+        ],
+        [
+            "The architect is permitted to camp or forgive.",
+            "It is not the case that the architect is permitted to forgive."
+        ],
+        [
+            "The programmer is permitted to dream or betray.",
+            "It is not the case that the programmer is permitted to dream."
+        ],
+        [
+            "The king is permitted to research or think.",
+            "It is not the case that the king is permitted to research."
+        ],
+        [
+            "The student is permitted to laugh or admit.",
+            "It is not the case that the student is permitted to laugh."
+        ],
+        [
+            "The pilot is permitted to lose or long.",
+            "It is not the case that the pilot is permitted to lose."
+        ],
+        [
+            "The actor is permitted to love or drive.",
+            "It is not the case that the actor is permitted to love."
+        ],
+        [
+            "The king is permitted to delight or lose.",
+            "It is not the case that the king is permitted to lose."
+        ],
+        [
+            "The king is permitted to lie or compete.",
+            "It is not the case that the king is permitted to compete."
+        ],
+        [
+            "My friend is permitted to adore or astonish.",
+            "It is not the case that my friend is permitted to adore."
+        ],
+        [
+            "The musician is permitted to sail or long.",
+            "It is not the case that the musician is permitted to long."
+        ],
+        [
+            "The architect is permitted to drive or forgive.",
+            "It is not the case that the architect is permitted to forgive."
+        ],
+        [
+            "The director is permitted to lose or compete.",
+            "It is not the case that the director is permitted to lose."
+        ],
+        [
+            "The athlete is permitted to learn or write.",
+            "It is not the case that the athlete is permitted to learn."
+        ],
+        [
+            "The architect is permitted to travel or camp.",
+            "It is not the case that the architect is permitted to camp."
+        ],
+        [
+            "The soldier is permitted to draw or amazed.",
+            "It is not the case that the soldier is permitted to amazed."
+        ],
+        [
+            "The painter is permitted to climb or edit.",
+            "It is not the case that the painter is permitted to climb."
+        ],
+        [
+            "The soldier is permitted to admit or steal.",
+            "It is not the case that the soldier is permitted to admit."
+        ],
+        [
+            "The driver is permitted to sing or climb.",
+            "It is not the case that the driver is permitted to climb."
+        ],
+        [
+            "My friend is permitted to read or swim.",
+            "It is not the case that my friend is permitted to swim."
+        ],
+        [
+            "The queen is permitted to run or laugh.",
+            "It is not the case that the queen is permitted to run."
+        ],
+        [
+            "Her father is permitted to dream or discover.",
+            "It is not the case that her father is permitted to dream."
+        ],
+        [
+            "The scholar is permitted to design or paint.",
+            "It is not the case that the scholar is permitted to design."
+        ],
+        [
+            "The director is permitted to dance or hike.",
+            "It is not the case that the director is permitted to hike."
+        ],
+        [
+            "The athlete is permitted to teach or amaze.",
+            "It is not the case that the athlete is permitted to teach."
+        ],
+        [
+            "The athlete is permitted to work or laugh.",
+            "It is not the case that the athlete is permitted to work."
+        ],
+        [
+            "The pilot is permitted to innovate or hope.",
+            "It is not the case that the pilot is permitted to hope."
+        ],
+        [
+            "The explorer is permitted to build or sketch.",
+            "It is not the case that the explorer is permitted to sketch."
+        ],
+        [
+            "The chef is permitted to write or eat.",
+            "It is not the case that the chef is permitted to write."
+        ],
+        [
+            "Her father is permitted to apologize or speak.",
+            "It is not the case that her father is permitted to apologize."
+        ],
+        [
+            "The woman is permitted to lie or sleep.",
+            "It is not the case that the woman is permitted to lie."
+        ],
+        [
+            "Her father is permitted to sail or promise.",
+            "It is not the case that her father is permitted to promise."
+        ],
+        [
+            "The driver is permitted to run or amazed.",
+            "It is not the case that the driver is permitted to amazed."
+        ],
+        [
+            "The explorer is permitted to film or win.",
+            "It is not the case that the explorer is permitted to win."
+        ],
+        [
+            "The chef is permitted to work or innocent.",
+            "It is not the case that the chef is permitted to work."
+        ],
+        [
+            "The writer is permitted to betray or cherish.",
+            "It is not the case that the writer is permitted to betray."
+        ],
+        [
+            "His mother is permitted to design or work.",
+            "It is not the case that his mother is permitted to work."
+        ],
+        [
+            "The soldier is permitted to code or forgive.",
+            "It is not the case that the soldier is permitted to code."
+        ],
+        [
+            "The doctor is permitted to sail or laugh.",
+            "It is not the case that the doctor is permitted to sail."
+        ],
+        [
+            "The nurse is permitted to code or write.",
+            "It is not the case that the nurse is permitted to write."
+        ],
+        [
+            "The woman is permitted to edit or code.",
+            "It is not the case that the woman is permitted to edit."
+        ],
+        [
+            "The woman is permitted to astonish or fish.",
+            "It is not the case that the woman is permitted to astonish."
+        ],
+        [
+            "The architect is permitted to compete or paint.",
+            "It is not the case that the architect is permitted to compete."
+        ],
+        [
+            "The explorer is permitted to explore or steal.",
+            "It is not the case that the explorer is permitted to steal."
+        ],
+        [
+            "His mother is permitted to imagine or win.",
+            "It is not the case that his mother is permitted to imagine."
+        ],
+        [
+            "The director is permitted to innocent or win.",
+            "It is not the case that the director is permitted to win."
+        ],
+        [
+            "The dancer is permitted to sketch or write.",
+            "It is not the case that the dancer is permitted to sketch."
+        ],
+        [
+            "The designer is permitted to program or read.",
+            "It is not the case that the designer is permitted to read."
+        ],
+        [
+            "The doctor is permitted to research or envy.",
+            "It is not the case that the doctor is permitted to research."
+        ],
+        [
+            "The scientist is permitted to miss or speak.",
+            "It is not the case that the scientist is permitted to miss."
+        ],
+        [
+            "The scholar is permitted to amaze or astonish.",
+            "It is not the case that the scholar is permitted to amaze."
+        ],
+        [
+            "The programmer is permitted to fish or innovate.",
+            "It is not the case that the programmer is permitted to innovate."
+        ],
+        [
+            "The programmer is permitted to innovate or explore.",
+            "It is not the case that the programmer is permitted to innovate."
+        ],
+        [
+            "The engineer is permitted to hope or learn.",
+            "It is not the case that the engineer is permitted to learn."
+        ],
+        [
+            "The engineer is permitted to draw or edit.",
+            "It is not the case that the engineer is permitted to edit."
+        ],
+        [
+            "The designer is permitted to appreciate or play.",
+            "It is not the case that the designer is permitted to appreciate."
+        ],
+        [
+            "The programmer is permitted to travel or wake.",
+            "It is not the case that the programmer is permitted to travel."
+        ],
+        [
+            "The nurse is permitted to wake or astonish.",
+            "It is not the case that the nurse is permitted to astonish."
+        ],
+        [
+            "The chef is permitted to climb or long.",
+            "It is not the case that the chef is permitted to climb."
+        ],
+        [
+            "The woman is permitted to research or ski.",
+            "It is not the case that the woman is permitted to research."
+        ],
+        [
+            "My friend is permitted to teach or cry.",
+            "It is not the case that my friend is permitted to cry."
+        ],
+        [
+            "The programmer is permitted to travel or innovate.",
+            "It is not the case that the programmer is permitted to innovate."
+        ],
+        [
+            "The architect is permitted to fly or draw.",
+            "It is not the case that the architect is permitted to draw."
+        ],
+        [
+            "His mother is permitted to hike or build.",
+            "It is not the case that his mother is permitted to hike."
+        ],
+        [
+            "The athlete is permitted to forgive or read.",
+            "It is not the case that the athlete is permitted to forgive."
+        ],
+        [
+            "The architect is permitted to laugh or betray.",
+            "It is not the case that the architect is permitted to betray."
+        ],
+        [
+            "The driver is permitted to sleep or climb.",
+            "It is not the case that the driver is permitted to sleep."
+        ],
+        [
+            "The boy is permitted to amaze or research.",
+            "It is not the case that the boy is permitted to research."
+        ],
+        [
+            "The driver is permitted to cycle or fish.",
+            "It is not the case that the driver is permitted to fish."
+        ],
+        [
+            "The athlete is permitted to experiment or laugh.",
+            "It is not the case that the athlete is permitted to experiment."
+        ],
+        [
+            "The driver is permitted to sketch or innocent.",
+            "It is not the case that the driver is permitted to sketch."
+        ],
+        [
+            "The boy is permitted to compose or experiment.",
+            "It is not the case that the boy is permitted to experiment."
+        ],
+        [
+            "The driver is permitted to sleep or regret.",
+            "It is not the case that the driver is permitted to regret."
+        ],
+        [
+            "The man is permitted to think or discover.",
+            "It is not the case that the man is permitted to discover."
+        ],
+        [
+            "The driver is permitted to row or imagine.",
+            "It is not the case that the driver is permitted to row."
+        ],
+        [
+            "The designer is permitted to film or inspire.",
+            "It is not the case that the designer is permitted to film."
+        ],
+        [
+            "The scholar is permitted to regret or astonish.",
+            "It is not the case that the scholar is permitted to regret."
+        ],
+        [
+            "The nurse is permitted to cheat or create.",
+            "It is not the case that the nurse is permitted to cheat."
+        ]
+    ],
+    "PE_p_or_q_implies_non_PE_p_and_PE_q_négation_implicite": [
+        [
+            "The programmer is permitted to fill or hold.",
+            "The programmer is permitted to empty and is permitted to release."
+        ],
+        [
+            "The painter is permitted to love or open.",
+            "The painter is permitted to hate and is permitted to close."
+        ],
+        [
+            "The artist is permitted to open or cherish.",
+            "The artist is permitted to close and is permitted to despise."
+        ],
+        [
+            "The king is permitted to shine or unite.",
+            "The king is permitted to fade and is permitted to separate."
+        ],
+        [
+            "The painter is permitted to encourage or reveal.",
+            "The painter is permitted to discourage and is permitted to conceal."
+        ],
+        [
+            "The woman is permitted to enter or increase.",
+            "The woman is permitted to exit and is permitted to decrease."
+        ],
+        [
+            "The director is permitted to increase or attach.",
+            "The director is permitted to decrease and is permitted to detach."
+        ],
+        [
+            "The painter is permitted to mend or tie.",
+            "The painter is permitted to break and is permitted to untie."
+        ],
+        [
+            "The woman is permitted to build or accelerate.",
+            "The woman is permitted to destroy and is permitted to decelerate."
+        ],
+        [
+            "Your sister is permitted to straighten or give.",
+            "Your sister is permitted to bend and is permitted to take."
+        ],
+        [
+            "The explorer is permitted to advance or stand.",
+            "The explorer is permitted to retreat and is permitted to sit."
+        ],
+        [
+            "The actor is permitted to shine or earn.",
+            "The actor is permitted to fade and is permitted to spend."
+        ],
+        [
+            "The artist is permitted to build or float.",
+            "The artist is permitted to destroy and is permitted to sink."
+        ],
+        [
+            "The king is permitted to gather or straighten.",
+            "The king is permitted to scatter and is permitted to bend."
+        ],
+        [
+            "His mother is permitted to grow or float.",
+            "His mother is permitted to shrink and is permitted to sink."
+        ],
+        [
+            "The doctor is permitted to open or connect.",
+            "The doctor is permitted to close and is permitted to disconnect."
+        ],
+        [
+            "The king is permitted to encourage or sow.",
+            "The king is permitted to discourage and is permitted to reap."
+        ],
+        [
+            "The engineer is permitted to awake or rise.",
+            "The engineer is permitted to sleep and is permitted to fall."
+        ],
+        [
+            "The actor is permitted to enter or climb.",
+            "The actor is permitted to exit and is permitted to descend."
+        ],
+        [
+            "The driver is permitted to accept or straighten.",
+            "The driver is permitted to reject and is permitted to bend."
+        ],
+        [
+            "The programmer is permitted to fill or open.",
+            "The programmer is permitted to empty and is permitted to close."
+        ],
+        [
+            "The scholar is permitted to include or arrive.",
+            "The scholar is permitted to exclude and is permitted to depart."
+        ],
+        [
+            "The designer is permitted to earn or rise.",
+            "The designer is permitted to spend and is permitted to fall."
+        ],
+        [
+            "My friend is permitted to tighten or grow.",
+            "My friend is permitted to loosen and is permitted to shrink."
+        ],
+        [
+            "Your sister is permitted to build or shine.",
+            "Your sister is permitted to destroy and is permitted to fade."
+        ],
+        [
+            "The nurse is permitted to include or attach.",
+            "The nurse is permitted to exclude and is permitted to detach."
+        ],
+        [
+            "The queen is permitted to give or advance.",
+            "The queen is permitted to take and is permitted to retreat."
+        ],
+        [
+            "The student is permitted to charge or buy.",
+            "The student is permitted to discharge and is permitted to sell."
+        ],
+        [
+            "The soldier is permitted to grow or push.",
+            "The soldier is permitted to shrink and is permitted to pull."
+        ],
+        [
+            "The doctor is permitted to permit or charge.",
+            "The doctor is permitted to forbid and is permitted to discharge."
+        ],
+        [
+            "The director is permitted to include or increase.",
+            "The director is permitted to exclude and is permitted to decrease."
+        ],
+        [
+            "The man is permitted to unite or attach.",
+            "The man is permitted to separate and is permitted to detach."
+        ],
+        [
+            "The scholar is permitted to enter or respect.",
+            "The scholar is permitted to exit and is permitted to disrespect."
+        ],
+        [
+            "My friend is permitted to unify or charge.",
+            "My friend is permitted to divide and is permitted to discharge."
+        ],
+        [
+            "The boy is permitted to protect or unite.",
+            "The boy is permitted to attack and is permitted to separate."
+        ],
+        [
+            "The nurse is permitted to rise or gather.",
+            "The nurse is permitted to fall and is permitted to scatter."
+        ],
+        [
+            "My friend is permitted to fill or admit.",
+            "My friend is permitted to empty and is permitted to deny."
+        ],
+        [
+            "The scientist is permitted to float or sow.",
+            "The scientist is permitted to sink and is permitted to reap."
+        ],
+        [
+            "The woman is permitted to reveal or push.",
+            "The woman is permitted to conceal and is permitted to pull."
+        ],
+        [
+            "The architect is permitted to laugh or laugh.",
+            "The architect is permitted to cry and is permitted to cry."
+        ],
+        [
+            "The queen is permitted to stand or encourage.",
+            "The queen is permitted to sit and is permitted to discourage."
+        ],
+        [
+            "The driver is permitted to build or include.",
+            "The driver is permitted to destroy and is permitted to exclude."
+        ],
+        [
+            "The programmer is permitted to awake or stand.",
+            "The programmer is permitted to sleep and is permitted to sit."
+        ],
+        [
+            "The architect is permitted to expand or increase.",
+            "The architect is permitted to contract and is permitted to decrease."
+        ],
+        [
+            "The chef is permitted to appear or accept.",
+            "The chef is permitted to disappear and is permitted to reject."
+        ],
+        [
+            "The painter is permitted to respect or open.",
+            "The painter is permitted to disrespect and is permitted to close."
+        ],
+        [
+            "The king is permitted to build or enter.",
+            "The king is permitted to destroy and is permitted to exit."
+        ],
+        [
+            "The scholar is permitted to win or open.",
+            "The scholar is permitted to lose and is permitted to close."
+        ],
+        [
+            "The driver is permitted to mend or come.",
+            "The driver is permitted to break and is permitted to go."
+        ],
+        [
+            "The nurse is permitted to give or reveal.",
+            "The nurse is permitted to take and is permitted to conceal."
+        ],
+        [
+            "The pilot is permitted to permit or admit.",
+            "The pilot is permitted to forbid and is permitted to deny."
+        ],
+        [
+            "The painter is permitted to expand or lighten.",
+            "The painter is permitted to contract and is permitted to darken."
+        ],
+        [
+            "The scientist is permitted to permit or unite.",
+            "The scientist is permitted to forbid and is permitted to separate."
+        ],
+        [
+            "The nurse is permitted to tighten or push.",
+            "The nurse is permitted to loosen and is permitted to pull."
+        ],
+        [
+            "The chef is permitted to win or increase.",
+            "The chef is permitted to lose and is permitted to decrease."
+        ],
+        [
+            "My friend is permitted to push or lighten.",
+            "My friend is permitted to pull and is permitted to darken."
+        ],
+        [
+            "The driver is permitted to rise or cherish.",
+            "The driver is permitted to fall and is permitted to despise."
+        ],
+        [
+            "The student is permitted to attach or open.",
+            "The student is permitted to detach and is permitted to close."
+        ],
+        [
+            "My friend is permitted to expand or earn.",
+            "My friend is permitted to contract and is permitted to spend."
+        ],
+        [
+            "The designer is permitted to awake or open.",
+            "The designer is permitted to sleep and is permitted to close."
+        ],
+        [
+            "The boy is permitted to give or appear.",
+            "The boy is permitted to take and is permitted to disappear."
+        ],
+        [
+            "The programmer is permitted to live or open.",
+            "The programmer is permitted to die and is permitted to close."
+        ],
+        [
+            "The musician is permitted to straighten or permit.",
+            "The musician is permitted to bend and is permitted to forbid."
+        ],
+        [
+            "My friend is permitted to grow or buy.",
+            "My friend is permitted to shrink and is permitted to sell."
+        ],
+        [
+            "My friend is permitted to come or stand.",
+            "My friend is permitted to go and is permitted to sit."
+        ],
+        [
+            "The athlete is permitted to fill or speak.",
+            "The athlete is permitted to empty and is permitted to listen."
+        ],
+        [
+            "The director is permitted to cherish or protect.",
+            "The director is permitted to despise and is permitted to attack."
+        ],
+        [
+            "My friend is permitted to arrive or unite.",
+            "My friend is permitted to depart and is permitted to separate."
+        ],
+        [
+            "The engineer is permitted to earn or float.",
+            "The engineer is permitted to spend and is permitted to sink."
+        ],
+        [
+            "The designer is permitted to encourage or tighten.",
+            "The designer is permitted to discourage and is permitted to loosen."
+        ],
+        [
+            "The explorer is permitted to appear or charge.",
+            "The explorer is permitted to disappear and is permitted to discharge."
+        ],
+        [
+            "The nurse is permitted to hold or charge.",
+            "The nurse is permitted to release and is permitted to discharge."
+        ],
+        [
+            "The queen is permitted to respect or start.",
+            "The queen is permitted to disrespect and is permitted to stop."
+        ],
+        [
+            "The pilot is permitted to win or straighten.",
+            "The pilot is permitted to lose and is permitted to bend."
+        ],
+        [
+            "The driver is permitted to reveal or laugh.",
+            "The driver is permitted to conceal and is permitted to cry."
+        ],
+        [
+            "The actor is permitted to straighten or attach.",
+            "The actor is permitted to bend and is permitted to detach."
+        ],
+        [
+            "The king is permitted to lighten or accept.",
+            "The king is permitted to darken and is permitted to reject."
+        ],
+        [
+            "The boy is permitted to love or increase.",
+            "The boy is permitted to hate and is permitted to decrease."
+        ],
+        [
+            "The scholar is permitted to connect or awake.",
+            "The scholar is permitted to disconnect and is permitted to sleep."
+        ],
+        [
+            "The designer is permitted to enter or include.",
+            "The designer is permitted to exit and is permitted to exclude."
+        ],
+        [
+            "The painter is permitted to encourage or rise.",
+            "The painter is permitted to discourage and is permitted to fall."
+        ],
+        [
+            "The artist is permitted to mend or protect.",
+            "The artist is permitted to break and is permitted to attack."
+        ],
+        [
+            "The athlete is permitted to love or push.",
+            "The athlete is permitted to hate and is permitted to pull."
+        ],
+        [
+            "The athlete is permitted to build or appear.",
+            "The athlete is permitted to destroy and is permitted to disappear."
+        ],
+        [
+            "The dancer is permitted to encourage or speak.",
+            "The dancer is permitted to discourage and is permitted to listen."
+        ],
+        [
+            "The boy is permitted to accelerate or gather.",
+            "The boy is permitted to decelerate and is permitted to scatter."
+        ],
+        [
+            "The dancer is permitted to reveal or reveal.",
+            "The dancer is permitted to conceal and is permitted to conceal."
+        ],
+        [
+            "The musician is permitted to shine or shine.",
+            "The musician is permitted to fade and is permitted to fade."
+        ],
+        [
+            "The musician is permitted to live or live.",
+            "The musician is permitted to die and is permitted to die."
+        ],
+        [
+            "The pilot is permitted to laugh or hold.",
+            "The pilot is permitted to cry and is permitted to release."
+        ],
+        [
+            "The scientist is permitted to win or shine.",
+            "The scientist is permitted to lose and is permitted to fade."
+        ],
+        [
+            "My friend is permitted to win or lighten.",
+            "My friend is permitted to lose and is permitted to darken."
+        ],
+        [
+            "The king is permitted to appear or appear.",
+            "The king is permitted to disappear and is permitted to disappear."
+        ],
+        [
+            "The architect is permitted to encourage or laugh.",
+            "The architect is permitted to discourage and is permitted to cry."
+        ],
+        [
+            "The driver is permitted to push or climb.",
+            "The driver is permitted to pull and is permitted to descend."
+        ],
+        [
+            "The king is permitted to open or accelerate.",
+            "The king is permitted to close and is permitted to decelerate."
+        ],
+        [
+            "The actor is permitted to shine or include.",
+            "The actor is permitted to fade and is permitted to exclude."
+        ],
+        [
+            "The chef is permitted to stand or accelerate.",
+            "The chef is permitted to sit and is permitted to decelerate."
+        ],
+        [
+            "The explorer is permitted to open or respect.",
+            "The explorer is permitted to close and is permitted to disrespect."
+        ],
+        [
+            "The artist is permitted to win or unite.",
+            "The artist is permitted to lose and is permitted to separate."
+        ]
+    ],
+    "PE_p_or_q_implies_non_PE_p_/_non_PE_q_négation_implicite": [
+        [
+            "The doctor is permitted to connect or stand.",
+            "The doctor is permitted to disconnect."
+        ],
+        [
+            "The man is permitted to arrive or stand.",
+            "The man is permitted to depart."
+        ],
+        [
+            "The boy is permitted to arrive or fill.",
+            "The boy is permitted to empty."
+        ],
+        [
+            "The musician is permitted to rise or lighten.",
+            "The musician is permitted to fall."
+        ],
+        [
+            "The musician is permitted to advance or rise.",
+            "The musician is permitted to retreat."
+        ],
+        [
+            "The programmer is permitted to cherish or include.",
+            "The programmer is permitted to despise."
+        ],
+        [
+            "The director is permitted to build or unite.",
+            "The director is permitted to separate."
+        ],
+        [
+            "The pilot is permitted to lighten or unite.",
+            "The pilot is permitted to darken."
+        ],
+        [
+            "The student is permitted to connect or permit.",
+            "The student is permitted to forbid."
+        ],
+        [
+            "The nurse is permitted to encourage or hold.",
+            "The nurse is permitted to release."
+        ],
+        [
+            "The chef is permitted to lighten or open.",
+            "The chef is permitted to close."
+        ],
+        [
+            "The chef is permitted to include or include.",
+            "The chef is permitted to exclude."
+        ],
+        [
+            "The doctor is permitted to gather or win.",
+            "The doctor is permitted to lose."
+        ],
+        [
+            "The boy is permitted to encourage or permit.",
+            "The boy is permitted to discourage."
+        ],
+        [
+            "The writer is permitted to encourage or give.",
+            "The writer is permitted to take."
+        ],
+        [
+            "The driver is permitted to gather or accelerate.",
+            "The driver is permitted to scatter."
+        ],
+        [
+            "The man is permitted to unify or protect.",
+            "The man is permitted to divide."
+        ],
+        [
+            "The soldier is permitted to attach or straighten.",
+            "The soldier is permitted to detach."
+        ],
+        [
+            "The designer is permitted to shine or rise.",
+            "The designer is permitted to fade."
+        ],
+        [
+            "The boy is permitted to shine or speak.",
+            "The boy is permitted to fade."
+        ],
+        [
+            "Your sister is permitted to charge or encourage.",
+            "Your sister is permitted to discharge."
+        ],
+        [
+            "The nurse is permitted to sow or unify.",
+            "The nurse is permitted to reap."
+        ],
+        [
+            "The athlete is permitted to include or live.",
+            "The athlete is permitted to die."
+        ],
+        [
+            "The scientist is permitted to protect or increase.",
+            "The scientist is permitted to attack."
+        ],
+        [
+            "The director is permitted to mend or laugh.",
+            "The director is permitted to break."
+        ],
+        [
+            "The man is permitted to float or come.",
+            "The man is permitted to go."
+        ],
+        [
+            "The doctor is permitted to connect or push.",
+            "The doctor is permitted to disconnect."
+        ],
+        [
+            "The writer is permitted to live or push.",
+            "The writer is permitted to die."
+        ],
+        [
+            "The athlete is permitted to push or enter.",
+            "The athlete is permitted to pull."
+        ],
+        [
+            "The dancer is permitted to start or earn.",
+            "The dancer is permitted to stop."
+        ],
+        [
+            "The king is permitted to live or sow.",
+            "The king is permitted to die."
+        ],
+        [
+            "The man is permitted to stand or arrive.",
+            "The man is permitted to depart."
+        ],
+        [
+            "The boy is permitted to advance or come.",
+            "The boy is permitted to go."
+        ],
+        [
+            "The programmer is permitted to permit or increase.",
+            "The programmer is permitted to forbid."
+        ],
+        [
+            "The programmer is permitted to expand or start.",
+            "The programmer is permitted to stop."
+        ],
+        [
+            "The director is permitted to enter or attach.",
+            "The director is permitted to exit."
+        ],
+        [
+            "The doctor is permitted to respect or win.",
+            "The doctor is permitted to lose."
+        ],
+        [
+            "The soldier is permitted to laugh or win.",
+            "The soldier is permitted to lose."
+        ],
+        [
+            "The doctor is permitted to attach or increase.",
+            "The doctor is permitted to decrease."
+        ],
+        [
+            "The boy is permitted to give or push.",
+            "The boy is permitted to take."
+        ],
+        [
+            "The actor is permitted to climb or protect.",
+            "The actor is permitted to attack."
+        ],
+        [
+            "The queen is permitted to encourage or include.",
+            "The queen is permitted to exclude."
+        ],
+        [
+            "The chef is permitted to increase or sow.",
+            "The chef is permitted to reap."
+        ],
+        [
+            "The boy is permitted to grow or appear.",
+            "The boy is permitted to disappear."
+        ],
+        [
+            "The driver is permitted to expand or climb.",
+            "The driver is permitted to descend."
+        ],
+        [
+            "The athlete is permitted to accept or open.",
+            "The athlete is permitted to reject."
+        ],
+        [
+            "The writer is permitted to attach or give.",
+            "The writer is permitted to take."
+        ],
+        [
+            "The scholar is permitted to stand or grow.",
+            "The scholar is permitted to shrink."
+        ],
+        [
+            "The dancer is permitted to win or shine.",
+            "The dancer is permitted to lose."
+        ],
+        [
+            "The actor is permitted to love or respect.",
+            "The actor is permitted to hate."
+        ],
+        [
+            "The soldier is permitted to climb or push.",
+            "The soldier is permitted to pull."
+        ],
+        [
+            "His mother is permitted to float or permit.",
+            "His mother is permitted to forbid."
+        ],
+        [
+            "The programmer is permitted to push or come.",
+            "The programmer is permitted to pull."
+        ],
+        [
+            "The writer is permitted to advance or give.",
+            "The writer is permitted to take."
+        ],
+        [
+            "The athlete is permitted to build or expand.",
+            "The athlete is permitted to destroy."
+        ],
+        [
+            "The painter is permitted to rise or include.",
+            "The painter is permitted to fall."
+        ],
+        [
+            "The actor is permitted to unite or rise.",
+            "The actor is permitted to fall."
+        ],
+        [
+            "The woman is permitted to cherish or appear.",
+            "The woman is permitted to despise."
+        ],
+        [
+            "The woman is permitted to unite or connect.",
+            "The woman is permitted to disconnect."
+        ],
+        [
+            "The painter is permitted to build or accept.",
+            "The painter is permitted to destroy."
+        ],
+        [
+            "The programmer is permitted to shine or buy.",
+            "The programmer is permitted to fade."
+        ],
+        [
+            "The chef is permitted to speak or build.",
+            "The chef is permitted to destroy."
+        ],
+        [
+            "Her father is permitted to connect or tighten.",
+            "Her father is permitted to loosen."
+        ],
+        [
+            "The director is permitted to laugh or love.",
+            "The director is permitted to hate."
+        ],
+        [
+            "The musician is permitted to unite or charge.",
+            "The musician is permitted to discharge."
+        ],
+        [
+            "The queen is permitted to mend or rise.",
+            "The queen is permitted to fall."
+        ],
+        [
+            "The engineer is permitted to tighten or grow.",
+            "The engineer is permitted to shrink."
+        ],
+        [
+            "The king is permitted to cherish or enter.",
+            "The king is permitted to despise."
+        ],
+        [
+            "The writer is permitted to open or arrive.",
+            "The writer is permitted to depart."
+        ],
+        [
+            "Your sister is permitted to straighten or encourage.",
+            "Your sister is permitted to discourage."
+        ],
+        [
+            "The woman is permitted to lighten or speak.",
+            "The woman is permitted to listen."
+        ],
+        [
+            "Her father is permitted to stand or accelerate.",
+            "Her father is permitted to sit."
+        ],
+        [
+            "The queen is permitted to unite or permit.",
+            "The queen is permitted to forbid."
+        ],
+        [
+            "The writer is permitted to open or expand.",
+            "The writer is permitted to close."
+        ],
+        [
+            "The director is permitted to admit or encourage.",
+            "The director is permitted to deny."
+        ],
+        [
+            "The writer is permitted to tighten or fill.",
+            "The writer is permitted to empty."
+        ],
+        [
+            "The dancer is permitted to open or start.",
+            "The dancer is permitted to stop."
+        ],
+        [
+            "The actor is permitted to stand or come.",
+            "The actor is permitted to go."
+        ],
+        [
+            "The driver is permitted to buy or cherish.",
+            "The driver is permitted to sell."
+        ],
+        [
+            "The explorer is permitted to reveal or buy.",
+            "The explorer is permitted to sell."
+        ],
+        [
+            "The actor is permitted to expand or laugh.",
+            "The actor is permitted to cry."
+        ],
+        [
+            "The student is permitted to start or increase.",
+            "The student is permitted to stop."
+        ],
+        [
+            "The driver is permitted to expand or respect.",
+            "The driver is permitted to contract."
+        ],
+        [
+            "The writer is permitted to mend or rise.",
+            "The writer is permitted to fall."
+        ],
+        [
+            "Her father is permitted to tighten or appear.",
+            "Her father is permitted to loosen."
+        ],
+        [
+            "The musician is permitted to arrive or speak.",
+            "The musician is permitted to depart."
+        ],
+        [
+            "The soldier is permitted to attach or increase.",
+            "The soldier is permitted to decrease."
+        ],
+        [
+            "The queen is permitted to protect or encourage.",
+            "The queen is permitted to attack."
+        ],
+        [
+            "The doctor is permitted to accept or accept.",
+            "The doctor is permitted to reject."
+        ],
+        [
+            "My friend is permitted to speak or admit.",
+            "My friend is permitted to listen."
+        ],
+        [
+            "The painter is permitted to cherish or protect.",
+            "The painter is permitted to attack."
+        ],
+        [
+            "The driver is permitted to straighten or cherish.",
+            "The driver is permitted to despise."
+        ],
+        [
+            "The architect is permitted to permit or enter.",
+            "The architect is permitted to exit."
+        ],
+        [
+            "Her father is permitted to earn or give.",
+            "Her father is permitted to spend."
+        ],
+        [
+            "The director is permitted to attach or mend.",
+            "The director is permitted to break."
+        ],
+        [
+            "The engineer is permitted to love or increase.",
+            "The engineer is permitted to decrease."
+        ],
+        [
+            "The queen is permitted to cherish or climb.",
+            "The queen is permitted to descend."
+        ],
+        [
+            "The driver is permitted to unite or admit.",
+            "The driver is permitted to separate."
+        ],
+        [
+            "The designer is permitted to enter or come.",
+            "The designer is permitted to go."
+        ],
+        [
+            "His mother is permitted to mend or build.",
+            "His mother is permitted to destroy."
+        ]
+    ]
+}
