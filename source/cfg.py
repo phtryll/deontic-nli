@@ -1,6 +1,6 @@
 import random
 from collections import defaultdict
-from typing import Set, List, Dict, DefaultDict, Any
+from typing import Set, List, Dict, DefaultDict, Any, Optional
 from source.cfg_utils import Rule, Tree, unify
 
 
@@ -69,20 +69,23 @@ class CFG:
     def generate(self, verbose=False):
         """Generate a grammar tree."""
 
-        # Initialize global variable bindings for the entire CFG tree
-        self.bindings: Dict[str, Any] = {}
+        # Non terminal feature bindings: initialize an empty dict for each non-terminal
+        self.feature_bindings: Dict[str, Dict[str, Any]] = {non_terminal: {} for non_terminal in self.mappings}
 
         # Initialize a tree with the axiom as the starting label
         tree: Tree = Tree(node_label=self.axiom, features={})
-
-        # Initialize a stack (LIFO) to hold nodes for rewriting
-        stack: List[Tree] = [tree]
+        
+        # Stack holds tuples of (node, parent_label)
+        stack: List[tuple[Tree, Optional[str]]] = [(tree, None)]
 
         # Main loop: continue until stack is empty
         while stack:
 
             # Processing the last node from the stack
-            node = stack.pop()
+            node, parent_label = stack.pop()
+
+            # Get the local bindings for this non terminal
+            local_bindings = self.feature_bindings.get(node.node_label, {})
 
             # Check if that node is terminal: if yes skip
             if self.is_terminal(node.node_label):
@@ -99,7 +102,9 @@ class CFG:
             # Filter by feature unification
             candidates = []
             for rule in applicable_rules:
-                merged_features = unify({**node.features, **self.bindings}, rule.features)
+                context = {**node.features, **local_bindings}
+                # context = node.features
+                merged_features = unify(context, rule.features)
 
                 if merged_features is not None:
                     candidates.append((rule, merged_features))
@@ -111,12 +116,13 @@ class CFG:
             weights = [rule.prob for rule, _ in candidates]
             selected_rule, selected_features = random.choices(candidates, weights=weights, k=1)[0]
 
-            # Update the variable bindings in case a variable got bound
-            for feature, value in selected_features.items():
-                orig_value = node.features.get(feature)
-                rule_value = selected_rule.features.get(feature)
-                if self.is_variable(orig_value) or self.is_variable(rule_value):
-                    self.bindings[feature] = value
+            # Record any variable→constant binding in the parent non-terminal
+            if parent_label in self.feature_bindings:
+                for feature, value in selected_features.items():
+                    node_value = node.features.get(feature)
+                    rule_value = selected_rule.features.get(feature)
+                    if self.is_variable(node_value) or self.is_variable(rule_value):
+                        self.feature_bindings[parent_label][feature] = value
 
             # Create children with current global variable bindings
             node.children = [
@@ -124,13 +130,14 @@ class CFG:
                 for symbol in selected_rule.right
             ]
 
+            # Push children along with this node as their parent
+            for child in reversed(node.children):
+                stack.append((child, node.node_label))
+
             # If verbose: print the current state of the tree
             if verbose:
                 print(f"Applied rule: {node.node_label} -> {selected_rule.right}")
                 print(f"Current tree: {tree}")
-
-            # Add the new children in the stack in reverse order (left to right)
-            stack.extend(reversed(node.children))
         
         return tree
     
