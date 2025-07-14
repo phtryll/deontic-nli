@@ -1,9 +1,24 @@
 labels_ollama = {
-    "VP_b": ["V_INF", "V_3SG"]
+    "NP": ["NP"],
+    "VP": ["V_INF", "V_3SG"]
 }
 
 prompts_ollama = {
-    "NP": "Generate exactly {k} unique simple noun phrases consisting of a determiner and a nou that is an agent, for example: 'the boy', 'the man', 'the teacher', 'my friend'.",
-    "VP_a": "Generate exactly {k} unique simple verbs in the third person present tense, for example: 'sleeps', 'thinks'. Avoid verbs that require an object like 'goes', 'sees' or 'maintains'.",
-    "VP_b": "Generate exactly {k} unique verbs, for each verb give its infinitive from (ex: 'sleep') and its 3rd person singular form (ex: 'sleeps')."
+
+    "NP": """
+    
+    Generate exactly {k} unique and simple noun phrases.
+    They should consist of a determiner and a noun representing a person (e.g., 'the boy', 'the man', 'the teacher', 'my friend').
+    
+    """,
+    
+    "VP": """
+    
+    Generate exactly {k} unique verbs.
+    For each verb, provide its infinitive form (e.g., 'sleep') and its third person singular form (e.g., 'sleeps').
+    They should combine with a subject to form a complete action without requiring an object or complement.
+    For example, 'sleeps', 'runs'; avoid 'advocates', which typically needs a complement.
+
+    """
+
 }

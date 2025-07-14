@@ -1,8 +1,8 @@
-from ollama import chat
-from pydantic import RootModel
+from ollama import chat, generate
+from pydantic import create_model, ConfigDict, Field
 from source.cfg import CFG
 from source.cfg_utils import join
-from typing import List, Dict
+from typing import List, Dict, Any
 
 
 def generate_examples(grammar: CFG, num_examples: int = 20, print_tree: bool = False) -> List[str]:
@@ -30,44 +30,57 @@ def generate_examples(grammar: CFG, num_examples: int = 20, print_tree: bool = F
     return examples
 
 
-class LexicalPoolSchema(RootModel[List[str]]):
-    """Root model for a mapping from category to list of generated items."""
-    pass
-
-
-def generate_items(prompt: str, model: str = 'mistral') -> List[str]:
+def generate_items(prompt: str, field_names: List[str], model: str = 'mistral') -> Dict[str, List[str]]:
     """
-    Generate lexical items for each category using ollama.
-    Returns: dict mapping category to list of items.
-
-    - prompt: a prompt string.
-    - model: ollama model name.
+    Generate lexical items for a given prompt, enforcing a strict JSON schema.
+    Returns a dict mapping each field name to its list of generated strings.
     """
     
-    system_msg = {
-        'role': 'system',
-        'content': ()
-    }
+    # Define the format fields (they correspond to the entry labels, i.e. the non-terminals)
+    fields: Any = {name: (List[str], Field()) for name in field_names}
+    
+    # Dynamically create a JSON schema for each prompt
+    SchemaClass = create_model(
+        "LexicalPoolSchema",
+        __config__=ConfigDict(extra='forbid'),
+       **fields
+    )
 
-    user_msg = {
-        'role': 'user',
-        'content': prompt
-    }
+    # Extract the JSON Schema from the dynamic model and explicitly forbid additional properties
+    json_schema = SchemaClass.model_json_schema()
+    json_schema["additionalProperties"] = False
 
+    # System general prompt
+    system_prompts = (
+        'You are a JSON generator. You must output _only_ valid JSON that conforms exactly to the provided schema. '
+        'You will receive an instruction to “Generate exactly {k} items.” You must return exactly {k} elements in each list—no more, no fewer. '
+    )
+
+    # Prepare the system and user messages for the ollama chat API
+    system_msg = {'role': 'system', 'content': system_prompts}
+    user_msg = {'role': 'user', 'content': prompt}
+
+    # Invoke the LLM and instruct it to format output according to our JSON schema
     response = chat(
         messages=[system_msg, user_msg],
         model=model,
-        format=LexicalPoolSchema.model_json_schema(),
+        format=json_schema,
+        # options={'temperature':0.0} # No surprises...
     )
 
+    # Extract the content (and make sure it exists)
     content = response.message.content
     if content is None:
         raise ValueError("No content in model response")
-    
-    # Validate and parse JSON to dict
-    lexical_pool = LexicalPoolSchema.model_validate_json(content).root
-    
-    return lexical_pool
+
+    # Validate the JSON response against our schema
+    try:
+        instance = SchemaClass.model_validate_json(content)
+    except Exception:
+        raise ValueError("Output format was not validated")
+
+    # Return the validated data as a dict
+    return instance.model_dump()
 
 
 def format_rules(slot_dict: Dict[str, List[str]]) -> Dict[str, List[str]]:
