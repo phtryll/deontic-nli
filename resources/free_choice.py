@@ -4,7 +4,7 @@ from source.cfg_utils import Rule
 
 fcp_base = [
 
-    Rule(left="S", right=["<PREMISE>", "<HYPOTHESIS>"]),
+    Rule(left="S", right=["<PREMISE>", "<HYPOTHESIS>"], features={'subj':'?x'}),
 
     Rule(left="<PREMISE>", right=["<PROPOSITION>"]),
     Rule(left="<HYPOTHESIS>", right=["<PROPOSITION>"]),
@@ -12,6 +12,10 @@ fcp_base = [
     Rule(left="<PROPOSITION>", right=["B"]),
     Rule(left="A", right=["NP", "VP", "."]),
     Rule(left="B", right=["NP", "VP", "."]),
+
+
+
+    
 
     # Rule(
     #     left="<PREMISE>",
@@ -104,3 +108,8 @@ for file in rule_files:
             if r not in seen_rules:
                 seen_rules.add(r)
                 fcp.append(r)
+
+# Add relevant features
+for rule in fcp:
+    if rule.left == "NP":
+        rule.features.setdefault("subj", rule.right[0])
