@@ -44,12 +44,12 @@ def main():
     # Select one or more grammars
     parser.add_argument(
         "-g", "--grammar",
-        choices=GRAMMARS,
-        nargs="+",
-        metavar=("GRAMMAR1", "GRAMMAR2"),
+        nargs=2,
+        action="append",
+        metavar=("GRAMMAR_KEY", "GRAMMAR_NAME"),
         help=(
-            f"select grammar(s) to generate examples: "
-            f"{', '.join(GRAMMARS.keys())}"
+            f"select a grammar by key and assign it a custom name; "
+            f"valid keys: {', '.join(GRAMMARS.keys())}"
         )
     )
 
@@ -119,12 +119,13 @@ def main():
     if (args.generate_examples or args.show_grammar) and not args.grammar:
         parser.error("argument -g/--grammar is required for generating examples or showing grammar.")
 
-    # Create a dictionary with all the specified grammars
+    # Create a dictionary with all the specified grammars and custom names
     if args.grammar:
-        grammars = {
-            name: CFG(rules=GRAMMARS[name][0], axiom="S")
-            for name in args.grammar
-        }
+        grammars = {}
+        for key, custom_name in args.grammar:
+            if key not in GRAMMARS:
+                parser.error(f"Unknown grammar key '{key}'. Valid keys: {', '.join(GRAMMARS.keys())}")
+            grammars[custom_name] = CFG(rules=GRAMMARS[key][0], axiom="S")
 
     # Display the CFG(s) to the user
     if args.show_grammar:
@@ -134,10 +135,9 @@ def main():
                 print(grammar)
 
         if args.show_grammar == "base":
-            base_grammars = {
-                name: CFG(rules=GRAMMARS[name][1], axiom="S")
-                for name in args.grammar
-            }
+            base_grammars = {}
+            for key, custom_name in args.grammar:
+                base_grammars[custom_name] = CFG(rules=GRAMMARS[key][1], axiom="S")
             
             for name, grammar in base_grammars.items():
                 print(f"\n----Context-free grammar for {name}----\n")
@@ -161,9 +161,23 @@ def main():
         if args.save:
             save_path = Path(__file__).parent / "data" / args.save
             
-            with open(save_path, "w", encoding="utf-8") as f:
-                json.dump(formatted_examples, f, ensure_ascii=False, indent=4)
+            # Load existing data if the file exists
+            if save_path.exists():
+                with open(save_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+            else:
+                data = {}
             
+            # Merge new examples into existing data
+            for name, examples_list in formatted_examples.items():
+                if name in data and isinstance(data[name], list):
+                    data[name].extend(examples_list)
+                else:
+                    data[name] = examples_list
+            
+            # Write merged data back to file
+            with open(save_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
             print(f"\nSaved generated examples to {save_path}")
 
     # Generate lexical rules
