@@ -1,0 +1,900 @@
+Example 1:
+Premise: Her father swims or writes.
+Hypothesis: Her father swims and writes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0009
+  NEUTRAL: 0.0047
+  ENTAILMENT: 0.9944
+
+Example 2:
+Premise: The artist climbs or loves.
+Hypothesis: The artist climbs and loves.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0071
+  ENTAILMENT: 0.9910
+
+Example 3:
+Premise: The engineer astonishes or misses.
+Hypothesis: The engineer astonishes and misses.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0058
+  NEUTRAL: 0.0057
+  ENTAILMENT: 0.9885
+
+Example 4:
+Premise: The director lies or climbs.
+Hypothesis: The director lies and climbs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0011
+  NEUTRAL: 0.0056
+  ENTAILMENT: 0.9933
+
+Example 5:
+Premise: My friend invents or reads.
+Hypothesis: My friend invents and reads.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0050
+  ENTAILMENT: 0.9934
+
+Example 6:
+Premise: The driver climbs or edits.
+Hypothesis: The driver climbs and edits.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0065
+  ENTAILMENT: 0.9917
+
+Example 7:
+Premise: My friend envies or designs.
+Hypothesis: My friend envies and designs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0031
+  NEUTRAL: 0.0054
+  ENTAILMENT: 0.9914
+
+Example 8:
+Premise: The musician explores or teaches.
+Hypothesis: The musician explores and teaches.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0046
+  ENTAILMENT: 0.9941
+
+Example 9:
+Premise: The actor wakes or sleeps.
+Hypothesis: The actor wakes and sleeps.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0040
+  NEUTRAL: 0.0087
+  ENTAILMENT: 0.9873
+
+Example 10:
+Premise: The architect appreciates or longs.
+Hypothesis: The architect appreciates and longs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0051
+  ENTAILMENT: 0.9931
+
+Example 11:
+Premise: My friend cheats or loses.
+Hypothesis: My friend cheats and loses.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0053
+  NEUTRAL: 0.0070
+  ENTAILMENT: 0.9877
+
+Example 12:
+Premise: The athlete loses or cries.
+Hypothesis: The athlete loses and cries.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0048
+  ENTAILMENT: 0.9938
+
+Example 13:
+Premise: The explorer invents or camps.
+Hypothesis: The explorer invents and camps.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0021
+  NEUTRAL: 0.0050
+  ENTAILMENT: 0.9929
+
+Example 14:
+Premise: The student plays or thinks.
+Hypothesis: The student plays and thinks.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0009
+  NEUTRAL: 0.0052
+  ENTAILMENT: 0.9939
+
+Example 15:
+Premise: The dancer competes or designs.
+Hypothesis: The dancer competes and designs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0054
+  ENTAILMENT: 0.9928
+
+Example 16:
+Premise: The explorer edits or astonishes.
+Hypothesis: The explorer edits and astonishes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0021
+  NEUTRAL: 0.0056
+  ENTAILMENT: 0.9923
+
+Example 17:
+Premise: The chef edits or betrays.
+Hypothesis: The chef edits and betrays.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0056
+  ENTAILMENT: 0.9928
+
+Example 18:
+Premise: The writer teaches or reads.
+Hypothesis: The writer teaches and reads.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0052
+  ENTAILMENT: 0.9935
+
+Example 19:
+Premise: The queen skis or forgives.
+Hypothesis: The queen skis and forgives.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0025
+  NEUTRAL: 0.0102
+  ENTAILMENT: 0.9873
+
+Example 20:
+Premise: The pilot appreciates or hikes.
+Hypothesis: The pilot appreciates and hikes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0023
+  NEUTRAL: 0.0058
+  ENTAILMENT: 0.9919
+
+Example 21:
+Premise: The nurse writes or invents.
+Hypothesis: The nurse writes and invents.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0050
+  ENTAILMENT: 0.9935
+
+Example 22:
+Premise: The architect longs or edits.
+Hypothesis: The architect longs and edits.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0092
+  ENTAILMENT: 0.9891
+
+Example 23:
+Premise: The chef travels or laughs.
+Hypothesis: The chef travels and laughs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0021
+  NEUTRAL: 0.0056
+  ENTAILMENT: 0.9923
+
+Example 24:
+Premise: The king programs or hikes.
+Hypothesis: The king programs and hikes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0039
+  NEUTRAL: 0.0069
+  ENTAILMENT: 0.9892
+
+Example 25:
+Premise: The chef camps or delights.
+Hypothesis: The chef camps and delights.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0055
+  ENTAILMENT: 0.9929
+
+Example 26:
+Premise: The soldier programs or composes.
+Hypothesis: The soldier programs and composes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0056
+  ENTAILMENT: 0.9927
+
+Example 27:
+Premise: The actor appreciates or skis.
+Hypothesis: The actor appreciates and skis.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0055
+  NEUTRAL: 0.0079
+  ENTAILMENT: 0.9866
+
+Example 28:
+Premise: My friend fishes or drives.
+Hypothesis: My friend fishes and drives.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0045
+  ENTAILMENT: 0.9942
+
+Example 29:
+Premise: The man appreciates or enjoys.
+Hypothesis: The man appreciates and enjoys.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0022
+  NEUTRAL: 0.0049
+  ENTAILMENT: 0.9928
+
+Example 30:
+Premise: The director wakes or promises.
+Hypothesis: The director wakes and promises.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0029
+  NEUTRAL: 0.0065
+  ENTAILMENT: 0.9905
+
+Example 31:
+Premise: The scientist invents or edits.
+Hypothesis: The scientist invents and edits.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0046
+  ENTAILMENT: 0.9938
+
+Example 32:
+Premise: The musician discovers or jumps.
+Hypothesis: The musician discovers and jumps.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0052
+  ENTAILMENT: 0.9929
+
+Example 33:
+Premise: The scholar eats or drives.
+Hypothesis: The scholar eats and drives.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0012
+  NEUTRAL: 0.0052
+  ENTAILMENT: 0.9936
+
+Example 34:
+Premise: The student innocent or discovers.
+Hypothesis: The student innocent and discovers.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0072
+  NEUTRAL: 0.0100
+  ENTAILMENT: 0.9829
+
+Example 35:
+Premise: The engineer designs or cries.
+Hypothesis: The engineer designs and cries.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0052
+  ENTAILMENT: 0.9935
+
+Example 36:
+Premise: Your sister promises or researches.
+Hypothesis: Your sister promises and researches.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0057
+  ENTAILMENT: 0.9930
+
+Example 37:
+Premise: The scholar cherishes or designs.
+Hypothesis: The scholar cherishes and designs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0033
+  NEUTRAL: 0.0056
+  ENTAILMENT: 0.9911
+
+Example 38:
+Premise: The dancer flies or discovers.
+Hypothesis: The dancer flies and discovers.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0024
+  NEUTRAL: 0.0166
+  ENTAILMENT: 0.9810
+
+Example 39:
+Premise: The woman writes or sleeps.
+Hypothesis: The woman writes and sleeps.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0048
+  ENTAILMENT: 0.9938
+
+Example 40:
+Premise: The engineer teaches or sketches.
+Hypothesis: The engineer teaches and sketches.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0048
+  ENTAILMENT: 0.9937
+
+Example 41:
+Premise: The scholar apologizes or longs.
+Hypothesis: The scholar apologizes and longs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0053
+  ENTAILMENT: 0.9933
+
+Example 42:
+Premise: The chef imagines or speaks.
+Hypothesis: The chef imagines and speaks.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0053
+  ENTAILMENT: 0.9935
+
+Example 43:
+Premise: His mother loves or designs.
+Hypothesis: His mother loves and designs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0048
+  ENTAILMENT: 0.9934
+
+Example 44:
+Premise: The queen enjoys or dances.
+Hypothesis: The queen enjoys and dances.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0022
+  NEUTRAL: 0.0048
+  ENTAILMENT: 0.9929
+
+Example 45:
+Premise: The boy speaks or yearns.
+Hypothesis: The boy speaks and yearns.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0048
+  ENTAILMENT: 0.9938
+
+Example 46:
+Premise: The man drives or innovates.
+Hypothesis: The man drives and innovates.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0056
+  ENTAILMENT: 0.9929
+
+Example 47:
+Premise: The engineer draws or wins.
+Hypothesis: The engineer draws and wins.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0078
+  NEUTRAL: 0.0175
+  ENTAILMENT: 0.9747
+
+Example 48:
+Premise: The pilot steals or writes.
+Hypothesis: The pilot steals and writes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0011
+  NEUTRAL: 0.0053
+  ENTAILMENT: 0.9936
+
+Example 49:
+Premise: The designer regrets or steals.
+Hypothesis: The designer regrets and steals.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0055
+  ENTAILMENT: 0.9929
+
+Example 50:
+Premise: Your sister pines or yearns.
+Hypothesis: Your sister pines and yearns.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0046
+  ENTAILMENT: 0.9938
+
+Example 51:
+Premise: The student experiments or promises.
+Hypothesis: The student experiments and promises.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0038
+  NEUTRAL: 0.0063
+  ENTAILMENT: 0.9899
+
+Example 52:
+Premise: The driver longs or plays.
+Hypothesis: The driver longs and plays.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0048
+  ENTAILMENT: 0.9938
+
+Example 53:
+Premise: The actor hikes or learns.
+Hypothesis: The actor hikes and learns.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0067
+  ENTAILMENT: 0.9914
+
+Example 54:
+Premise: The king paints or rows.
+Hypothesis: The king paints and rows.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0030
+  NEUTRAL: 0.0056
+  ENTAILMENT: 0.9913
+
+Example 55:
+Premise: Her father betrays or hates.
+Hypothesis: Her father betrays and hates.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0057
+  ENTAILMENT: 0.9924
+
+Example 56:
+Premise: The programmer cheats or codes.
+Hypothesis: The programmer cheats and codes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0080
+  ENTAILMENT: 0.9907
+
+Example 57:
+Premise: The artist eats or fishes.
+Hypothesis: The artist eats and fishes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0052
+  ENTAILMENT: 0.9935
+
+Example 58:
+Premise: The athlete camps or imagines.
+Hypothesis: The athlete camps and imagines.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0050
+  ENTAILMENT: 0.9936
+
+Example 59:
+Premise: The nurse cries or films.
+Hypothesis: The nurse cries and films.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0026
+  NEUTRAL: 0.0082
+  ENTAILMENT: 0.9891
+
+Example 60:
+Premise: Your sister lies or swims.
+Hypothesis: Your sister lies and swims.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0012
+  NEUTRAL: 0.0047
+  ENTAILMENT: 0.9941
+
+Example 61:
+Premise: The designer swims or composes.
+Hypothesis: The designer swims and composes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0071
+  ENTAILMENT: 0.9915
+
+Example 62:
+Premise: The man sketches or designs.
+Hypothesis: The man sketches and designs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0056
+  ENTAILMENT: 0.9927
+
+Example 63:
+Premise: The actor misses or cherishes.
+Hypothesis: The actor misses and cherishes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0051
+  ENTAILMENT: 0.9930
+
+Example 64:
+Premise: The pilot competes or experiments.
+Hypothesis: The pilot competes and experiments.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0012
+  NEUTRAL: 0.0070
+  ENTAILMENT: 0.9918
+
+Example 65:
+Premise: The student astonishes or eats.
+Hypothesis: The student astonishes and eats.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0078
+  ENTAILMENT: 0.9907
+
+Example 66:
+Premise: The king amazes or hates.
+Hypothesis: The king amazes and hates.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0022
+  NEUTRAL: 0.0065
+  ENTAILMENT: 0.9913
+
+Example 67:
+Premise: The chef thinks or lies.
+Hypothesis: The chef thinks and lies.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0054
+  ENTAILMENT: 0.9929
+
+Example 68:
+Premise: Your sister regrets or enjoys.
+Hypothesis: Your sister regrets and enjoys.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0028
+  NEUTRAL: 0.0055
+  ENTAILMENT: 0.9917
+
+Example 69:
+Premise: The student drives or discovers.
+Hypothesis: The student drives and discovers.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0038
+  NEUTRAL: 0.0121
+  ENTAILMENT: 0.9840
+
+Example 70:
+Premise: The king enjoys or travels.
+Hypothesis: The king enjoys and travels.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0023
+  NEUTRAL: 0.0047
+  ENTAILMENT: 0.9930
+
+Example 71:
+Premise: The queen drives or innovates.
+Hypothesis: The queen drives and innovates.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0048
+  ENTAILMENT: 0.9936
+
+Example 72:
+Premise: The scholar works or programs.
+Hypothesis: The scholar works and programs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0023
+  NEUTRAL: 0.0069
+  ENTAILMENT: 0.9908
+
+Example 73:
+Premise: The driver longs or camps.
+Hypothesis: The driver longs and camps.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0020
+  NEUTRAL: 0.0049
+  ENTAILMENT: 0.9931
+
+Example 74:
+Premise: The king draws or cherishes.
+Hypothesis: The king draws and cherishes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0049
+  ENTAILMENT: 0.9938
+
+Example 75:
+Premise: The pilot steals or draws.
+Hypothesis: The pilot steals and draws.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0049
+  ENTAILMENT: 0.9934
+
+Example 76:
+Premise: The engineer runs or enjoys.
+Hypothesis: The engineer runs and enjoys.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0026
+  NEUTRAL: 0.0057
+  ENTAILMENT: 0.9918
+
+Example 77:
+Premise: The programmer designs or dances.
+Hypothesis: The programmer designs and dances.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0020
+  NEUTRAL: 0.0054
+  ENTAILMENT: 0.9926
+
+Example 78:
+Premise: The artist programs or runs.
+Hypothesis: The artist programs and runs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0025
+  NEUTRAL: 0.0057
+  ENTAILMENT: 0.9918
+
+Example 79:
+Premise: The driver forgives or learns.
+Hypothesis: The driver forgives and learns.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0067
+  ENTAILMENT: 0.9919
+
+Example 80:
+Premise: The nurse promises or jumps.
+Hypothesis: The nurse promises and jumps.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0059
+  ENTAILMENT: 0.9923
+
+Example 81:
+Premise: The programmer codes or swims.
+Hypothesis: The programmer codes and swims.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0029
+  NEUTRAL: 0.0116
+  ENTAILMENT: 0.9855
+
+Example 82:
+Premise: Your sister reads or regrets.
+Hypothesis: Your sister reads and regrets.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0031
+  NEUTRAL: 0.0089
+  ENTAILMENT: 0.9880
+
+Example 83:
+Premise: The director researches or enjoys.
+Hypothesis: The director researches and enjoys.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0047
+  ENTAILMENT: 0.9934
+
+Example 84:
+Premise: Her father regrets or imagines.
+Hypothesis: Her father regrets and imagines.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0059
+  ENTAILMENT: 0.9922
+
+Example 85:
+Premise: Your sister longs or astonishes.
+Hypothesis: Your sister longs and astonishes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0048
+  ENTAILMENT: 0.9935
+
+Example 86:
+Premise: The engineer paints or yearns.
+Hypothesis: The engineer paints and yearns.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0050
+  ENTAILMENT: 0.9935
+
+Example 87:
+Premise: The explorer innocent or discovers.
+Hypothesis: The explorer innocent and discovers.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0129
+  NEUTRAL: 0.0116
+  ENTAILMENT: 0.9755
+
+Example 88:
+Premise: The doctor experiments or laughs.
+Hypothesis: The doctor experiments and laughs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0068
+  ENTAILMENT: 0.9914
+
+Example 89:
+Premise: The musician longs or explores.
+Hypothesis: The musician longs and explores.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0050
+  ENTAILMENT: 0.9933
+
+Example 90:
+Premise: Her father camps or rows.
+Hypothesis: Her father camps and rows.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0025
+  NEUTRAL: 0.0049
+  ENTAILMENT: 0.9925
+
+Example 91:
+Premise: The man experiments or researches.
+Hypothesis: The man experiments and researches.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0054
+  ENTAILMENT: 0.9933
+
+Example 92:
+Premise: The doctor experiments or loves.
+Hypothesis: The doctor experiments and loves.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0055
+  ENTAILMENT: 0.9928
+
+Example 93:
+Premise: The musician sails or sketches.
+Hypothesis: The musician sails and sketches.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0050
+  ENTAILMENT: 0.9934
+
+Example 94:
+Premise: The scientist appreciates or thinks.
+Hypothesis: The scientist appreciates and thinks.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0051
+  ENTAILMENT: 0.9936
+
+Example 95:
+Premise: The explorer laughs or hikes.
+Hypothesis: The explorer laughs and hikes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0072
+  ENTAILMENT: 0.9909
+
+Example 96:
+Premise: The student builds or imagines.
+Hypothesis: The student builds and imagines.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0011
+  NEUTRAL: 0.0048
+  ENTAILMENT: 0.9941
+
+Example 97:
+Premise: His mother innovates or imagines.
+Hypothesis: His mother innovates and imagines.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0012
+  NEUTRAL: 0.0044
+  ENTAILMENT: 0.9944
+
+Example 98:
+Premise: The boy codes or sails.
+Hypothesis: The boy codes and sails.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0020
+  NEUTRAL: 0.0090
+  ENTAILMENT: 0.9890
+
+Example 99:
+Premise: The chef swims or longs.
+Hypothesis: The chef swims and longs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0047
+  ENTAILMENT: 0.9940
+
+Example 100:
+Premise: The artist apologizes or sketches.
+Hypothesis: The artist apologizes and sketches.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0062
+  ENTAILMENT: 0.9923
+

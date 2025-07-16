@@ -1,0 +1,900 @@
+Example 1:
+Premise: Your sister apologizes.
+Hypothesis: Your sister amazes or apologizes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0059
+  NEUTRAL: 0.7931
+  ENTAILMENT: 0.2009
+
+Example 2:
+Premise: My friend thinks.
+Hypothesis: My friend thinks or codes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.9955
+  ENTAILMENT: 0.0031
+
+Example 3:
+Premise: The designer designs.
+Hypothesis: The designer designs or sails.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0033
+  NEUTRAL: 0.9876
+  ENTAILMENT: 0.0091
+
+Example 4:
+Premise: The engineer composes.
+Hypothesis: The engineer imagines or composes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0022
+  NEUTRAL: 0.3466
+  ENTAILMENT: 0.6512
+
+Example 5:
+Premise: Your sister cries.
+Hypothesis: Your sister cries or longs.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.9589
+  ENTAILMENT: 0.0397
+
+Example 6:
+Premise: The soldier swims.
+Hypothesis: The soldier composes or swims.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0150
+  NEUTRAL: 0.5343
+  ENTAILMENT: 0.4507
+
+Example 7:
+Premise: The explorer cherishes.
+Hypothesis: The explorer cherishes or runs.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0110
+  NEUTRAL: 0.9563
+  ENTAILMENT: 0.0327
+
+Example 8:
+Premise: The explorer hope.
+Hypothesis: The explorer travels or hope.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0091
+  NEUTRAL: 0.8995
+  ENTAILMENT: 0.0914
+
+Example 9:
+Premise: The pilot lies.
+Hypothesis: The pilot experiments or lies.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0045
+  NEUTRAL: 0.8607
+  ENTAILMENT: 0.1349
+
+Example 10:
+Premise: The nurse composes.
+Hypothesis: The nurse composes or explores.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0020
+  NEUTRAL: 0.9396
+  ENTAILMENT: 0.0584
+
+Example 11:
+Premise: Your sister photographs.
+Hypothesis: Your sister photographs or edits.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.8453
+  ENTAILMENT: 0.1532
+
+Example 12:
+Premise: The pilot cheats.
+Hypothesis: The pilot experiments or cheats.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0130
+  NEUTRAL: 0.4438
+  ENTAILMENT: 0.5432
+
+Example 13:
+Premise: The chef travels.
+Hypothesis: The chef hope or travels.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0117
+  NEUTRAL: 0.4397
+  ENTAILMENT: 0.5487
+
+Example 14:
+Premise: Your sister films.
+Hypothesis: Your sister explores or films.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0020
+  NEUTRAL: 0.0862
+  ENTAILMENT: 0.9118
+
+Example 15:
+Premise: The explorer speaks.
+Hypothesis: The explorer speaks or cries.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0061
+  NEUTRAL: 0.9821
+  ENTAILMENT: 0.0119
+
+Example 16:
+Premise: The nurse appreciates.
+Hypothesis: The nurse appreciates or dances.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0098
+  NEUTRAL: 0.9642
+  ENTAILMENT: 0.0260
+
+Example 17:
+Premise: The woman sleeps.
+Hypothesis: The woman codes or sleeps.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0124
+  NEUTRAL: 0.4615
+  ENTAILMENT: 0.5261
+
+Example 18:
+Premise: The king travels.
+Hypothesis: The king travels or betrays.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0128
+  NEUTRAL: 0.9570
+  ENTAILMENT: 0.0302
+
+Example 19:
+Premise: The writer rows.
+Hypothesis: The writer rows or regrets.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0054
+  NEUTRAL: 0.9714
+  ENTAILMENT: 0.0232
+
+Example 20:
+Premise: The soldier apologizes.
+Hypothesis: The soldier apologizes or programs.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0054
+  NEUTRAL: 0.6647
+  ENTAILMENT: 0.3299
+
+Example 21:
+Premise: The actor speaks.
+Hypothesis: The actor speaks or programs.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.9714
+  ENTAILMENT: 0.0269
+
+Example 22:
+Premise: My friend sleeps.
+Hypothesis: My friend travels or sleeps.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0030
+  NEUTRAL: 0.7317
+  ENTAILMENT: 0.2653
+
+Example 23:
+Premise: The programmer inspires.
+Hypothesis: The programmer inspires or composes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0048
+  NEUTRAL: 0.9717
+  ENTAILMENT: 0.0234
+
+Example 24:
+Premise: The driver dances.
+Hypothesis: The driver amazes or dances.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0041
+  NEUTRAL: 0.6261
+  ENTAILMENT: 0.3698
+
+Example 25:
+Premise: The writer wins.
+Hypothesis: The writer wins or flies.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0118
+  NEUTRAL: 0.9789
+  ENTAILMENT: 0.0093
+
+Example 26:
+Premise: The pilot innocent.
+Hypothesis: The pilot innocent or competes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0118
+  NEUTRAL: 0.9476
+  ENTAILMENT: 0.0406
+
+Example 27:
+Premise: The nurse draws.
+Hypothesis: The nurse draws or imagines.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.7357
+  ENTAILMENT: 0.2628
+
+Example 28:
+Premise: The writer edits.
+Hypothesis: The writer edits or innocent.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0297
+  NEUTRAL: 0.9159
+  ENTAILMENT: 0.0544
+
+Example 29:
+Premise: The doctor envies.
+Hypothesis: The doctor speaks or envies.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0055
+  NEUTRAL: 0.1714
+  ENTAILMENT: 0.8231
+
+Example 30:
+Premise: The driver experiments.
+Hypothesis: The driver experiments or climbs.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0036
+  NEUTRAL: 0.9817
+  ENTAILMENT: 0.0147
+
+Example 31:
+Premise: His mother works.
+Hypothesis: His mother experiments or works.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.5779
+  ENTAILMENT: 0.4204
+
+Example 32:
+Premise: The engineer explores.
+Hypothesis: The engineer explores or regrets.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0137
+  NEUTRAL: 0.9694
+  ENTAILMENT: 0.0168
+
+Example 33:
+Premise: The painter learns.
+Hypothesis: The painter innocent or learns.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0428
+  NEUTRAL: 0.3233
+  ENTAILMENT: 0.6339
+
+Example 34:
+Premise: The painter cycles.
+Hypothesis: The painter cycles or enjoys.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0028
+  NEUTRAL: 0.8335
+  ENTAILMENT: 0.1637
+
+Example 35:
+Premise: Her father envies.
+Hypothesis: Her father works or envies.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0390
+  NEUTRAL: 0.5589
+  ENTAILMENT: 0.4021
+
+Example 36:
+Premise: The driver enjoys.
+Hypothesis: The driver admits or enjoys.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0650
+  ENTAILMENT: 0.9335
+
+Example 37:
+Premise: The writer flies.
+Hypothesis: The writer amazes or flies.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0044
+  NEUTRAL: 0.4634
+  ENTAILMENT: 0.5322
+
+Example 38:
+Premise: The dancer sketches.
+Hypothesis: The dancer forgives or sketches.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0157
+  NEUTRAL: 0.5393
+  ENTAILMENT: 0.4450
+
+Example 39:
+Premise: The chef photographs.
+Hypothesis: The chef photographs or adores.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0038
+  NEUTRAL: 0.9176
+  ENTAILMENT: 0.0786
+
+Example 40:
+Premise: The programmer adores.
+Hypothesis: The programmer adores or rows.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0279
+  NEUTRAL: 0.9416
+  ENTAILMENT: 0.0305
+
+Example 41:
+Premise: The musician researches.
+Hypothesis: The musician explores or researches.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0240
+  ENTAILMENT: 0.9745
+
+Example 42:
+Premise: The man sings.
+Hypothesis: The man sings or paints.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0009
+  NEUTRAL: 0.9976
+  ENTAILMENT: 0.0016
+
+Example 43:
+Premise: The chef researches.
+Hypothesis: The chef researches or fishes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0333
+  NEUTRAL: 0.9555
+  ENTAILMENT: 0.0112
+
+Example 44:
+Premise: The nurse experiments.
+Hypothesis: The nurse creates or experiments.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0031
+  NEUTRAL: 0.0445
+  ENTAILMENT: 0.9524
+
+Example 45:
+Premise: The king inspires.
+Hypothesis: The king sails or inspires.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0373
+  NEUTRAL: 0.3863
+  ENTAILMENT: 0.5764
+
+Example 46:
+Premise: The pilot writes.
+Hypothesis: The pilot writes or hates.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0195
+  NEUTRAL: 0.9631
+  ENTAILMENT: 0.0174
+
+Example 47:
+Premise: The nurse films.
+Hypothesis: The nurse films or writes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.8995
+  ENTAILMENT: 0.0987
+
+Example 48:
+Premise: The doctor codes.
+Hypothesis: The doctor codes or amazes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0104
+  NEUTRAL: 0.9437
+  ENTAILMENT: 0.0458
+
+Example 49:
+Premise: The programmer paints.
+Hypothesis: The programmer fishes or paints.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0251
+  NEUTRAL: 0.5750
+  ENTAILMENT: 0.3999
+
+Example 50:
+Premise: The designer writes.
+Hypothesis: The designer writes or camps.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0151
+  NEUTRAL: 0.9799
+  ENTAILMENT: 0.0050
+
+Example 51:
+Premise: The chef hope.
+Hypothesis: The chef hope or lies.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0140
+  NEUTRAL: 0.9563
+  ENTAILMENT: 0.0297
+
+Example 52:
+Premise: The driver creates.
+Hypothesis: The driver edits or creates.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0028
+  NEUTRAL: 0.2231
+  ENTAILMENT: 0.7741
+
+Example 53:
+Premise: The dancer flies.
+Hypothesis: The dancer flies or cherishes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0068
+  NEUTRAL: 0.8719
+  ENTAILMENT: 0.1213
+
+Example 54:
+Premise: The architect skis.
+Hypothesis: The architect skis or cries.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0059
+  NEUTRAL: 0.9674
+  ENTAILMENT: 0.0267
+
+Example 55:
+Premise: The scholar drives.
+Hypothesis: The scholar drives or envies.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0071
+  NEUTRAL: 0.9508
+  ENTAILMENT: 0.0421
+
+Example 56:
+Premise: The boy researches.
+Hypothesis: The boy paints or researches.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0101
+  NEUTRAL: 0.8892
+  ENTAILMENT: 0.1007
+
+Example 57:
+Premise: The athlete speaks.
+Hypothesis: The athlete amazes or speaks.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0030
+  NEUTRAL: 0.9197
+  ENTAILMENT: 0.0773
+
+Example 58:
+Premise: The woman amazes.
+Hypothesis: The woman learns or amazes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0032
+  NEUTRAL: 0.4436
+  ENTAILMENT: 0.5532
+
+Example 59:
+Premise: The engineer dreams.
+Hypothesis: The engineer dreams or explores.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.8899
+  ENTAILMENT: 0.1086
+
+Example 60:
+Premise: The actor betrays.
+Hypothesis: The actor invents or betrays.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0174
+  NEUTRAL: 0.2492
+  ENTAILMENT: 0.7334
+
+Example 61:
+Premise: The dancer regrets.
+Hypothesis: The dancer envies or regrets.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0245
+  NEUTRAL: 0.4634
+  ENTAILMENT: 0.5121
+
+Example 62:
+Premise: The dancer cries.
+Hypothesis: The dancer cries or wakes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0041
+  NEUTRAL: 0.9792
+  ENTAILMENT: 0.0167
+
+Example 63:
+Premise: His mother amazes.
+Hypothesis: His mother programs or amazes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0111
+  NEUTRAL: 0.8347
+  ENTAILMENT: 0.1542
+
+Example 64:
+Premise: The designer reads.
+Hypothesis: The designer reads or edits.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.9033
+  ENTAILMENT: 0.0949
+
+Example 65:
+Premise: The designer apologizes.
+Hypothesis: The designer runs or apologizes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0066
+  NEUTRAL: 0.7060
+  ENTAILMENT: 0.2874
+
+Example 66:
+Premise: The writer runs.
+Hypothesis: The writer runs or longs.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0065
+  NEUTRAL: 0.8947
+  ENTAILMENT: 0.0987
+
+Example 67:
+Premise: The doctor draws.
+Hypothesis: The doctor dances or draws.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0090
+  NEUTRAL: 0.5410
+  ENTAILMENT: 0.4501
+
+Example 68:
+Premise: The student travels.
+Hypothesis: The student climbs or travels.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0041
+  NEUTRAL: 0.8630
+  ENTAILMENT: 0.1329
+
+Example 69:
+Premise: The doctor hope.
+Hypothesis: The doctor hope or sails.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0162
+  NEUTRAL: 0.9128
+  ENTAILMENT: 0.0709
+
+Example 70:
+Premise: The musician eats.
+Hypothesis: The musician adores or eats.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0032
+  NEUTRAL: 0.6471
+  ENTAILMENT: 0.3498
+
+Example 71:
+Premise: The boy travels.
+Hypothesis: The boy promises or travels.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0079
+  NEUTRAL: 0.4899
+  ENTAILMENT: 0.5022
+
+Example 72:
+Premise: The engineer cycles.
+Hypothesis: The engineer misses or cycles.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0128
+  NEUTRAL: 0.5018
+  ENTAILMENT: 0.4854
+
+Example 73:
+Premise: The explorer inspires.
+Hypothesis: The explorer inspires or innovates.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0028
+  NEUTRAL: 0.6122
+  ENTAILMENT: 0.3850
+
+Example 74:
+Premise: The engineer rows.
+Hypothesis: The engineer rows or wakes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0063
+  NEUTRAL: 0.9790
+  ENTAILMENT: 0.0146
+
+Example 75:
+Premise: The queen invents.
+Hypothesis: The queen invents or adores.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0060
+  NEUTRAL: 0.9561
+  ENTAILMENT: 0.0379
+
+Example 76:
+Premise: The student climbs.
+Hypothesis: The student climbs or flies.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0026
+  NEUTRAL: 0.8857
+  ENTAILMENT: 0.1116
+
+Example 77:
+Premise: The student astonishes.
+Hypothesis: The student astonishes or sails.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0143
+  NEUTRAL: 0.9780
+  ENTAILMENT: 0.0077
+
+Example 78:
+Premise: The driver photographs.
+Hypothesis: The driver photographs or sails.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0048
+  NEUTRAL: 0.9856
+  ENTAILMENT: 0.0096
+
+Example 79:
+Premise: The chef astonishes.
+Hypothesis: The chef swims or astonishes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0904
+  NEUTRAL: 0.5139
+  ENTAILMENT: 0.3957
+
+Example 80:
+Premise: His mother builds.
+Hypothesis: His mother builds or explores.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0009
+  NEUTRAL: 0.9594
+  ENTAILMENT: 0.0397
+
+Example 81:
+Premise: The writer imagines.
+Hypothesis: The writer adores or imagines.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0033
+  NEUTRAL: 0.9528
+  ENTAILMENT: 0.0440
+
+Example 82:
+Premise: The driver researches.
+Hypothesis: The driver drives or researches.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0410
+  ENTAILMENT: 0.9575
+
+Example 83:
+Premise: The programmer sings.
+Hypothesis: The programmer learns or sings.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0030
+  NEUTRAL: 0.1781
+  ENTAILMENT: 0.8189
+
+Example 84:
+Premise: The man longs.
+Hypothesis: The man longs or amazes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0079
+  NEUTRAL: 0.9606
+  ENTAILMENT: 0.0314
+
+Example 85:
+Premise: The queen wins.
+Hypothesis: The queen wins or speaks.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0059
+  NEUTRAL: 0.8838
+  ENTAILMENT: 0.1103
+
+Example 86:
+Premise: My friend forgives.
+Hypothesis: My friend lies or forgives.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0065
+  NEUTRAL: 0.7812
+  ENTAILMENT: 0.2123
+
+Example 87:
+Premise: The dancer explores.
+Hypothesis: The dancer imagines or explores.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0887
+  ENTAILMENT: 0.9099
+
+Example 88:
+Premise: The writer runs.
+Hypothesis: The writer films or runs.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0071
+  NEUTRAL: 0.5269
+  ENTAILMENT: 0.4660
+
+Example 89:
+Premise: The writer climbs.
+Hypothesis: The writer competes or climbs.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0036
+  NEUTRAL: 0.5763
+  ENTAILMENT: 0.4200
+
+Example 90:
+Premise: My friend steals.
+Hypothesis: My friend steals or apologizes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0226
+  NEUTRAL: 0.9521
+  ENTAILMENT: 0.0253
+
+Example 91:
+Premise: The chef invents.
+Hypothesis: The chef invents or drives.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0279
+  NEUTRAL: 0.9610
+  ENTAILMENT: 0.0112
+
+Example 92:
+Premise: The driver admits.
+Hypothesis: The driver admits or jumps.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0096
+  NEUTRAL: 0.9735
+  ENTAILMENT: 0.0169
+
+Example 93:
+Premise: The doctor climbs.
+Hypothesis: The doctor climbs or invents.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0025
+  NEUTRAL: 0.9839
+  ENTAILMENT: 0.0136
+
+Example 94:
+Premise: The artist astonishes.
+Hypothesis: The artist astonishes or designs.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0023
+  NEUTRAL: 0.9541
+  ENTAILMENT: 0.0436
+
+Example 95:
+Premise: The chef codes.
+Hypothesis: The chef codes or plays.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0207
+  NEUTRAL: 0.9302
+  ENTAILMENT: 0.0491
+
+Example 96:
+Premise: The architect laughs.
+Hypothesis: The architect cries or laughs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0045
+  NEUTRAL: 0.2481
+  ENTAILMENT: 0.7475
+
+Example 97:
+Premise: The engineer wakes.
+Hypothesis: The engineer wakes or steals.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0305
+  NEUTRAL: 0.9657
+  ENTAILMENT: 0.0038
+
+Example 98:
+Premise: The programmer writes.
+Hypothesis: The programmer sleeps or writes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0605
+  NEUTRAL: 0.6585
+  ENTAILMENT: 0.2810
+
+Example 99:
+Premise: The architect learns.
+Hypothesis: The architect learns or wins.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0038
+  NEUTRAL: 0.9592
+  ENTAILMENT: 0.0370
+
+Example 100:
+Premise: My friend laughs.
+Hypothesis: My friend laughs or adores.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0040
+  NEUTRAL: 0.9514
+  ENTAILMENT: 0.0446
+
