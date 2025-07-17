@@ -1,5 +1,5 @@
 {
-    "p_ou_q_implique_p/q": [
+    "p_or_q_implies_p_q": [
         [
             "The chef steals or swims.",
             "The chef steals."
@@ -401,7 +401,7 @@
             "The scientist thinks."
         ]
     ],
-    "p_ou_q_implique_p_et_q": [
+    "p_or_q_implies_p_and_q": [
         [
             "Her father swims or writes.",
             "Her father swims and writes."
@@ -803,7 +803,7 @@
             "The artist apologizes and sketches."
         ]
     ],
-    "p_and_q_implique_p_or_q": [
+    "p_and_q_implies_p_or_q": [
         [
             "The engineer amazes and builds.",
             "The engineer amazes or builds."
@@ -1205,7 +1205,7 @@
             "The man pines or designs."
         ]
     ],
-    "p/q_implique_p_ou_q": [
+    "p_q_implies_p_or_q": [
         [
             "Your sister apologizes.",
             "Your sister amazes or apologizes."
@@ -2009,7 +2009,7 @@
             "The actor is permitted to camp and is permitted to film."
         ]
     ],
-    "PE_p_or_q_implies_PE_p_/_PE_q": [
+    "PE_p_or_q_implies_PE_pq": [
         [
             "The man is permitted to climb or jump.",
             "The man is permitted to jump."
@@ -2411,7 +2411,7 @@
             "The designer is permitted to cry."
         ]
     ],
-    "PE_p_or_q_implies_non_PE_p_and_PE_q_négation_explicite": [
+    "PE_p_or_q_implies_non_PE_p_and_PE_q_explicit": [
         [
             "The king is permitted to love or pine.",
             "It is not the case that the king is permitted to love and is permitted to pine."
@@ -2813,7 +2813,7 @@
             "It is not the case that the architect is permitted to eat and is permitted to jump."
         ]
     ],
-    "PE_p_or_q_implies_non_PE_p_/_non_PE_q_négation_explicite": [
+    "PE_p_or_q_implies_non_PE_pq_explicit": [
         [
             "The chef is permitted to astonish or innocent.",
             "It is not the case that the chef is permitted to astonish."
@@ -3215,7 +3215,7 @@
             "It is not the case that the nurse is permitted to cheat."
         ]
     ],
-    "PE_p_or_q_implies_non_PE_p_and_PE_q_négation_implicite": [
+    "PE_p_or_q_implies_non_PE_p_and_PE_q_implicit": [
         [
             "The programmer is permitted to fill or hold.",
             "The programmer is permitted to empty and is permitted to release."
@@ -3617,7 +3617,7 @@
             "The artist is permitted to lose and is permitted to separate."
         ]
     ],
-    "PE_p_or_q_implies_non_PE_p_/_non_PE_q_négation_implicite": [
+    "PE_p_or_q_implies_non_PE_pq_implicit": [
         [
             "The doctor is permitted to connect or stand.",
             "The doctor is permitted to disconnect."
