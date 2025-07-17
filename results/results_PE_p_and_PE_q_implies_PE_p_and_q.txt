@@ -1,0 +1,900 @@
+Example 1:
+Premise: The chef is permitted to run and is permitted to think.
+Hypothesis: The chef is permitted to run and think.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9943
+
+Example 2:
+Premise: The boy is permitted to innovate and is permitted to appreciate.
+Hypothesis: The boy is permitted to innovate and appreciate.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9940
+
+Example 3:
+Premise: Her father is permitted to cheat and is permitted to appreciate.
+Hypothesis: Her father is permitted to cheat and appreciate.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9938
+
+Example 4:
+Premise: The musician is permitted to fly and is permitted to win.
+Hypothesis: The musician is permitted to fly and win.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9938
+
+Example 5:
+Premise: My friend is permitted to astonish and is permitted to yearn.
+Hypothesis: My friend is permitted to astonish and yearn.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9944
+
+Example 6:
+Premise: The writer is permitted to win and is permitted to astonish.
+Hypothesis: The writer is permitted to win and astonish.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9941
+
+Example 7:
+Premise: The actor is permitted to astonish and is permitted to promise.
+Hypothesis: The actor is permitted to astonish and promise.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9942
+
+Example 8:
+Premise: The queen is permitted to fish and is permitted to laugh.
+Hypothesis: The queen is permitted to fish and laugh.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9941
+
+Example 9:
+Premise: The chef is permitted to forgive and is permitted to imagine.
+Hypothesis: The chef is permitted to forgive and imagine.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9944
+
+Example 10:
+Premise: Your sister is permitted to think and is permitted to envy.
+Hypothesis: Your sister is permitted to think and envy.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9944
+
+Example 11:
+Premise: The director is permitted to enjoy and is permitted to win.
+Hypothesis: The director is permitted to enjoy and win.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9939
+
+Example 12:
+Premise: Her father is permitted to steal and is permitted to sketch.
+Hypothesis: Her father is permitted to steal and sketch.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0045
+  ENTAILMENT: 0.9939
+
+Example 13:
+Premise: The architect is permitted to astonished and is permitted to research.
+Hypothesis: The architect is permitted to astonished and research.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0045
+  ENTAILMENT: 0.9939
+
+Example 14:
+Premise: The soldier is permitted to play and is permitted to yearn.
+Hypothesis: The soldier is permitted to play and yearn.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9943
+
+Example 15:
+Premise: The athlete is permitted to think and is permitted to build.
+Hypothesis: The athlete is permitted to think and build.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9942
+
+Example 16:
+Premise: The engineer is permitted to win and is permitted to learn.
+Hypothesis: The engineer is permitted to win and learn.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9942
+
+Example 17:
+Premise: The nurse is permitted to laugh and is permitted to build.
+Hypothesis: The nurse is permitted to laugh and build.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9944
+
+Example 18:
+Premise: The queen is permitted to apologize and is permitted to write.
+Hypothesis: The queen is permitted to apologize and write.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9944
+
+Example 19:
+Premise: The doctor is permitted to build and is permitted to write.
+Hypothesis: The doctor is permitted to build and write.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9941
+
+Example 20:
+Premise: The dancer is permitted to hike and is permitted to travel.
+Hypothesis: The dancer is permitted to hike and travel.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9941
+
+Example 21:
+Premise: The boy is permitted to miss and is permitted to swim.
+Hypothesis: The boy is permitted to miss and swim.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0021
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9936
+
+Example 22:
+Premise: The dancer is permitted to delight and is permitted to regret.
+Hypothesis: The dancer is permitted to delight and regret.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9943
+
+Example 23:
+Premise: The writer is permitted to astonished and is permitted to design.
+Hypothesis: The writer is permitted to astonished and design.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0022
+  NEUTRAL: 0.0046
+  ENTAILMENT: 0.9933
+
+Example 24:
+Premise: Your sister is permitted to research and is permitted to build.
+Hypothesis: Your sister is permitted to research and build.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9939
+
+Example 25:
+Premise: His mother is permitted to invent and is permitted to ski.
+Hypothesis: His mother is permitted to invent and ski.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0021
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9938
+
+Example 26:
+Premise: The chef is permitted to miss and is permitted to invent.
+Hypothesis: The chef is permitted to miss and invent.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0044
+  ENTAILMENT: 0.9937
+
+Example 27:
+Premise: The pilot is permitted to inspire and is permitted to read.
+Hypothesis: The pilot is permitted to inspire and read.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9942
+
+Example 28:
+Premise: The designer is permitted to dance and is permitted to dance.
+Hypothesis: The designer is permitted to dance and dance.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0026
+  NEUTRAL: 0.0052
+  ENTAILMENT: 0.9922
+
+Example 29:
+Premise: The writer is permitted to learn and is permitted to astonish.
+Hypothesis: The writer is permitted to learn and astonish.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0020
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9939
+
+Example 30:
+Premise: The writer is permitted to innovate and is permitted to play.
+Hypothesis: The writer is permitted to innovate and play.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9941
+
+Example 31:
+Premise: The woman is permitted to discover and is permitted to discover.
+Hypothesis: The woman is permitted to discover and discover.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0032
+  NEUTRAL: 0.0070
+  ENTAILMENT: 0.9898
+
+Example 32:
+Premise: The writer is permitted to compete and is permitted to amazed.
+Hypothesis: The writer is permitted to compete and amazed.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0058
+  NEUTRAL: 0.0049
+  ENTAILMENT: 0.9893
+
+Example 33:
+Premise: The director is permitted to jump and is permitted to sing.
+Hypothesis: The director is permitted to jump and sing.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9943
+
+Example 34:
+Premise: The designer is permitted to hate and is permitted to astonish.
+Hypothesis: The designer is permitted to hate and astonish.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9940
+
+Example 35:
+Premise: The man is permitted to sing and is permitted to read.
+Hypothesis: The man is permitted to sing and read.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0020
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9937
+
+Example 36:
+Premise: The woman is permitted to think and is permitted to fish.
+Hypothesis: The woman is permitted to think and fish.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9941
+
+Example 37:
+Premise: Your sister is permitted to envy and is permitted to ski.
+Hypothesis: Your sister is permitted to envy and ski.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0021
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9937
+
+Example 38:
+Premise: The architect is permitted to row and is permitted to cheat.
+Hypothesis: The architect is permitted to row and cheat.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0044
+  ENTAILMENT: 0.9941
+
+Example 39:
+Premise: The dancer is permitted to lose and is permitted to research.
+Hypothesis: The dancer is permitted to lose and research.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0044
+  ENTAILMENT: 0.9939
+
+Example 40:
+Premise: The nurse is permitted to speak and is permitted to regret.
+Hypothesis: The nurse is permitted to speak and regret.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9943
+
+Example 41:
+Premise: The scientist is permitted to dance and is permitted to teach.
+Hypothesis: The scientist is permitted to dance and teach.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9942
+
+Example 42:
+Premise: The queen is permitted to astonish and is permitted to discover.
+Hypothesis: The queen is permitted to astonish and discover.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0012
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9945
+
+Example 43:
+Premise: The actor is permitted to draw and is permitted to program.
+Hypothesis: The actor is permitted to draw and program.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0022
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9936
+
+Example 44:
+Premise: The actor is permitted to compose and is permitted to row.
+Hypothesis: The actor is permitted to compose and row.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9940
+
+Example 45:
+Premise: His mother is permitted to sleep and is permitted to miss.
+Hypothesis: His mother is permitted to sleep and miss.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9942
+
+Example 46:
+Premise: The chef is permitted to forgive and is permitted to discover.
+Hypothesis: The chef is permitted to forgive and discover.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0013
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9944
+
+Example 47:
+Premise: The musician is permitted to long and is permitted to long.
+Hypothesis: The musician is permitted to long and long.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0037
+  NEUTRAL: 0.0081
+  ENTAILMENT: 0.9882
+
+Example 48:
+Premise: The soldier is permitted to invent and is permitted to code.
+Hypothesis: The soldier is permitted to invent and code.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9939
+
+Example 49:
+Premise: Your sister is permitted to cry and is permitted to steal.
+Hypothesis: Your sister is permitted to cry and steal.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9942
+
+Example 50:
+Premise: The explorer is permitted to delight and is permitted to laugh.
+Hypothesis: The explorer is permitted to delight and laugh.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9941
+
+Example 51:
+Premise: The doctor is permitted to lose and is permitted to design.
+Hypothesis: The doctor is permitted to lose and design.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0021
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9936
+
+Example 52:
+Premise: The actor is permitted to fish and is permitted to steal.
+Hypothesis: The actor is permitted to fish and steal.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9942
+
+Example 53:
+Premise: His mother is permitted to swim and is permitted to cheat.
+Hypothesis: His mother is permitted to swim and cheat.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9939
+
+Example 54:
+Premise: The chef is permitted to swim and is permitted to eat.
+Hypothesis: The chef is permitted to swim and eat.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9940
+
+Example 55:
+Premise: The artist is permitted to innocent and is permitted to forgive.
+Hypothesis: The artist is permitted to innocent and forgive.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9939
+
+Example 56:
+Premise: The architect is permitted to lose and is permitted to explore.
+Hypothesis: The architect is permitted to lose and explore.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9941
+
+Example 57:
+Premise: The artist is permitted to astonished and is permitted to regret.
+Hypothesis: The artist is permitted to astonished and regret.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9939
+
+Example 58:
+Premise: The driver is permitted to write and is permitted to envy.
+Hypothesis: The driver is permitted to write and envy.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9944
+
+Example 59:
+Premise: Her father is permitted to ski and is permitted to innocent.
+Hypothesis: Her father is permitted to ski and innocent.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0124
+  NEUTRAL: 0.0060
+  ENTAILMENT: 0.9816
+
+Example 60:
+Premise: The director is permitted to swim and is permitted to photograph.
+Hypothesis: The director is permitted to swim and photograph.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9941
+
+Example 61:
+Premise: The king is permitted to experiment and is permitted to betray.
+Hypothesis: The king is permitted to experiment and betray.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0044
+  ENTAILMENT: 0.9942
+
+Example 62:
+Premise: The doctor is permitted to hope and is permitted to explore.
+Hypothesis: The doctor is permitted to hope and explore.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0014
+  NEUTRAL: 0.0044
+  ENTAILMENT: 0.9942
+
+Example 63:
+Premise: The scientist is permitted to innocent and is permitted to lose.
+Hypothesis: The scientist is permitted to innocent and lose.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0031
+  NEUTRAL: 0.0045
+  ENTAILMENT: 0.9924
+
+Example 64:
+Premise: The king is permitted to yearn and is permitted to build.
+Hypothesis: The king is permitted to yearn and build.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9940
+
+Example 65:
+Premise: The programmer is permitted to cycle and is permitted to discover.
+Hypothesis: The programmer is permitted to cycle and discover.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9940
+
+Example 66:
+Premise: The king is permitted to hike and is permitted to betray.
+Hypothesis: The king is permitted to hike and betray.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9941
+
+Example 67:
+Premise: The chef is permitted to astonished and is permitted to sketch.
+Hypothesis: The chef is permitted to astonished and sketch.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0045
+  ENTAILMENT: 0.9936
+
+Example 68:
+Premise: The queen is permitted to dance and is permitted to enjoy.
+Hypothesis: The queen is permitted to dance and enjoy.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0012
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9946
+
+Example 69:
+Premise: The nurse is permitted to write and is permitted to build.
+Hypothesis: The nurse is permitted to write and build.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9942
+
+Example 70:
+Premise: The driver is permitted to wake and is permitted to cycle.
+Hypothesis: The driver is permitted to wake and cycle.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9939
+
+Example 71:
+Premise: The driver is permitted to ski and is permitted to inspire.
+Hypothesis: The driver is permitted to ski and inspire.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9940
+
+Example 72:
+Premise: The pilot is permitted to program and is permitted to dance.
+Hypothesis: The pilot is permitted to program and dance.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9942
+
+Example 73:
+Premise: The driver is permitted to create and is permitted to adore.
+Hypothesis: The driver is permitted to create and adore.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0020
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9939
+
+Example 74:
+Premise: The programmer is permitted to astonish and is permitted to astonished.
+Hypothesis: The programmer is permitted to astonish and astonished.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0071
+  NEUTRAL: 0.0059
+  ENTAILMENT: 0.9870
+
+Example 75:
+Premise: The designer is permitted to edit and is permitted to love.
+Hypothesis: The designer is permitted to edit and love.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9939
+
+Example 76:
+Premise: The artist is permitted to dance and is permitted to research.
+Hypothesis: The artist is permitted to dance and research.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9942
+
+Example 77:
+Premise: The writer is permitted to betray and is permitted to betray.
+Hypothesis: The writer is permitted to betray and betray.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0051
+  ENTAILMENT: 0.9932
+
+Example 78:
+Premise: The programmer is permitted to cheat and is permitted to fly.
+Hypothesis: The programmer is permitted to cheat and fly.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0044
+  ENTAILMENT: 0.9937
+
+Example 79:
+Premise: The chef is permitted to code and is permitted to swim.
+Hypothesis: The chef is permitted to code and swim.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9938
+
+Example 80:
+Premise: The man is permitted to appreciate and is permitted to draw.
+Hypothesis: The man is permitted to appreciate and draw.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9941
+
+Example 81:
+Premise: The king is permitted to work and is permitted to hope.
+Hypothesis: The king is permitted to work and hope.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9939
+
+Example 82:
+Premise: The musician is permitted to write and is permitted to travel.
+Hypothesis: The musician is permitted to write and travel.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0019
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9938
+
+Example 83:
+Premise: Her father is permitted to astonished and is permitted to delight.
+Hypothesis: Her father is permitted to astonished and delight.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9939
+
+Example 84:
+Premise: The explorer is permitted to hike and is permitted to inspire.
+Hypothesis: The explorer is permitted to hike and inspire.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9942
+
+Example 85:
+Premise: The woman is permitted to experiment and is permitted to amazed.
+Hypothesis: The woman is permitted to experiment and amazed.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0049
+  NEUTRAL: 0.0047
+  ENTAILMENT: 0.9905
+
+Example 86:
+Premise: The actor is permitted to lose and is permitted to win.
+Hypothesis: The actor is permitted to lose and win.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0023
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9935
+
+Example 87:
+Premise: The artist is permitted to hike and is permitted to enjoy.
+Hypothesis: The artist is permitted to hike and enjoy.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9944
+
+Example 88:
+Premise: The man is permitted to envy and is permitted to dance.
+Hypothesis: The man is permitted to envy and dance.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9942
+
+Example 89:
+Premise: Her father is permitted to travel and is permitted to program.
+Hypothesis: Her father is permitted to travel and program.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0020
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9937
+
+Example 90:
+Premise: The pilot is permitted to regret and is permitted to laugh.
+Hypothesis: The pilot is permitted to regret and laugh.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9940
+
+Example 91:
+Premise: Her father is permitted to long and is permitted to wake.
+Hypothesis: Her father is permitted to long and wake.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0021
+  NEUTRAL: 0.0041
+  ENTAILMENT: 0.9937
+
+Example 92:
+Premise: The programmer is permitted to astonish and is permitted to win.
+Hypothesis: The programmer is permitted to astonish and win.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9940
+
+Example 93:
+Premise: The chef is permitted to climb and is permitted to forgive.
+Hypothesis: The chef is permitted to climb and forgive.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9942
+
+Example 94:
+Premise: The student is permitted to innocent and is permitted to program.
+Hypothesis: The student is permitted to innocent and program.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0027
+  NEUTRAL: 0.0044
+  ENTAILMENT: 0.9928
+
+Example 95:
+Premise: The athlete is permitted to ski and is permitted to wake.
+Hypothesis: The athlete is permitted to ski and wake.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0021
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9936
+
+Example 96:
+Premise: The actor is permitted to swim and is permitted to photograph.
+Hypothesis: The actor is permitted to swim and photograph.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0017
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9941
+
+Example 97:
+Premise: The doctor is permitted to edit and is permitted to forgive.
+Hypothesis: The doctor is permitted to edit and forgive.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0016
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9941
+
+Example 98:
+Premise: The boy is permitted to sleep and is permitted to yearn.
+Hypothesis: The boy is permitted to sleep and yearn.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0015
+  NEUTRAL: 0.0043
+  ENTAILMENT: 0.9942
+
+Example 99:
+Premise: The writer is permitted to drive and is permitted to delight.
+Hypothesis: The writer is permitted to drive and delight.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0024
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9934
+
+Example 100:
+Premise: Your sister is permitted to adore and is permitted to invent.
+Hypothesis: Your sister is permitted to adore and invent.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0018
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.9940
+

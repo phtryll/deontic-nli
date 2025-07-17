@@ -1,0 +1,900 @@
+Example 1:
+Premise: The painter discovers.
+Hypothesis: It is not the case that the painter dances.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7971
+  NEUTRAL: 0.1570
+  ENTAILMENT: 0.0459
+
+Example 2:
+Premise: The director edits.
+Hypothesis: It is not the case that the director cherishes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.1740
+  NEUTRAL: 0.6614
+  ENTAILMENT: 0.1646
+
+Example 3:
+Premise: The boy apologizes.
+Hypothesis: It is not the case that the boy apologizes.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9762
+  NEUTRAL: 0.0160
+  ENTAILMENT: 0.0078
+
+Example 4:
+Premise: The student plays.
+Hypothesis: It is not the case that the student innocent.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.3191
+  NEUTRAL: 0.4703
+  ENTAILMENT: 0.2106
+
+Example 5:
+Premise: The programmer thinks.
+Hypothesis: It is not the case that the programmer cries.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.2535
+  NEUTRAL: 0.4208
+  ENTAILMENT: 0.3257
+
+Example 6:
+Premise: The nurse researches.
+Hypothesis: It is not the case that the nurse films.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.4566
+  NEUTRAL: 0.5246
+  ENTAILMENT: 0.0188
+
+Example 7:
+Premise: The writer sleeps.
+Hypothesis: It is not the case that the writer loves.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0980
+  NEUTRAL: 0.5036
+  ENTAILMENT: 0.3984
+
+Example 8:
+Premise: Her father wins.
+Hypothesis: It is not the case that her father apologizes.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.3667
+  NEUTRAL: 0.5373
+  ENTAILMENT: 0.0960
+
+Example 9:
+Premise: The nurse delights.
+Hypothesis: It is not the case that the nurse lies.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0226
+  NEUTRAL: 0.2767
+  ENTAILMENT: 0.7006
+
+Example 10:
+Premise: The nurse enjoys.
+Hypothesis: It is not the case that the nurse cries.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0028
+  NEUTRAL: 0.1210
+  ENTAILMENT: 0.8762
+
+Example 11:
+Premise: The artist hikes.
+Hypothesis: It is not the case that the artist pines.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0310
+  NEUTRAL: 0.1529
+  ENTAILMENT: 0.8161
+
+Example 12:
+Premise: The scholar films.
+Hypothesis: It is not the case that the scholar steals.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.1446
+  NEUTRAL: 0.5410
+  ENTAILMENT: 0.3144
+
+Example 13:
+Premise: The king teaches.
+Hypothesis: It is not the case that the king longs.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.1225
+  NEUTRAL: 0.6180
+  ENTAILMENT: 0.2595
+
+Example 14:
+Premise: The woman promises.
+Hypothesis: It is not the case that the woman creates.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8673
+  NEUTRAL: 0.1156
+  ENTAILMENT: 0.0171
+
+Example 15:
+Premise: My friend hikes.
+Hypothesis: It is not the case that my friend cries.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.2683
+  NEUTRAL: 0.2419
+  ENTAILMENT: 0.4898
+
+Example 16:
+Premise: The painter rows.
+Hypothesis: It is not the case that the painter sketches.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7656
+  NEUTRAL: 0.1623
+  ENTAILMENT: 0.0721
+
+Example 17:
+Premise: The scientist swims.
+Hypothesis: It is not the case that the scientist works.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9283
+  NEUTRAL: 0.0292
+  ENTAILMENT: 0.0425
+
+Example 18:
+Premise: The queen longs.
+Hypothesis: It is not the case that the queen pines.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9733
+  NEUTRAL: 0.0128
+  ENTAILMENT: 0.0139
+
+Example 19:
+Premise: The doctor amazes.
+Hypothesis: It is not the case that the doctor speaks.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9606
+  NEUTRAL: 0.0255
+  ENTAILMENT: 0.0138
+
+Example 20:
+Premise: The driver skis.
+Hypothesis: It is not the case that the driver creates.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9115
+  NEUTRAL: 0.0631
+  ENTAILMENT: 0.0254
+
+Example 21:
+Premise: The artist thinks.
+Hypothesis: It is not the case that the artist thinks.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8773
+  NEUTRAL: 0.0783
+  ENTAILMENT: 0.0444
+
+Example 22:
+Premise: The scientist loses.
+Hypothesis: It is not the case that the scientist writes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0242
+  NEUTRAL: 0.3332
+  ENTAILMENT: 0.6426
+
+Example 23:
+Premise: The woman sleeps.
+Hypothesis: It is not the case that the woman admits.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.2393
+  NEUTRAL: 0.7141
+  ENTAILMENT: 0.0466
+
+Example 24:
+Premise: The artist draws.
+Hypothesis: It is not the case that the artist eats.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.1833
+  NEUTRAL: 0.2044
+  ENTAILMENT: 0.6123
+
+Example 25:
+Premise: The scholar steals.
+Hypothesis: It is not the case that the scholar learns.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8412
+  NEUTRAL: 0.0863
+  ENTAILMENT: 0.0725
+
+Example 26:
+Premise: The driver imagines.
+Hypothesis: It is not the case that the driver amazes.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8987
+  NEUTRAL: 0.0803
+  ENTAILMENT: 0.0210
+
+Example 27:
+Premise: The queen skis.
+Hypothesis: It is not the case that the queen eats.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.5098
+  NEUTRAL: 0.1999
+  ENTAILMENT: 0.2902
+
+Example 28:
+Premise: The man competes.
+Hypothesis: It is not the case that the man promises.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.3279
+  NEUTRAL: 0.6501
+  ENTAILMENT: 0.0220
+
+Example 29:
+Premise: The engineer composes.
+Hypothesis: It is not the case that the engineer edits.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.3395
+  NEUTRAL: 0.5779
+  ENTAILMENT: 0.0826
+
+Example 30:
+Premise: The explorer loves.
+Hypothesis: It is not the case that the explorer writes.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8772
+  NEUTRAL: 0.1081
+  ENTAILMENT: 0.0147
+
+Example 31:
+Premise: The boy learns.
+Hypothesis: It is not the case that the boy designs.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7585
+  NEUTRAL: 0.2175
+  ENTAILMENT: 0.0239
+
+Example 32:
+Premise: The scholar invents.
+Hypothesis: It is not the case that the scholar teaches.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.1883
+  NEUTRAL: 0.3402
+  ENTAILMENT: 0.4714
+
+Example 33:
+Premise: Your sister dances.
+Hypothesis: It is not the case that your sister innovates.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6782
+  NEUTRAL: 0.2277
+  ENTAILMENT: 0.0941
+
+Example 34:
+Premise: Your sister composes.
+Hypothesis: It is not the case that your sister apologizes.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.5674
+  NEUTRAL: 0.2123
+  ENTAILMENT: 0.2203
+
+Example 35:
+Premise: Her father speaks.
+Hypothesis: It is not the case that her father flies.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6219
+  NEUTRAL: 0.2195
+  ENTAILMENT: 0.1586
+
+Example 36:
+Premise: The driver cycles.
+Hypothesis: It is not the case that the driver steals.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0321
+  NEUTRAL: 0.2667
+  ENTAILMENT: 0.7011
+
+Example 37:
+Premise: The queen yearns.
+Hypothesis: It is not the case that the queen sleeps.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0120
+  NEUTRAL: 0.0411
+  ENTAILMENT: 0.9469
+
+Example 38:
+Premise: His mother yearns.
+Hypothesis: It is not the case that his mother fishes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.3435
+  NEUTRAL: 0.1149
+  ENTAILMENT: 0.5415
+
+Example 39:
+Premise: The boy appreciates.
+Hypothesis: It is not the case that the boy films.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6857
+  NEUTRAL: 0.3032
+  ENTAILMENT: 0.0112
+
+Example 40:
+Premise: The painter swims.
+Hypothesis: It is not the case that the painter works.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9661
+  NEUTRAL: 0.0143
+  ENTAILMENT: 0.0196
+
+Example 41:
+Premise: The student teaches.
+Hypothesis: It is not the case that the student thinks.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6547
+  NEUTRAL: 0.3249
+  ENTAILMENT: 0.0204
+
+Example 42:
+Premise: The dancer fishes.
+Hypothesis: It is not the case that the dancer paints.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.5985
+  NEUTRAL: 0.2172
+  ENTAILMENT: 0.1843
+
+Example 43:
+Premise: The man hates.
+Hypothesis: It is not the case that the man admits.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.3887
+  NEUTRAL: 0.5363
+  ENTAILMENT: 0.0750
+
+Example 44:
+Premise: The athlete climbs.
+Hypothesis: It is not the case that the athlete sails.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0822
+  NEUTRAL: 0.1413
+  ENTAILMENT: 0.7765
+
+Example 45:
+Premise: The doctor experiments.
+Hypothesis: It is not the case that the doctor runs.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7671
+  NEUTRAL: 0.0628
+  ENTAILMENT: 0.1701
+
+Example 46:
+Premise: The director regrets.
+Hypothesis: It is not the case that the director discovers.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.1874
+  NEUTRAL: 0.5573
+  ENTAILMENT: 0.2553
+
+Example 47:
+Premise: The student rows.
+Hypothesis: It is not the case that the student wakes.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6844
+  NEUTRAL: 0.1721
+  ENTAILMENT: 0.1435
+
+Example 48:
+Premise: The man steals.
+Hypothesis: It is not the case that the man forgives.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0778
+  NEUTRAL: 0.3733
+  ENTAILMENT: 0.5489
+
+Example 49:
+Premise: The chef writes.
+Hypothesis: It is not the case that the chef loses.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.2822
+  NEUTRAL: 0.3676
+  ENTAILMENT: 0.3502
+
+Example 50:
+Premise: The programmer eats.
+Hypothesis: It is not the case that the programmer codes.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.4880
+  NEUTRAL: 0.2297
+  ENTAILMENT: 0.2823
+
+Example 51:
+Premise: The pilot loses.
+Hypothesis: It is not the case that the pilot edits.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.1156
+  NEUTRAL: 0.2000
+  ENTAILMENT: 0.6844
+
+Example 52:
+Premise: The driver steals.
+Hypothesis: It is not the case that the driver wins.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.4832
+  NEUTRAL: 0.2431
+  ENTAILMENT: 0.2736
+
+Example 53:
+Premise: The student explores.
+Hypothesis: It is not the case that the student sleeps.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0048
+  NEUTRAL: 0.0625
+  ENTAILMENT: 0.9327
+
+Example 54:
+Premise: The woman adores.
+Hypothesis: It is not the case that the woman speaks.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9692
+  NEUTRAL: 0.0240
+  ENTAILMENT: 0.0067
+
+Example 55:
+Premise: Your sister works.
+Hypothesis: It is not the case that your sister innovates.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.4517
+  NEUTRAL: 0.5129
+  ENTAILMENT: 0.0354
+
+Example 56:
+Premise: The scientist films.
+Hypothesis: It is not the case that the scientist loses.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.2768
+  NEUTRAL: 0.3568
+  ENTAILMENT: 0.3664
+
+Example 57:
+Premise: The pilot photographs.
+Hypothesis: It is not the case that the pilot teaches.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.5092
+  NEUTRAL: 0.4697
+  ENTAILMENT: 0.0211
+
+Example 58:
+Premise: The scholar pines.
+Hypothesis: It is not the case that the scholar discovers.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.4132
+  NEUTRAL: 0.5780
+  ENTAILMENT: 0.0088
+
+Example 59:
+Premise: The boy writes.
+Hypothesis: It is not the case that the boy dances.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.4657
+  NEUTRAL: 0.1761
+  ENTAILMENT: 0.3583
+
+Example 60:
+Premise: The artist dances.
+Hypothesis: It is not the case that the artist speaks.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0908
+  NEUTRAL: 0.1975
+  ENTAILMENT: 0.7117
+
+Example 61:
+Premise: His mother cherishes.
+Hypothesis: It is not the case that his mother inspires.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9859
+  NEUTRAL: 0.0088
+  ENTAILMENT: 0.0052
+
+Example 62:
+Premise: The nurse runs.
+Hypothesis: It is not the case that the nurse travels.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9900
+  NEUTRAL: 0.0045
+  ENTAILMENT: 0.0055
+
+Example 63:
+Premise: The engineer pines.
+Hypothesis: It is not the case that the engineer climbs.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.2259
+  NEUTRAL: 0.1437
+  ENTAILMENT: 0.6304
+
+Example 64:
+Premise: The scientist astonishes.
+Hypothesis: It is not the case that the scientist jumps.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9234
+  NEUTRAL: 0.0449
+  ENTAILMENT: 0.0317
+
+Example 65:
+Premise: The nurse regrets.
+Hypothesis: It is not the case that the nurse sails.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.2973
+  NEUTRAL: 0.2038
+  ENTAILMENT: 0.4989
+
+Example 66:
+Premise: The designer draws.
+Hypothesis: It is not the case that the designer yearns.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.4282
+  NEUTRAL: 0.5147
+  ENTAILMENT: 0.0571
+
+Example 67:
+Premise: The director delights.
+Hypothesis: It is not the case that the director explores.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9669
+  NEUTRAL: 0.0196
+  ENTAILMENT: 0.0136
+
+Example 68:
+Premise: The programmer explores.
+Hypothesis: It is not the case that the programmer paints.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8991
+  NEUTRAL: 0.0889
+  ENTAILMENT: 0.0120
+
+Example 69:
+Premise: The chef amazes.
+Hypothesis: It is not the case that the chef climbs.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8851
+  NEUTRAL: 0.0748
+  ENTAILMENT: 0.0401
+
+Example 70:
+Premise: The woman forgives.
+Hypothesis: It is not the case that the woman invents.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0444
+  NEUTRAL: 0.3301
+  ENTAILMENT: 0.6255
+
+Example 71:
+Premise: The woman wakes.
+Hypothesis: It is not the case that the woman jumps.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6108
+  NEUTRAL: 0.2434
+  ENTAILMENT: 0.1458
+
+Example 72:
+Premise: The dancer misses.
+Hypothesis: It is not the case that the dancer skis.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.2165
+  NEUTRAL: 0.2316
+  ENTAILMENT: 0.5519
+
+Example 73:
+Premise: The writer speaks.
+Hypothesis: It is not the case that the writer imagines.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0468
+  NEUTRAL: 0.9292
+  ENTAILMENT: 0.0240
+
+Example 74:
+Premise: The writer builds.
+Hypothesis: It is not the case that the writer plays.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.1822
+  NEUTRAL: 0.4588
+  ENTAILMENT: 0.3590
+
+Example 75:
+Premise: The actor misses.
+Hypothesis: It is not the case that the actor hikes.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.5582
+  NEUTRAL: 0.1963
+  ENTAILMENT: 0.2455
+
+Example 76:
+Premise: The soldier innocent.
+Hypothesis: It is not the case that the soldier sketches.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.2092
+  NEUTRAL: 0.6664
+  ENTAILMENT: 0.1244
+
+Example 77:
+Premise: The musician paints.
+Hypothesis: It is not the case that the musician adores.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8072
+  NEUTRAL: 0.1831
+  ENTAILMENT: 0.0097
+
+Example 78:
+Premise: The student regrets.
+Hypothesis: It is not the case that the student adores.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0285
+  NEUTRAL: 0.6384
+  ENTAILMENT: 0.3331
+
+Example 79:
+Premise: The dancer dances.
+Hypothesis: It is not the case that the dancer hope.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8308
+  NEUTRAL: 0.1409
+  ENTAILMENT: 0.0283
+
+Example 80:
+Premise: The athlete composes.
+Hypothesis: It is not the case that the athlete envies.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6478
+  NEUTRAL: 0.3328
+  ENTAILMENT: 0.0194
+
+Example 81:
+Premise: The director sings.
+Hypothesis: It is not the case that the director draws.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.4982
+  NEUTRAL: 0.3504
+  ENTAILMENT: 0.1515
+
+Example 82:
+Premise: The chef climbs.
+Hypothesis: It is not the case that the chef travels.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9788
+  NEUTRAL: 0.0116
+  ENTAILMENT: 0.0096
+
+Example 83:
+Premise: The boy drives.
+Hypothesis: It is not the case that the boy adores.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8477
+  NEUTRAL: 0.1426
+  ENTAILMENT: 0.0096
+
+Example 84:
+Premise: The driver draws.
+Hypothesis: It is not the case that the driver dreams.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.1383
+  NEUTRAL: 0.3137
+  ENTAILMENT: 0.5480
+
+Example 85:
+Premise: My friend loses.
+Hypothesis: It is not the case that my friend imagines.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0077
+  NEUTRAL: 0.7332
+  ENTAILMENT: 0.2591
+
+Example 86:
+Premise: The driver dances.
+Hypothesis: It is not the case that the driver composes.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.3215
+  NEUTRAL: 0.2736
+  ENTAILMENT: 0.4049
+
+Example 87:
+Premise: The woman composes.
+Hypothesis: It is not the case that the woman envies.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6872
+  NEUTRAL: 0.2862
+  ENTAILMENT: 0.0266
+
+Example 88:
+Premise: The nurse cries.
+Hypothesis: It is not the case that the nurse films.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8350
+  NEUTRAL: 0.1516
+  ENTAILMENT: 0.0133
+
+Example 89:
+Premise: The woman yearns.
+Hypothesis: It is not the case that the woman speaks.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9587
+  NEUTRAL: 0.0259
+  ENTAILMENT: 0.0154
+
+Example 90:
+Premise: The explorer designs.
+Hypothesis: It is not the case that the explorer flies.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.4799
+  NEUTRAL: 0.4853
+  ENTAILMENT: 0.0347
+
+Example 91:
+Premise: The scholar wins.
+Hypothesis: It is not the case that the scholar cries.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0058
+  NEUTRAL: 0.1283
+  ENTAILMENT: 0.8659
+
+Example 92:
+Premise: The doctor swims.
+Hypothesis: It is not the case that the doctor adores.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8681
+  NEUTRAL: 0.1037
+  ENTAILMENT: 0.0282
+
+Example 93:
+Premise: The engineer apologizes.
+Hypothesis: It is not the case that the engineer sleeps.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8058
+  NEUTRAL: 0.1378
+  ENTAILMENT: 0.0564
+
+Example 94:
+Premise: The nurse reads.
+Hypothesis: It is not the case that the nurse paints.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.2353
+  NEUTRAL: 0.4642
+  ENTAILMENT: 0.3006
+
+Example 95:
+Premise: Your sister sleeps.
+Hypothesis: It is not the case that your sister explores.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0148
+  NEUTRAL: 0.0908
+  ENTAILMENT: 0.8944
+
+Example 96:
+Premise: The king innovates.
+Hypothesis: It is not the case that the king paints.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9070
+  NEUTRAL: 0.0672
+  ENTAILMENT: 0.0258
+
+Example 97:
+Premise: The student forgives.
+Hypothesis: It is not the case that the student fishes.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9258
+  NEUTRAL: 0.0480
+  ENTAILMENT: 0.0262
+
+Example 98:
+Premise: The soldier astonishes.
+Hypothesis: It is not the case that the soldier films.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8341
+  NEUTRAL: 0.1443
+  ENTAILMENT: 0.0216
+
+Example 99:
+Premise: The director dreams.
+Hypothesis: It is not the case that the director creates.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8315
+  NEUTRAL: 0.1313
+  ENTAILMENT: 0.0372
+
+Example 100:
+Premise: The boy creates.
+Hypothesis: It is not the case that the boy admits.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.3189
+  NEUTRAL: 0.6608
+  ENTAILMENT: 0.0204
+

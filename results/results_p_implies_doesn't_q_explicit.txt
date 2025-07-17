@@ -1,0 +1,900 @@
+Example 1:
+Premise: His mother pines.
+Hypothesis: His mother doesn't astonish.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7269
+  NEUTRAL: 0.1076
+  ENTAILMENT: 0.1654
+
+Example 2:
+Premise: My friend delights.
+Hypothesis: My friend doesn't hope.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9991
+  NEUTRAL: 0.0006
+  ENTAILMENT: 0.0003
+
+Example 3:
+Premise: The painter flies.
+Hypothesis: The painter doesn't astonished.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8171
+  NEUTRAL: 0.1021
+  ENTAILMENT: 0.0808
+
+Example 4:
+Premise: The driver codes.
+Hypothesis: The driver doesn't lose.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0361
+  NEUTRAL: 0.4674
+  ENTAILMENT: 0.4966
+
+Example 5:
+Premise: The queen sings.
+Hypothesis: The queen doesn't speak.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9057
+  NEUTRAL: 0.0744
+  ENTAILMENT: 0.0199
+
+Example 6:
+Premise: The king edits.
+Hypothesis: The king doesn't fly.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9508
+  NEUTRAL: 0.0433
+  ENTAILMENT: 0.0059
+
+Example 7:
+Premise: The artist innovates.
+Hypothesis: The artist doesn't enjoy.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9947
+  NEUTRAL: 0.0038
+  ENTAILMENT: 0.0015
+
+Example 8:
+Premise: The nurse dances.
+Hypothesis: The nurse doesn't laugh.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9963
+  NEUTRAL: 0.0031
+  ENTAILMENT: 0.0006
+
+Example 9:
+Premise: The director sleeps.
+Hypothesis: The director doesn't astonish.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0060
+  NEUTRAL: 0.0933
+  ENTAILMENT: 0.9007
+
+Example 10:
+Premise: The explorer speaks.
+Hypothesis: The explorer doesn't astonished.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9806
+  NEUTRAL: 0.0108
+  ENTAILMENT: 0.0086
+
+Example 11:
+Premise: The boy edits.
+Hypothesis: The boy doesn't research.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.4125
+  NEUTRAL: 0.3679
+  ENTAILMENT: 0.2197
+
+Example 12:
+Premise: The king adores.
+Hypothesis: The king doesn't explore.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9990
+  NEUTRAL: 0.0008
+  ENTAILMENT: 0.0002
+
+Example 13:
+Premise: The engineer eats.
+Hypothesis: The engineer doesn't inspire.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7296
+  NEUTRAL: 0.2156
+  ENTAILMENT: 0.0548
+
+Example 14:
+Premise: His mother admits.
+Hypothesis: His mother doesn't row.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.5056
+  NEUTRAL: 0.2847
+  ENTAILMENT: 0.2097
+
+Example 15:
+Premise: The scientist travels.
+Hypothesis: The scientist doesn't research.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9961
+  NEUTRAL: 0.0030
+  ENTAILMENT: 0.0009
+
+Example 16:
+Premise: The architect steals.
+Hypothesis: The architect doesn't cheat.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9985
+  NEUTRAL: 0.0010
+  ENTAILMENT: 0.0005
+
+Example 17:
+Premise: The explorer competes.
+Hypothesis: The explorer doesn't wake.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9994
+  NEUTRAL: 0.0005
+  ENTAILMENT: 0.0002
+
+Example 18:
+Premise: The soldier thinks.
+Hypothesis: The soldier doesn't invent.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.2614
+  NEUTRAL: 0.4058
+  ENTAILMENT: 0.3327
+
+Example 19:
+Premise: The dancer betrays.
+Hypothesis: The dancer doesn't invent.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0324
+  NEUTRAL: 0.1614
+  ENTAILMENT: 0.8061
+
+Example 20:
+Premise: The pilot reads.
+Hypothesis: The pilot doesn't research.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9950
+  NEUTRAL: 0.0042
+  ENTAILMENT: 0.0008
+
+Example 21:
+Premise: Your sister flies.
+Hypothesis: Your sister doesn't ski.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.1864
+  NEUTRAL: 0.1857
+  ENTAILMENT: 0.6279
+
+Example 22:
+Premise: The pilot camps.
+Hypothesis: The pilot doesn't film.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.5126
+  NEUTRAL: 0.2727
+  ENTAILMENT: 0.2147
+
+Example 23:
+Premise: My friend dances.
+Hypothesis: My friend doesn't astonish.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9790
+  NEUTRAL: 0.0153
+  ENTAILMENT: 0.0058
+
+Example 24:
+Premise: The student apologizes.
+Hypothesis: The student doesn't astonish.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9578
+  NEUTRAL: 0.0282
+  ENTAILMENT: 0.0140
+
+Example 25:
+Premise: The designer drives.
+Hypothesis: The designer doesn't learn.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9967
+  NEUTRAL: 0.0027
+  ENTAILMENT: 0.0005
+
+Example 26:
+Premise: The queen yearns.
+Hypothesis: The queen doesn't ski.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9033
+  NEUTRAL: 0.0598
+  ENTAILMENT: 0.0369
+
+Example 27:
+Premise: The artist forgives.
+Hypothesis: The artist doesn't swim.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9757
+  NEUTRAL: 0.0210
+  ENTAILMENT: 0.0033
+
+Example 28:
+Premise: The student travels.
+Hypothesis: The student doesn't love.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9543
+  NEUTRAL: 0.0394
+  ENTAILMENT: 0.0062
+
+Example 29:
+Premise: The student competes.
+Hypothesis: The student doesn't envy.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9627
+  NEUTRAL: 0.0319
+  ENTAILMENT: 0.0054
+
+Example 30:
+Premise: The architect steals.
+Hypothesis: The architect doesn't travel.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9900
+  NEUTRAL: 0.0071
+  ENTAILMENT: 0.0029
+
+Example 31:
+Premise: The writer learns.
+Hypothesis: The writer doesn't travel.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9960
+  NEUTRAL: 0.0034
+  ENTAILMENT: 0.0005
+
+Example 32:
+Premise: The dancer regrets.
+Hypothesis: The dancer doesn't miss.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9974
+  NEUTRAL: 0.0018
+  ENTAILMENT: 0.0008
+
+Example 33:
+Premise: The queen researches.
+Hypothesis: The queen doesn't play.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.1020
+  NEUTRAL: 0.3491
+  ENTAILMENT: 0.5489
+
+Example 34:
+Premise: The soldier creates.
+Hypothesis: The soldier doesn't appreciate.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9865
+  NEUTRAL: 0.0117
+  ENTAILMENT: 0.0019
+
+Example 35:
+Premise: Her father creates.
+Hypothesis: Her father doesn't fly.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7988
+  NEUTRAL: 0.1353
+  ENTAILMENT: 0.0659
+
+Example 36:
+Premise: The woman researches.
+Hypothesis: The woman doesn't ski.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8764
+  NEUTRAL: 0.0988
+  ENTAILMENT: 0.0248
+
+Example 37:
+Premise: The chef admits.
+Hypothesis: The chef doesn't climb.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9726
+  NEUTRAL: 0.0211
+  ENTAILMENT: 0.0063
+
+Example 38:
+Premise: The driver lies.
+Hypothesis: The driver doesn't speak.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9734
+  NEUTRAL: 0.0142
+  ENTAILMENT: 0.0124
+
+Example 39:
+Premise: The doctor composes.
+Hypothesis: The doctor doesn't discover.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8846
+  NEUTRAL: 0.0661
+  ENTAILMENT: 0.0494
+
+Example 40:
+Premise: The painter appreciates.
+Hypothesis: The painter doesn't research.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9702
+  NEUTRAL: 0.0270
+  ENTAILMENT: 0.0029
+
+Example 41:
+Premise: The student promises.
+Hypothesis: The student doesn't jump.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9685
+  NEUTRAL: 0.0236
+  ENTAILMENT: 0.0079
+
+Example 42:
+Premise: The scientist discovers.
+Hypothesis: The scientist doesn't explore.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9995
+  NEUTRAL: 0.0004
+  ENTAILMENT: 0.0002
+
+Example 43:
+Premise: Your sister plays.
+Hypothesis: Your sister doesn't design.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7375
+  NEUTRAL: 0.1329
+  ENTAILMENT: 0.1296
+
+Example 44:
+Premise: The painter discovers.
+Hypothesis: The painter doesn't long.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.3569
+  NEUTRAL: 0.5046
+  ENTAILMENT: 0.1385
+
+Example 45:
+Premise: The king amazes.
+Hypothesis: The king doesn't research.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9950
+  NEUTRAL: 0.0040
+  ENTAILMENT: 0.0009
+
+Example 46:
+Premise: Her father cries.
+Hypothesis: Her father doesn't cycle.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8641
+  NEUTRAL: 0.0648
+  ENTAILMENT: 0.0711
+
+Example 47:
+Premise: My friend steals.
+Hypothesis: My friend doesn't paint.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9270
+  NEUTRAL: 0.0441
+  ENTAILMENT: 0.0289
+
+Example 48:
+Premise: The scholar appreciates.
+Hypothesis: The scholar doesn't innocent.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9845
+  NEUTRAL: 0.0105
+  ENTAILMENT: 0.0051
+
+Example 49:
+Premise: The athlete loses.
+Hypothesis: The athlete doesn't read.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.4819
+  NEUTRAL: 0.4353
+  ENTAILMENT: 0.0827
+
+Example 50:
+Premise: The painter teaches.
+Hypothesis: The painter doesn't innovate.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.2438
+  NEUTRAL: 0.5488
+  ENTAILMENT: 0.2074
+
+Example 51:
+Premise: The dancer sings.
+Hypothesis: The dancer doesn't explore.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9917
+  NEUTRAL: 0.0064
+  ENTAILMENT: 0.0018
+
+Example 52:
+Premise: The student cheats.
+Hypothesis: The student doesn't sail.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9907
+  NEUTRAL: 0.0063
+  ENTAILMENT: 0.0030
+
+Example 53:
+Premise: The architect innocent.
+Hypothesis: The architect doesn't imagine.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0071
+  NEUTRAL: 0.4089
+  ENTAILMENT: 0.5841
+
+Example 54:
+Premise: The writer fishes.
+Hypothesis: The writer doesn't imagine.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9423
+  NEUTRAL: 0.0384
+  ENTAILMENT: 0.0193
+
+Example 55:
+Premise: The man eats.
+Hypothesis: The man doesn't amazed.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7244
+  NEUTRAL: 0.1052
+  ENTAILMENT: 0.1705
+
+Example 56:
+Premise: The scholar builds.
+Hypothesis: The scholar doesn't laugh.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.5452
+  NEUTRAL: 0.3467
+  ENTAILMENT: 0.1081
+
+Example 57:
+Premise: The chef dreams.
+Hypothesis: The chef doesn't win.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9719
+  NEUTRAL: 0.0234
+  ENTAILMENT: 0.0048
+
+Example 58:
+Premise: The scholar thinks.
+Hypothesis: The scholar doesn't program.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0337
+  NEUTRAL: 0.2123
+  ENTAILMENT: 0.7540
+
+Example 59:
+Premise: The king admits.
+Hypothesis: The king doesn't sketch.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8901
+  NEUTRAL: 0.0992
+  ENTAILMENT: 0.0108
+
+Example 60:
+Premise: The engineer eats.
+Hypothesis: The engineer doesn't dance.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.3753
+  NEUTRAL: 0.3151
+  ENTAILMENT: 0.3096
+
+Example 61:
+Premise: The nurse designs.
+Hypothesis: The nurse doesn't fish.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8860
+  NEUTRAL: 0.0930
+  ENTAILMENT: 0.0209
+
+Example 62:
+Premise: Her father yearns.
+Hypothesis: Her father doesn't lie.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.2715
+  NEUTRAL: 0.5105
+  ENTAILMENT: 0.2180
+
+Example 63:
+Premise: The boy loses.
+Hypothesis: The boy doesn't photograph.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.2898
+  NEUTRAL: 0.5726
+  ENTAILMENT: 0.1377
+
+Example 64:
+Premise: The athlete steals.
+Hypothesis: The athlete doesn't row.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8123
+  NEUTRAL: 0.0812
+  ENTAILMENT: 0.1065
+
+Example 65:
+Premise: Your sister forgives.
+Hypothesis: Your sister doesn't envy.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0176
+  NEUTRAL: 0.3181
+  ENTAILMENT: 0.6643
+
+Example 66:
+Premise: The king envies.
+Hypothesis: The king doesn't paint.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9593
+  NEUTRAL: 0.0359
+  ENTAILMENT: 0.0048
+
+Example 67:
+Premise: The queen builds.
+Hypothesis: The queen doesn't camp.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9807
+  NEUTRAL: 0.0143
+  ENTAILMENT: 0.0049
+
+Example 68:
+Premise: The king discovers.
+Hypothesis: The king doesn't hate.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6843
+  NEUTRAL: 0.2829
+  ENTAILMENT: 0.0327
+
+Example 69:
+Premise: The architect imagines.
+Hypothesis: The architect doesn't cheat.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8698
+  NEUTRAL: 0.1097
+  ENTAILMENT: 0.0205
+
+Example 70:
+Premise: The director cries.
+Hypothesis: The director doesn't create.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.4477
+  NEUTRAL: 0.1322
+  ENTAILMENT: 0.4201
+
+Example 71:
+Premise: The explorer forgives.
+Hypothesis: The explorer doesn't forgive.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9994
+  NEUTRAL: 0.0004
+  ENTAILMENT: 0.0002
+
+Example 72:
+Premise: The explorer paints.
+Hypothesis: The explorer doesn't fly.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.1836
+  NEUTRAL: 0.3059
+  ENTAILMENT: 0.5105
+
+Example 73:
+Premise: The boy draws.
+Hypothesis: The boy doesn't drive.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0552
+  NEUTRAL: 0.1966
+  ENTAILMENT: 0.7482
+
+Example 74:
+Premise: The dancer codes.
+Hypothesis: The dancer doesn't read.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8829
+  NEUTRAL: 0.0952
+  ENTAILMENT: 0.0218
+
+Example 75:
+Premise: The queen climbs.
+Hypothesis: The queen doesn't envy.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7018
+  NEUTRAL: 0.2503
+  ENTAILMENT: 0.0480
+
+Example 76:
+Premise: The pilot competes.
+Hypothesis: The pilot doesn't envy.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9730
+  NEUTRAL: 0.0221
+  ENTAILMENT: 0.0049
+
+Example 77:
+Premise: The engineer speaks.
+Hypothesis: The engineer doesn't wake.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9976
+  NEUTRAL: 0.0020
+  ENTAILMENT: 0.0004
+
+Example 78:
+Premise: The nurse discovers.
+Hypothesis: The nurse doesn't row.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9756
+  NEUTRAL: 0.0179
+  ENTAILMENT: 0.0064
+
+Example 79:
+Premise: The artist wakes.
+Hypothesis: The artist doesn't experiment.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8627
+  NEUTRAL: 0.0897
+  ENTAILMENT: 0.0476
+
+Example 80:
+Premise: The chef hates.
+Hypothesis: The chef doesn't camp.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.1889
+  NEUTRAL: 0.4439
+  ENTAILMENT: 0.3672
+
+Example 81:
+Premise: The driver camps.
+Hypothesis: The driver doesn't apologize.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6537
+  NEUTRAL: 0.2472
+  ENTAILMENT: 0.0991
+
+Example 82:
+Premise: The engineer dances.
+Hypothesis: The engineer doesn't swim.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.6572
+  NEUTRAL: 0.1634
+  ENTAILMENT: 0.1793
+
+Example 83:
+Premise: The dancer hope.
+Hypothesis: The dancer doesn't yearn.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9969
+  NEUTRAL: 0.0020
+  ENTAILMENT: 0.0010
+
+Example 84:
+Premise: The director climbs.
+Hypothesis: The director doesn't photograph.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9383
+  NEUTRAL: 0.0547
+  ENTAILMENT: 0.0070
+
+Example 85:
+Premise: The engineer astonishes.
+Hypothesis: The engineer doesn't play.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9974
+  NEUTRAL: 0.0021
+  ENTAILMENT: 0.0005
+
+Example 86:
+Premise: The boy hope.
+Hypothesis: The boy doesn't enjoy.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9179
+  NEUTRAL: 0.0602
+  ENTAILMENT: 0.0219
+
+Example 87:
+Premise: The painter runs.
+Hypothesis: The painter doesn't invent.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.1000
+  NEUTRAL: 0.3165
+  ENTAILMENT: 0.5836
+
+Example 88:
+Premise: My friend skis.
+Hypothesis: My friend doesn't camp.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.1147
+  NEUTRAL: 0.3142
+  ENTAILMENT: 0.5711
+
+Example 89:
+Premise: The scholar hope.
+Hypothesis: The scholar doesn't eat.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9864
+  NEUTRAL: 0.0118
+  ENTAILMENT: 0.0018
+
+Example 90:
+Premise: The actor draws.
+Hypothesis: The actor doesn't write.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.2593
+  NEUTRAL: 0.2811
+  ENTAILMENT: 0.4597
+
+Example 91:
+Premise: The musician films.
+Hypothesis: The musician doesn't betray.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9385
+  NEUTRAL: 0.0541
+  ENTAILMENT: 0.0074
+
+Example 92:
+Premise: The painter writes.
+Hypothesis: The painter doesn't climb.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7295
+  NEUTRAL: 0.1609
+  ENTAILMENT: 0.1096
+
+Example 93:
+Premise: His mother travels.
+Hypothesis: His mother doesn't fish.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.7219
+  NEUTRAL: 0.1978
+  ENTAILMENT: 0.0802
+
+Example 94:
+Premise: The nurse invents.
+Hypothesis: The nurse doesn't sail.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.9815
+  NEUTRAL: 0.0142
+  ENTAILMENT: 0.0043
+
+Example 95:
+Premise: The doctor loses.
+Hypothesis: The doctor doesn't think.
+Prediction: NEUTRAL
+Scores:
+  CONTRADICTION: 0.0845
+  NEUTRAL: 0.7789
+  ENTAILMENT: 0.1367
+
+Example 96:
+Premise: The writer creates.
+Hypothesis: The writer doesn't research.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.2953
+  NEUTRAL: 0.3241
+  ENTAILMENT: 0.3806
+
+Example 97:
+Premise: The man lies.
+Hypothesis: The man doesn't lose.
+Prediction: CONTRADICTION
+Scores:
+  CONTRADICTION: 0.8157
+  NEUTRAL: 0.1114
+  ENTAILMENT: 0.0729
+
+Example 98:
+Premise: His mother composes.
+Hypothesis: His mother doesn't jump.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.1479
+  NEUTRAL: 0.2091
+  ENTAILMENT: 0.6430
+
+Example 99:
+Premise: The scholar steals.
+Hypothesis: The scholar doesn't program.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.3455
+  NEUTRAL: 0.2501
+  ENTAILMENT: 0.4044
+
+Example 100:
+Premise: My friend travels.
+Hypothesis: My friend doesn't invent.
+Prediction: ENTAILMENT
+Scores:
+  CONTRADICTION: 0.0324
+  NEUTRAL: 0.1897
+  ENTAILMENT: 0.7778
+
