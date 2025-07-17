@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 from functools import partial
 from argparse import RawTextHelpFormatter
+from source.evaluate import evaluate, model, tokenizer
 
 # Import CFG and generation source code
 from source.cfg import CFG
@@ -110,7 +111,29 @@ def main():
         help="save generated rules under data/<FILE>"
     )
 
+    # Evaluate NLI on a JSON file of pairs
+    parser.add_argument(
+        "--evaluate",
+        metavar="FILE",
+        type=Path,
+        help="evaluate a JSON file with examples"
+    )
+
     args = parser.parse_args()
+
+    # Batch evaluation
+    if args.evaluate:
+        results_dir = Path(__file__).parent / "results"
+        results_dir.mkdir(exist_ok=True)
+
+        with open(args.evaluate, "r", encoding="utf-8") as f:
+            examples = json.load(f)
+        
+        for key, tuples in examples.items():
+            pairs = [tuple(item) for item in tuples]
+            
+            evaluate(pairs, model, tokenizer, key_name=key, results_dir=str(results_dir))
+        return
 
     # Always initialize an empty grammar dict
     grammars = {}

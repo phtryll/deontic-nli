@@ -53,7 +53,7 @@ def generate_items(prompt: str, field_names: List[str], model: str = 'mistral') 
     # System general prompt
     system_prompts = (
         'You are a JSON generator. You must output _only_ valid JSON that conforms exactly to the provided schema. '
-        'You will receive an instruction to “Generate exactly {k} items.” You must return exactly {k} elements in each list—no more, no fewer. '
+        'You will receive an instruction to “Generate exactly {k} items.” You must return exactly {k} elements in each list. '
     )
 
     # Prepare the system and user messages for the ollama chat API
@@ -65,7 +65,7 @@ def generate_items(prompt: str, field_names: List[str], model: str = 'mistral') 
         messages=[system_msg, user_msg],
         model=model,
         format=json_schema,
-        # options={'temperature':0.0} # No surprises...
+        # options={'temperature':0.5}
     )
 
     # Extract the content (and make sure it exists)
