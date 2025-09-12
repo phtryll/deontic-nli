@@ -2,6 +2,8 @@
 testing/
 testing.py
 arc/
+report.tex
+build/
 
 # macOS Finder metadata
 .DS_Store
