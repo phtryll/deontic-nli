@@ -1,5 +1,5 @@
 from ollama import chat, generate
-from pydantic import create_model, ConfigDict, Field
+from pydantic import create_model, ConfigDict, Field, conlist
 from source.cfg import CFG
 from source.cfg_utils import join
 from typing import List, Dict, Any
@@ -30,14 +30,14 @@ def generate_examples(grammar: CFG, num_examples: int = 20, print_tree: bool = F
     return examples
 
 
-def generate_items(prompt: str, field_names: List[str], model: str = 'mistral') -> Dict[str, List[str]]:
+def generate_items(prompt: str,  k: int, field_names: List[str], model: str = 'mistral') -> Dict[str, List[str]]:
     """
     Generate lexical items for a given prompt, enforcing a strict JSON schema.
     Returns a dict mapping each field name to its list of generated strings.
     """
     
     # Define the format fields (they correspond to the entry labels, i.e. the non-terminals)
-    fields: Any = {name: (List[str], Field()) for name in field_names}
+    fields: Any = {name: (conlist(str, min_length=k, max_length=k), Field()) for name in field_names}
     
     # Dynamically create a JSON schema for each prompt
     SchemaClass = create_model(
@@ -52,8 +52,8 @@ def generate_items(prompt: str, field_names: List[str], model: str = 'mistral') 
 
     # System general prompt
     system_prompts = (
-        'You are a JSON generator. You must output _only_ valid JSON that conforms exactly to the provided schema. '
-        'You will receive an instruction to “Generate exactly {k} items.” You must return exactly {k} elements in each list. '
+        f'You are a JSON generator. You must output only valid JSON that conforms exactly to the provided schema. '
+        f'You will receive an instruction to “Generate exactly {k} items.” You must return exactly {k} elements in each list. '
     )
 
     # Prepare the system and user messages for the ollama chat API
@@ -76,11 +76,16 @@ def generate_items(prompt: str, field_names: List[str], model: str = 'mistral') 
     # Validate the JSON response against our schema
     try:
         instance = SchemaClass.model_validate_json(content)
-    except Exception:
-        raise ValueError("Output format was not validated")
+    except Exception as e:
+        raise ValueError("Output format was not validated") from e
 
-    # Return the validated data as a dict
-    return instance.model_dump()
+    # Enforce exact length for each field
+    data = instance.model_dump()
+    for field, items in data.items():
+        if len(items) != k:
+            raise ValueError(f"{field}: expected {k} items, got {len(items)}")
+
+    return data
 
 
 def format_rules(slot_dict: Dict[str, List[str]]) -> Dict[str, List[str]]:
