@@ -213,7 +213,7 @@ def main():
             field_names = labels_ollama[label]
             prompt = prompt.format(k=args.generate_rules)
             
-            result = generate_items(prompt, field_names, args.model)
+            result = generate_items(prompt, args.generate_rules, field_names, args.model)
             output_dict.update(result)
         
         new_rules = format_rules(output_dict)
