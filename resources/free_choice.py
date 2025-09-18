@@ -1,11 +1,14 @@
 import os
 import json
+from copy import deepcopy
 from source.cfg_utils import Rule
+from source.generate import parse_json, _SAFE_GLOBALS, _SAFE_LOCALS
 
-fcp_base = [
+# ------------------------------------
+# Free-choice permission test grammars
+# ------------------------------------
 
-    # -------------------
-    # p ou q implique p/q
+A_or_B_impl_AB = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "A", "or", "B", "."]),
@@ -17,37 +20,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_3SG"], features={'verb':'?a'}),
     Rule(left="B", right=["V_3SG"], features={'verb':'?b'}),
+]
 
-    # ----------------------
-    # p ou q implique p et q
-    Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
-
-    Rule(left="<PREMISE>", right=["SUBJ", "A", "or", "B", "."]),
-    Rule(left="<HYPOTHESIS>", right=["SUBJ", "A", "and", "B", "."]),
-
-    Rule(left="PROP", right=["A"]),
-    Rule(left="PROP", right=["B"]),
-
-    Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
-    Rule(left="A", right=["V_3SG"], features={'verb':'?a'}),
-    Rule(left="B", right=["V_3SG"], features={'verb':'?b'}),
-
-    # -----------------------
-    # p and q implique p or q
-    Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
-
-    Rule(left="<PREMISE>", right=["SUBJ", "A", "and", "B", "."]),
-    Rule(left="<HYPOTHESIS>", right=["SUBJ", "A", "or", "B", "."]),
-
-    Rule(left="PROP", right=["A"]),
-    Rule(left="PROP", right=["B"]),
-
-    Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
-    Rule(left="A", right=["V_3SG"], features={'verb':'?a'}),
-    Rule(left="B", right=["V_3SG"], features={'verb':'?b'}),
-
-    # -------------------
-    # p/q implique p ou q
+AB_impl_A_or_B = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "PROP", "."]),
@@ -59,9 +34,37 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_3SG"], features={'verb':'?a'}),
     Rule(left="B", right=["V_3SG"], features={'verb':'?b'}),
+]
 
-    # ---------------------------------
-    # PE (p or q) implies PE p and PE q
+A_or_B_impl_A_and_B = [
+    Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
+
+    Rule(left="<PREMISE>", right=["SUBJ", "A", "or", "B", "."]),
+    Rule(left="<HYPOTHESIS>", right=["SUBJ", "A", "and", "B", "."]),
+
+    Rule(left="PROP", right=["A"]),
+    Rule(left="PROP", right=["B"]),
+
+    Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
+    Rule(left="A", right=["V_3SG"], features={'verb':'?a'}),
+    Rule(left="B", right=["V_3SG"], features={'verb':'?b'}),
+]
+
+A_and_B_impl_A_or_B = [
+    Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
+
+    Rule(left="<PREMISE>", right=["SUBJ", "A", "and", "B", "."]),
+    Rule(left="<HYPOTHESIS>", right=["SUBJ", "A", "or", "B", "."]),
+
+    Rule(left="PROP", right=["A"]),
+    Rule(left="PROP", right=["B"]),
+
+    Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
+    Rule(left="A", right=["V_3SG"], features={'verb':'?a'}),
+    Rule(left="B", right=["V_3SG"], features={'verb':'?b'}),
+]
+
+PE_A_or_B_impl_PE_A_and_PE_B = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "B", "."]),
@@ -70,31 +73,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # ---------------------------------
-    # PE (p or q) implies PE p or PE q
-    Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
-
-    Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "B", "."]),
-    Rule(left="<HYPOTHESIS>", right=["SUBJ", "is permitted to", "A", "or", "is permitted to", "B", "."]),
-
-    Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
-    Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
-    Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
-
-    # ---------------------------------
-    # PE (p and q) implies PE p and PE q
-    Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
-
-    Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "and", "B", "."]),
-    Rule(left="<HYPOTHESIS>", right=["SUBJ", "is permitted to", "A", "and", "is permitted to", "B", "."]),
-
-    Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
-    Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
-    Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
-
-    # -----------------------------
-    # PE_p_or_q_implies_PE_p_/_PE_q
+PE_A_or_B_impl_PE_X = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "B", "."]),
@@ -106,9 +87,31 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # ---------------------------------
-    # PE (p or q) implies PE p and q
+PE_A_or_B_impl_PE_A_or_PE_B = [
+    Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
+
+    Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "B", "."]),
+    Rule(left="<HYPOTHESIS>", right=["SUBJ", "is permitted to", "A", "or", "is permitted to", "B", "."]),
+
+    Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
+    Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
+    Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
+
+PE_A_and_B_impl_PE_A_and_PE_B = [
+    Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
+
+    Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "and", "B", "."]),
+    Rule(left="<HYPOTHESIS>", right=["SUBJ", "is permitted to", "A", "and", "is permitted to", "B", "."]),
+
+    Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
+    Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
+    Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
+
+PE_A_and_B_impl_PE_A_and_B = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "B", "."]),
@@ -117,9 +120,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # -----------------------------
-    # PE p or PE q implies PE (p or q)
+PE_A_or_PE_B_impl_PE_A_or_B = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "is permitted to", "B", "."]),
@@ -128,9 +131,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # -----------------------------
-    # PE p and PE q implies PE (p and q)
+PE_A_and_PE_B_impl_PE_A_and_B = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "and", "is permitted to", "B", "."]),
@@ -139,21 +142,22 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # ------------------------------------------------------
-    # PE_p_or_q_implies_non_PE_p_and_PE_q_négation_explicite
+
+PE_A_or_B_impl_neg_PE_A_and_PE_B_explicit = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "B", "."]),
-    Rule(left="<HYPOTHESIS>", right=["NEG", "SUBJ", "is permitted to", "A", "and", "is permitted to", "B", "."]),
+    Rule(left="<HYPOTHESIS>", right=["NEG", "SUBJ", "is both permitted to", "A", "and", "permitted to", "B", "."]),
 
     Rule(left="NEG", right=["it is not the case that"]),
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # ---------------------------------------------------------
-    # PE_p_or_q_implies_non_PE_p_/_non_PE_q_négation_explicite
+PE_A_or_B_impl_neg_PE_X = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "B", "."]),
@@ -166,9 +170,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # ------------------------------------------------------
-    # PE_p_or_q_implies_non_PE_p_and_PE_q_négation_implicite
+PE_A_or_B_impl_neg_PE_A_and_PE_B_implicit = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "XA", "or", "XB", "."]),
@@ -187,9 +191,9 @@ fcp_base = [
 
     Rule(left="A", right=["V_INF_ant"], features={'verb':'?a', 'ant':'y'}),
     Rule(left="B", right=["V_INF_ant"], features={'verb':'?b', 'ant':'y'}),
+]
 
-    # --------------------------------------------------------
-    # PE_p_or_q_implies_non_PE_p_/_non_PE_q_négation_implicite
+PE_A_or_B_impl_neg_PE_X_implicit = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "XA", "or", "XB", "."]),
@@ -208,9 +212,9 @@ fcp_base = [
 
     Rule(left="A", right=["V_INF_ant"], features={'verb':'?a', 'ant':'y'}),
     Rule(left="B", right=["V_INF_ant"], features={'verb':'?b', 'ant':'y'}),
+]
 
-    # ---------------------------------------------------------
-    # p_implies_not_the_case_that_p_explicit
+A_implies_neg_A_explicit_1 = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "A", "."]),
@@ -219,9 +223,9 @@ fcp_base = [
     Rule(left="NEG", right=["it is not the case that"]),
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_3SG"], features={'verb':'?a'}),
+]
 
-    # ---------------------------------------------------------
-    # p_implies_doesn't_p_explicit
+A_implies_neg_A_explicit_2 = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "XA", "."]),
@@ -233,9 +237,9 @@ fcp_base = [
     Rule(left="YA", right=["A"], features={'p':'n'}),
     Rule(left="A", right=["V_3SG"], features={'verb':'?a', 'p':'y'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a', 'p':'n'}),
+]
 
-    # ---------------------------------------------------------
-    # p_implies_not_the_case_that_q_explicit
+A_implies_neg_V_explicit_1 = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "A", "."]),
@@ -245,9 +249,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_3SG"], features={'verb':'?a'}),
     Rule(left="B", right=["V_3SG"], features={'verb':'?a'}),
+]
 
-    # ---------------------------------------------------------
-    # p_implies_doesn't_q_explicit
+A_implies_neg_V_explicit_2 = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "A", "."]),
@@ -257,9 +261,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_3SG"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?a'}),
+]
 
-    # ---------------------------------------------------------
-    # p_implies_not_p_implicit
+A_implies_not_not_A_1 = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "XA", "."]),
@@ -273,9 +277,9 @@ fcp_base = [
 
     Rule(left="A", right=["V_3SG_neg"], features={'verb':'?a', 'ant':'n'}),
     Rule(left="A", right=["V_3SG_ant"], features={'verb':'?a', 'ant':'y'}),
+]
 
-    # ---------------------------------------------------------
-    # p_implies_doesn't_p_implicit
+A_implies_not_not_A_2 = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "XA", "."]),
@@ -289,9 +293,9 @@ fcp_base = [
 
     Rule(left="A", right=["V_3SG_neg"], features={'verb':'?a', 'ant':'n'}),
     Rule(left="A", right=["V_INF_ant"], features={'verb':'?a', 'ant':'y'}),
+]
 
-    # ---------------------------------
-    # PE_p_or_q_implies_PE_p_and_FO_q
+PE_A_or_B_impl_PE_A_and_FO_B = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "B", "."]),
@@ -300,9 +304,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # ---------------------------------
-    # PE_p_or_q_implies_FO_p_and_PE_q
+PE_A_or_B_impl_FO_A_and_PE_B = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "B", "."]),
@@ -311,9 +315,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # ---------------------------------
-    # PE_p_or_q_implies_FO_p_or_FO_q
+PE_A_or_B_impl_FO_A_or_FO_B = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "or", "B", "."]),
@@ -322,9 +326,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # ---------------------------------
-    # PE_p_and_q_implies_PE_p_or_FO_q
+PE_A_and_B_impl_PE_A_or_FO_B = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "and", "B", "."]),
@@ -333,9 +337,9 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
+]
 
-    # ---------------------------------
-    # PE_p_and_q_implies_FO_p_or_PE_q
+PE_A_and_B_impl_FO_A_or_PE_B = [
     Rule(left="S", right=["[P]", "<PREMISE>", "[H]", "<HYPOTHESIS>"]),
 
     Rule(left="<PREMISE>", right=["SUBJ", "is permitted to", "A", "and", "B", "."]),
@@ -344,11 +348,20 @@ fcp_base = [
     Rule(left="SUBJ", right=["NP"], features={'subj':'?x'}),
     Rule(left="A", right=["V_INF"], features={'verb':'?a'}),
     Rule(left="B", right=["V_INF"], features={'verb':'?b'}),
-
 ]
 
-fcp = list(fcp_base)
-seen_rules = set()
+# Group all test grammars in a dictionary
+fcp_base = {
+    name: val
+    for name, val in locals().items()
+    if isinstance(val, list) and all(isinstance(x, Rule) for x in val)
+}
+
+# -------------------------------------
+# Load lexical rules and build features
+# -------------------------------------
+
+from collections import defaultdict
 
 # Load lexical item grammar rules
 rule_files = [
@@ -357,67 +370,78 @@ rule_files = [
     "rules_VP_NEG.json"
 ]
 
-# Verb cell matching
-v_inf_list = []
-v_3sg_list = []
-V_INF_neg_list = []
-V_INF_ant_list = []
-V_3sg_neg_list = []
-V_3sg_ant_list = []
+# Group lexical rules by their left-hand category (e.g., "V_INF", "V_3SG", ...)
+lexical_rules = defaultdict(list)
 
-# Add them to the grammar
-for file in rule_files:
-    rules_path = os.path.join(os.path.dirname(__file__), '..', 'data', file)
+# Add them to the grammar (merge rules from all files)
+for filename in rule_files:
+    rules_path = os.path.join(os.path.dirname(__file__), 'data', filename)
     
-    # Extract rules
     with open(rules_path, 'r') as json_file:
-        rules = json.load(json_file)
-    
-    # Add rules to rules list
-    for rules_list in rules.values():
-        for entry in rules_list:
-            r = eval(entry)
-            if r not in seen_rules:
-                seen_rules.add(r)
-                fcp.append(r)
+        data = json.load(json_file)
+        
+        for category, entries in data.items():
+            for string in entries:
+                rule = parse_json(string)
+                lexical_rules[category].append(rule)
 
-    if "V_INF" in rules and "V_3SG" in rules:
-        v_inf_list = [eval(entry).right[0] for entry in rules["V_INF"]]
-        v_3sg_list = [eval(entry).right[0] for entry in rules["V_3SG"]]
+# Build lists of corresponding forms (take the first RHS token for each rule)
+v_inf_list      = [r.right[0] for r in lexical_rules.get("V_INF", [])]
+v_3sg_list      = [r.right[0] for r in lexical_rules.get("V_3SG", [])]
+v_inf_neg_list  = [r.right[0] for r in lexical_rules.get("V_INF_neg", [])]
+v_inf_ant_list  = [r.right[0] for r in lexical_rules.get("V_INF_ant", [])]
+v_3sg_neg_list  = [r.right[0] for r in lexical_rules.get("V_3SG_neg", [])]
+v_3sg_ant_list  = [r.right[0] for r in lexical_rules.get("V_3SG_ant", [])]
 
-    if "V_INF_neg" in rules and "V_INF_ant" in rules:
-        V_INF_neg_list = [eval(entry).right[0] for entry in rules["V_INF_neg"]]
-        V_INF_ant_list = [eval(entry).right[0] for entry in rules["V_INF_ant"]]
-    
-    if "V_3SG_neg" in rules and "V_3SG_ant" in rules:
-        V_3sg_neg_list = [eval(entry).right[0] for entry in rules["V_3SG_neg"]]
-        V_3sg_ant_list = [eval(entry).right[0] for entry in rules["V_3SG_ant"]]
+# Create dictionaries for feature building
+verb_to_inf        = dict(zip(v_3sg_list,   v_inf_list))         # 3SG -> INF
+verb_to_ant_inf    = dict(zip(v_inf_ant_list,  v_inf_neg_list))  # ant-INF -> neg-INF
+verb_to_ant_3sg_1  = dict(zip(v_3sg_neg_list, v_inf_neg_list))   # neg-3SG -> neg-INF
+verb_to_ant_3sg_2  = dict(zip(v_3sg_ant_list, v_inf_neg_list))   # ant-3SG -> neg-INF
 
-verb_to_inf      = dict(zip(v_3sg_list,   v_inf_list))
-verb_to_ant_inf  = dict(zip(V_INF_ant_list,  V_INF_neg_list))
-verb_to_ant_3sg_1  = dict(zip(V_3sg_neg_list, V_INF_neg_list))
-verb_to_ant_3sg_2  = dict(zip(V_3sg_ant_list, V_INF_neg_list))
+# ----------------------------------------
+# Populate the grammars with lexical rules
+# ----------------------------------------
 
-# Add relevant features
-for rule in fcp:
-    if rule.left == "NP":
-        rule.features.setdefault("subj", rule.right[0])
+# Store populated grammars (will be used to generate examples)
+fcp = {}
+
+for name, grammar in fcp_base.items():
+    fcp[name] = deepcopy(grammar)
+
+    # Add lexical rules: if grammar has a placeholder symbol that matches keys in lexical_rules,
+    # extend the grammar with those lexical rules.
+    new_rules = set()
     
-    if rule.left == "V_INF":
-        rule.features.setdefault("verb", rule.right[0])
-    if rule.left == "V_3SG":
-        rule.features.setdefault("verb", verb_to_inf.get(rule.right[0], rule.right[0]))
-    
-    if rule.left == "V_INF_neg":
-        rule.features.setdefault("verb", rule.right[0])
-        rule.features.setdefault("ant", "n")
-    if rule.left == "V_INF_ant":
-        rule.features.setdefault("verb", verb_to_ant_inf.get(rule.right[0], rule.right[0]))
-        rule.features.setdefault("ant", "y")
-    
-    if rule.left == "V_3SG_neg":
-        rule.features.setdefault("verb", verb_to_ant_3sg_1.get(rule.right[0], rule.right[0]))
-        rule.features.setdefault("ant", "n")
-    if rule.left == "V_3SG_ant":
-        rule.features.setdefault("verb", verb_to_ant_3sg_2.get(rule.right[0], rule.right[0]))
-        rule.features.setdefault("ant", "y")
+    for rule in grammar:
+        for category, rules_list in lexical_rules.items():
+            if category in rule.right:
+                new_rules.update(rules_list)
+
+    for rule in new_rules:
+        if rule not in fcp[name]:
+            fcp[name].append(rule)
+
+    # Add relevant features
+    for rule in fcp[name]:
+        if rule.left == "NP":
+            rule.features.setdefault("subj", rule.right[0])
+        
+        if rule.left == "V_INF":
+            rule.features.setdefault("verb", rule.right[0])
+        if rule.left == "V_3SG":
+            rule.features.setdefault("verb", verb_to_inf.get(rule.right[0], rule.right[0]))
+        
+        if rule.left == "V_INF_neg":
+            rule.features.setdefault("verb", rule.right[0])
+            rule.features.setdefault("ant", "n")
+        if rule.left == "V_INF_ant":
+            rule.features.setdefault("verb", verb_to_ant_inf.get(rule.right[0], rule.right[0]))
+            rule.features.setdefault("ant", "y")
+        
+        if rule.left == "V_3SG_neg":
+            rule.features.setdefault("verb", verb_to_ant_3sg_1.get(rule.right[0], rule.right[0]))
+            rule.features.setdefault("ant", "n")
+        if rule.left == "V_3SG_ant":
+            rule.features.setdefault("verb", verb_to_ant_3sg_2.get(rule.right[0], rule.right[0]))
+            rule.features.setdefault("ant", "y")
