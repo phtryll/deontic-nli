@@ -1,7 +1,7 @@
 from ollama import chat, generate
 from pydantic import create_model, ConfigDict, Field, conlist
 from source.cfg import CFG
-from source.cfg_utils import join
+from source.cfg_utils import join, Rule
 from typing import List, Dict, Any
 
 
@@ -130,3 +130,23 @@ def format_examples(input: Dict[str, List[str]]) -> Dict[str, List[tuple[str, st
                 formatted_examples[grammar].append((premise, hypothesis))
     
     return formatted_examples
+
+# ---------------------------------------------
+# Safe parser for Rule strings loaded from JSON
+# ---------------------------------------------
+
+_SAFE_GLOBALS = {"__builtins__": {}}  # no builtins exposed
+_SAFE_LOCALS = {"Rule": Rule} # only allow constructing Rule
+
+def parse_json(string: str) -> Rule:
+    """Parse a string like 'Rule(left="V_INF", right=["eat"])' into a Rule using constrained eval."""
+
+    if not isinstance(string, str) or not string.lstrip().startswith("Rule("):
+        raise ValueError(f"Unexpected rule entry (expected 'Rule(...)' string): {string!r}")
+    
+    rule = eval(string, _SAFE_GLOBALS, _SAFE_LOCALS)
+    
+    if not isinstance(rule, Rule):
+        raise ValueError(f"Parsed object is not a Rule: {string!r}")
+    
+    return rule
