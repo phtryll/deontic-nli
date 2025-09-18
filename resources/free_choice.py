@@ -2,7 +2,7 @@ import os
 import json
 from copy import deepcopy
 from source.cfg_utils import Rule
-from source.generate import parse_json, _SAFE_GLOBALS, _SAFE_LOCALS
+from source.generate import parse_json
 
 # ------------------------------------
 # Free-choice permission test grammars
