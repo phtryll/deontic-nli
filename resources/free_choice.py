@@ -375,7 +375,7 @@ lexical_rules = defaultdict(list)
 
 # Add them to the grammar (merge rules from all files)
 for filename in rule_files:
-    rules_path = os.path.join(os.path.dirname(__file__), 'data', filename)
+    rules_path = os.path.join(os.path.dirname(__file__), '..', 'data', filename)
     
     with open(rules_path, 'r') as json_file:
         data = json.load(json_file)
