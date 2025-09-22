@@ -21,7 +21,11 @@ from resources.operators import operators, operators_base
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
 
 # Cleaner --help display
-MyFormatter = partial(RawTextHelpFormatter, max_help_position=70, width=100)
+MyFormatter = partial(RawTextHelpFormatter, max_help_position=50, width=120)
+
+# --------
+# METAVARS
+# --------
 
 # Current grammars to generate examples with
 GRAMMARS = {
@@ -32,49 +36,55 @@ GRAMMARS = {
 }
 
 # Current models to generate text
-MODELS = ["mistral", "deepseek-r1", "llama3.1"]
+MODELS_GEN = ["mistral", "deepseek-r1", "llama3.1"]
+
+# Current models to evaluate text
+MODELS_EVAL = []
+
+# ----------------
+# PARSER ARGUMENTS
+# ----------------
 
 def main():
     
+    # Title
     parser = argparse.ArgumentParser(
         prog="cli.py",
         formatter_class=MyFormatter,
         description="Deontic NLI - CLI utility"
     )
 
-    # Select one or more grammars
+    # Select one grammar group
     parser.add_argument(
         "-g", "--grammar",
-        nargs=2,
-        action="append",
-        metavar=("GRAMMAR_KEY", "GRAMMAR_NAME"),
+        metavar="GRAMMAR",
         help=(
-            f"select a grammar by key and assign it a custom name; "
+            f"select a grammar group by key; "
             f"valid keys: {', '.join(GRAMMARS.keys())}"
         )
     )
 
-    # Select one or more grammars
+    # Option to view the selected CFG from the grammar group
+    parser.add_argument(
+        "--show",
+        choices=["base", "full"],
+        metavar="TYPE",
+        help="view the selected CFG, either with lexical rules (TYPE: full) or without (TYPE: base)"
+    )
+
+    # Select a generation models (default choice: 'mistral')
     parser.add_argument(
         "-m", "--model",
-        choices=MODELS,
+        choices=MODELS_GEN,
         metavar="MODEL",
-        default=MODELS[0],
+        default=MODELS_GEN[0],
         help=(
-            f"select model for text generation: "
-            f"{', '.join(MODELS)} (default: {MODELS[0]})"
+            f"select a model for lexical item(s) generation: "
+            f"{', '.join(MODELS_GEN)} (default: {MODELS_GEN[0]})"
         )
     )
 
-    # Option to print the selected CFG(s)
-    parser.add_argument(
-        "--show-grammar",
-        choices=["base", "full"],
-        metavar="GRAMMAR",
-        help="print the CFG grammar(s): base, full"
-    )
-
-    # Option to generate N examples from the grammar. Mode can be 'cfg' for uniform or 'pcfg' for probabilistic generation.
+    # Option to generate N examples from the grammar
     parser.add_argument(
         "--generate-examples",
         nargs='?',
@@ -82,95 +92,130 @@ def main():
         type=int,
         default=None,
         metavar="N",
-        help="generate N examples (default: 100)"
+        help="generate N examples from the selected grammar (default: 100)"
     )
 
     # Option to generate N lexical rules using ollama for text generation
     parser.add_argument(
-        "--generate-rules",
+        "--generate-grammars",
         nargs='?',
         const=100,
         type=int,
         default=None,
         metavar="N",
-        help="generate N lexical rules from previously generated lexical pool (default: 100)"
+        help="generate N lexical items and format them into CFG rules using an LLM (default: 100)"
     )
 
     # Specify what prompt(s) we want to use
     parser.add_argument(
-        "-l", "--labels",
+        "--labels",
         nargs="+",
         choices=list(prompts_ollama.keys()),
         metavar="LABEL",
-        help="select which prompt labels to generate rules for (default: all)"
+        help="select which prompt labels to generate lexical items for (default: all)"
     )
 
+    # Save generated rules/examples toggle
     parser.add_argument(
         "-s", "--save",
-        metavar="FILE",
-        help="save generated rules under data/<FILE>"
+        metavar="FILENAME",
+        help="save generated rules/examples under data/<FILENAME>"
     )
 
     # Evaluate NLI on a JSON file of pairs
     parser.add_argument(
-        "--evaluate",
-        metavar="FILE",
+        "-e", "--evaluate",
+        metavar="FILENAME",
         type=Path,
         help="evaluate a JSON file with examples"
     )
 
     args = parser.parse_args()
 
-    # Batch evaluation
+# ----------
+# EVALUATION
+# ----------
+
     if args.evaluate:
+        # Verfify output directory exists
         results_dir = Path(__file__).parent / "results"
         results_dir.mkdir(exist_ok=True)
 
+        # Load examples
         with open(args.evaluate, "r", encoding="utf-8") as f:
             examples = json.load(f)
         
+        # Format examples into List[Tuple] and evaluate
         for key, tuples in examples.items():
             pairs = [tuple(item) for item in tuples]
-            
             evaluate(pairs, model, tokenizer, key_name=key, results_dir=str(results_dir))
         return
 
-    # Always initialize an empty grammar dict
-    grammars = {}
-    
-    # Check if grammar has been defined
-    if (args.generate_examples or args.show_grammar) and not args.grammar:
-        parser.error("argument -g/--grammar is required for generating examples or showing grammar.")
+# ---------------
+# GRAMMAR LOADING
+# ---------------
 
-    # Create a dictionary with all the specified grammars and custom names
+# TODO: Work-in-progress: allow multiple grammar selection
+
+    # Init empty dict
+    selected_grammars = {}
+
     if args.grammar:
-        grammars = {}
-        for key, custom_name in args.grammar:
-            if key not in GRAMMARS:
-                parser.error(f"Unknown grammar key '{key}'. Valid keys: {', '.join(GRAMMARS.keys())}")
-            grammars[custom_name] = CFG(rules=GRAMMARS[key][0], axiom="S")
+        # Check if the input matches available grammar keys
+        if args.grammar not in GRAMMARS:
+            parser.error(f"Unknown grammar key '{args.grammar}'. Valid keys: {', '.join(GRAMMARS.keys())}")
 
-    # Display the CFG(s) to the user
-    if args.show_grammar:
-        if args.show_grammar == "full":
-            for name, grammar in grammars.items():
-                print(f"\n----Context-free grammar for {name}----\n")
-                print(grammar)
+        # Extract the CFGs within the selected grammar group
+        grammars, grammars_base = GRAMMARS[args.grammar]
 
-        if args.show_grammar == "base":
-            base_grammars = {}
-            for key, custom_name in args.grammar:
-                base_grammars[custom_name] = CFG(rules=GRAMMARS[key][1], axiom="S")
+        # Prompt the user to select a grammar within the group
+        if isinstance(grammars, dict):
+            available_grammars = list(grammars.keys()) # list all the available grammars
+
+            # List options to choose from
+            print(f"Grammar group '{args.grammar}' has multiple sub-grammars. Available options:")
+            for i, name in enumerate(available_grammars, start=1):
+                print(f"    {i}. {name}")
+
+            # User input
+            choice = input("Select grammar by number: ").strip()
             
-            for name, grammar in base_grammars.items():
-                print(f"\n----Context-free grammar for {name}----\n")
-                print(grammar)
+            # Only numeric indices are allowed
+            while not choice.isdigit() or not (1 <= int(choice) <= len(available_grammars)):
+                print("Invalid entry. Please enter a number from the list above.")
+                choice = input("Select valid grammar number: ").strip()
+
+            selected_key = available_grammars[int(choice) - 1]
+
+            # Load the selected grammar
+            selected_grammar = grammars[selected_key]
+            selected_grammars[selected_key] = CFG(rules=selected_grammar, axiom="S")
+
+            # ---------------------
+            # VIEW SELECTED GRAMMAR
+            # ---------------------
+
+            if args.show:
+                if args.show == "full":
+                    for name, grammar in selected_grammars.items():
+                        print(f"\n----Context-free grammar for {name}----\n")
+                        print(grammar)
+
+                if args.show == "base":
+                        base_rules = grammars_base[selected_key]
+                        base_grammar = CFG(rules=base_rules, axiom="S")
+                        print(f"\n----Context-free grammar for {selected_key}----\n")
+                        print(base_grammar)
+
+# -----------------
+# GENERATE EXAMPLES
+# -----------------
 
     # Generate examples
     if args.generate_examples:
         examples_dict = {}
         
-        for name, grammar in grammars.items():
+        for name, grammar in selected_grammars.items():
             examples = generate_examples(grammar, args.generate_examples, print_tree=False)
             examples_dict[name] = examples
         
@@ -203,22 +248,26 @@ def main():
                 json.dump(data, f, ensure_ascii=False, indent=4)
             print(f"\nSaved generated examples to {save_path}")
 
-    # Generate lexical rules
-    if args.generate_rules:
+# --------------
+# GENERATE RULES
+# --------------
+
+    # Generate lexical grammars
+    if args.generate_grammars:
         output_dict = {}
         selected_labels = args.labels if args.labels else prompts_ollama.keys()
         
         for label in selected_labels:
             prompt = prompts_ollama[label]
             field_names = labels_ollama[label]
-            prompt = prompt.format(k=args.generate_rules)
+            prompt = prompt.format(k=args.generate_grammars)
             
-            result = generate_items(prompt, args.generate_rules, field_names, args.model)
+            result = generate_items(prompt, args.generate_grammars, field_names, args.model)
             output_dict.update(result)
         
-        new_rules = format_rules(output_dict)
+        new_grammars = format_rules(output_dict)
 
-        for label, output in new_rules.items():
+        for label, output in new_grammars.items():
             print(f"\n--- {label} ---\n")
             
             for item in output:
@@ -228,9 +277,9 @@ def main():
             save_path = Path(__file__).parent / "data" / args.save
             
             with open(save_path, "w", encoding="utf-8") as f:
-                json.dump(new_rules, f, ensure_ascii=False, indent=4)
+                json.dump(new_grammars, f, ensure_ascii=False, indent=4)
             
-            print(f"\nSaved generated rules to {save_path}")
+            print(f"\nSaved generated grammars to {save_path}")
 
 # Run CLI
 if __name__ == "__main__":
