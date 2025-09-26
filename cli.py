@@ -23,9 +23,9 @@ logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
 # Cleaner --help display
 MyFormatter = partial(RawTextHelpFormatter, max_help_position=50, width=120)
 
-# --------
-# METAVARS
-# --------
+# ---------
+# META-VARS
+# ---------
 
 # Current grammars to generate examples with
 GRAMMARS = {
@@ -137,7 +137,7 @@ def main():
 # ----------
 
     if args.evaluate:
-        # Verfify output directory exists
+        # Verify output directory exists
         results_dir = Path(__file__).parent / "results"
         results_dir.mkdir(exist_ok=True)
 
@@ -155,8 +155,6 @@ def main():
 # GRAMMAR LOADING
 # ---------------
 
-# TODO: Work-in-progress: allow multiple grammar selection
-
     # Init empty dict
     selected_grammars = {}
 
@@ -170,26 +168,65 @@ def main():
 
         # Prompt the user to select a grammar within the group
         if isinstance(grammars, dict):
-            available_grammars = list(grammars.keys()) # list all the available grammars
+            available_grammars = list(grammars.keys())
 
-            # List options to choose from
+            # Display the available grammars to the user
             print(f"Grammar group '{args.grammar}' has multiple sub-grammars. Available options:")
             for i, name in enumerate(available_grammars, start=1):
                 print(f"    {i}. {name}")
 
-            # User input
-            choice = input("Select grammar by number: ").strip()
-            
-            # Only numeric indices are allowed
-            while not choice.isdigit() or not (1 <= int(choice) <= len(available_grammars)):
-                print("Invalid entry. Please enter a number from the list above.")
-                choice = input("Select valid grammar number: ").strip()
+            selected_indices = None  # No indices selected until user input is verified
+            prompt = "Select grammar number(s) (e.g. 1 or 1,3 or 'all'/'*'): "
 
-            selected_key = available_grammars[int(choice) - 1]
+            # While loop to verify user input
+            while selected_indices is None:
+                choice = input(prompt).strip()
 
-            # Load the selected grammar
-            selected_grammar = grammars[selected_key]
-            selected_grammars[selected_key] = CFG(rules=selected_grammar, axiom="S")
+                # Continue if empty
+                if not choice:
+                    print("Invalid entry. Please enter number(s) from the list above.")
+                    continue
+
+                # Account for all sub-grammars
+                if choice.lower() in {"all", "*"}:
+                    selected_indices = list(range(len(available_grammars)))
+                    break
+
+                # Split at comma
+                tokens = choice.replace(",", " ").split()
+
+                indices = []
+                valid = True
+
+                # Go through the input tokens for each
+                for token in tokens:
+                    # If one of the tokens is not a digit start over
+                    if not token.isdigit():
+                        valid = False
+                        break
+                    
+                    # If its a digit reindex correctly from 0 and check if valid
+                    idx = int(token) - 1
+                    if idx < 0 or idx >= len(available_grammars):
+                        valid = False
+                        break
+
+                    # If all is well, add to the indices
+                    indices.append(idx)
+
+                # If break, restart
+                if not valid:
+                    print("Invalid entry. Please enter number(s) from the list above.")
+                    continue
+
+                # Selected indices of the grammars
+                selected_indices = sorted(set(indices))
+
+            # Build a dictionary of name: grammar
+            for idx in selected_indices:
+                selected_key = available_grammars[idx]
+                selected_grammar = grammars[selected_key]
+                selected_grammars[selected_key] = CFG(rules=selected_grammar, axiom="S")
 
             # ---------------------
             # VIEW SELECTED GRAMMAR
@@ -202,16 +239,16 @@ def main():
                         print(grammar)
 
                 if args.show == "base":
-                        base_rules = grammars_base[selected_key]
+                    for name in selected_grammars:
+                        base_rules = grammars_base[name]
                         base_grammar = CFG(rules=base_rules, axiom="S")
-                        print(f"\n----Context-free grammar for {selected_key}----\n")
+                        print(f"\n----Context-free grammar for {name}----\n")
                         print(base_grammar)
 
 # -----------------
 # GENERATE EXAMPLES
 # -----------------
 
-    # Generate examples
     if args.generate_examples:
         examples_dict = {}
         
