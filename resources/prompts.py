@@ -59,11 +59,11 @@ prompts_ollama = {
 
     "Adjectives": """
 
-    Here is the subject: humans - ages, genders, roles, or professions.
-    Generate exactly {k} unique English nouns that name a person or type of person, e.g. “boy”, “girl”, “man”, “firefighter”, “lawyer”.
-    Generate exactly {k} unique descriptive adjectives that can be applied to humans. Include a mix of traits (e.g., curious), physical qualities (e.g., blond), ages (e.g., young), nationalities (e.g., french), and similar attributes.
-    
-    Rules
+        Here is the subject: humans - ages, genders, roles, or professions.
+        Generate exactly {k} unique English nouns that name a person or type of person, e.g. “boy”, “girl”, “man”, “firefighter”, “lawyer”.
+        Generate exactly {k} unique descriptive adjectives that can be applied to humans. Include a mix of traits (e.g., curious), physical qualities (e.g., blond), ages (e.g., young), nationalities (e.g., french), and similar attributes.
+        
+        Rules:
         1.	Write exactly {k} adjectives, no more, no less.
         2.	Each adjective must be a single English word, in lowercase.
         3.	No duplicates.

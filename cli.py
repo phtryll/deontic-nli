@@ -97,7 +97,7 @@ def main():
 
     # Option to generate N lexical rules using ollama for text generation
     parser.add_argument(
-        "--generate-grammars",
+        "--generate-rules",
         nargs='?',
         const=100,
         type=int,
@@ -290,16 +290,16 @@ def main():
 # --------------
 
     # Generate lexical grammars
-    if args.generate_grammars:
+    if args.generate_rules:
         output_dict = {}
         selected_labels = args.labels if args.labels else prompts_ollama.keys()
         
         for label in selected_labels:
             prompt = prompts_ollama[label]
             field_names = labels_ollama[label]
-            prompt = prompt.format(k=args.generate_grammars)
+            prompt = prompt.format(k=args.generate_rules)
             
-            result = generate_items(prompt, args.generate_grammars, field_names, args.model)
+            result = generate_items(prompt, args.generate_rules, field_names, args.model)
             output_dict.update(result)
         
         new_grammars = format_rules(output_dict)
