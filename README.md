@@ -18,7 +18,7 @@ We first translate deontic logic formulas into natural language, and then feed t
 To get started with this repository, clone it and navigate into the directory:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/phtryll/deontic-nli.git
 cd deontic-nli
 ```
 
