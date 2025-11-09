@@ -43,52 +43,78 @@ def plot(labels, all_probs, model, base_dir, key_name=None):
     plt.close()
     print(f"Saved plot to {jpg_path}")
 
-# Load model
+
+# Load model in inference mode
 tokenizer = AutoTokenizer.from_pretrained("FacebookAI/roberta-large-mnli")
 model = AutoModelForSequenceClassification.from_pretrained("FacebookAI/roberta-large-mnli")
 model.eval()
 
-def evaluate(pairs, model, tokenizer, key_name=None, results_dir=None):
-    
-    # Determine base directory for outputs
-    if results_dir:
-        os.makedirs(results_dir, exist_ok=True)
-        base_dir = results_dir
-    else:
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-    
+
+def evaluate(pairs, model, tokenizer, key_name, results_dir, batch_size=16):
+    """
+    Evaluation pipeline for a set of premise/hypothesis paris.
+    For now the model loaded is roberta-large-mnli.
+    Outputs a txt file with the output of the model for each pair,
+    as well as plots aggregating the results.
+    """
+
     # Initialize storage for example labels and probabilities
+    results = []
     labels = []
     all_probs = []
     
-    # Retrieve all class labels for detailed scoring
-    classes = [model.config.id2label[i] for i in range(len(model.config.id2label))]
+    # Retrieve all class labels (i.e. 'Contradiction', 'Entailment', 'Neutral')
+    id2label = model.config.id2label # We use it later on
+    classes = list(id2label.values())
     
-    # Construct results filename using key_name if provided
-    results_filename = f"results_{key_name}.txt" if key_name else "results.txt"
-    out_path = os.path.join(base_dir, results_filename)
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    # Identify the path where the results file will be stored
+    out_path = os.path.join(results_dir, f"results_{key_name}.txt")
     print(f"Saving results to {out_path}")
     
-    with open(out_path, 'w') as out_file:
-        for idx, (premise, hypothesis) in enumerate(pairs):
-            inputs = tokenizer(premise, hypothesis, return_tensors="pt", truncation=True)
-            with torch.no_grad():
-                logits = model(**inputs).logits
-            probs = torch.softmax(logits, dim=1)[0]
-            pred_id = torch.argmax(probs).item()
-            label = model.config.id2label[pred_id]
+    # Main evaluation loop over batches of examples
+    for batch_start in range(0, len(pairs), batch_size):
 
-            # Write numbered example and all class probabilities
+        # Create batches of example pairs
+        batch = pairs[batch_start : batch_start + batch_size]
+        premises, hypotheses = map(list, zip(*batch))
+
+        # Prepare the inputs for the model
+        inputs = tokenizer(
+            premises,
+            hypotheses,
+            return_tensors="pt",
+            padding=True,
+            truncation=True
+        )
+
+        # Forward pass
+        with torch.inference_mode():
+            logits = model(**inputs).logits
+
+        # Get the probabilities and the predicted labels
+        batch_probs = torch.softmax(logits, dim=1)
+        pred_ids = batch_probs.argmax(dim=1)
+        
+        # Each example is a tuple with premise, hypothesis, probabilities vector and predicted label
+        results.extend(
+            (premise, hypothesis, id2label[int(pred_id)], probs.tolist())
+            for (premise, hypothesis), pred_id, probs in zip(batch, pred_ids, batch_probs)
+        )
+
+    # Write the results in a .txt file
+    with open(out_path, "w") as out_file:
+
+        # Loop over each example pair and write in the file
+        for idx, (premise, hypothesis, label, probs) in enumerate(results):
             out_file.write(f"Example {idx+1}:\n")
             out_file.write(f"Premise: {premise}\nHypothesis: {hypothesis}\n")
             out_file.write(f"Prediction: {label}\n")
             out_file.write("Scores:\n")
-            for cls_name, prob_val in zip(classes, probs.tolist()):
-                out_file.write(f"  {cls_name}: {prob_val:.4f}\n")
+            for cls_name, prob_val in zip(classes, probs):
+                out_file.write(f"\t{cls_name}: {prob_val:.4f}\n")
             out_file.write("\n")
-            labels.append(f"Example {idx+1}")
-            all_probs.append(probs.tolist())
     
     # Generate and save plot
-    plot(labels, all_probs, model, base_dir, key_name)
+    labels = [f"Example {i+1}" for i in range(len(results))]
+    all_probs = [probs for (_, _, _, probs) in results]
+    plot(labels, all_probs, model, results_dir, key_name)

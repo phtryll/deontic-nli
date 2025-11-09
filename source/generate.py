@@ -1,4 +1,4 @@
-from ollama import chat, generate
+from ollama import chat
 from pydantic import create_model, ConfigDict, Field, conlist
 from source.cfg import CFG
 from source.cfg_utils import join, Rule
