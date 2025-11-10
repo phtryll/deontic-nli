@@ -4,7 +4,7 @@ import argparse
 from pathlib import Path
 from functools import partial
 from argparse import RawTextHelpFormatter
-from source.evaluate import evaluate, model, tokenizer
+from source.evaluate import evaluate
 
 # Import CFG and generation source code
 from source.cfg import CFG
@@ -72,15 +72,27 @@ def main():
         help="view the selected CFG, either with lexical rules (TYPE: full) or without (TYPE: base)"
     )
 
-    # Select a generation models (default choice: 'mistral')
+    # Select a generation model (default choice: 'mistral')
     parser.add_argument(
-        "-m", "--model",
+        "--gen-model",
         choices=MODELS_GEN,
-        metavar="MODEL",
+        metavar="MODEL_NAME",
         default=MODELS_GEN[0],
         help=(
             f"select a model for lexical item(s) generation: "
             f"{', '.join(MODELS_GEN)} (default: {MODELS_GEN[0]})"
+        )
+    )
+
+    # Select an evaluation models (default choice: 'roberta-large-mnli')
+    parser.add_argument(
+        "--nli-model",
+        metavar="MODEL_NAME",
+        type=str,
+        default="FacebookAI/roberta-large-mnli",
+        help=(
+            "HuggingFace model name to use for NLI evaluation; "
+            "(default: FacebookAI/roberta-large-mnli)"
         )
     )
 
@@ -148,7 +160,7 @@ def main():
         # Format examples into List[Tuple] and evaluate
         for key, tuples in examples.items():
             pairs = [tuple(item) for item in tuples]
-            evaluate(pairs, model, tokenizer, key_name=key, results_dir=str(results_dir))
+            evaluate(pairs, args.nli_model, key, str(results_dir))
         return
 
 # ---------------
@@ -299,7 +311,7 @@ def main():
             field_names = labels_ollama[label]
             prompt = prompt.format(k=args.generate_rules)
             
-            result = generate_items(prompt, args.generate_rules, field_names, args.model)
+            result = generate_items(prompt, args.generate_rules, field_names, args.gen_model)
             output_dict.update(result)
         
         new_grammars = format_rules(output_dict)

@@ -8,10 +8,15 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer, logg
 # Silence expected unused weight warnings from transformers
 logging.set_verbosity_error()
 
-# Load model in inference mode
-tokenizer = AutoTokenizer.from_pretrained("FacebookAI/roberta-large-mnli")
-model = AutoModelForSequenceClassification.from_pretrained("FacebookAI/roberta-large-mnli")
-model.eval()
+
+def load_nli_model(model_name: str):
+    """Helper function to load a tokenizer and NLI model by name from HuggingFace."""
+
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = AutoModelForSequenceClassification.from_pretrained(model_name)
+    model.eval()
+
+    return tokenizer, model
 
 
 def plot(probs, classes, base_dir, key_name):
@@ -35,13 +40,16 @@ def plot(probs, classes, base_dir, key_name):
     plt.close()
 
 
-def evaluate(pairs, model, tokenizer, key_name, results_dir, batch_size=16):
+def evaluate(pairs, model_name, key_name, results_dir, batch_size=16):
     """
     Evaluation pipeline for a set of premise/hypothesis paris.
     For now the model loaded is roberta-large-mnli.
     Outputs a txt file with the output of the model for each pair,
     as well as plots aggregating the results.
     """
+
+    # Set tokenizer and model
+    tokenizer, model = load_nli_model(model_name)
 
     # Retrieve all class labels (i.e. 'Contradiction', 'Entailment', 'Neutral')
     id2label = model.config.id2label # We use it later on
