@@ -1,21 +1,22 @@
 import json
 import logging
 import argparse
+from tqdm import tqdm
 from pathlib import Path
 from functools import partial
 from argparse import RawTextHelpFormatter
-from source.evaluate import evaluate
 
 # Import CFG and generation source code
 from source.cfg import CFG
+from source.prompts import *
 from source.generate import generate_examples, generate_items, format_rules, format_examples
-from resources.prompts import prompts_ollama, labels_ollama
+from source.evaluate import evaluate, write_to_file, compute_entropies, plot_mustache
 
 # Grammars
-from resources.axiom_obrm import obrm, obrm_base
-from resources.axiom_obexh import exh, exh_base
-from resources.free_choice import fcp, fcp_base
-from resources.operators import operators, operators_base
+from grammars.axiom_obrm import obrm, obrm_base
+from grammars.axiom_obexh import exh, exh_base
+from grammars.free_choice import fcp, fcp_base
+from grammars.operators import operators, operators_base
 
 # Suppress useless transformers messages
 logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
@@ -37,9 +38,6 @@ GRAMMARS = {
 
 # Current models to generate text
 MODELS_GEN = ["mistral", "deepseek-r1", "llama3.1"]
-
-# Current models to evaluate text
-MODELS_EVAL = []
 
 # ----------------
 # PARSER ARGUMENTS
@@ -142,6 +140,13 @@ def main():
         help="evaluate a JSON file with examples"
     )
 
+    parser.add_argument(
+        "--eval-mode",
+        choices=["entropy", "detailed"],
+        default="entropy",
+        help="choose evaluation mode: 'entropy' for entropy boxplot only, 'detailed' for per-grammar detailed plots (default: entropy)"
+    )
+
     args = parser.parse_args()
 
 # ----------
@@ -157,10 +162,21 @@ def main():
         with open(args.evaluate, "r", encoding="utf-8") as f:
             examples = json.load(f)
         
-        # Format examples into List[Tuple] and evaluate
-        for key, tuples in examples.items():
+        all_entropies = {}
+
+        for key, tuples in tqdm(examples.items(), desc=f"Evaluating grammars"):
             pairs = [tuple(item) for item in tuples]
-            evaluate(pairs, args.nli_model, key, str(results_dir))
+
+            if args.eval_mode == "detailed":
+                res, cls = evaluate(pairs, args.nli_model)
+                write_to_file(res, cls, key, str(results_dir))
+            else:
+                entropies = compute_entropies(pairs, args.nli_model)
+                all_entropies[key] = entropies
+
+        if args.eval_mode == "entropy":
+            plot_mustache(all_entropies, str(results_dir))
+
         return
 
 # ---------------
@@ -276,7 +292,7 @@ def main():
                 print(example)
         
         if args.save:
-            save_path = Path(__file__).parent / "data" / args.save
+            save_path = Path(__file__).parent / "examples" / args.save
             
             # Load existing data if the file exists
             if save_path.exists():
@@ -323,12 +339,12 @@ def main():
                 print(item)
 
         if args.save:
-            save_path = Path(__file__).parent / "data" / args.save
+            save_path = Path(__file__).parent / "rules" / args.save
             
             with open(save_path, "w", encoding="utf-8") as f:
                 json.dump(new_grammars, f, ensure_ascii=False, indent=4)
             
-            print(f"\nSaved generated grammars to {save_path}")
+            print(f"\nSaved generated rules to {save_path}")
 
 # Run CLI
 if __name__ == "__main__":

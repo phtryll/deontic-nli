@@ -2,6 +2,8 @@ import os
 import torch
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+from scipy.stats import entropy
 from matplotlib.ticker import MaxNLocator
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, logging
 
@@ -19,7 +21,7 @@ def load_nli_model(model_name: str):
     return tokenizer, model
 
 
-def plot(probs, classes, base_dir, key_name):
+def plot_bar(probs, classes, base_dir, key_name):
     """Helper function to plot model's output for each example."""
 
     # Path to store the figure
@@ -40,7 +42,40 @@ def plot(probs, classes, base_dir, key_name):
     plt.close()
 
 
-def evaluate(pairs, model_name, key_name, results_dir, batch_size=16):
+def plot_mustache(all_entropies, results_dir):
+    """Helper function to plot model output distributions for each grammar across all examples."""
+
+    # Set path
+    path = os.path.join(results_dir, "cross_grammar_entropy_boxplot.png")
+    print(f"Saving mustache plot to {path}")
+
+    # Convert to DataFrame
+    df = pd.DataFrame(all_entropies)
+
+    # Rename columns to numeric indices for x-axis
+    index_map = {i + 1: name for i, name in enumerate(df.columns)}
+    df.columns = list(index_map.keys())
+
+    # Create boxplot
+    figure = df.boxplot(grid=False, patch_artist=True)
+    figure.set(title="Cross-Grammar Entropy", xlabel="Sub-grammars", ylabel="Entropy (bits)")
+
+    # Add legend using the mapping
+    legend_patches = [mpatches.Patch(label=f"{i}: {name}") for i, name in index_map.items()]
+    figure.legend(
+        handles=legend_patches,
+        title="Legend",
+        loc="center right",
+        bbox_to_anchor=(-0.115, 0.5),
+        fontsize="small"
+    )
+
+    # Save plot
+    plt.savefig(path, bbox_inches="tight", dpi=300)
+    plt.close()
+
+
+def evaluate(pairs, model_name, batch_size=16):
     """
     Evaluation pipeline for a set of premise/hypothesis paris.
     For now the model loaded is roberta-large-mnli.
@@ -55,14 +90,11 @@ def evaluate(pairs, model_name, key_name, results_dir, batch_size=16):
     id2label = model.config.id2label # We use it later on
     classes = list(id2label.values())
 
-    # Identify the path where the results file will be stored
-    out_path = os.path.join(results_dir, f"results_{key_name}.txt")
-    print(f"Saving results to {out_path}")
-
     # Store evaluation results
     results = []
 
     # Main evaluation loop over batches of examples
+    # for batch_start in tqdm(range(0, len(pairs), batch_size), desc="Evaluating over batches"):
     for batch_start in range(0, len(pairs), batch_size):
 
         # Create batches of example pairs
@@ -91,6 +123,24 @@ def evaluate(pairs, model_name, key_name, results_dir, batch_size=16):
             (premise, hypothesis, id2label[int(pred_id)], probs.tolist())
             for (premise, hypothesis), pred_id, probs in zip(batch, pred_ids, batch_probs)
         )
+    
+    return results, classes
+
+
+def compute_entropies(pairs, model_name, batch_size=16, base=2):
+    """Evaluate a set of pairs and return only the entropy vector."""
+
+    results, _ = evaluate(pairs, model_name, batch_size)
+    entropies = [entropy(probs, base=base) for (_, _, _, probs) in results]
+    
+    return entropies
+
+
+def write_to_file(results, classes, key_name, results_dir):
+
+    # Identify the path where the results file will be stored
+    out_path = os.path.join(results_dir, f"results_{key_name}.txt")
+    print(f"Saving results to {out_path}")
 
     # Write the results in a .txt file
     with open(out_path, "w") as out_file:
@@ -105,4 +155,4 @@ def evaluate(pairs, model_name, key_name, results_dir, batch_size=16):
             out_file.write("\n")
 
     # Plot the results
-    plot([probs for (_, _, _, probs) in results], classes, results_dir, key_name)
+    plot_bar([probs for (_, _, _, probs) in results], classes, results_dir, key_name)
