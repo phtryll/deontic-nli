@@ -1,9 +1,5 @@
-# Custom
-testing/
-testing.py
-arc/
-report.tex
-build/
+# Old files
+archive/
 
 # macOS Finder metadata
 .DS_Store
