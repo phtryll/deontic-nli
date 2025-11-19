@@ -1,0 +1,2134 @@
+{
+    "A_or_B_impl_AB": [
+        [
+            "The driver imagines or skis.",
+            "The driver imagines."
+        ],
+        [
+            "His mother wakes or inspires.",
+            "His mother inspires."
+        ],
+        [
+            "Your sister rows or yearns.",
+            "Your sister rows."
+        ],
+        [
+            "Her father hikes or discovers.",
+            "Her father hikes."
+        ],
+        [
+            "The soldier hates or travels.",
+            "The soldier hates."
+        ],
+        [
+            "The woman programs or enjoys.",
+            "The woman enjoys."
+        ],
+        [
+            "The nurse pines or hope.",
+            "The nurse pines."
+        ],
+        [
+            "The woman writes or dreams.",
+            "The woman dreams."
+        ],
+        [
+            "The soldier misses or misses.",
+            "The soldier misses."
+        ],
+        [
+            "The artist betrays or cycles.",
+            "The artist betrays."
+        ],
+        [
+            "The artist jumps or betrays.",
+            "The artist betrays."
+        ],
+        [
+            "Her father sails or flies.",
+            "Her father sails."
+        ],
+        [
+            "The chef designs or explores.",
+            "The chef explores."
+        ],
+        [
+            "Your sister forgives or writes.",
+            "Your sister writes."
+        ],
+        [
+            "Her father eats or cries.",
+            "Her father cries."
+        ],
+        [
+            "The student paints or competes.",
+            "The student competes."
+        ],
+        [
+            "My friend programs or photographs.",
+            "My friend programs."
+        ],
+        [
+            "The athlete innocent or yearns.",
+            "The athlete yearns."
+        ],
+        [
+            "His mother discovers or apologizes.",
+            "His mother discovers."
+        ],
+        [
+            "His mother forgives or invents.",
+            "His mother invents."
+        ]
+    ],
+    "AB_impl_A_or_B": [
+        [
+            "The scientist rows.",
+            "The scientist designs or rows."
+        ],
+        [
+            "Your sister reads.",
+            "Your sister skis or reads."
+        ],
+        [
+            "Your sister cherishes.",
+            "Your sister hates or cherishes."
+        ],
+        [
+            "His mother enjoys.",
+            "His mother cheats or enjoys."
+        ],
+        [
+            "The dancer fishes.",
+            "The dancer fishes or learns."
+        ],
+        [
+            "The scientist dances.",
+            "The scientist wins or dances."
+        ],
+        [
+            "The driver loses.",
+            "The driver steals or loses."
+        ],
+        [
+            "Her father promises.",
+            "Her father promises or explores."
+        ],
+        [
+            "The director cycles.",
+            "The director invents or cycles."
+        ],
+        [
+            "The designer writes.",
+            "The designer eats or writes."
+        ],
+        [
+            "The musician inspires.",
+            "The musician runs or inspires."
+        ],
+        [
+            "The engineer steals.",
+            "The engineer innovates or steals."
+        ],
+        [
+            "The programmer composes.",
+            "The programmer wins or composes."
+        ],
+        [
+            "The man plays.",
+            "The man hope or plays."
+        ],
+        [
+            "The director hikes.",
+            "The director misses or hikes."
+        ],
+        [
+            "The student reads.",
+            "The student reads or programs."
+        ],
+        [
+            "The director apologizes.",
+            "The director apologizes or wins."
+        ],
+        [
+            "The nurse promises.",
+            "The nurse climbs or promises."
+        ],
+        [
+            "The athlete dreams.",
+            "The athlete skis or dreams."
+        ],
+        [
+            "The programmer innovates.",
+            "The programmer camps or innovates."
+        ]
+    ],
+    "A_or_B_impl_A_and_B": [
+        [
+            "The writer imagines or drives.",
+            "The writer imagines and drives."
+        ],
+        [
+            "The boy sails or hates.",
+            "The boy sails and hates."
+        ],
+        [
+            "The boy learns or competes.",
+            "The boy learns and competes."
+        ],
+        [
+            "The scholar yearns or designs.",
+            "The scholar yearns and designs."
+        ],
+        [
+            "The designer betrays or dreams.",
+            "The designer betrays and dreams."
+        ],
+        [
+            "The driver edits or sails.",
+            "The driver edits and sails."
+        ],
+        [
+            "The artist inspires or promises.",
+            "The artist inspires and promises."
+        ],
+        [
+            "The musician apologizes or dances.",
+            "The musician apologizes and dances."
+        ],
+        [
+            "The scientist dances or drives.",
+            "The scientist dances and drives."
+        ],
+        [
+            "The writer cheats or misses.",
+            "The writer cheats and misses."
+        ],
+        [
+            "The chef rows or drives.",
+            "The chef rows and drives."
+        ],
+        [
+            "The scientist invents or builds.",
+            "The scientist invents and builds."
+        ],
+        [
+            "The woman admits or hikes.",
+            "The woman admits and hikes."
+        ],
+        [
+            "The writer loves or cherishes.",
+            "The writer loves and cherishes."
+        ],
+        [
+            "The doctor wakes or hikes.",
+            "The doctor wakes and hikes."
+        ],
+        [
+            "The dancer imagines or creates.",
+            "The dancer imagines and creates."
+        ],
+        [
+            "His mother sails or travels.",
+            "His mother sails and travels."
+        ],
+        [
+            "The man programs or fishes.",
+            "The man programs and fishes."
+        ],
+        [
+            "His mother creates or plays.",
+            "His mother creates and plays."
+        ],
+        [
+            "My friend yearns or yearns.",
+            "My friend yearns and yearns."
+        ]
+    ],
+    "A_and_B_impl_A_or_B": [
+        [
+            "The pilot loves and designs.",
+            "The pilot loves or designs."
+        ],
+        [
+            "The chef swims and photographs.",
+            "The chef swims or photographs."
+        ],
+        [
+            "The musician hikes and laughs.",
+            "The musician hikes or laughs."
+        ],
+        [
+            "The nurse adores and writes.",
+            "The nurse adores or writes."
+        ],
+        [
+            "The driver sings and wakes.",
+            "The driver sings or wakes."
+        ],
+        [
+            "The musician dances and longs.",
+            "The musician dances or longs."
+        ],
+        [
+            "The student creates and drives.",
+            "The student creates or drives."
+        ],
+        [
+            "Your sister learns and invents.",
+            "Your sister learns or invents."
+        ],
+        [
+            "The scientist cherishes and sleeps.",
+            "The scientist cherishes or sleeps."
+        ],
+        [
+            "The woman explores and sketches.",
+            "The woman explores or sketches."
+        ],
+        [
+            "The director dreams and creates.",
+            "The director dreams or creates."
+        ],
+        [
+            "The architect speaks and longs.",
+            "The architect speaks or longs."
+        ],
+        [
+            "The artist envies and discovers.",
+            "The artist envies or discovers."
+        ],
+        [
+            "The chef travels and camps.",
+            "The chef travels or camps."
+        ],
+        [
+            "The man researches and admits.",
+            "The man researches or admits."
+        ],
+        [
+            "The scientist betrays and hikes.",
+            "The scientist betrays or hikes."
+        ],
+        [
+            "The engineer invents and researches.",
+            "The engineer invents or researches."
+        ],
+        [
+            "The painter cheats and photographs.",
+            "The painter cheats or photographs."
+        ],
+        [
+            "His mother innocent and wins.",
+            "His mother innocent or wins."
+        ],
+        [
+            "The artist composes and appreciates.",
+            "The artist composes or appreciates."
+        ]
+    ],
+    "PE_A_or_B_impl_PE_A_and_PE_B": [
+        [
+            "The boy is permitted to paint or wake.",
+            "The boy is permitted to paint and is permitted to wake."
+        ],
+        [
+            "The architect is permitted to apologize or experiment.",
+            "The architect is permitted to apologize and is permitted to experiment."
+        ],
+        [
+            "Your sister is permitted to lose or experiment.",
+            "Your sister is permitted to lose and is permitted to experiment."
+        ],
+        [
+            "The nurse is permitted to sing or enjoy.",
+            "The nurse is permitted to sing and is permitted to enjoy."
+        ],
+        [
+            "The king is permitted to play or read.",
+            "The king is permitted to play and is permitted to read."
+        ],
+        [
+            "The scientist is permitted to paint or regret.",
+            "The scientist is permitted to paint and is permitted to regret."
+        ],
+        [
+            "The musician is permitted to hate or sing.",
+            "The musician is permitted to hate and is permitted to sing."
+        ],
+        [
+            "The engineer is permitted to edit or fish.",
+            "The engineer is permitted to edit and is permitted to fish."
+        ],
+        [
+            "The programmer is permitted to amazed or film.",
+            "The programmer is permitted to amazed and is permitted to film."
+        ],
+        [
+            "The dancer is permitted to wake or amaze.",
+            "The dancer is permitted to wake and is permitted to amaze."
+        ],
+        [
+            "The explorer is permitted to invent or camp.",
+            "The explorer is permitted to invent and is permitted to camp."
+        ],
+        [
+            "The driver is permitted to appreciate or long.",
+            "The driver is permitted to appreciate and is permitted to long."
+        ],
+        [
+            "The architect is permitted to dream or design.",
+            "The architect is permitted to dream and is permitted to design."
+        ],
+        [
+            "Her father is permitted to eat or love.",
+            "Her father is permitted to eat and is permitted to love."
+        ],
+        [
+            "The actor is permitted to film or long.",
+            "The actor is permitted to film and is permitted to long."
+        ],
+        [
+            "The nurse is permitted to miss or edit.",
+            "The nurse is permitted to miss and is permitted to edit."
+        ],
+        [
+            "The explorer is permitted to cherish or inspire.",
+            "The explorer is permitted to cherish and is permitted to inspire."
+        ],
+        [
+            "The doctor is permitted to amazed or laugh.",
+            "The doctor is permitted to amazed and is permitted to laugh."
+        ],
+        [
+            "The doctor is permitted to fish or film.",
+            "The doctor is permitted to fish and is permitted to film."
+        ],
+        [
+            "The actor is permitted to long or sketch.",
+            "The actor is permitted to long and is permitted to sketch."
+        ]
+    ],
+    "PE_A_or_B_impl_PE_X": [
+        [
+            "The chef is permitted to explore or forgive.",
+            "The chef is permitted to forgive."
+        ],
+        [
+            "The soldier is permitted to sleep or sleep.",
+            "The soldier is permitted to sleep."
+        ],
+        [
+            "His mother is permitted to hate or climb.",
+            "His mother is permitted to hate."
+        ],
+        [
+            "The pilot is permitted to astonish or fly.",
+            "The pilot is permitted to fly."
+        ],
+        [
+            "The chef is permitted to innovate or write.",
+            "The chef is permitted to innovate."
+        ],
+        [
+            "The programmer is permitted to long or program.",
+            "The programmer is permitted to long."
+        ],
+        [
+            "The designer is permitted to sleep or yearn.",
+            "The designer is permitted to sleep."
+        ],
+        [
+            "The driver is permitted to fish or long.",
+            "The driver is permitted to long."
+        ],
+        [
+            "The dancer is permitted to experiment or sketch.",
+            "The dancer is permitted to experiment."
+        ],
+        [
+            "My friend is permitted to lose or edit.",
+            "My friend is permitted to lose."
+        ],
+        [
+            "The student is permitted to ski or fish.",
+            "The student is permitted to ski."
+        ],
+        [
+            "The musician is permitted to miss or hope.",
+            "The musician is permitted to miss."
+        ],
+        [
+            "The man is permitted to admit or cherish.",
+            "The man is permitted to cherish."
+        ],
+        [
+            "The nurse is permitted to steal or swim.",
+            "The nurse is permitted to swim."
+        ],
+        [
+            "The woman is permitted to amazed or sing.",
+            "The woman is permitted to amazed."
+        ],
+        [
+            "The driver is permitted to invent or run.",
+            "The driver is permitted to run."
+        ],
+        [
+            "The queen is permitted to imagine or miss.",
+            "The queen is permitted to imagine."
+        ],
+        [
+            "The architect is permitted to climb or create.",
+            "The architect is permitted to climb."
+        ],
+        [
+            "Her father is permitted to explore or win.",
+            "Her father is permitted to explore."
+        ],
+        [
+            "The pilot is permitted to lie or sleep.",
+            "The pilot is permitted to lie."
+        ]
+    ],
+    "PE_A_or_B_impl_PE_A_or_PE_B": [
+        [
+            "The programmer is permitted to wake or envy.",
+            "The programmer is permitted to wake or is permitted to envy."
+        ],
+        [
+            "The driver is permitted to ski or hike.",
+            "The driver is permitted to ski or is permitted to hike."
+        ],
+        [
+            "His mother is permitted to compose or cherish.",
+            "His mother is permitted to compose or is permitted to cherish."
+        ],
+        [
+            "The woman is permitted to adore or imagine.",
+            "The woman is permitted to adore or is permitted to imagine."
+        ],
+        [
+            "The boy is permitted to speak or enjoy.",
+            "The boy is permitted to speak or is permitted to enjoy."
+        ],
+        [
+            "The dancer is permitted to yearn or fish.",
+            "The dancer is permitted to yearn or is permitted to fish."
+        ],
+        [
+            "The scientist is permitted to sing or sing.",
+            "The scientist is permitted to sing or is permitted to sing."
+        ],
+        [
+            "Her father is permitted to laugh or promise.",
+            "Her father is permitted to laugh or is permitted to promise."
+        ],
+        [
+            "The painter is permitted to row or inspire.",
+            "The painter is permitted to row or is permitted to inspire."
+        ],
+        [
+            "My friend is permitted to research or work.",
+            "My friend is permitted to research or is permitted to work."
+        ],
+        [
+            "His mother is permitted to astonished or delight.",
+            "His mother is permitted to astonished or is permitted to delight."
+        ],
+        [
+            "The boy is permitted to photograph or film.",
+            "The boy is permitted to photograph or is permitted to film."
+        ],
+        [
+            "My friend is permitted to delight or read.",
+            "My friend is permitted to delight or is permitted to read."
+        ],
+        [
+            "My friend is permitted to astonished or sail.",
+            "My friend is permitted to astonished or is permitted to sail."
+        ],
+        [
+            "The queen is permitted to run or think.",
+            "The queen is permitted to run or is permitted to think."
+        ],
+        [
+            "The boy is permitted to steal or program.",
+            "The boy is permitted to steal or is permitted to program."
+        ],
+        [
+            "The student is permitted to design or speak.",
+            "The student is permitted to design or is permitted to speak."
+        ],
+        [
+            "The soldier is permitted to camp or innocent.",
+            "The soldier is permitted to camp or is permitted to innocent."
+        ],
+        [
+            "The athlete is permitted to research or code.",
+            "The athlete is permitted to research or is permitted to code."
+        ],
+        [
+            "The queen is permitted to invent or hope.",
+            "The queen is permitted to invent or is permitted to hope."
+        ]
+    ],
+    "PE_A_and_B_impl_PE_A_and_PE_B": [
+        [
+            "Your sister is permitted to code and build.",
+            "Your sister is permitted to code and is permitted to build."
+        ],
+        [
+            "The king is permitted to imagine and envy.",
+            "The king is permitted to imagine and is permitted to envy."
+        ],
+        [
+            "The woman is permitted to invent and amaze.",
+            "The woman is permitted to invent and is permitted to amaze."
+        ],
+        [
+            "The artist is permitted to write and long.",
+            "The artist is permitted to write and is permitted to long."
+        ],
+        [
+            "The director is permitted to win and build.",
+            "The director is permitted to win and is permitted to build."
+        ],
+        [
+            "The doctor is permitted to draw and dance.",
+            "The doctor is permitted to draw and is permitted to dance."
+        ],
+        [
+            "The writer is permitted to laugh and apologize.",
+            "The writer is permitted to laugh and is permitted to apologize."
+        ],
+        [
+            "The explorer is permitted to camp and miss.",
+            "The explorer is permitted to camp and is permitted to miss."
+        ],
+        [
+            "The painter is permitted to promise and play.",
+            "The painter is permitted to promise and is permitted to play."
+        ],
+        [
+            "The pilot is permitted to innovate and research.",
+            "The pilot is permitted to innovate and is permitted to research."
+        ],
+        [
+            "His mother is permitted to steal and amaze.",
+            "His mother is permitted to steal and is permitted to amaze."
+        ],
+        [
+            "The doctor is permitted to amaze and win.",
+            "The doctor is permitted to amaze and is permitted to win."
+        ],
+        [
+            "The programmer is permitted to betray and learn.",
+            "The programmer is permitted to betray and is permitted to learn."
+        ],
+        [
+            "The programmer is permitted to astonished and sing.",
+            "The programmer is permitted to astonished and is permitted to sing."
+        ],
+        [
+            "The nurse is permitted to win and cycle.",
+            "The nurse is permitted to win and is permitted to cycle."
+        ],
+        [
+            "The man is permitted to write and swim.",
+            "The man is permitted to write and is permitted to swim."
+        ],
+        [
+            "The doctor is permitted to create and write.",
+            "The doctor is permitted to create and is permitted to write."
+        ],
+        [
+            "The designer is permitted to enjoy and photograph.",
+            "The designer is permitted to enjoy and is permitted to photograph."
+        ],
+        [
+            "The writer is permitted to hike and compose.",
+            "The writer is permitted to hike and is permitted to compose."
+        ],
+        [
+            "The designer is permitted to compose and run.",
+            "The designer is permitted to compose and is permitted to run."
+        ]
+    ],
+    "PE_A_and_B_impl_PE_A_and_B": [
+        [
+            "The doctor is permitted to discover or discover.",
+            "The doctor is permitted to discover and discover."
+        ],
+        [
+            "His mother is permitted to win or astonished.",
+            "His mother is permitted to win and astonished."
+        ],
+        [
+            "The painter is permitted to delight or play.",
+            "The painter is permitted to delight and play."
+        ],
+        [
+            "Her father is permitted to win or think.",
+            "Her father is permitted to win and think."
+        ],
+        [
+            "The athlete is permitted to invent or sing.",
+            "The athlete is permitted to invent and sing."
+        ],
+        [
+            "The king is permitted to betray or lie.",
+            "The king is permitted to betray and lie."
+        ],
+        [
+            "The director is permitted to adore or betray.",
+            "The director is permitted to adore and betray."
+        ],
+        [
+            "The nurse is permitted to read or promise.",
+            "The nurse is permitted to read and promise."
+        ],
+        [
+            "The painter is permitted to run or photograph.",
+            "The painter is permitted to run and photograph."
+        ],
+        [
+            "My friend is permitted to amazed or dance.",
+            "My friend is permitted to amazed and dance."
+        ],
+        [
+            "Her father is permitted to promise or write.",
+            "Her father is permitted to promise and write."
+        ],
+        [
+            "The dancer is permitted to climb or discover.",
+            "The dancer is permitted to climb and discover."
+        ],
+        [
+            "Her father is permitted to create or play.",
+            "Her father is permitted to create and play."
+        ],
+        [
+            "The actor is permitted to envy or edit.",
+            "The actor is permitted to envy and edit."
+        ],
+        [
+            "My friend is permitted to fly or fish.",
+            "My friend is permitted to fly and fish."
+        ],
+        [
+            "The dancer is permitted to adore or long.",
+            "The dancer is permitted to adore and long."
+        ],
+        [
+            "The designer is permitted to ski or win.",
+            "The designer is permitted to ski and win."
+        ],
+        [
+            "The chef is permitted to compose or delight.",
+            "The chef is permitted to compose and delight."
+        ],
+        [
+            "The chef is permitted to row or regret.",
+            "The chef is permitted to row and regret."
+        ],
+        [
+            "The king is permitted to miss or edit.",
+            "The king is permitted to miss and edit."
+        ]
+    ],
+    "PE_A_or_PE_B_impl_PE_A_or_B": [
+        [
+            "Your sister is permitted to hope or is permitted to cry.",
+            "Your sister is permitted to hope or cry."
+        ],
+        [
+            "The actor is permitted to amaze or is permitted to inspire.",
+            "The actor is permitted to amaze or inspire."
+        ],
+        [
+            "The student is permitted to long or is permitted to astonished.",
+            "The student is permitted to long or astonished."
+        ],
+        [
+            "The queen is permitted to yearn or is permitted to photograph.",
+            "The queen is permitted to yearn or photograph."
+        ],
+        [
+            "The driver is permitted to laugh or is permitted to photograph.",
+            "The driver is permitted to laugh or photograph."
+        ],
+        [
+            "The explorer is permitted to innovate or is permitted to cherish.",
+            "The explorer is permitted to innovate or cherish."
+        ],
+        [
+            "The soldier is permitted to delight or is permitted to experiment.",
+            "The soldier is permitted to delight or experiment."
+        ],
+        [
+            "My friend is permitted to research or is permitted to research.",
+            "My friend is permitted to research or research."
+        ],
+        [
+            "The nurse is permitted to miss or is permitted to row.",
+            "The nurse is permitted to miss or row."
+        ],
+        [
+            "The director is permitted to betray or is permitted to cycle.",
+            "The director is permitted to betray or cycle."
+        ],
+        [
+            "The explorer is permitted to cry or is permitted to envy.",
+            "The explorer is permitted to cry or envy."
+        ],
+        [
+            "The woman is permitted to build or is permitted to pine.",
+            "The woman is permitted to build or pine."
+        ],
+        [
+            "The king is permitted to fly or is permitted to regret.",
+            "The king is permitted to fly or regret."
+        ],
+        [
+            "The nurse is permitted to cry or is permitted to draw.",
+            "The nurse is permitted to cry or draw."
+        ],
+        [
+            "My friend is permitted to sleep or is permitted to fly.",
+            "My friend is permitted to sleep or fly."
+        ],
+        [
+            "The boy is permitted to lose or is permitted to code.",
+            "The boy is permitted to lose or code."
+        ],
+        [
+            "The programmer is permitted to row or is permitted to drive.",
+            "The programmer is permitted to row or drive."
+        ],
+        [
+            "My friend is permitted to delight or is permitted to speak.",
+            "My friend is permitted to delight or speak."
+        ],
+        [
+            "The director is permitted to play or is permitted to design.",
+            "The director is permitted to play or design."
+        ],
+        [
+            "The programmer is permitted to ski or is permitted to hate.",
+            "The programmer is permitted to ski or hate."
+        ]
+    ],
+    "PE_A_and_PE_B_impl_PE_A_and_B": [
+        [
+            "The athlete is permitted to row and is permitted to hope.",
+            "The athlete is permitted to row and hope."
+        ],
+        [
+            "The architect is permitted to cry and is permitted to delight.",
+            "The architect is permitted to cry and delight."
+        ],
+        [
+            "Your sister is permitted to enjoy and is permitted to win.",
+            "Your sister is permitted to enjoy and win."
+        ],
+        [
+            "The programmer is permitted to hope and is permitted to fly.",
+            "The programmer is permitted to hope and fly."
+        ],
+        [
+            "The artist is permitted to hate and is permitted to laugh.",
+            "The artist is permitted to hate and laugh."
+        ],
+        [
+            "The man is permitted to jump and is permitted to code.",
+            "The man is permitted to jump and code."
+        ],
+        [
+            "The scholar is permitted to fish and is permitted to cycle.",
+            "The scholar is permitted to fish and cycle."
+        ],
+        [
+            "The pilot is permitted to cherish and is permitted to laugh.",
+            "The pilot is permitted to cherish and laugh."
+        ],
+        [
+            "The engineer is permitted to lose and is permitted to run.",
+            "The engineer is permitted to lose and run."
+        ],
+        [
+            "The chef is permitted to betray and is permitted to miss.",
+            "The chef is permitted to betray and miss."
+        ],
+        [
+            "The doctor is permitted to play and is permitted to imagine.",
+            "The doctor is permitted to play and imagine."
+        ],
+        [
+            "The programmer is permitted to teach and is permitted to research.",
+            "The programmer is permitted to teach and research."
+        ],
+        [
+            "The scholar is permitted to jump and is permitted to row.",
+            "The scholar is permitted to jump and row."
+        ],
+        [
+            "The explorer is permitted to apologize and is permitted to amaze.",
+            "The explorer is permitted to apologize and amaze."
+        ],
+        [
+            "Her father is permitted to draw and is permitted to travel.",
+            "Her father is permitted to draw and travel."
+        ],
+        [
+            "The architect is permitted to miss and is permitted to write.",
+            "The architect is permitted to miss and write."
+        ],
+        [
+            "The scholar is permitted to love and is permitted to eat.",
+            "The scholar is permitted to love and eat."
+        ],
+        [
+            "The woman is permitted to paint and is permitted to forgive.",
+            "The woman is permitted to paint and forgive."
+        ],
+        [
+            "The director is permitted to hate and is permitted to astonish.",
+            "The director is permitted to hate and astonish."
+        ],
+        [
+            "The artist is permitted to laugh and is permitted to invent.",
+            "The artist is permitted to laugh and invent."
+        ]
+    ],
+    "PE_A_or_B_impl_neg_PE_A_and_PE_B_explicit": [
+        [
+            "The driver is permitted to win or compose.",
+            "It is not the case that the driver is both permitted to win and permitted to compose."
+        ],
+        [
+            "The architect is permitted to run or steal.",
+            "It is not the case that the architect is both permitted to run and permitted to steal."
+        ],
+        [
+            "The boy is permitted to ski or compete.",
+            "It is not the case that the boy is both permitted to ski and permitted to compete."
+        ],
+        [
+            "Your sister is permitted to paint or innovate.",
+            "It is not the case that your sister is both permitted to paint and permitted to innovate."
+        ],
+        [
+            "The explorer is permitted to draw or envy.",
+            "It is not the case that the explorer is both permitted to draw and permitted to envy."
+        ],
+        [
+            "The architect is permitted to read or amazed.",
+            "It is not the case that the architect is both permitted to read and permitted to amazed."
+        ],
+        [
+            "The student is permitted to envy or sing.",
+            "It is not the case that the student is both permitted to envy and permitted to sing."
+        ],
+        [
+            "The woman is permitted to experiment or yearn.",
+            "It is not the case that the woman is both permitted to experiment and permitted to yearn."
+        ],
+        [
+            "His mother is permitted to think or sleep.",
+            "It is not the case that his mother is both permitted to think and permitted to sleep."
+        ],
+        [
+            "The nurse is permitted to code or photograph.",
+            "It is not the case that the nurse is both permitted to code and permitted to photograph."
+        ],
+        [
+            "The musician is permitted to appreciate or love.",
+            "It is not the case that the musician is both permitted to appreciate and permitted to love."
+        ],
+        [
+            "His mother is permitted to dream or think.",
+            "It is not the case that his mother is both permitted to dream and permitted to think."
+        ],
+        [
+            "The woman is permitted to compete or compose.",
+            "It is not the case that the woman is both permitted to compete and permitted to compose."
+        ],
+        [
+            "The scientist is permitted to drive or swim.",
+            "It is not the case that the scientist is both permitted to drive and permitted to swim."
+        ],
+        [
+            "The writer is permitted to compose or cheat.",
+            "It is not the case that the writer is both permitted to compose and permitted to cheat."
+        ],
+        [
+            "The student is permitted to fly or experiment.",
+            "It is not the case that the student is both permitted to fly and permitted to experiment."
+        ],
+        [
+            "The pilot is permitted to admit or lose.",
+            "It is not the case that the pilot is both permitted to admit and permitted to lose."
+        ],
+        [
+            "The woman is permitted to fly or miss.",
+            "It is not the case that the woman is both permitted to fly and permitted to miss."
+        ],
+        [
+            "The engineer is permitted to experiment or innocent.",
+            "It is not the case that the engineer is both permitted to experiment and permitted to innocent."
+        ],
+        [
+            "The artist is permitted to adore or draw.",
+            "It is not the case that the artist is both permitted to adore and permitted to draw."
+        ]
+    ],
+    "PE_A_or_B_impl_neg_PE_X": [
+        [
+            "The pilot is permitted to lose or appreciate.",
+            "It is not the case that the pilot is permitted to appreciate."
+        ],
+        [
+            "The doctor is permitted to experiment or delight.",
+            "It is not the case that the doctor is permitted to delight."
+        ],
+        [
+            "Your sister is permitted to run or climb.",
+            "It is not the case that your sister is permitted to run."
+        ],
+        [
+            "The director is permitted to cycle or hate.",
+            "It is not the case that the director is permitted to cycle."
+        ],
+        [
+            "The painter is permitted to experiment or miss.",
+            "It is not the case that the painter is permitted to miss."
+        ],
+        [
+            "Her father is permitted to build or apologize.",
+            "It is not the case that her father is permitted to build."
+        ],
+        [
+            "The driver is permitted to miss or yearn.",
+            "It is not the case that the driver is permitted to yearn."
+        ],
+        [
+            "The doctor is permitted to read or delight.",
+            "It is not the case that the doctor is permitted to read."
+        ],
+        [
+            "The programmer is permitted to jump or create.",
+            "It is not the case that the programmer is permitted to jump."
+        ],
+        [
+            "The king is permitted to appreciate or apologize.",
+            "It is not the case that the king is permitted to apologize."
+        ],
+        [
+            "The musician is permitted to sing or work.",
+            "It is not the case that the musician is permitted to work."
+        ],
+        [
+            "The scholar is permitted to think or win.",
+            "It is not the case that the scholar is permitted to think."
+        ],
+        [
+            "The engineer is permitted to drive or jump.",
+            "It is not the case that the engineer is permitted to jump."
+        ],
+        [
+            "My friend is permitted to explore or astonished.",
+            "It is not the case that my friend is permitted to explore."
+        ],
+        [
+            "Her father is permitted to sketch or dream.",
+            "It is not the case that her father is permitted to sketch."
+        ],
+        [
+            "The man is permitted to sleep or pine.",
+            "It is not the case that the man is permitted to sleep."
+        ],
+        [
+            "The king is permitted to lie or adore.",
+            "It is not the case that the king is permitted to lie."
+        ],
+        [
+            "His mother is permitted to regret or explore.",
+            "It is not the case that his mother is permitted to regret."
+        ],
+        [
+            "The designer is permitted to hate or row.",
+            "It is not the case that the designer is permitted to hate."
+        ],
+        [
+            "The athlete is permitted to laugh or win.",
+            "It is not the case that the athlete is permitted to laugh."
+        ]
+    ],
+    "PE_A_or_B_impl_neg_PE_A_and_PE_B_implicit": [
+        [
+            "The artist is permitted to reveal or admit.",
+            "The artist is permitted to conceal and is permitted to deny."
+        ],
+        [
+            "The pilot is permitted to advance or connect.",
+            "The pilot is permitted to retreat and is permitted to disconnect."
+        ],
+        [
+            "The chef is permitted to hold or reveal.",
+            "The chef is permitted to release and is permitted to conceal."
+        ],
+        [
+            "Your sister is permitted to give or admit.",
+            "Your sister is permitted to take and is permitted to deny."
+        ],
+        [
+            "The boy is permitted to charge or cherish.",
+            "The boy is permitted to discharge and is permitted to despise."
+        ],
+        [
+            "The woman is permitted to include or accept.",
+            "The woman is permitted to exclude and is permitted to reject."
+        ],
+        [
+            "The king is permitted to admit or laugh.",
+            "The king is permitted to deny and is permitted to cry."
+        ],
+        [
+            "The scientist is permitted to stand or win.",
+            "The scientist is permitted to sit and is permitted to lose."
+        ],
+        [
+            "The actor is permitted to rise or shine.",
+            "The actor is permitted to fall and is permitted to fade."
+        ],
+        [
+            "The artist is permitted to earn or admit.",
+            "The artist is permitted to spend and is permitted to deny."
+        ],
+        [
+            "My friend is permitted to lighten or advance.",
+            "My friend is permitted to darken and is permitted to retreat."
+        ],
+        [
+            "The actor is permitted to sow or rise.",
+            "The actor is permitted to reap and is permitted to fall."
+        ],
+        [
+            "The athlete is permitted to laugh or gather.",
+            "The athlete is permitted to cry and is permitted to scatter."
+        ],
+        [
+            "The scientist is permitted to protect or admit.",
+            "The scientist is permitted to attack and is permitted to deny."
+        ],
+        [
+            "His mother is permitted to increase or live.",
+            "His mother is permitted to decrease and is permitted to die."
+        ],
+        [
+            "The designer is permitted to protect or live.",
+            "The designer is permitted to attack and is permitted to die."
+        ],
+        [
+            "The scientist is permitted to speak or increase.",
+            "The scientist is permitted to listen and is permitted to decrease."
+        ],
+        [
+            "The writer is permitted to protect or live.",
+            "The writer is permitted to attack and is permitted to die."
+        ],
+        [
+            "The nurse is permitted to respect or cherish.",
+            "The nurse is permitted to disrespect and is permitted to despise."
+        ],
+        [
+            "My friend is permitted to love or include.",
+            "My friend is permitted to hate and is permitted to exclude."
+        ]
+    ],
+    "PE_A_or_B_impl_neg_PE_X_implicit": [
+        [
+            "The scholar is permitted to encourage or admit.",
+            "The scholar is permitted to deny."
+        ],
+        [
+            "Your sister is permitted to encourage or admit.",
+            "Your sister is permitted to deny."
+        ],
+        [
+            "The actor is permitted to speak or increase.",
+            "The actor is permitted to listen."
+        ],
+        [
+            "The director is permitted to climb or win.",
+            "The director is permitted to descend."
+        ],
+        [
+            "The driver is permitted to float or lighten.",
+            "The driver is permitted to sink."
+        ],
+        [
+            "The musician is permitted to tie or admit.",
+            "The musician is permitted to deny."
+        ],
+        [
+            "The artist is permitted to attach or straighten.",
+            "The artist is permitted to detach."
+        ],
+        [
+            "The pilot is permitted to win or speak.",
+            "The pilot is permitted to listen."
+        ],
+        [
+            "The musician is permitted to speak or encourage.",
+            "The musician is permitted to listen."
+        ],
+        [
+            "My friend is permitted to attach or respect.",
+            "My friend is permitted to detach."
+        ],
+        [
+            "The actor is permitted to advance or rise.",
+            "The actor is permitted to fall."
+        ],
+        [
+            "The doctor is permitted to fill or straighten.",
+            "The doctor is permitted to empty."
+        ],
+        [
+            "The engineer is permitted to gather or sow.",
+            "The engineer is permitted to reap."
+        ],
+        [
+            "The painter is permitted to earn or speak.",
+            "The painter is permitted to listen."
+        ],
+        [
+            "The nurse is permitted to charge or come.",
+            "The nurse is permitted to go."
+        ],
+        [
+            "The director is permitted to stand or connect.",
+            "The director is permitted to sit."
+        ],
+        [
+            "The musician is permitted to expand or win.",
+            "The musician is permitted to lose."
+        ],
+        [
+            "His mother is permitted to live or push.",
+            "His mother is permitted to pull."
+        ],
+        [
+            "The explorer is permitted to start or start.",
+            "The explorer is permitted to stop."
+        ],
+        [
+            "The programmer is permitted to unify or shine.",
+            "The programmer is permitted to divide."
+        ]
+    ],
+    "A_implies_neg_A_explicit_1": [
+        [
+            "The king admits.",
+            "It is not the case that the king admits."
+        ],
+        [
+            "The student cycles.",
+            "It is not the case that the student cycles."
+        ],
+        [
+            "The musician innocent.",
+            "It is not the case that the musician innocent."
+        ],
+        [
+            "The designer cherishes.",
+            "It is not the case that the designer cherishes."
+        ],
+        [
+            "The king invents.",
+            "It is not the case that the king invents."
+        ],
+        [
+            "The architect sings.",
+            "It is not the case that the architect sings."
+        ],
+        [
+            "The driver plays.",
+            "It is not the case that the driver plays."
+        ],
+        [
+            "My friend wins.",
+            "It is not the case that my friend wins."
+        ],
+        [
+            "The driver flies.",
+            "It is not the case that the driver flies."
+        ],
+        [
+            "Your sister amazes.",
+            "It is not the case that your sister amazes."
+        ],
+        [
+            "The programmer eats.",
+            "It is not the case that the programmer eats."
+        ],
+        [
+            "The queen skis.",
+            "It is not the case that the queen skis."
+        ],
+        [
+            "The designer innocent.",
+            "It is not the case that the designer innocent."
+        ],
+        [
+            "Your sister innovates.",
+            "It is not the case that your sister innovates."
+        ],
+        [
+            "The architect rows.",
+            "It is not the case that the architect rows."
+        ],
+        [
+            "The chef betrays.",
+            "It is not the case that the chef betrays."
+        ],
+        [
+            "The athlete creates.",
+            "It is not the case that the athlete creates."
+        ],
+        [
+            "The doctor films.",
+            "It is not the case that the doctor films."
+        ],
+        [
+            "The queen reads.",
+            "It is not the case that the queen reads."
+        ],
+        [
+            "The programmer longs.",
+            "It is not the case that the programmer longs."
+        ]
+    ],
+    "A_implies_neg_A_explicit_2": [
+        [
+            "The king teaches.",
+            "The king doesn't teach."
+        ],
+        [
+            "His mother sleeps.",
+            "His mother doesn't sleep."
+        ],
+        [
+            "The director sails.",
+            "The director doesn't sail."
+        ],
+        [
+            "The chef camps.",
+            "The chef doesn't camp."
+        ],
+        [
+            "The artist writes.",
+            "The artist doesn't write."
+        ],
+        [
+            "The driver lies.",
+            "The driver doesn't lie."
+        ],
+        [
+            "His mother admits.",
+            "His mother doesn't admit."
+        ],
+        [
+            "The athlete draws.",
+            "The athlete doesn't draw."
+        ],
+        [
+            "The scientist discovers.",
+            "The scientist doesn't discover."
+        ],
+        [
+            "The student promises.",
+            "The student doesn't promise."
+        ],
+        [
+            "The writer dances.",
+            "The writer doesn't dance."
+        ],
+        [
+            "The director dreams.",
+            "The director doesn't dream."
+        ],
+        [
+            "His mother jumps.",
+            "His mother doesn't jump."
+        ],
+        [
+            "The actor loves.",
+            "The actor doesn't love."
+        ],
+        [
+            "The chef enjoys.",
+            "The chef doesn't enjoy."
+        ],
+        [
+            "The explorer imagines.",
+            "The explorer doesn't imagine."
+        ],
+        [
+            "The actor works.",
+            "The actor doesn't work."
+        ],
+        [
+            "The architect sings.",
+            "The architect doesn't sing."
+        ],
+        [
+            "The queen builds.",
+            "The queen doesn't build."
+        ],
+        [
+            "Her father admits.",
+            "Her father doesn't admit."
+        ]
+    ],
+    "A_implies_neg_V_explicit_1": [
+        [
+            "The musician pines.",
+            "It is not the case that the musician teaches."
+        ],
+        [
+            "The programmer flies.",
+            "It is not the case that the programmer hope."
+        ],
+        [
+            "The scholar delights.",
+            "It is not the case that the scholar dreams."
+        ],
+        [
+            "My friend misses.",
+            "It is not the case that my friend experiments."
+        ],
+        [
+            "The nurse fishes.",
+            "It is not the case that the nurse wakes."
+        ],
+        [
+            "The architect programs.",
+            "It is not the case that the architect hope."
+        ],
+        [
+            "The nurse programs.",
+            "It is not the case that the nurse hope."
+        ],
+        [
+            "The actor promises.",
+            "It is not the case that the actor flies."
+        ],
+        [
+            "The scientist enjoys.",
+            "It is not the case that the scientist invents."
+        ],
+        [
+            "The programmer steals.",
+            "It is not the case that the programmer explores."
+        ],
+        [
+            "The doctor researches.",
+            "It is not the case that the doctor works."
+        ],
+        [
+            "The king hope.",
+            "It is not the case that the king edits."
+        ],
+        [
+            "His mother dances.",
+            "It is not the case that his mother dreams."
+        ],
+        [
+            "The director amazes.",
+            "It is not the case that the director betrays."
+        ],
+        [
+            "The explorer yearns.",
+            "It is not the case that the explorer promises."
+        ],
+        [
+            "The chef codes.",
+            "It is not the case that the chef learns."
+        ],
+        [
+            "The musician delights.",
+            "It is not the case that the musician amazes."
+        ],
+        [
+            "The soldier loves.",
+            "It is not the case that the soldier promises."
+        ],
+        [
+            "The pilot eats.",
+            "It is not the case that the pilot loses."
+        ],
+        [
+            "The queen travels.",
+            "It is not the case that the queen designs."
+        ]
+    ],
+    "A_implies_neg_V_explicit_2": [
+        [
+            "His mother speaks.",
+            "His mother doesn't learn."
+        ],
+        [
+            "The writer regrets.",
+            "The writer doesn't enjoy."
+        ],
+        [
+            "The woman steals.",
+            "The woman doesn't yearn."
+        ],
+        [
+            "The director innovates.",
+            "The director doesn't love."
+        ],
+        [
+            "The queen swims.",
+            "The queen doesn't astonish."
+        ],
+        [
+            "The athlete wins.",
+            "The athlete doesn't camp."
+        ],
+        [
+            "My friend invents.",
+            "My friend doesn't sail."
+        ],
+        [
+            "His mother drives.",
+            "His mother doesn't design."
+        ],
+        [
+            "The doctor cherishes.",
+            "The doctor doesn't hike."
+        ],
+        [
+            "The student flies.",
+            "The student doesn't run."
+        ],
+        [
+            "The boy fishes.",
+            "The boy doesn't cherish."
+        ],
+        [
+            "The soldier amazes.",
+            "The soldier doesn't photograph."
+        ],
+        [
+            "The scientist travels.",
+            "The scientist doesn't jump."
+        ],
+        [
+            "The athlete envies.",
+            "The athlete doesn't betray."
+        ],
+        [
+            "The dancer innocent.",
+            "The dancer doesn't speak."
+        ],
+        [
+            "The musician programs.",
+            "The musician doesn't delight."
+        ],
+        [
+            "The boy amazes.",
+            "The boy doesn't cry."
+        ],
+        [
+            "Her father teaches.",
+            "Her father doesn't hope."
+        ],
+        [
+            "Her father cycles.",
+            "Her father doesn't create."
+        ],
+        [
+            "The chef explores.",
+            "The chef doesn't jump."
+        ]
+    ],
+    "A_implies_not_not_A_1": [
+        [
+            "The nurse gathers.",
+            "It is not the case that the nurse scatters."
+        ],
+        [
+            "The scholar rises.",
+            "It is not the case that the scholar falls."
+        ],
+        [
+            "The woman advances.",
+            "It is not the case that the woman retreats."
+        ],
+        [
+            "The pilot holds.",
+            "It is not the case that the pilot releases."
+        ],
+        [
+            "His mother stands.",
+            "It is not the case that his mother sits."
+        ],
+        [
+            "The engineer straightens.",
+            "It is not the case that the engineer bends."
+        ],
+        [
+            "The programmer holds.",
+            "It is not the case that the programmer releases."
+        ],
+        [
+            "The soldier expands.",
+            "It is not the case that the soldier contracts."
+        ],
+        [
+            "The programmer opens.",
+            "It is not the case that the programmer closes."
+        ],
+        [
+            "The soldier attaches.",
+            "It is not the case that the soldier detaches."
+        ],
+        [
+            "The pilot charges.",
+            "It is not the case that the pilot discharges."
+        ],
+        [
+            "The chef connects.",
+            "It is not the case that the chef disconnects."
+        ],
+        [
+            "The king rises.",
+            "It is not the case that the king falls."
+        ],
+        [
+            "The pilot tightens.",
+            "It is not the case that the pilot loosens."
+        ],
+        [
+            "The king sows.",
+            "It is not the case that the king reaps."
+        ],
+        [
+            "The king advances.",
+            "It is not the case that the king retreats."
+        ],
+        [
+            "The driver admits.",
+            "It is not the case that the driver denies."
+        ],
+        [
+            "The driver comes.",
+            "It is not the case that the driver goes."
+        ],
+        [
+            "The programmer grows.",
+            "It is not the case that the programmer shrinks."
+        ],
+        [
+            "The pilot reveals.",
+            "It is not the case that the pilot conceals."
+        ]
+    ],
+    "A_implies_not_not_A_2": [
+        [
+            "The soldier increases.",
+            "The soldier doesn't decrease."
+        ],
+        [
+            "Her father protects.",
+            "Her father doesn't attack."
+        ],
+        [
+            "The driver admits.",
+            "The driver doesn't deny."
+        ],
+        [
+            "The driver straightens.",
+            "The driver doesn't bend."
+        ],
+        [
+            "The driver permits.",
+            "The driver doesn't forbid."
+        ],
+        [
+            "The boy accepts.",
+            "The boy doesn't reject."
+        ],
+        [
+            "The scientist arrives.",
+            "The scientist doesn't depart."
+        ],
+        [
+            "His mother encourages.",
+            "His mother doesn't discourage."
+        ],
+        [
+            "The programmer climbs.",
+            "The programmer doesn't descend."
+        ],
+        [
+            "The engineer includes.",
+            "The engineer doesn't exclude."
+        ],
+        [
+            "The actor climbs.",
+            "The actor doesn't descend."
+        ],
+        [
+            "The pilot enters.",
+            "The pilot doesn't exit."
+        ],
+        [
+            "The musician ties.",
+            "The musician doesn't untie."
+        ],
+        [
+            "The actor holds.",
+            "The actor doesn't release."
+        ],
+        [
+            "Her father pushes.",
+            "Her father doesn't pull."
+        ],
+        [
+            "The woman holds.",
+            "The woman doesn't release."
+        ],
+        [
+            "The programmer rises.",
+            "The programmer doesn't fall."
+        ],
+        [
+            "The architect lightens.",
+            "The architect doesn't darken."
+        ],
+        [
+            "The soldier wins.",
+            "The soldier doesn't lose."
+        ],
+        [
+            "The student floats.",
+            "The student doesn't sink."
+        ]
+    ],
+    "PE_A_or_B_impl_PE_A_and_FO_B": [
+        [
+            "The writer is permitted to design or astonished.",
+            "The writer is permitted to design and is forbidden to astonished."
+        ],
+        [
+            "Your sister is permitted to apologize or climb.",
+            "Your sister is permitted to apologize and is forbidden to climb."
+        ],
+        [
+            "The driver is permitted to swim or drive.",
+            "The driver is permitted to swim and is forbidden to drive."
+        ],
+        [
+            "The nurse is permitted to dream or build.",
+            "The nurse is permitted to dream and is forbidden to build."
+        ],
+        [
+            "The programmer is permitted to ski or travel.",
+            "The programmer is permitted to ski and is forbidden to travel."
+        ],
+        [
+            "The soldier is permitted to learn or film.",
+            "The soldier is permitted to learn and is forbidden to film."
+        ],
+        [
+            "The musician is permitted to dream or research.",
+            "The musician is permitted to dream and is forbidden to research."
+        ],
+        [
+            "The artist is permitted to research or long.",
+            "The artist is permitted to research and is forbidden to long."
+        ],
+        [
+            "The designer is permitted to edit or wake.",
+            "The designer is permitted to edit and is forbidden to wake."
+        ],
+        [
+            "The doctor is permitted to delight or invent.",
+            "The doctor is permitted to delight and is forbidden to invent."
+        ],
+        [
+            "Your sister is permitted to hate or program.",
+            "Your sister is permitted to hate and is forbidden to program."
+        ],
+        [
+            "His mother is permitted to jump or eat.",
+            "His mother is permitted to jump and is forbidden to eat."
+        ],
+        [
+            "The dancer is permitted to innovate or innovate.",
+            "The dancer is permitted to innovate and is forbidden to innovate."
+        ],
+        [
+            "Your sister is permitted to run or pine.",
+            "Your sister is permitted to run and is forbidden to pine."
+        ],
+        [
+            "My friend is permitted to experiment or code.",
+            "My friend is permitted to experiment and is forbidden to code."
+        ],
+        [
+            "The musician is permitted to program or drive.",
+            "The musician is permitted to program and is forbidden to drive."
+        ],
+        [
+            "The musician is permitted to ski or teach.",
+            "The musician is permitted to ski and is forbidden to teach."
+        ],
+        [
+            "The scientist is permitted to work or innovate.",
+            "The scientist is permitted to work and is forbidden to innovate."
+        ],
+        [
+            "The scientist is permitted to edit or edit.",
+            "The scientist is permitted to edit and is forbidden to edit."
+        ],
+        [
+            "The engineer is permitted to astonished or play.",
+            "The engineer is permitted to astonished and is forbidden to play."
+        ]
+    ],
+    "PE_A_or_B_impl_FO_A_and_PE_B": [
+        [
+            "The engineer is permitted to hope or research.",
+            "The engineer is forbidden to hope and is permitted to research."
+        ],
+        [
+            "The architect is permitted to miss or dream.",
+            "The architect is forbidden to miss and is permitted to dream."
+        ],
+        [
+            "The scientist is permitted to wake or betray.",
+            "The scientist is forbidden to wake and is permitted to betray."
+        ],
+        [
+            "The athlete is permitted to steal or amazed.",
+            "The athlete is forbidden to steal and is permitted to amazed."
+        ],
+        [
+            "The queen is permitted to hike or adore.",
+            "The queen is forbidden to hike and is permitted to adore."
+        ],
+        [
+            "The pilot is permitted to write or wake.",
+            "The pilot is forbidden to write and is permitted to wake."
+        ],
+        [
+            "The engineer is permitted to write or run.",
+            "The engineer is forbidden to write and is permitted to run."
+        ],
+        [
+            "The artist is permitted to admit or hike.",
+            "The artist is forbidden to admit and is permitted to hike."
+        ],
+        [
+            "The director is permitted to film or envy.",
+            "The director is forbidden to film and is permitted to envy."
+        ],
+        [
+            "My friend is permitted to think or astonished.",
+            "My friend is forbidden to think and is permitted to astonished."
+        ],
+        [
+            "The nurse is permitted to innovate or compose.",
+            "The nurse is forbidden to innovate and is permitted to compose."
+        ],
+        [
+            "The musician is permitted to camp or film.",
+            "The musician is forbidden to camp and is permitted to film."
+        ],
+        [
+            "The queen is permitted to innocent or research.",
+            "The queen is forbidden to innocent and is permitted to research."
+        ],
+        [
+            "The musician is permitted to envy or compete.",
+            "The musician is forbidden to envy and is permitted to compete."
+        ],
+        [
+            "The painter is permitted to edit or design.",
+            "The painter is forbidden to edit and is permitted to design."
+        ],
+        [
+            "The chef is permitted to play or wake.",
+            "The chef is forbidden to play and is permitted to wake."
+        ],
+        [
+            "The soldier is permitted to program or enjoy.",
+            "The soldier is forbidden to program and is permitted to enjoy."
+        ],
+        [
+            "The architect is permitted to cycle or cycle.",
+            "The architect is forbidden to cycle and is permitted to cycle."
+        ],
+        [
+            "The scholar is permitted to discover or work.",
+            "The scholar is forbidden to discover and is permitted to work."
+        ],
+        [
+            "The musician is permitted to dream or eat.",
+            "The musician is forbidden to dream and is permitted to eat."
+        ]
+    ],
+    "PE_A_or_B_impl_FO_A_or_FO_B": [
+        [
+            "The artist is permitted to hike or climb.",
+            "The artist is forbidden to hike or is forbidden to climb."
+        ],
+        [
+            "The doctor is permitted to sleep or draw.",
+            "The doctor is forbidden to sleep or is forbidden to draw."
+        ],
+        [
+            "Your sister is permitted to camp or enjoy.",
+            "Your sister is forbidden to camp or is forbidden to enjoy."
+        ],
+        [
+            "The musician is permitted to envy or swim.",
+            "The musician is forbidden to envy or is forbidden to swim."
+        ],
+        [
+            "The soldier is permitted to apologize or edit.",
+            "The soldier is forbidden to apologize or is forbidden to edit."
+        ],
+        [
+            "The boy is permitted to think or sing.",
+            "The boy is forbidden to think or is forbidden to sing."
+        ],
+        [
+            "The doctor is permitted to code or film.",
+            "The doctor is forbidden to code or is forbidden to film."
+        ],
+        [
+            "Her father is permitted to film or run.",
+            "Her father is forbidden to film or is forbidden to run."
+        ],
+        [
+            "The artist is permitted to fly or wake.",
+            "The artist is forbidden to fly or is forbidden to wake."
+        ],
+        [
+            "The chef is permitted to steal or photograph.",
+            "The chef is forbidden to steal or is forbidden to photograph."
+        ],
+        [
+            "The painter is permitted to cheat or teach.",
+            "The painter is forbidden to cheat or is forbidden to teach."
+        ],
+        [
+            "The driver is permitted to wake or think.",
+            "The driver is forbidden to wake or is forbidden to think."
+        ],
+        [
+            "The engineer is permitted to long or delight.",
+            "The engineer is forbidden to long or is forbidden to delight."
+        ],
+        [
+            "Her father is permitted to enjoy or hate.",
+            "Her father is forbidden to enjoy or is forbidden to hate."
+        ],
+        [
+            "The musician is permitted to astonish or travel.",
+            "The musician is forbidden to astonish or is forbidden to travel."
+        ],
+        [
+            "The athlete is permitted to lose or sketch.",
+            "The athlete is forbidden to lose or is forbidden to sketch."
+        ],
+        [
+            "The pilot is permitted to innovate or research.",
+            "The pilot is forbidden to innovate or is forbidden to research."
+        ],
+        [
+            "The scholar is permitted to apologize or learn.",
+            "The scholar is forbidden to apologize or is forbidden to learn."
+        ],
+        [
+            "The engineer is permitted to astonished or read.",
+            "The engineer is forbidden to astonished or is forbidden to read."
+        ],
+        [
+            "The painter is permitted to compete or travel.",
+            "The painter is forbidden to compete or is forbidden to travel."
+        ]
+    ],
+    "PE_A_and_B_impl_PE_A_or_FO_B": [
+        [
+            "The king is permitted to climb and pine.",
+            "The king is permitted to climb or is forbidden to pine."
+        ],
+        [
+            "The artist is permitted to eat and lie.",
+            "The artist is permitted to eat or is forbidden to lie."
+        ],
+        [
+            "The dancer is permitted to enjoy and inspire.",
+            "The dancer is permitted to enjoy or is forbidden to inspire."
+        ],
+        [
+            "The chef is permitted to edit and camp.",
+            "The chef is permitted to edit or is forbidden to camp."
+        ],
+        [
+            "The programmer is permitted to run and cherish.",
+            "The programmer is permitted to run or is forbidden to cherish."
+        ],
+        [
+            "The athlete is permitted to adore and fly.",
+            "The athlete is permitted to adore or is forbidden to fly."
+        ],
+        [
+            "The director is permitted to cherish and sketch.",
+            "The director is permitted to cherish or is forbidden to sketch."
+        ],
+        [
+            "The man is permitted to teach and fish.",
+            "The man is permitted to teach or is forbidden to fish."
+        ],
+        [
+            "The driver is permitted to climb and program.",
+            "The driver is permitted to climb or is forbidden to program."
+        ],
+        [
+            "The writer is permitted to amaze and win.",
+            "The writer is permitted to amaze or is forbidden to win."
+        ],
+        [
+            "The scientist is permitted to eat and teach.",
+            "The scientist is permitted to eat or is forbidden to teach."
+        ],
+        [
+            "The chef is permitted to cherish and sail.",
+            "The chef is permitted to cherish or is forbidden to sail."
+        ],
+        [
+            "The engineer is permitted to learn and win.",
+            "The engineer is permitted to learn or is forbidden to win."
+        ],
+        [
+            "The explorer is permitted to appreciate and hate.",
+            "The explorer is permitted to appreciate or is forbidden to hate."
+        ],
+        [
+            "The director is permitted to long and create.",
+            "The director is permitted to long or is forbidden to create."
+        ],
+        [
+            "The man is permitted to wake and apologize.",
+            "The man is permitted to wake or is forbidden to apologize."
+        ],
+        [
+            "The king is permitted to camp and edit.",
+            "The king is permitted to camp or is forbidden to edit."
+        ],
+        [
+            "The director is permitted to astonished and work.",
+            "The director is permitted to astonished or is forbidden to work."
+        ],
+        [
+            "The scholar is permitted to draw and play.",
+            "The scholar is permitted to draw or is forbidden to play."
+        ],
+        [
+            "The musician is permitted to cry and fly.",
+            "The musician is permitted to cry or is forbidden to fly."
+        ]
+    ],
+    "PE_A_and_B_impl_FO_A_or_PE_B": [
+        [
+            "The student is permitted to regret and play.",
+            "The student is forbidden to regret or is permitted to play."
+        ],
+        [
+            "The queen is permitted to hike and think.",
+            "The queen is forbidden to hike or is permitted to think."
+        ],
+        [
+            "The scientist is permitted to inspire and explore.",
+            "The scientist is forbidden to inspire or is permitted to explore."
+        ],
+        [
+            "The engineer is permitted to cycle and miss.",
+            "The engineer is forbidden to cycle or is permitted to miss."
+        ],
+        [
+            "The engineer is permitted to appreciate and hike.",
+            "The engineer is forbidden to appreciate or is permitted to hike."
+        ],
+        [
+            "The man is permitted to film and think.",
+            "The man is forbidden to film or is permitted to think."
+        ],
+        [
+            "The engineer is permitted to climb and inspire.",
+            "The engineer is forbidden to climb or is permitted to inspire."
+        ],
+        [
+            "The queen is permitted to create and promise.",
+            "The queen is forbidden to create or is permitted to promise."
+        ],
+        [
+            "The programmer is permitted to win and betray.",
+            "The programmer is forbidden to win or is permitted to betray."
+        ],
+        [
+            "His mother is permitted to hike and admit.",
+            "His mother is forbidden to hike or is permitted to admit."
+        ],
+        [
+            "The painter is permitted to photograph and eat.",
+            "The painter is forbidden to photograph or is permitted to eat."
+        ],
+        [
+            "The painter is permitted to long and cry.",
+            "The painter is forbidden to long or is permitted to cry."
+        ],
+        [
+            "The architect is permitted to explore and program.",
+            "The architect is forbidden to explore or is permitted to program."
+        ],
+        [
+            "The woman is permitted to inspire and research.",
+            "The woman is forbidden to inspire or is permitted to research."
+        ],
+        [
+            "The king is permitted to imagine and row.",
+            "The king is forbidden to imagine or is permitted to row."
+        ],
+        [
+            "The man is permitted to sail and think.",
+            "The man is forbidden to sail or is permitted to think."
+        ],
+        [
+            "Your sister is permitted to astonish and teach.",
+            "Your sister is forbidden to astonish or is permitted to teach."
+        ],
+        [
+            "The nurse is permitted to admit and speak.",
+            "The nurse is forbidden to admit or is permitted to speak."
+        ],
+        [
+            "The boy is permitted to lose and forgive.",
+            "The boy is forbidden to lose or is permitted to forgive."
+        ],
+        [
+            "The queen is permitted to cheat and edit.",
+            "The queen is forbidden to cheat or is permitted to edit."
+        ]
+    ]
+}

@@ -365,9 +365,9 @@ from collections import defaultdict
 
 # Load lexical item grammar rules
 rule_files = [
-    "rules_NP.json",
-    "rules_VP.json",
-    "rules_VP_NEG.json"
+    "rules_NP",
+    "rules_VP",
+    "rules_VP_NEG"
 ]
 
 # Group lexical rules by their left-hand category (e.g., "V_INF", "V_3SG", ...)
@@ -375,7 +375,7 @@ lexical_rules = defaultdict(list)
 
 # Add them to the grammar (merge rules from all files)
 for filename in rule_files:
-    rules_path = os.path.join(os.path.dirname(__file__), '..', 'data', filename)
+    rules_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'rules', filename + '.json')
     
     with open(rules_path, 'r') as json_file:
         data = json.load(json_file)
