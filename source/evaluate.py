@@ -12,7 +12,11 @@ logging.set_verbosity_error()
 
 
 def load_nli_model(model_name: str):
-    """Helper function to load a tokenizer and NLI model by name from HuggingFace."""
+    """
+    Helper function to load a tokenizer and NLI model by name from HuggingFace.
+    
+    - model_name (str): the model name taken from HuggingFace.
+    """
 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSequenceClassification.from_pretrained(model_name)
@@ -22,7 +26,13 @@ def load_nli_model(model_name: str):
 
 
 def plot_bar(probs, classes, base_dir, key_name):
-    """Helper function to plot model's output for each example."""
+    """
+    Helper function to plot model's output for each example.
+    
+    - probs (List[List[float]]): a list of lists containing the probability for each class, for each example.
+    - classes (List[str]): the classes (output labels).
+    - base_dir: (str): directory to save plot
+    """
 
     # Path to store the figure
     path = os.path.join(base_dir, f"graph_{key_name}.png")
