@@ -7,8 +7,8 @@ from functools import partial
 from argparse import RawTextHelpFormatter
 
 # Import CFG and generation source code
+from source.paths import *
 from source.cfg import CFG
-from source.prompts import *
 from source.generate import generate_examples, generate_items, format_rules, format_examples
 from source.evaluate import evaluate, write_to_file, compute_entropies, plot_mustache
 
@@ -37,7 +37,7 @@ GRAMMARS = {
 }
 
 # Current models to generate text
-MODELS_GEN = ["mistral", "deepseek-r1", "llama3.1"]
+MODELS_GEN = ["mistral", "gpt-oss", "deepseek-r1", "llama3.1"]
 
 # ----------------
 # PARSER ARGUMENTS
@@ -70,9 +70,9 @@ def main():
         help="view the selected CFG, either with lexical rules (TYPE: full) or without (TYPE: base)"
     )
 
-    # Select a generation model (default choice: 'mistral')
+    # Select a generation model
     parser.add_argument(
-        "--gen-model",
+        "--ollama-model",
         choices=MODELS_GEN,
         metavar="MODEL_NAME",
         default=MODELS_GEN[0],
@@ -82,7 +82,7 @@ def main():
         )
     )
 
-    # Select an evaluation models (default choice: 'roberta-large-mnli')
+    # Select an evaluation models
     parser.add_argument(
         "--nli-model",
         metavar="MODEL_NAME",
@@ -116,15 +116,6 @@ def main():
         help="generate N lexical items and format them into CFG rules using an LLM (default: 100)"
     )
 
-    # Specify what prompt(s) we want to use
-    parser.add_argument(
-        "--labels",
-        nargs="+",
-        choices=list(prompts_ollama.keys()),
-        metavar="LABEL",
-        help="select which prompt labels to generate lexical items for (default: all)"
-    )
-
     # Save generated rules/examples toggle
     parser.add_argument(
         "-s", "--save",
@@ -154,12 +145,9 @@ def main():
 # ----------
 
     if args.evaluate:
-        # Verify output directory exists
-        results_dir = Path(__file__).parent / "results"
-        results_dir.mkdir(exist_ok=True)
-
         # Load examples
-        with open(args.evaluate, "r", encoding="utf-8") as f:
+        path = EXAMPLES_DIR / args.evaluate
+        with open(path, "r", encoding="utf-8") as f:
             examples = json.load(f)
         
         all_entropies = {}
@@ -169,13 +157,13 @@ def main():
 
             if args.eval_mode == "detailed":
                 res, cls = evaluate(pairs, args.nli_model)
-                write_to_file(res, cls, key, str(results_dir))
+                write_to_file(res, cls, key, RESULTS_DIR)
             else:
                 entropies = compute_entropies(pairs, args.nli_model)
                 all_entropies[key] = entropies
 
         if args.eval_mode == "entropy":
-            plot_mustache(all_entropies, str(results_dir))
+            plot_mustache(all_entropies, RESULTS_DIR)
 
         return
 
@@ -292,7 +280,7 @@ def main():
                 print(example)
         
         if args.save:
-            save_path = Path(__file__).parent / "examples" / args.save
+            save_path = EXAMPLES_DIR / args.save
             
             # Load existing data if the file exists
             if save_path.exists():
@@ -320,14 +308,72 @@ def main():
     # Generate lexical grammars
     if args.generate_rules:
         output_dict = {}
-        selected_labels = args.labels if args.labels else prompts_ollama.keys()
+
+        # Load prompts
+        with open(PROMPTS_PATH, "r", encoding="utf-8") as f:
+            prompts = json.load(f)
+
+        # Get the available lexical item prompts that can be used to generate rules
+        print(f"Select the type of lexical rule you want to generate: ")
+        for i, name in enumerate(prompts, start=1):
+            print(f"    {i}. {name}")
+
+        selected_indices = None  # No indices selected until user input is verified
+        prompt = "Select rule type number(s) (e.g. 1 or 1,3 or 'all'/'*'): "
+
+        # While loop to verify user input
+        while selected_indices is None:
+            choice = input(prompt).strip()
+
+            # Continue if empty
+            if not choice:
+                print("Invalid entry. Please enter number(s) from the list above.")
+                continue
+
+            # Account for all sub-grammars
+            if choice.lower() in {"all", "*"}:
+                selected_indices = list(range(len(prompts)))
+                break
+
+            # Split at comma
+            tokens = choice.replace(",", " ").split()
+
+            indices = []
+            valid = True
+
+            # Go through the input tokens for each
+            for token in tokens:
+                # If one of the tokens is not a digit start over
+                if not token.isdigit():
+                    valid = False
+                    break
+                
+                # If its a digit reindex correctly from 0 and check if valid
+                idx = int(token) - 1
+                if idx < 0 or idx >= len(prompts):
+                    valid = False
+                    break
+
+                # If all is well, add to the indices
+                indices.append(idx)
+
+            # If break, restart
+            if not valid:
+                print("Invalid entry. Please enter number(s) from the list above.")
+                continue
+
+            # Selected indices of the grammars
+            selected_indices = sorted(set(indices))
         
+        # Get the labels
+        keys_list = list(prompts.keys())
+        selected_labels = [keys_list[idx] for idx in selected_indices]
+
         for label in selected_labels:
-            prompt = prompts_ollama[label]
-            field_names = labels_ollama[label]
+            prompt = "\n".join(prompts[label]["prompt"])
+            field_names = prompts[label]["labels"]
             prompt = prompt.format(k=args.generate_rules)
-            
-            result = generate_items(prompt, args.generate_rules, field_names, args.gen_model)
+            result = generate_items(prompt, args.generate_rules, field_names, args.ollama_model)
             output_dict.update(result)
         
         new_grammars = format_rules(output_dict)
@@ -339,7 +385,7 @@ def main():
                 print(item)
 
         if args.save:
-            save_path = Path(__file__).parent / "rules" / args.save
+            save_path = RULES_DIR / args.save
             
             with open(save_path, "w", encoding="utf-8") as f:
                 json.dump(new_grammars, f, ensure_ascii=False, indent=4)
