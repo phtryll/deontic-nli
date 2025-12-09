@@ -2,7 +2,7 @@ import os
 import json
 from copy import deepcopy
 from source.cfg_utils import Rule
-from source.generate import parse_json
+from source.generate import format_rules
 
 # ------------------------------------
 # Free-choice permission test grammars
@@ -364,11 +364,7 @@ fcp_base = {
 from collections import defaultdict
 
 # Load lexical item grammar rules
-rule_files = [
-    "rules_NP",
-    "rules_VP",
-    "rules_VP_NEG"
-]
+rule_files = []
 
 # Group lexical rules by their left-hand category (e.g., "V_INF", "V_3SG", ...)
 lexical_rules = defaultdict(list)
@@ -379,11 +375,7 @@ for filename in rule_files:
     
     with open(rules_path, 'r') as json_file:
         data = json.load(json_file)
-        
-        for category, entries in data.items():
-            for string in entries:
-                rule = parse_json(string)
-                lexical_rules[category].append(rule)
+        lexical_rules = format_rules(data)
 
 # Build lists of corresponding forms (take the first RHS token for each rule)
 v_inf_list      = [r.right[0] for r in lexical_rules.get("V_INF", [])]

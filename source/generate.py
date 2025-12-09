@@ -1,8 +1,10 @@
+import time
 from ollama import chat
 from pydantic import create_model, ConfigDict, Field, conlist
 from source.cfg import CFG
 from source.cfg_utils import join, Rule
 from typing import List, Dict, Any
+from tqdm import tqdm
 
 
 def generate_examples(grammar: CFG, num_examples: int = 20, print_tree: bool = False) -> List[str]:
@@ -35,10 +37,10 @@ def generate_items(prompt: str,  k: int, field_names: List[str], model: str = 'm
     Generate lexical items for a given prompt, enforcing a strict JSON schema.
     Returns a dict mapping each field name to its list of generated strings.
     """
-    
+
     # Define the format fields (they correspond to the entry labels, i.e. the non-terminals)
     fields: Any = {name: (conlist(str, min_length=k, max_length=k), Field()) for name in field_names}
-    
+
     # Dynamically create a JSON schema for each prompt
     SchemaClass = create_model(
         "LexicalPoolSchema",
@@ -60,17 +62,29 @@ def generate_items(prompt: str,  k: int, field_names: List[str], model: str = 'm
     system_msg = {'role': 'system', 'content': system_prompts}
     user_msg = {'role': 'user', 'content': prompt}
 
-    # Invoke the LLM and instruct it to format output according to our JSON schema
+    start = time.time()
+
+    # Streaming call
     response = chat(
         messages=[system_msg, user_msg],
         model=model,
         format=json_schema,
-        # options={'temperature':0.5}
+        stream=True,
     )
 
-    # Extract the content (and make sure it exists)
-    content = response.message.content
-    if content is None:
+    # Stream tokens and show a live progress indicator
+    chunks = []
+    with tqdm(total=None, desc="Generating", unit="tok") as pbar:
+        for chunk in response:
+            token = chunk["message"]["content"]
+            chunks.append(token)
+            pbar.update(1)
+
+    elapsed = time.time() - start
+    print(f"Generation took {elapsed:.2f}s")
+
+    content = "".join(chunks)
+    if not content:
         raise ValueError("No content in model response")
 
     # Validate the JSON response against our schema
@@ -88,27 +102,27 @@ def generate_items(prompt: str,  k: int, field_names: List[str], model: str = 'm
     return data
 
 
-def format_rules(slot_dict: Dict[str, List[str]]) -> Dict[str, List[str]]:
+def format_rules(slot_dict: Dict[str, List[str]]) -> Dict[str, List[Rule]]:
     """
-    Convert a slot-mapped dict into CFG rule strings.
-    For each slot_label, produce a list of Rule(...) strings.
-    Returns: Dict[slot_label, List[rule_str]].
+    Convert a slot-mapped dict into CFG Rule objects.
+    For each slot_label, produce a list of Rule(...) instances.
+    Returns: Dict[slot_label, List[Rule]].
     """
     
     # Map each slot label to its list of rule strings
-    rules_map: Dict[str, List[str]] = {}
+    rules_map: Dict[str, List[Rule]] = {}
 
     # Iterate over slot labels and their predicted items
     for slot_label, items in slot_dict.items():
         
         # Collect rule strings for this slot_label
-        rule_strs: List[str] = []
+        rules: List[Rule] = []
         
         # Create a Rule string for each item
         for item in items:
-            rule_strs.append(f'Rule(left="{slot_label}", right=["{item}"])')
+            rules.append(Rule(left=slot_label, right=[item]))
         
-        rules_map[slot_label] = rule_strs
+        rules_map[slot_label] = rules
 
     # Return the mapping of slot labels to rule string lists
     return rules_map
@@ -130,23 +144,3 @@ def format_examples(input: Dict[str, List[str]]) -> Dict[str, List[tuple[str, st
                 formatted_examples[grammar].append((premise, hypothesis))
     
     return formatted_examples
-
-# ---------------------------------------------
-# Safe parser for Rule strings loaded from JSON
-# ---------------------------------------------
-
-_SAFE_GLOBALS = {"__builtins__": {}}  # no builtins exposed
-_SAFE_LOCALS = {"Rule": Rule} # only allow constructing Rule
-
-def parse_json(string: str) -> Rule:
-    """Parse a string like 'Rule(left="V_INF", right=["eat"])' into a Rule using constrained eval."""
-
-    if not isinstance(string, str) or not string.lstrip().startswith("Rule("):
-        raise ValueError(f"Unexpected rule entry (expected 'Rule(...)' string): {string!r}")
-    
-    rule = eval(string, _SAFE_GLOBALS, _SAFE_LOCALS)
-    
-    if not isinstance(rule, Rule):
-        raise ValueError(f"Parsed object is not a Rule: {string!r}")
-    
-    return rule
