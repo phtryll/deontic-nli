@@ -9,7 +9,7 @@ from argparse import RawTextHelpFormatter
 # Import CFG and generation source code
 from source.paths import *
 from source.cfg import CFG
-from source.generate import generate_examples, generate_items, format_rules, format_examples
+from source.generate import generate_examples, generate_items, format_examples
 from source.evaluate import evaluate, write_to_file, compute_entropies, plot_mustache
 
 # Grammars
@@ -37,7 +37,7 @@ GRAMMARS = {
 }
 
 # Current models to generate text
-MODELS_GEN = ["mistral", "gpt-oss", "deepseek-r1", "llama3.1"]
+MODELS_GEN = ["gpt-oss", "mistral", "deepseek-r1", "llama3.1"]
 
 # ----------------
 # PARSER ARGUMENTS
@@ -307,7 +307,6 @@ def main():
 
     # Generate lexical grammars
     if args.generate_rules:
-        output_dict = {}
 
         # Load prompts
         with open(PROMPTS_PATH, "r", encoding="utf-8") as f:
@@ -368,17 +367,17 @@ def main():
         # Get the labels
         keys_list = list(prompts.keys())
         selected_labels = [keys_list[idx] for idx in selected_indices]
+        output_dict = {}
 
+        print("Generating items...")
         for label in selected_labels:
             prompt = "\n".join(prompts[label]["prompt"])
             field_names = prompts[label]["labels"]
             prompt = prompt.format(k=args.generate_rules)
             result = generate_items(prompt, args.generate_rules, field_names, args.ollama_model)
             output_dict.update(result)
-        
-        new_grammars = format_rules(output_dict)
 
-        for label, output in new_grammars.items():
+        for label, output in output_dict.items():
             print(f"\n--- {label} ---\n")
             
             for item in output:
@@ -386,9 +385,23 @@ def main():
 
         if args.save:
             save_path = RULES_DIR / args.save
+
+            # Load existing data if the file exists
+            if save_path.exists():
+                with open(save_path, "r", encoding="utf-8") as f:
+                    lexical_items = json.load(f)
+            else:
+                lexical_items = {}
+
+            # Merge new lexical items into existing data
+            for name, examples_list in output_dict.items():
+                if name in lexical_items and isinstance(lexical_items[name], list):
+                    lexical_items[name].extend(examples_list)
+                else:
+                    lexical_items[name] = examples_list
             
             with open(save_path, "w", encoding="utf-8") as f:
-                json.dump(new_grammars, f, ensure_ascii=False, indent=4)
+                json.dump(lexical_items, f, ensure_ascii=False, indent=4)
             
             print(f"\nSaved generated rules to {save_path}")
 
