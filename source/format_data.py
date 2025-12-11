@@ -18,15 +18,16 @@ def format_examples(input: Dict[str, List[str]]) -> Dict[str, List[tuple[str, st
     return formatted_examples
 
 
-def format_rules(slot_dict: Dict[str, List[str]]) -> Dict[str, List[Rule]]:
+def format_rules(data: Dict[str, List]) -> Dict[str, List[Rule]]:
     rules_map: Dict[str, List[Rule]] = {}
 
-    for slot_label, items in slot_dict.items():
-        rules: List[Rule] = []
-        
-        for item in items:
-            rules.append(Rule(left=slot_label, right=[item]))
+    fields = data["fields"]
+    items = data["items"]
 
-        rules_map[slot_label] = rules
-    
+    for col_idx, field in enumerate(fields):
+        rules: List[Rule] = []
+        for row in items:
+            rules.append(Rule(left=field, right=[row[col_idx]]))
+        rules_map[field] = rules
+
     return rules_map
