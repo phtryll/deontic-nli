@@ -9,7 +9,8 @@ from argparse import RawTextHelpFormatter
 # Import CFG and generation source code
 from source.paths import *
 from source.cfg import CFG
-from source.generate import generate_examples, generate_items, format_examples
+from source.format_data import format_examples
+from source.generate_data import generate_lexical_items, generate_examples
 from source.evaluate import evaluate, write_to_file, compute_entropies, plot_mustache
 
 # Grammars
@@ -116,11 +117,11 @@ def main():
         help="generate N lexical items and format them into CFG rules using an LLM (default: 100)"
     )
 
-    # Save generated rules/examples toggle
+    # Save generated data/examples toggle
     parser.add_argument(
         "-s", "--save",
         metavar="FILENAME",
-        help="save generated rules/examples under data/<FILENAME>"
+        help="save generated data/examples under data/<FILENAME>"
     )
 
     # Evaluate NLI on a JSON file of pairs
@@ -146,7 +147,7 @@ def main():
 
     if args.evaluate:
         # Load examples
-        path = EXAMPLES_DIR / args.evaluate
+        path = DATA_DIR / args.evaluate
         with open(path, "r", encoding="utf-8") as f:
             examples = json.load(f)
         
@@ -280,7 +281,7 @@ def main():
                 print(example)
         
         if args.save:
-            save_path = EXAMPLES_DIR / args.save
+            save_path = DATA_DIR / args.save
             
             # Load existing data if the file exists
             if save_path.exists():
@@ -374,17 +375,22 @@ def main():
             prompt = "\n".join(prompts[label]["prompt"])
             field_names = prompts[label]["labels"]
             prompt = prompt.format(k=args.generate_rules)
-            result = generate_items(prompt, args.generate_rules, field_names, args.ollama_model)
-            output_dict.update(result)
+            result = generate_lexical_items(prompt, field_names, args.generate_rules, args.ollama_model)
+            output_dict[label] = result
 
-        for label, output in output_dict.items():
+        for label, vals in output_dict.items():
             print(f"\n--- {label} ---\n")
-            
-            for item in output:
-                print(item)
+            fields = vals['fields']
+            items = vals['items']
+
+            for idx, row in enumerate(items, start=1):
+                print(f"({idx})")
+                for field, value in zip(fields, row):
+                    print(f"{field}: {value}")
+                print()
 
         if args.save:
-            save_path = RULES_DIR / args.save
+            save_path = DATA_DIR / args.save
 
             # Load existing data if the file exists
             if save_path.exists():
@@ -393,16 +399,31 @@ def main():
             else:
                 lexical_items = {}
 
-            # Merge new lexical items into existing data
-            for name, examples_list in output_dict.items():
-                if name in lexical_items and isinstance(lexical_items[name], list):
-                    lexical_items[name].extend(examples_list)
+            for name, new_data in output_dict.items():
+                new_fields = new_data.get("fields", [])
+                new_items = new_data.get("items", [])
+
+                # If the entry already exists, merge while skipping duplicates
+                if name in lexical_items and isinstance(lexical_items[name], dict):
+                    existing_fields = lexical_items[name].get("fields", [])
+                    existing_items = lexical_items[name].get("items", [])
+
+                    # Ensure fields match
+                    if existing_fields != new_fields:
+                        continue
+
+                    # Add only items that are not duplicates
+                    for row in new_items:
+                        if row not in existing_items:
+                            existing_items.append(row)
+
+                    lexical_items[name]["items"] = existing_items
+
                 else:
-                    lexical_items[name] = examples_list
+                    lexical_items[name] = {"fields": new_fields, "items": new_items}
             
             with open(save_path, "w", encoding="utf-8") as f:
                 json.dump(lexical_items, f, ensure_ascii=False, indent=4)
-            
             print(f"\nSaved generated rules to {save_path}")
 
 # Run CLI
